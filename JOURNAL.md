@@ -38,3 +38,16 @@
 - 创建 setup/SHEET_SETUP_GUIDE.md（Google Sheet + Apps Script 部署指南）
 - 明确厨师注册流程：表单 → WhatsApp + Google Sheet 双记录
 - 更新 SSOT 文档对齐全部变更
+
+### WhatsApp Channel 冷冻鸡价自动抓取上线
+- **操作人：AI | 2026-06-02 下午**
+- 研究 DOSM API 找到 cpi_headline + cpi_headline_inflation 数据集（13 个 COICOP 分类），但 cpi_5d（5 位码细分类目）API 未开放
+- 确认终极价格方案：DOSM CPI（自动）+ WhatsApp Channel 鸡价（实时）
+- 识别到 Puchong Food Import & Export Sdn Bhd WhatsApp Channel（invite: 0029Vb6p7Qq5Ejy68g8VCj1U, JID: 120363405976277555@newsletter）
+- 修改 wa_daemon3.js：添加 /fetch_channel HTTP 端点 + messages.upsert 监听器，捕获 channel 消息
+- 重点注意：daemon 不再重启以免 WhatsApp 封号
+- 创建 chan_prices.py：解析鸡价消息（46 项），压缩代码缩写（BB→Boneless Breast, SBB→Skinless Boneless Breast 等），执行 /0.9 计算并四舍五入到 0.10
+- 首页模板：新增 🐓 Frozen Chicken Wholesale Price 表格（Item/Product/Price），全宽展示全部 46 项
+- 更新 aggregate.py 加入 chan_prices 模块
+- 数据源：WhatsApp Channel（邀请链接关注 + subscribeNewsletterUpdates 订阅）
+- 已知限制：newsletterFetchMessages 在 Baileys 7.0.0-rc13 中超时，改用 live messages.upsert 监听

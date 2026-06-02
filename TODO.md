@@ -20,11 +20,14 @@
 - [x] 广告合作页面（4 个定价层级 + CPM 公式）
 - [x] 页面浏览追踪（CountAPI + GA4 占位）
 - [x] 流量统计面板（Dashboard：总访问量、页面排行、广告曝光）
+- [x] 首页行业动态板块：汇率 + DOSM CPI + Google News RSS + WhatsApp Channel 鸡价 ✅
+- [x] WhatsApp Channel 自动抓取：Baileys 监听频道 → 解析价格 → /0.9 计算 → 网站显示
 - [x] setup/ 目录 + SHEET_SETUP_GUIDE.md（Google Sheet 部署指南）
 
 ## ⏳ 待办
 
-- [ ] 在手机部署 Google Apps Script（需要电脑或手机 GAS 编辑）
+- [ ] 设置 cron 定时运行 aggregate.py（新闻+汇率+鸡价自动刷新）
+- [ ] 手机部署 Google Apps Script（需要电脑或手机 GAS 编辑）
 - [ ] GitHub token 添加 workflow scope → 启用自动化 CI/CD
 - [ ] 供应商名单补全（需要 Reino 提供）
 - [ ] KHL 真实 WhatsApp 号码

@@ -37,3 +37,15 @@ CI 中 git push 会自动推送 `docs/` 内容。
 ### CountAPI 免费版限制
 CountAPI 免费版有请求频率和存储限制。不能用做精确统计，只适合展示趋势。
 长期方案：考虑自建计数或切换到 GA4 为主。
+
+### WhatsApp Baileys newsletterFetchMessages 超时
+`newsletterFetchMessages(jid, count)` 在 Baileys 7.0.0-rc13 中发送 IQ 查询后无响应，最终超时。
+当前方案：改用 `subscribeNewsletterUpdates(jid)` + `messages.upsert` 事件监听实时消息。
+不重启 daemon — 频繁重启会触发 WhatsApp 封号限制。
+
+### 鸡价解析：名称清理规则
+- 保留英文名，缩写展开（BB → Boneless Breast, SBB → Skinless Boneless Breast 等）
+- 品牌名保持大写（CARGIL, TYSON）
+- 价格 /0.9 → 四舍五入到 0.10（13.88889 → 13.90）
+- 原始消息存 `chan_raw.json`，解析后存 `chan_prices.json`
+- 不显示 Source Price 列，只看调整后价格
