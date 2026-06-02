@@ -8,6 +8,25 @@
   <link rel="stylesheet" href="/css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- Google Analytics (GA4) — 替换为你的 Measurement ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
+  <!-- 页面浏览追踪 — 每页独立计数 -->
+  <script>
+    (function() {
+      var pageId = location.pathname.replace(/\/$/g, '') || '/';
+      var key = 'jbkitchen' + pageId.replace(/\//g, '-');
+      fetch('https://api.countapi.xyz/hit/jbkitchen/' + encodeURIComponent(key))
+        .catch(function() {});
+    })();
+  </script>
 </head>
 <body>
   <header class="site-header">
@@ -18,6 +37,7 @@
         <li><a href="/suppliers/">🏪 供应商</a></li>
         <li><a href="/calculator/">🧮 成本计算</a></li>
         <li><a href="/guides/">📋 指南</a></li>
+        <li><a href="/advertise/">📢 广告</a></li>
       </ul>
       <div class="nav-actions">
         <a href="/chefs/submit/" class="btn btn-primary btn-sm">📝 免费挂简历</a>
@@ -43,6 +63,8 @@
           <li><a href="/chefs/submit/">📝 免费挂简历</a></li>
           <li><a href="/suppliers/">🏪 供应商目录</a></li>
           <li><a href="/calculator/">🧮 成本计算器</a></li>
+          <li><a href="/advertise/">📢 广告合作</a></li>
+          <li><a href="/dashboard/">📊 流量统计</a></li>
         </ul>
       </div>
       <div class="footer-khl">
@@ -53,7 +75,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; {{ now.Year }} jbkitchen · Powered by KHL Frozen Food</p>
+      <p>&copy; {{ now.Year }} jbkitchen · Powered by KHL Frozen Food · <a href="/advertise/" style="color:var(--gold);text-decoration:none;">广告合作</a> · <a href="/dashboard/" style="color:var(--gold);text-decoration:none;">流量统计</a></p>
     </div>
   </footer>
 </body>

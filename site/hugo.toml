@@ -31,6 +31,10 @@ publishDir = "../docs"
   url = "/calculator/"
   weight = 3
 [[menu.main]]
-  name = "经营指南"
+  name = "📋 指南"
   url = "/guides/"
   weight = 4
+[[menu.main]]
+  name = "📢 广告"
+  url = "/advertise/"
+  weight = 5
