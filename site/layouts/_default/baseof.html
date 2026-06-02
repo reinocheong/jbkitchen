@@ -66,12 +66,12 @@
     <nav class="nav">
       <a href="{{ "" | absURL }}" class="logo"><span class="logo-text">jbkitchen</span></a>
       <ul class="nav-menu" id="navMenu">
-        <li><a href="{{ "chefs/" | absURL }}">Chef Talent</a></li>
-        <li><a href="{{ "suppliers/" | absURL }}">Suppliers</a></li>
-        <li><a href="{{ "guides/" | absURL }}">Guides</a></li>
-        <li><a href="{{ "contribute/" | absURL }}">Contribute</a></li>
-        <li><a href="{{ "about/" | absURL }}">About</a></li>
-        <li><a href="{{ "calculator/" | absURL }}">Cost Calc</a></li>
+        <li><a href="{{ "chefs/" | absURL }}"{{ if eq $.Page.Section "chefs" }} class="active"{{ end }}>Chef Talent</a></li>
+        <li><a href="{{ "suppliers/" | absURL }}"{{ if eq $.Page.Section "suppliers" }} class="active"{{ end }}>Suppliers</a></li>
+        <li><a href="{{ "guides/" | absURL }}"{{ if eq $.Page.Section "guides" }} class="active"{{ end }}>Guides</a></li>
+        <li><a href="{{ "contribute/" | absURL }}"{{ if eq $.Page.Section "contribute" }} class="active"{{ end }}>Contribute</a></li>
+        <li><a href="{{ "about/" | absURL }}"{{ if eq $.Page.Section "about" }} class="active"{{ end }}>About</a></li>
+        <li><a href="{{ "calculator/" | absURL }}"{{ if eq $.Page.Section "calculator" }} class="active"{{ end }}>Cost Calc</a></li>
       </ul>
       <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
         <span></span><span></span><span></span>
@@ -144,13 +144,6 @@
           <li><a href="{{ "suppliers/" | absURL }}">Supplier Directory</a></li>
           <li><a href="{{ "calculator/" | absURL }}">Cost Calculator</a></li>
           <li><a href="{{ "dashboard/" | absURL }}">Dashboard</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="{{ .Site.Params.khl_whatsapp }}" target="_blank" rel="noopener">WhatsApp KHL</a></li>
-          <li><a href="tel:{{ .Site.Params.khl_phone | safeHTML }}">{{ .Site.Params.khl_phone }}</a></li>
         </ul>
       </div>
     </div>
