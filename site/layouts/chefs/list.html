@@ -9,20 +9,46 @@
 
 <div class="page-jobs">
 
-  <!-- Hero: Chef Talent Pool -->
-  <div class="cta-hero-chef">
+  <!-- ═══ CHIEF TALENT HERO ═══ -->
+  <section class="chef-hero">
+    <div class="chef-hero-icon">👨‍🍳</div>
     <h1>JB Chef Talent Pool</h1>
-    <p>Restaurant owners, find your next kitchen star. Chefs, get discovered by JB's top restaurants.</p>
-    <div class="cta-hero-actions">
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLScJVkyYraKTstINyqyZDlA_3wJNCVj6ohHOMCs4Gtv6nChRBw/viewform" target="_blank" rel="noopener" class="cta-btn-primary">👨‍🍳 I'm a Chef — Post My Resume</a>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfoPVj5H343aVjuHJ91ONi-Tp_lcWnc0aDrbuZD2-PeNnBv1A/viewform" target="_blank" rel="noopener" class="cta-btn-secondary">🏪 I'm Hiring — Find Talent</a>
+    <p class="chef-hero-sub">Connecting JB's restaurant owners with skilled kitchen talent — and helping chefs find their next opportunity.</p>
+    <div class="chef-hero-actions">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScJVkyYraKTstINyqyZDlA_3wJNCVj6ohHOMCs4Gtv6nChRBw/viewform" target="_blank" rel="noopener" class="chef-btn-primary">I'm a Chef — Submit Resume</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfoPVj5H343aVjuHJ91ONi-Tp_lcWnc0aDrbuZD2-PeNnBv1A/viewform" target="_blank" rel="noopener" class="chef-btn-secondary">I'm Hiring — Find Talent</a>
     </div>
-  </div>
+  </section>
 
-  <!-- Registered Chefs -->
+  <!-- ═══ HOW IT WORKS ═══ -->
+  <section class="how-it-works">
+    <h2>How It Works</h2>
+    <div class="hiw-grid">
+      <div class="hiw-card">
+        <div class="hiw-num">1</div>
+        <h3>Chefs Submit Resume</h3>
+        <p>Fill in your details — name, experience, specialty. It's free and takes 2 minutes.</p>
+      </div>
+      <div class="hiw-card">
+        <div class="hiw-num">2</div>
+        <h3>Get Listed on jbkitchen</h3>
+        <p>Your profile is visible to restaurant owners and hiring managers across JB.</p>
+      </div>
+      <div class="hiw-card">
+        <div class="hiw-num">3</div>
+        <h3>Employers Find You</h3>
+        <p>Restaurants looking for talent contact us, and we connect them with you.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ REGISTERED CHEFS ═══ -->
   {{- if $chefItems }}
   <section class="chef-showcase">
-    <h2>Available Chefs</h2>
+    <div class="section-head">
+      <h2>Available Chefs</h2>
+      <span class="section-meta">{{ len $chefItems }} registered</span>
+    </div>
     <div class="chef-grid">
       {{- range $chefItems }}
       <div class="chef-card">
@@ -31,69 +57,82 @@
           {{- with .role }}<span class="chef-role">{{ . }}</span>{{ end }}
         </div>
         {{- with .specialty }}<p class="chef-specialty">{{ . }}</p>{{ end }}
-        {{- with .experience }}<p class="chef-exp">{{ . }} years experience</p>{{ end }}
+        {{- with .experience }}<p class="chef-exp">{{ . }} years</p>{{ end }}
         <div class="chef-card-footer">
           <span class="chef-location">{{ .location | default "Johor Bahru" }}</span>
-          {{- with .availability }}<span class="chef-availability">{{ . }}</span>{{ end }}
+          {{- with .availability }}<span class="chef-avail">{{ . }}</span>{{ end }}
         </div>
       </div>
       {{- end }}
     </div>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfoPVj5H343aVjuHJ91ONi-Tp_lcWnc0aDrbuZD2-PeNnBv1A/viewform" target="_blank" rel="noopener" class="cta-link">Interested in hiring? Tell us what you need →</a>
+    <div class="section-cta">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfoPVj5H343aVjuHJ91ONi-Tp_lcWnc0aDrbuZD2-PeNnBv1A/viewform" target="_blank" rel="noopener" class="chef-link">Looking to hire? Tell us what you need →</a>
+    </div>
   </section>
   {{- else }}
-  <!-- Empty state -->
-  <section class="empty-chef-state">
-    <div class="empty-icon">👨‍🍳</div>
-    <h2>Be the First Chef on jbkitchen</h2>
-    <p>JB restaurant owners are looking for talent like you. Post your resume and get discovered.</p>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLScJVkyYraKTstINyqyZDlA_3wJNCVj6ohHOMCs4Gtv6nChRBw/viewform" target="_blank" rel="noopener" class="cta-btn-primary">Post My Resume Now →</a>
+  <!-- Empty: show "For Employers" CTA -->
+  <section class="chef-cta-dual">
+    <div class="dual-card dual-chef">
+      <div class="dual-icon">👨‍🍳</div>
+      <h3>Are You a Chef?</h3>
+      <p>Get discovered by JB restaurant owners. Submit your resume and we'll list you here.</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScJVkyYraKTstINyqyZDlA_3wJNCVj6ohHOMCs4Gtv6nChRBw/viewform" target="_blank" rel="noopener" class="chef-btn-primary">Submit Resume →</a>
+    </div>
+    <div class="dual-card dual-employer">
+      <div class="dual-icon">🏪</div>
+      <h3>Are You Hiring?</h3>
+      <p>Let us know what you're looking for. We'll match you with suitable chef talent.</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfoPVj5H343aVjuHJ91ONi-Tp_lcWnc0aDrbuZD2-PeNnBv1A/viewform" target="_blank" rel="noopener" class="chef-btn-secondary">Register Interest →</a>
+    </div>
   </section>
   {{- end }}
 
-  <!-- Market Jobs (Secondary) -->
+  <!-- ═══ MARKET JOBS (collapsed) ═══ -->
   {{- if $jobItems }}
-  <section class="job-market-section">
-    <div class="section-header">
-      <h2>Market Jobs</h2>
-      <span class="section-meta">{{ len $jobItems }} openings across JB</span>
-    </div>
-    <p class="section-subtitle">Current kitchen &amp; F&B openings in Johor Bahru — for reference and market insight</p>
-
-    <div class="job-list">
-      {{- range $jobItems }}
-      <a href="{{ .url }}" target="_blank" rel="noopener" class="job-card">
-        <div class="job-card-body">
-          <div class="job-card-top">
-            <span class="job-title">{{ .title }}</span>
-            <span class="job-company">{{ .company }}</span>
+  <section class="market-section">
+    <details class="market-collapse" open>
+      <summary class="market-summary">
+        <span class="market-heading">Market Jobs</span>
+        <span class="market-meta">{{ len $jobItems }} openings</span>
+      </summary>
+      <p class="market-sub">Current kitchen &amp; F&B openings in JB — for market reference</p>
+      <div class="job-list">
+        {{- range first 15 $jobItems }}
+        <a href="{{ .url }}" target="_blank" rel="noopener" class="job-card job-card-compact">
+          <div class="job-card-body">
+            <div class="job-card-top">
+              <span class="job-title">{{ .title }}</span>
+              <span class="job-company">{{ .company }}</span>
+            </div>
+            <div class="job-card-meta">
+              {{- if .salary -}}
+              {{- if reflect.IsMap .salary -}}
+              {{- if .salary.text_formatted -}}
+              <span class="job-salary">{{ .salary.text_formatted }}</span>
+              {{- else if .salary.text -}}
+              <span class="job-salary">{{ .salary.text }}</span>
+              {{- end -}}
+              {{- else -}}
+              <span class="job-salary">{{ .salary }}</span>
+              {{- end -}}
+              {{- end -}}
+              <span class="job-location">{{ .location }}</span>
+            </div>
           </div>
-          <div class="job-card-meta">
-            {{- if .salary -}}
-            {{- if reflect.IsMap .salary -}}
-            {{- if .salary.text_formatted -}}
-            <span class="job-salary">{{ .salary.text_formatted }}</span>
-            {{- else if .salary.text -}}
-            <span class="job-salary">{{ .salary.text }}</span>
-            {{- end -}}
-            {{- else -}}
-            <span class="job-salary">{{ .salary }}</span>
-            {{- end -}}
-            {{- end -}}
-            <span class="job-location">{{ .location }}</span>
-            <span class="job-date">{{ .date }}</span>
+          <div class="job-card-side">
+            <span class="src-tag src-{{ lower .source }}">{{ .source }}</span>
           </div>
-        </div>
-        <div class="job-card-side">
-          <span class="src-tag src-{{ lower .source }}">{{ .source }}</span>
-        </div>
-      </a>
+        </a>
+        {{- end }}
+      </div>
+      {{- if gt (len $jobItems) 15 }}
+      <p class="market-more">{{ len $jobItems }} jobs total — scroll for more</p>
       {{- end }}
-    </div>
+    </details>
   </section>
   {{- end }}
 
-  <!-- Bottom CTA -->
+  <!-- ═══ BOTTOM CTA ═══ -->
   <div class="page-footer-cta">
     <p>Looking to hire or get hired in JB's F&B scene?</p>
     <div class="footer-cta-actions">
