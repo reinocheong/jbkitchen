@@ -78,18 +78,25 @@
     {{- end }}
 
     <!-- 🐓 冷冻鸡价 -->
-    {{- if $chan.highlights }}
-    <div class="live-card">
-      <h3>🐓 冷冻鸡价 <span class="price-note">(批发价/kg)</span></h3>
-      <div class="price-list">
-        {{- range $chan.highlights }}
-        <div class="price-row">
-          <span>{{ .display }}</span>
-          <strong class="text-gold">RM{{ lang.FormatNumber 2 .price }}</strong>
-        </div>
-        {{- end }}
-      </div>
-      <p class="live-updated">更新：{{ $chan.date }} | {{ $chan.source }}</p>
+    {{- if $chan.items }}
+    <div class="live-card live-card-wide">
+      <h3>🐓 Frozen Chicken Wholesale Price <span class="price-note">(RM/kg, adjusted)</span></h3>
+      <table class="price-table">
+        <thead>
+          <tr><th>Item</th><th>Product</th><th>Source Price</th><th>Adjusted Price</th></tr>
+        </thead>
+        <tbody>
+          {{- range $chan.items }}
+          <tr>
+            <td class="td-item">{{ .item }}</td>
+            <td class="td-name">{{ .name }}</td>
+            <td class="td-src">RM{{ lang.FormatNumber 2 .price_src }}</td>
+            <td class="td-price"><strong>RM{{ lang.FormatNumber 2 .price }}</strong></td>
+          </tr>
+          {{- end }}
+        </tbody>
+      </table>
+      <p class="live-updated">Updated: {{ $chan.date }} | {{ $chan.source }}</p>
     </div>
     {{- end }}
 

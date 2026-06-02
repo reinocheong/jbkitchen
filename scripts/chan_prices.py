@@ -10,45 +10,71 @@ DATA_DIR = os.path.join(os.path.dirname(__file__), '..', 'site', 'data')
 RAW_FILE = os.path.join(DATA_DIR, 'chan_raw.json')
 OUT_FILE = os.path.join(DATA_DIR, 'chan_prices.json')
 
-# Product name clarification mapping
-PRODUCT_NAMES = {
-    'bb': '去骨鸡胸肉',
-    'boneless breast': '去骨鸡胸肉',
-    'sbb': '去皮去骨鸡胸肉',
-    'skinless boneless breast': '去皮去骨鸡胸肉',
-    'bl': '去骨鸡腿肉',
-    'boneless leg': '去骨鸡腿肉',
-    'sbl': '去皮去骨鸡腿肉',
-    'skinless boneless leg': '去皮去骨鸡腿肉',
-    'wl': '全鸡腿',
-    'whole leg': '全鸡腿',
-    'whole chicken': '全鸡',
-    'drumstick': '鸡腿 (Drumstick)',
-    'mid joint wing': '鸡中翅',
-    'wing': '鸡翅',
-    'thigh': '鸡大腿肉',
-    'fillet': '鸡柳肉',
-    'chop': '鸡块 Chop',
-    'spring': '童子鸡 (Spring)',
-    'rib': '鸡肋骨',
-    'buntut': '鸡屁股',
-    'neck': '鸡颈',
-    'pedal': '鸡脚',
-    'kaki': '鸡脚',
-    'rangka': '鸡骨架 (Carcass)',
-    'carcass': '鸡骨架 (Carcass)',
-    'chicken cube': '鸡肉丁',
-    'oyster meat': '蚝肉鸡腿 (Oyster)',
-    'keel': '鸡胸柳 (Keel)',
-    'drummet': '小鸡腿 (Drummet)',
-    'body skin': '鸡皮',
-    'neck skin': '鸡颈皮',
-    'cube': '鸡肉丁',
+# Abbreviation → readable English mapping
+ABBR_MAP = {
+    'bb': 'Boneless Breast',
+    'sbb': 'Skinless Boneless Breast',
+    'bl': 'Boneless Leg',
+    'sbl': 'Skinless Boneless Leg',
+    'sbL': 'Skinless Boneless Leg',
+    'wl': 'Whole Leg',
+    'wL': 'Whole Leg',
+    'jc': 'JC',
+    'im': 'Import',
+    'lo': 'Local',
+    'sbt': 'Skinless Boneless Thigh',
+    'sbL cube': 'Skinless Boneless Leg Cube',
 }
+
 
 def round_to_10sen(val):
     """Round to nearest 0.10 (10 sen). 0.05 → up"""
     return math.floor(val * 10 + 0.5) / 10
+
+
+def clean_product_name(raw):
+    """Clean up product codes to readable English."""
+    name = raw.strip()
+    
+    # Remove leading/trailing punctuation
+    name = name.rstrip('.').rstrip(',').strip()
+    
+    # Normalize whitespace
+    name = re.sub(r'\s+', ' ', name)
+    
+    # First check for known multi-word patterns
+    name_lower = name.lower()
+    
+    # Expand abbreviations in order (longest first to avoid partial matches)
+    # First handle the BB(boneless breast) pattern - split between code and description
+    # Insert space before parentheses
+    name = re.sub(r'([a-z])(\()', r'\1 (', name)
+    name = re.sub(r'(\))([a-z])', r'\1 \2', name)
+    
+    tokens = re.split(r'[\s/]+', name)
+    expanded = []
+    for token in tokens:
+        t_lower = token.lower().strip('*()')
+        if t_lower in ABBR_MAP:
+            expanded.append(ABBR_MAP[t_lower])
+        else:
+            # Capitalize first letter, keep rest (but preserve ALL CAPS brands)
+            if token.isupper() and len(token) > 1:
+                expanded.append(token)  # Keep brands like CARGIL, TYSON as-is
+            else:
+                expanded.append(token.capitalize() if token.islower() or token[0].islower() else token)
+    
+    name = ' '.join(expanded)
+    
+    # Clean up *IM*/*LO* etc
+    name = re.sub(r'\s*\*\s*([A-Za-z]+)\s*\*', r' \1', name)
+    name = re.sub(r'\s*/\s*', '/', name)
+    
+    # Normalize spaces again
+    name = re.sub(r'\s+', ' ', name).strip()
+    
+    return name
+
 
 def parse_price_line(line):
     """Parse a single line from the price list."""
@@ -56,7 +82,7 @@ def parse_price_line(line):
     if not line:
         return None
     
-    # Skip non-item lines (discount info, address, etc.)
+    # Skip non-item lines
     skip_keywords = [
         'delivery', 'self-collect', 'operation hours', 'special discount',
         'puchong food', 'sila hubungi', 'sila hantar', 'for cash term',
@@ -67,81 +93,80 @@ def parse_price_line(line):
     if any(kw in line.lower() for kw in skip_keywords):
         return None
     
-    # Remove size ranges in parentheses that look like (0.8-0.9) or (0.65-0.85)
-    # These are not prices, they're weight ranges
+    # Remove size ranges (0.8-0.9), these are weights not prices
     line_clean = re.sub(r'\([\d.]+-[\d.]+\s*(?:kg)?\)', '', line, flags=re.IGNORECASE)
-    
-    # Also remove things like (11.12.13) - those are item size codes
+    # Remove multi-dot codes like (11.12.13)
     line_clean = re.sub(r'\([\d.]+\.[\d.]+\)', '', line_clean)
     
-    # Check if line has a price
-    # Price can be: 9.60, rm9.60, 9.00per nos, rm1.30
-    price_patterns = [
-        (r'rm(\d+\.?\d*)', lambda m: float(m.group(1))),
-        (r'(\d+\.\d{2})\s*(?:per\s+nos)?', lambda m: float(m.group(1))),
-    ]
-    
+    # Find price at/near end of line
     found_price = None
     price_end = len(line_clean)
     
-    for pattern, converter in price_patterns:
-        for m in re.finditer(pattern, line_clean, re.IGNORECASE):
-            pos = m.start()
-            # Must be at/near end of line (within last 15 chars)
-            if len(line_clean) - pos <= 20:
-                val = converter(m)
-                if val < 50:  # Sanity check: prices should be < RM50/kg
-                    found_price = val
-                    price_end = pos
-                    break
+    # Pattern 1: rmX.XX
+    m = re.search(r'rm(\d+\.?\d*)', line_clean, re.IGNORECASE)
+    if m and len(line_clean) - m.start() <= 25:
+        val = float(m.group(1))
+        if val < 50:
+            found_price = val
+            price_end = m.start()
+    
+    # Pattern 2: X.XX at end (with or without "per nos")
+    if found_price is None:
+        m = re.search(r'(\d+\.\d{2})\s*(?:per\s+nos)?', line_clean, re.IGNORECASE)
+        if m and len(line_clean) - m.start() <= 20:
+            val = float(m.group(1))
+            if val < 50:
+                found_price = val
+                price_end = m.start()
     
     if found_price is None:
         return None
     
     # Extract item number
     item_no = ''
-    item_match = re.match(r'\(?(\d+[a-z]?)\)?\s*', line[:price_end])
+    item_match = re.match(r'\(?(\d+[a-z]?)\)?\s*', line_clean[:price_end])
     if item_match:
         item_no = item_match.group(1)
     
-    # Clean up the name text (remove item number, trailing whitespace)
+    # Extract name (after item number, before price)
     name_raw = line_clean[:price_end].strip()
     if item_no:
         remaining = line_clean[len(item_match.group(0)):price_end].strip()
         if remaining:
             name_raw = remaining
+    name_raw = re.sub(r'\s+', ' ', name_raw).strip()
+    name_raw = name_raw.rstrip('.').rstrip(',').strip()
     
-    # Clean up name - remove excess whitespace, normalize separators
-    name = re.sub(r'\s+', ' ', name_raw).strip()
-    name = name.rstrip('.').rstrip(',').strip()
-    
-    # Skip if no meaningful name
-    if len(name) < 2:
+    if len(name_raw) < 2:
         return None
     
-    # Generate display name
-    name_lower = name.lower()
-    display_name = name  # Default
+    # Clean up product name
+    display_name = clean_product_name(name_raw)
     
-    # Try to map to known product
-    for key, cn_name in sorted(PRODUCT_NAMES.items(), key=lambda x: -len(x[0])):
-        if key in name_lower:
-            # Use the mapped Chinese name but keep some original info
-            origin = ''
-            if 'import' in name_lower or '*im*' in name_lower:
-                origin = '进口'
-            elif 'local' in name_lower or '*lo*' in name_lower or '*lo' in name_lower:
-                origin = '本地'
-            display_name = f'{cn_name}{origin}' if origin else cn_name
-            if 'original' in name_lower:
-                display_name = f'{cn_name}原装'
-            break
+    # Derive product code
+    code = ''
+    code_match = re.match(r'([A-Za-z]+)', name_raw.strip())
+    if code_match:
+        code_base = code_match.group(1).upper()
+        # Special handling for known codes
+        if code_base == 'BB':
+            code = 'BB'
+        elif code_base == 'SBB':
+            code = 'SBB'
+        elif code_base in ('BL',):
+            code = 'BL'
+        elif code_base in ('WL', 'WL'):
+            code = 'WL'
+        elif code_base == 'SBL':
+            code = 'SBL'
+        else:
+            code = code_base
     
     return {
         'item': item_no,
-        'code': name.split('(')[0].split()[0].upper() if name.split() else '',
+        'code': code,
         'name': display_name,
-        'name_raw': name,
+        'name_raw': name_raw,
         'price_src': found_price,
         'price_calc': round(found_price / 0.9, 4),
         'price': round_to_10sen(found_price / 0.9),
@@ -175,50 +200,16 @@ def main():
     output = {
         'date': raw.get('date', raw.get('updated', '')),
         'updated': datetime.now().strftime('%Y-%m-%d %H:%M'),
-        'source': '冷冻鸡批发价',
-        'note': '价格已含/0.9调整，四舍五入至0.10',
+        'source': 'Frozen Chicken Wholesale Price',
+        'note': 'Price = source / 0.9, rounded to nearest RM0.10',
         'items': items,
     }
-    
-    # Curated highlights for restaurant owners - key cuts
-    highlight_map = {
-        'whole chicken': '全鸡',
-        'drumstick': '鸡腿',
-        'mid joint wing': '鸡中翅',
-        'bb original': '去骨鸡胸肉原装',
-        'bb butterfly': '去骨鸡胸肉蝴蝶',
-        'thigh import': '鸡大腿肉进口',
-        'thigh local': '鸡大腿肉本地',
-        'wl jc im': '全鸡腿进口',
-        'wl jc lo': '全鸡腿本地',
-        'bl im': '去骨鸡腿肉进口',
-        'bl lo': '去骨鸡腿肉本地',
-        'chop 8': '鸡块8块装',
-        'chop 9': '鸡块9块装',
-        'fillet': '鸡柳肉',
-        'wing import': '鸡翅进口',
-        'wing local': '鸡翅本地',
-    }
-    highlights = []
-    seen = set()
-    for item in items:
-        nl = item['name_raw'].lower()
-        for kw, label in highlight_map.items():
-            if kw in nl:
-                if label not in seen:
-                    seen.add(label)
-                    entry = dict(item)
-                    entry['display'] = label
-                    highlights.append(entry)
-                break
-    if highlights:
-        output['highlights'] = highlights
     
     os.makedirs(os.path.dirname(OUT_FILE), exist_ok=True)
     with open(OUT_FILE, 'w', encoding='utf-8') as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
     
-    print(f"✅ 解析完成: {len(items)} 项, 高亮 {len(highlights)} 项")
+    print(f"✅ 解析完成: {len(items)} 项")
     print(f"   输出: {OUT_FILE}")
 
 

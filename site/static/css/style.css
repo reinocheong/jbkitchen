@@ -293,6 +293,17 @@ body {
 .live-updated a { color: var(--green-600); text-decoration: none; }
 .price-note { font-size: 0.65rem; color: var(--text-3); font-weight: normal; }
 
+/* ---- Price Table (Chicken Prices) ---- */
+.price-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; }
+.price-table th { text-align: left; padding: 0.3rem 0.4rem; border-bottom: 1px solid var(--border); color: var(--text-3); font-weight: 600; }
+.price-table td { padding: 0.25rem 0.4rem; border-bottom: 1px solid rgba(255,255,255,0.04); }
+.price-table tbody tr:hover { background: rgba(197,165,90,0.05); }
+.td-item { width: 3rem; color: var(--text-3); }
+.td-name { /* auto width */ }
+.td-src { width: 5rem; color: var(--text-3); text-align: right; }
+.td-price { width: 5rem; text-align: right; }
+.td-price strong { color: var(--gold, #C5A55A); }
+
 /* ---- Footer ---- */
 .site-footer {
   background: var(--green-900);
