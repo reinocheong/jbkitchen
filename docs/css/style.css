@@ -546,107 +546,51 @@ body {
 .rp-subtitle { color: var(--text-3); font-size: 0.9rem; }
 
 /* Champion Card (#1) */
-.rp-champion {
+.rp-top {
   border-radius: var(--radius);
   border: 2px solid var(--gold);
-  background: linear-gradient(135deg, #fffdf0, #fff8dc, #fffdf0);
-  overflow: hidden;
+  background: linear-gradient(135deg, #fffdf0, #fff8dc);
   margin-bottom: 1.5rem;
-  position: relative;
 }
-.rp-champ-ribbon {
-  background: var(--gold);
-  color: var(--green-900);
-  text-align: center;
-  font-weight: 800;
-  font-size: 0.8rem;
-  padding: 0.3rem 0;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+.rp-top-inner {
+  padding: 1.5rem;
 }
-.rp-champ-inner {
-  display: flex;
-  gap: 1.5rem;
-  padding: 1.8rem;
-}
-.rp-champ-left { flex-shrink: 0; }
-.rp-champ-badge {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0;
-}
-.rp-rank-big {
-  font-size: 2.8rem;
-  font-weight: 900;
-  color: var(--gold-dark);
-  line-height: 1;
-}
-.rp-rank-label {
-  font-size: 0.7rem;
-  font-weight: 800;
-  color: var(--gold-dark);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-.rp-champ-body { flex: 1; }
-.rp-champ-head {
+.rp-top-head {
   display: flex;
   align-items: center;
   gap: 0.6rem;
   flex-wrap: wrap;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
 }
-.rp-champ-head h2 {
-  font-size: 1.3rem;
+.rp-top-num {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--gold-dark);
+}
+.rp-top-head h2 {
+  font-size: 1.2rem;
   font-weight: 800;
   color: var(--green-900);
 }
-.rp-champ-tagline {
-  font-size: 0.95rem;
+.rp-top-tagline {
+  font-size: 0.9rem;
   color: var(--gold-dark);
   font-weight: 600;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
 }
-.rp-champ-desc {
+.rp-top-desc {
   font-size: 0.85rem;
   color: var(--text-2);
   line-height: 1.6;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
 }
-
-/* Why KHL section */
-.rp-why-section {
-  background: rgba(212,168,67,0.08);
-  border-radius: var(--radius-sm);
-  padding: 1rem 1.2rem;
-  margin-bottom: 1rem;
-}
-.rp-why-section h4 {
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: var(--green-800);
-  margin-bottom: 0.5rem;
-}
-.rp-why-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.35rem;
-}
-.rp-why-item {
-  font-size: 0.78rem;
-  color: var(--text-2);
-  padding: 0.2rem 0;
-}
-
-/* Champion actions */
-.rp-champ-tags {
+.rp-top-tags {
   display: flex;
   gap: 0.3rem;
   flex-wrap: wrap;
   margin-bottom: 1rem;
 }
-.rp-champ-actions {
+.rp-top-footer {
   display: flex;
   gap: 0.6rem;
   flex-wrap: wrap;
@@ -867,9 +811,6 @@ body {
   .chef-list-item { flex-direction: column; text-align: center; }
   .chef-list-item .left { flex-direction: column; }
   .tool-grid { grid-template-columns: 1fr 1fr; }
-  .rank-footer { flex-direction: column; align-items: flex-start; }
-  .rp-champ-inner { flex-direction: column; }
-  .rp-why-grid { grid-template-columns: 1fr; }
-  .rp-methodology { flex-direction: column; }
+  .rp-card-footer { flex-direction: column; align-items: flex-start; }
   .rp-cta-card { flex-direction: column; text-align: center; }
 }

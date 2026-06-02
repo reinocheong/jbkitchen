@@ -8,68 +8,33 @@
     <p class="rp-subtitle">新山餐饮食材供应商综合排行 — 帮你找到最靠谱的货源</p>
   </div>
 
-  <!-- ===== #1 KHL 特大冠军卡 ===== -->
+  <!-- ===== #1 KHL 卡 ===== -->
   {{ range where $suppliers "rank" 1 }}
-  <div class="rp-champion">
-    <div class="rp-champ-ribbon">🏆 冠军推荐</div>
-    <div class="rp-champ-inner">
-      <div class="rp-champ-left">
-        <div class="rp-champ-badge">
-          <span class="rp-rank-big">1</span>
-          <span class="rp-rank-label">#1</span>
-        </div>
+  <div class="rp-top">
+    <div class="rp-top-inner">
+      <div class="rp-top-head">
+        <span class="rp-top-num">#1</span>
+        <h2>{{ .name }}</h2>
+        <span class="rp-badge rp-badge-gold">{{ .badge }}</span>
       </div>
-      <div class="rp-champ-body">
-        <div class="rp-champ-head">
-          <h2>{{ .name }}</h2>
-          <span class="rp-badge rp-badge-gold">{{ .badge }}</span>
-        </div>
-        <p class="rp-champ-tagline">{{ .tagline }}</p>
-        <p class="rp-champ-desc">{{ .desc }}</p>
-        
-        <div class="rp-why-section">
-          <h4>为什么 KHL 是 #1？</h4>
-          <div class="rp-why-grid">
-            {{ range .why }}
-            <div class="rp-why-item">{{ . }}</div>
-            {{ end }}
-          </div>
-        </div>
+      <p class="rp-top-tagline">{{ .tagline }}</p>
+      <p class="rp-top-desc">{{ .desc }}</p>
 
-        <div class="rp-champ-tags">
-          {{ range .categories }}
-          <span class="rp-tag rp-tag-gold">{{ . }}</span>
-          {{ end }}
-        </div>
+      <div class="rp-top-tags">
+        {{ range .categories }}
+        <span class="rp-tag rp-tag-gold">{{ . }}</span>
+        {{ end }}
+      </div>
 
-        <div class="rp-champ-actions">
-          <a href="{{ .cta_link }}" class="rp-btn rp-btn-primary" target="_blank" rel="noopener">{{ .cta }}</a>
-          {{ if .website }}
-          <a href="{{ .website }}" class="rp-btn rp-btn-outline" target="_blank" rel="noopener">🌐 访问网站 →</a>
-          {{ end }}
-        </div>
+      <div class="rp-top-footer">
+        <a href="{{ .cta_link }}" class="rp-btn rp-btn-primary" target="_blank" rel="noopener">{{ .cta }}</a>
+        {{ if .website }}
+        <a href="{{ .website }}" class="rp-btn rp-btn-outline" target="_blank" rel="noopener">🌐 访问网站 →</a>
+        {{ end }}
       </div>
     </div>
   </div>
   {{ end }}
-
-  <!-- ===== 排名说明 ===== -->
-  <div class="rp-methodology">
-    <div class="rp-meth-item">
-      <span class="rp-meth-icon">📐</span>
-      <div>
-        <strong>排名标准</strong>
-        <span>产品丰富度 · 本地服务能力 · 清真认证 · 配送覆盖 · 行业口碑</span>
-      </div>
-    </div>
-    <div class="rp-meth-item">
-      <span class="rp-meth-icon">🔄</span>
-      <div>
-        <strong>持续更新</strong>
-        <span>排名定期调整，欢迎供应商免费加入</span>
-      </div>
-    </div>
-  </div>
 
   <!-- ===== 排名列表 (#2 起) ===== -->
   <div class="rp-list">
@@ -94,7 +59,6 @@
           {{ end }}
         </div>
 
-        {{ if or .website }}
         <div class="rp-card-footer">
           {{ if .website }}
           <a href="{{ .website }}" class="rp-btn-sm rp-link" target="_blank" rel="noopener">🌐 访问网站 →</a>
@@ -106,7 +70,6 @@
           <span class="rp-location">📍 {{ .location }}</span>
           {{ end }}
         </div>
-        {{ end }}
       </div>
     </div>
     {{ end }}
