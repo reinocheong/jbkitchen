@@ -5,19 +5,19 @@
 # 3. Deploy to GitHub Pages
 set -euo pipefail
 
-cd "$(dirname "$0")/.."
+PROJECT_DIR="/home/user/jbkitchen"
+cd "$PROJECT_DIR"
 
 # Step 1: Refresh data
-cd scripts
-python3 aggregate.py
+python3 scripts/aggregate.py
 
 # Step 2: Build Hugo (preserve .nojekyll and CNAME)
-cd ../site
+cd site
 hugo --minify
 touch ../docs/.nojekyll
 
 # Step 3: Deploy
-cd ..
+cd "$PROJECT_DIR"
 git add -A
 git commit -m "auto: data refresh $(date +'%Y-%m-%d %H:%M')" || true
 git push

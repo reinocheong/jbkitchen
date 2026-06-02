@@ -3,7 +3,8 @@
 # Runs: FB scraper → parse FB → aggregate (Jora/Hiredly/Maukerja/MyFutureJobs) → Hugo build → deploy
 set -euo pipefail
 
-cd "$(dirname "$0")/.."
+PROJECT_DIR="/home/user/jbkitchen"
+cd "$PROJECT_DIR"
 
 # Step 1: FB job scraper (Playwright, ~2-3 min)
 echo "[fb_job_scraper] 启动"
