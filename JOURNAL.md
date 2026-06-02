@@ -82,9 +82,8 @@
   - `skills`：技能检测（Pastry/Baking/Chinese Cuisine 等 20+ 模式）
   - `description`：占位（后续可补充职位描述）
   - `salary.text_formatted`：人类可读薪资格式（RM3,000 - RM5,000/month）
-- 修改 parse_fb_jobs.py：导入 `_enrich_job` 为 FB 职位添加相同字段
 - 更新 site/layouts/chefs/list.html：新增分类标签徽章、薪资格式化显示、图标装饰
-- 新增 category-badge CSS 样式（6 种分类配色 + source-facebook）
+- 新增 category-badge CSS 样式（6 种分类配色）
 - 全量更新 7 个 SSOT 文档对齐当前项目状态
 
 ### 行业动态板块上线

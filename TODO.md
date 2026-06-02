@@ -5,6 +5,11 @@
 
 ## ✅ 已完成
 
+- [x] 清理所有 Facebook 爬虫痕迹（脚本/数据/pycache/文档/cookie/css/.gitignore）
+- [x] 翻译按钮 CSS 修复（dropdown 定位 + 动画）
+- [x] 替换 FB 源为 JobStreet 厨师岗位（115 条，Windows Chrome CDP 爬取）
+- [x] 全站招聘数：60 → 225 条
+
 - [x] Hugo 站点骨架 + 深绿金色主题
 - [x] 首页（行业动态：汇率/CPI/新闻/鸡价 + 4 工具卡片式入口）
 - [x] 成本计算器 V2（菜品成本卡+食材清单+多菜对比+保本分析+建议售价+localStorage保存）
@@ -55,7 +60,6 @@
 - [ ] 厨师注册数据导出到 XLSX 功能（通过 Google Sheets 导出）
 - [ ] 提交 sitemap 到 Google Search Console
 - [ ] Contribute 页专用 Google Form
-- [ ] 添加 JobStreet / Indeed 招聘源 (Windows Chrome CDP)
 
 ## ⚠️ 已知问题
 

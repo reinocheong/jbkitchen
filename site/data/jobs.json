@@ -1,12 +1,12 @@
 {
   "updated": "2026-06-02T19:38:34",
-  "count": 182,
+  "count": 225,
   "by_source": {
     "Hiredly": 16,
     "Maukerja": 9,
     "Jora": 12,
     "MyFutureJobs": 16,
-    "JobStreet": 131,
+    "JobStreet": 115,
     "Indeed": 0
   },
   "items": [
@@ -2346,6 +2346,393 @@
       "salary": "RM 1,900 – RM 2,500 per month",
       "description": "Service Crew bertanggungjawab melayan pelanggan, mengambil pesanan makanan dan minuman serta memastikan pelanggan mendapat pengalaman yang baik.",
       "date": "19d ago",
+      "source": "JobStreet"
+    },
+    {
+      "title": "Senior Commis Viennoiserie / Demi Chef",
+      "company": "LOAF ADAM SDN BHD",
+      "location": "Johor Bahru",
+      "salary": "RM 2,300 – RM 2,500 per month",
+      "description": "Senior Commis for Viennoiserie / Demi Chef",
+      "date": "7d ago",
+      "source": "JobStreet"
+    },
+    {
+      "title": "Commis I",
+      "company": "V8 Hotel (Viva Bestari Inn Sdn Bhd)",
+      "location": "Skudai",
+      "salary": "RM 1,900 – RM 2,200 per month",
+      "description": "The Commis I is a senior level commis responsible for assisting in the preparation, cooking and presentation of food at a high standard.",
+      "date": "14d ago",
+      "source": "JobStreet"
+    },
+    {
+      "title": "Commis",
+      "company": "AUSTIN LEISURE SDN. BHD.",
+      "location": "Johor Bahru",
+      "salary": "RM 1,900 – RM 2,500 per month",
+      "description": "“Join Austin Heights Group and play a key role in our operations. We seek reliable, motivated individuals ready to grow in a professional team.”",
+      "date": "25d ago",
+      "source": "JobStreet"
+    },
+    {
+      "title": "Commis",
+      "company": "Austin Heights Golf & Country Resort Sdn Bhd",
+      "location": "Johor Bahru",
+      "salary": "RM 2,000 – RM 2,700 per month",
+      "description": "“Join Austin Heights Group and play a key role in our operations. We seek reliable, motivated individuals ready to grow in a professional team.”",
+      "date": "25d ago",
+      "source": "JobStreet"
+    },
+    {
+      "title": "Demi Chef",
+      "company": "V8 Hotel (Viva Bestari Inn Sdn Bhd)",
+      "location": "Skudai",
+      "salary": "RM 2,800 – RM 3,100 per month",
+      "description": "The Demi Chef is the second person in charge in the kitchen and assists the Chef De Partie in managing daily kitchen operations.",
+      "date": "12d ago",
+      "source": "JobStreet"
+    },
+    {
+      "title": "Bakery Demi Chef / Chef De Pastrie | Iskandar Puteri",
+      "company": "Hirehub Group",
+      "location": "Iskandar Puteri",
+      "salary": null,
+      "description": "Work Location: Iskandar Puteri, Johor",
+      "date": "30d+ ago",
+      "source": "JobStreet"
+    },
+    {
+      "title": "Sous Chef",
+      "company": "Da Napoli Cafe",
+      "location": "Johor Bahru",
+      "salary": "RM 3,500 – RM 5,000 per month",
+      "description": "supports the Head Chef in managing daily kitchen operations and ensuring consistent food quality, efficient service and proper kitchen discipline.",
+      "date": "21d ago",
+      "source": "JobStreet"
+    },
+    {
+      "title": "Chef (Chinese Kitchen)",
+      "company": "LYC MOTHER & CHILD CENTRE SDN. BHD.",
+      "location": "Johor Bahru",
+      "salary": null,
+      "description": "Craft innovative dishes in a nurturing environment. Competitive salary, career growth, and great perks.",
+      "date": "20d ago",
+      "source": "JobStreet"
+    },
+    {
+      "title": "CAKE DECORATER CHEF / JUNIOR",
+      "company": "Season Confectionary and Bakery",
+      "location": "Johor Bahru",
+      "salary": null,
+      "description": "We are hiring!",
+      "date": "7d ago",
+      "source": "JobStreet"
+    },
+    {
+      "title": "BAKERY CHEF",
+      "company": "Season Confectionary and Bakery",
+      "location": "Johor Bahru",
+      "salary": null,
+      "description": "We are hiring!",
+      "date": "7d ago",
+      "source": "JobStreet"
+    },
+    {
+      "title": "Kitchen Crew / Cook",
+      "company": "The Leman S Sdn Bhd",
+      "location": "Johor Bahru",
+      "salary": "RM 2,350 – RM 3,000 per month",
+      "description": "Kitchen Crew / Cook bertanggungjawab menyediakan makanan mengikut menu cafe serta memastikan kebersihan dapur dan kualiti makanan sentiasa terjaga.",
+      "date": "19d ago",
+      "source": "JobStreet"
+    },
+    {
+      "title": "Pastry Chef (Sutera Mall)",
+      "company": "VERONA BAKE (M) SDN BHD",
+      "location": "Johor Bahru",
+      "salary": "RM 2,500 – RM 3,500 per month",
+      "description": "This role is perfect for those passionate about food, eager to learn, and excited to grow in a professional culinary environment!",
+      "date": "21d ago",
+      "source": "JobStreet"
+    },
+    {
+      "title": "KITCHEN HELPER",
+      "company": "Austin Heights Golf & Country Resort Sdn Bhd",
+      "location": "Johor Bahru",
+      "salary": "RM 1,900 – RM 2,000 per month",
+      "description": "Location : Taman Mount Austin, Johor Bahru Takes care of daily food preparation and duties assigned by the chef / Kitchen Lead to meet the standard...",
+      "date": "25d ago",
+      "source": "JobStreet"
+    },
+    {
+      "title": "R&D Chef",
+      "company": "Nasty Cookie Sdn Bhd",
+      "location": "Pasir Gudang",
+      "salary": "RM 4,500 – RM 6,000 per month",
+      "description": "This role is responsible for product development, quality control, and overseeing daily dessert production operations.",
+      "date": "11d ago",
+      "source": "JobStreet"
+    },
+    {
+      "title": "Bakery Assistant (Mid Valley Southkey)",
+      "company": "Oriental Coffee International Sdn Bhd (Retail)",
+      "location": "Johor Bahru",
+      "salary": "RM 2,500 – RM 3,500 per month",
+      "description": "Bakery Assistant",
+      "date": "4d ago",
+      "source": "JobStreet"
+    },
+    {
+      "title": "Bread Apprentice",
+      "company": "Omo Pastry Sdn. Bhd.",
+      "location": "Johor Bahru",
+      "salary": "RM 1,800 – RM 2,300 per month",
+      "description": "Assist bakers in daily preparation and baking tasks",
+      "date": "5d ago",
+      "source": "JobStreet"
+    },
+    {
+      "title": "Teacher - International School (Expatriate Position)",
+      "company": "Paragon Education Sdn Bhd",
+      "location": "Johor Bahru",
+      "salary": null,
+      "description": "I am not LED, I LEAD! Moulding Leaders for tomorrow!",
+      "date": "19d ago",
+      "source": "JobStreet"
+    },
+    {
+      "title": "Production Assistant | Bandar Johor Bahru",
+      "company": "Hirehub Group",
+      "location": "Johor Bahru",
+      "salary": null,
+      "description": "A well-established food manufacturing company specializing in soup bases, sauces, and compound seasonings for the FMCG and food service industry....",
+      "date": "5d ago",
+      "source": "JobStreet"
+    },
+    {
+      "title": "Full-Time Coolrista (TF Nusa Bestari)",
+      "company": "Coolblog Dessert Sdn Bhd",
+      "location": "Nusa Bestari",
+      "salary": "RM 1,800 – RM 2,000 per month",
+      "description": "-",
+      "date": "27d ago",
+      "source": "JobStreet"
+    },
+    {
+      "title": "Rider (McDonald's Bukit Indah JB)",
+      "company": "McDonald's",
+      "location": "Bukit Indah",
+      "salary": null,
+      "description": "-",
+      "date": "25d ago",
+      "source": "JobStreet"
+    },
+    {
+      "title": "GEL (McDonald's Senai)",
+      "company": "McDonald's",
+      "location": "Senai",
+      "salary": null,
+      "description": "-",
+      "date": "22d ago",
+      "source": "JobStreet"
+    },
+    {
+      "title": "Dietary Aide",
+      "company": "Regency Specialist Hospital Sdn Bhd",
+      "location": "Masai",
+      "salary": "RM 1,700 – RM 1,900 per month",
+      "description": "We are hiring!",
+      "date": "12d ago",
+      "source": "JobStreet"
+    },
+    {
+      "title": "MNC Assembly Technician",
+      "company": "Kanry Search",
+      "location": "Pasir Gudang",
+      "salary": "RM 2,000 – RM 2,500 per month",
+      "description": "Equipment Assembly Technician (MNC | Basic up to RM2500 + Completion Bonus | 5 Days | Pasir Gudang)",
+      "date": "11d ago",
+      "source": "JobStreet"
+    },
+    {
+      "title": "Helper Operator (Project Oil and Gas)",
+      "company": "PERSOL Workforce Solutions Malaysia Sdn Bhd",
+      "location": "Tanjung Langsat",
+      "salary": "RM 1,700 – RM 2,500 per month",
+      "description": "Kami mencari Helper yang boleh membantu Operator untuk project 3 bulan di Kilang Oil and Gas dalam Tanjung Langsat Port.",
+      "date": "24d ago",
+      "source": "JobStreet"
+    },
+    {
+      "title": "Cleaner / Tukang Pembersih- Pasir Gudang",
+      "company": "JSK Group Of Companies",
+      "location": "Pasir Gudang",
+      "salary": null,
+      "description": "Join us now.",
+      "date": "8d ago",
+      "source": "JobStreet"
+    },
+    {
+      "title": "Retail Assistant - FamilyMart Tmn Ungku TunAminah",
+      "company": "QL Maxincome Sdn Bhd (FamilyMart)",
+      "location": "Skudai",
+      "salary": null,
+      "description": ".",
+      "date": "8d ago",
+      "source": "JobStreet"
+    },
+    {
+      "title": "Storekeeper/ Material Handler",
+      "company": "Tiong Nam Logistics Solutions Sdn Bhd",
+      "location": "Gelang Patah",
+      "salary": null,
+      "description": "Kami sedang mencari Storekeeper/ Material Handler yang bertanggungjawab dan proaktif untuk mengurus serta menyelia operasi harian gudang.",
+      "date": "22d ago",
+      "source": "JobStreet"
+    },
+    {
+      "title": "HR ADMIN JR. EXECUTIVE",
+      "company": "HAZA FOOD SDN BHD",
+      "location": "Skudai",
+      "salary": "RM 2,500 – RM 3,000 per month",
+      "description": "Manage HR administration, employee records, attendance, leave, payroll support, recruitment coordination, and HRIS updates.",
+      "date": "1h ago",
+      "source": "JobStreet"
+    },
+    {
+      "title": "Dietician",
+      "company": "Columbia Asia Hospital - Tebrau",
+      "location": "Tebrau",
+      "salary": "RM 2,700 – RM 4,000 per month",
+      "description": "We have a vacancy for a Dietitian. Join us and make a real impact in patient care and grow your career in a supportive environment.",
+      "date": "14d ago",
+      "source": "JobStreet"
+    },
+    {
+      "title": "Event Operations Executive",
+      "company": "TAC MANAGEMENT SDN. BHD.",
+      "location": "Johor Bahru",
+      "salary": "RM 3,800 – RM 4,800 per month",
+      "description": "Be part of a dynamic team that values growth, precision, and people. At TAC, we don’t just offer jobs — we offer careers with purpose.",
+      "date": "30d+ ago",
+      "source": "JobStreet"
+    },
+    {
+      "title": "HR Senior Executive / Executive (Payroll)",
+      "company": "FOOD EXCELLENCE SPECIALIST SDN BHD",
+      "location": "Pasir Gudang",
+      "salary": null,
+      "description": "HR Admin Senior Executives are the key human resource department members and are crucial in leading the HR staff and implementing various projects.",
+      "date": "28d ago",
+      "source": "JobStreet"
+    },
+    {
+      "title": "Business Development Executive (Johor State)",
+      "company": "CE Asia Heavy Machinery Sdn Bhd",
+      "location": "Kempas",
+      "salary": "RM 3,500 – RM 4,000 per month",
+      "description": "NIL",
+      "date": "12d ago",
+      "source": "JobStreet"
+    },
+    {
+      "title": "Personal cum Admin Assistant",
+      "company": "Union Care (M) Sdn Bhd",
+      "location": "Kulai",
+      "salary": "RM 2,500 – RM 2,900 per month",
+      "description": "In this role, you will be responsible for scheduling meetings, taking notes, and handling correspondence on behalf of Medical Director.",
+      "date": "30d+ ago",
+      "source": "JobStreet"
+    },
+    {
+      "title": "(Impian Emas, Skudai) Outdoor Sales Executive",
+      "company": "STANDARD FOOD SOLUTIONS SDN BHD",
+      "location": "Skudai",
+      "salary": "RM 3,500 – RM 5,000 per month",
+      "description": "Frozen Food Trading (Halal)",
+      "date": "7d ago",
+      "source": "JobStreet"
+    },
+    {
+      "title": "Kitchen Crew",
+      "company": "Bored Tacos",
+      "location": "Tampoi",
+      "salary": "RM 2,500 – RM 3,000 per month",
+      "description": "Join our growing café team in Johor Bahru!",
+      "date": "4d ago",
+      "source": "JobStreet"
+    },
+    {
+      "title": "Senior Sales Executive",
+      "company": "Qson Industries (M) Sdn Bhd",
+      "location": "Johor Bahru",
+      "salary": "RM 5,500 – RM 7,500 per month",
+      "description": "We are seeking an experienced and results-driven Senior Sales Executive to join our commercial kitchen equipment division.",
+      "date": "13d ago",
+      "source": "JobStreet"
+    },
+    {
+      "title": "Kitchen Assistant (Johor Bahru outlet)",
+      "company": "Oriental Coffee International Sdn Bhd (Retail)",
+      "location": "Johor Bahru",
+      "salary": "RM 2,500 – RM 3,500 per month",
+      "description": "Kitchen Assistant hiring",
+      "date": "4d ago",
+      "source": "JobStreet"
+    },
+    {
+      "title": "Food Safety Officer",
+      "company": "Regency Specialist Hospital Sdn Bhd",
+      "location": "Masai",
+      "salary": "RM 1,700 – RM 2,200 per month",
+      "description": "We are hiring!",
+      "date": "12d ago",
+      "source": "JobStreet"
+    },
+    {
+      "title": "Kitchen Crew (Aeon Bukit Indah , Paradigm Mall JB , Mid Valley Southkey)",
+      "company": "Vivo Food Sdn Bhd",
+      "location": "Johor Bahru",
+      "salary": "RM 2,100 – RM 2,500 per month",
+      "description": "The Kitchen Crew is responsible for supporting daily kitchen operations by preparing ingredients, cooking simple menu items, maintaining cleanliness.",
+      "date": "18d ago",
+      "source": "JobStreet"
+    },
+    {
+      "title": "Activity Crew, Kitchen Crew and Assistant supervisor",
+      "company": "Wawawah Sdn Bhd",
+      "location": "Johor Bahru",
+      "salary": "RM 2,500 – RM 3,500 per month",
+      "description": "Be part of our opening team in JB! No boring days here — just good vibes, teamwork, happy guests & a brand-new concept you’ll be proud to be part of.",
+      "date": "12d ago",
+      "source": "JobStreet"
+    },
+    {
+      "title": "Restaurant Crew - Johor",
+      "company": "Marrybrown Sdn Bhd",
+      "location": "Johor Bahru",
+      "salary": null,
+      "description": "Join our dynamic team!",
+      "date": "15d ago",
+      "source": "JobStreet"
+    },
+    {
+      "title": "KITCHEN CREW (DESA TEBRAU)",
+      "company": "RMB NOODLE HOUSE",
+      "location": "Taman Desa Tebrau",
+      "salary": "RM 3,000 – RM 3,500 per month",
+      "description": "Email: enquiries@rmbnoodlehouse.com",
+      "date": "19d ago",
+      "source": "JobStreet"
+    },
+    {
+      "title": "Kru Restoran (McDonald's Larkin JB)",
+      "company": "McDonald's",
+      "location": "Larkin",
+      "salary": null,
+      "description": "-",
+      "date": "22d ago",
       "source": "JobStreet"
     }
   ]

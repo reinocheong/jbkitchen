@@ -81,6 +81,25 @@ body {
 
 .nav-actions { flex-shrink: 0; }
 
+/* ── Language Picker ── */
+.lang-picker { position: relative; display: inline-block; }
+.lang-btn {
+  background: none; border: 1px solid rgba(255,255,255,0.25); border-radius: 6px;
+  cursor: pointer; font-size: 1rem; padding: 4px 6px; line-height: 1; color: white;
+}
+.lang-btn:hover { border-color: var(--gold); }
+.lang-dropdown {
+  display: none; position: absolute; right: 0; top: 100%; margin-top: 4px;
+  background: white; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  min-width: 130px; z-index: 100;
+}
+.lang-dropdown.show { display: block; }
+.lang-dropdown a {
+  display: block; padding: 8px 14px; color: var(--text-1); font-size: 0.85rem;
+  text-decoration: none;
+}
+.lang-dropdown a:hover { background: #f0f7f0; color: var(--green-800); }
+
 /* ---- Hamburger ---- */
 .hamburger {
   display: none;
@@ -752,7 +771,7 @@ body {
 .src-hiredly { background: #e3f2fd; color: #1565c0; }
 .src-maukerja { background: #fff3e0; color: #e65100; }
 .src-myfuturejobs { background: #f3e5f5; color: #7b1fa2; }
-.src-facebook { background: #e8eaf6; color: #3949ab; }
+
 
 .page-footer-cta { text-align: center; margin-top: 2rem; }
 .empty-state {

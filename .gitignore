@@ -4,6 +4,3 @@ scripts/__pycache__/
 __pycache__/
 *.pyc
 .DS_Store
-
-# FB credentials — never commit to git
-scripts/fb_cookies.json
