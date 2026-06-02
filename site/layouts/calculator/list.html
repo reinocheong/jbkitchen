@@ -80,18 +80,18 @@
         </div>
 
         <div class="calc-suggest-box">
-          <h4>💡 建议售价</h4>
-          <div class="suggest-row">
-            <span>目标成本率 30%</span>
-            <span class="sg-price" id="suggest30">—</span>
-          </div>
-          <div class="suggest-row">
-            <span>目标成本率 35%</span>
-            <span class="sg-price" id="suggest35">—</span>
-          </div>
+          <h4>💡 建议售价 <span style="font-weight:400;font-size:0.7rem;color:var(--text-3);">大马餐饮常见目标成本率</span></h4>
           <div class="suggest-row">
             <span>目标成本率 40%</span>
             <span class="sg-price" id="suggest40">—</span>
+          </div>
+          <div class="suggest-row">
+            <span>目标成本率 45%</span>
+            <span class="sg-price" id="suggest45">—</span>
+          </div>
+          <div class="suggest-row">
+            <span>目标成本率 50%</span>
+            <span class="sg-price" id="suggest50">—</span>
           </div>
         </div>
 
@@ -268,9 +268,9 @@ function calcSingleDish() {
 
   // Suggested prices
   if (totalFoodCost > 0) {
-    document.getElementById('suggest30').textContent = 'RM ' + (totalFoodCost / 0.30).toFixed(2);
-    document.getElementById('suggest35').textContent = 'RM ' + (totalFoodCost / 0.35).toFixed(2);
     document.getElementById('suggest40').textContent = 'RM ' + (totalFoodCost / 0.40).toFixed(2);
+    document.getElementById('suggest45').textContent = 'RM ' + (totalFoodCost / 0.45).toFixed(2);
+    document.getElementById('suggest50').textContent = 'RM ' + (totalFoodCost / 0.50).toFixed(2);
   }
 
   document.getElementById('singleResult').style.display = 'block';
@@ -367,15 +367,14 @@ function calcBreakeven() {
 // ========== Example Data ==========
 const EXAMPLE_DISH = {
   name: '咖喱鸡饭（1份）',
-  sellPrice: 15.00,
-  otherCost: 2.50,
+  sellPrice: 10.00,
+  otherCost: 1.50,
   ingredients: [
-    { name: '鸡腿肉', qty: 150, unit: 'g', price: 14 },
-    { name: '马铃薯', qty: 80, unit: 'g', price: 4 },
-    { name: '咖喱酱料包', qty: 1, unit: 'pack', price: 3.5 },
-    { name: '椰浆', qty: 100, unit: 'ml', price: 8 },
-    { name: '白饭', qty: 200, unit: 'g', price: 3.5 },
-    { name: '配菜(黄瓜/生菜)', qty: 1, unit: 'pcs', price: 0.8 },
+    { name: '鸡腿肉', qty: 120, unit: 'g', price: 13 },
+    { name: '马铃薯', qty: 80, unit: 'g', price: 3.5 },
+    { name: '咖喱酱料', qty: 1, unit: 'pcs', price: 1.5 },
+    { name: '白饭', qty: 200, unit: 'g', price: 3 },
+    { name: '配菜(黄瓜/生菜)', qty: 1, unit: 'pcs', price: 0.5 },
   ]
 };
 
