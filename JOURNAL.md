@@ -58,3 +58,14 @@
 - TODO.md 「设置 cron」已勾选完成
 - 标记 7 个测试/废弃脚本为 DEPRECATED（check_commodities/check_prices/demo_cpi_data/list_dos_datasets/test_dosm_api/news_aggregator/news_filter）
 - 网站 live HTTP 200，`.nojekyll` 存在，无旧协议副本，无僵尸 docs/ 引用
+
+### 供应商排行榜上线 + 计算器重做
+- **操作人：AI | 2026-06-02 下午**
+- 使用 Windows Chrome CDP 通过 Google 搜索调研 JB 冷冻食品供应商，搜到实际结果
+- 创建 `site/data/suppliers.json`（15家供应商，含名/描述/分类/网址/成立年份）
+- 重写供应商排行榜页面：KHL 金色边框 #1 · 简洁卡片样式 · 品类标签 · 网站链接
+- 清理所有「KHL=平台创办人」描述（footer Powered by / 介绍文案 / 无用 why 字段）
+- 重写成本计算器：食材清单输入（6单位）→ 自动算成本率/毛利率/净利润 → 建议售价（40/45/50%目标）→ localStorage 保存 → 多菜对比表 → 保本分析
+- 示例数据（咖喱鸡饭 RM10, 食材成本 RM4.44=44.4%）
+- 鸡价表格 Item 改用顺序编号 1-46
+- 全站底部导航增加供应商/计算器/广告/统计链接

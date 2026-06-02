@@ -7,7 +7,11 @@
 
 - [x] Hugo 站点骨架 + 深绿金色主题
 - [x] 首页（两条路径：找厨师/找工作）
-- [x] 成本计算器（纯前端 JS）
+- [x] 成本计算器 V2（菜品成本卡+食材清单+多菜对比+保本分析+建议售价+localStorage保存）
+- [x] 供应商排行榜页面（15家真实JB供应商+排名+KHL #1金色卡片）
+- [x] 供应商名单通过Windows Chrome Google搜索调研（15家JB冷冻食品供应商）
+- [x] 全站清理「KHL=平台创办人」相关表述（footer/描述）
+- [x] 鸡价表格 Item 改用顺序编号（1-46），不再显示来源编号
 - [x] 供应商目录（KHL 置顶）
 - [x] KHL 详情页（产品展示 + WhatsApp 表单）
 - [x] 3 篇经营指南
@@ -26,10 +30,8 @@
 
 ## ⏳ 待办
 
-- [x] 设置 cron 定时运行 aggregate.py（每天4次：8/12/16/20）
 - [ ] 手机部署 Google Apps Script（需要电脑或手机 GAS 编辑）
 - [ ] GitHub token 添加 workflow scope → 启用自动化 CI/CD
-- [ ] 供应商名单补全（需要 Reino 提供）
 - [ ] KHL 真实 WhatsApp 号码
 - [ ] GA4 Measurement ID 替换为真实 ID
 - [ ] 域名购买 `jbkitchen.com`
