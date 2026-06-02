@@ -53,6 +53,7 @@
         </div>
 
         <button class="calc-btn-calc" onclick="calcSingleDish()">🧮 计算</button>
+        <button class="calc-btn-example" onclick="loadExample()">📋 加载示例</button>
       </div>
 
       <!-- Right: Results -->
@@ -361,6 +362,39 @@ function calcBreakeven() {
   document.getElementById('beDaily').textContent = daily + ' 份/天';
   document.getElementById('beResult').style.display = 'block';
   document.getElementById('beResult').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+// ========== Example Data ==========
+const EXAMPLE_DISH = {
+  name: '咖喱鸡饭（1份）',
+  sellPrice: 15.00,
+  otherCost: 2.50,
+  ingredients: [
+    { name: '鸡腿肉', qty: 150, unit: 'g', price: 14 },
+    { name: '马铃薯', qty: 80, unit: 'g', price: 4 },
+    { name: '咖喱酱料包', qty: 1, unit: 'pack', price: 3.5 },
+    { name: '椰浆', qty: 100, unit: 'ml', price: 8 },
+    { name: '白饭', qty: 200, unit: 'g', price: 3.5 },
+    { name: '配菜(黄瓜/生菜)', qty: 1, unit: 'pcs', price: 0.8 },
+  ]
+};
+
+function loadExample() {
+  document.getElementById('dishName').value = EXAMPLE_DISH.name;
+  document.getElementById('sellPrice').value = EXAMPLE_DISH.sellPrice;
+  document.getElementById('otherCostSingle').value = EXAMPLE_DISH.otherCost;
+
+  // Clear existing rows
+  const list = document.getElementById('ingredientList');
+  list.innerHTML = '';
+
+  // Add example ingredients
+  EXAMPLE_DISH.ingredients.forEach(ing => {
+    addIngredient({ name: ing.name, qty: ing.qty, unit: ing.unit, price: ing.price });
+  });
+
+  // Auto-calculate
+  calcSingleDish();
 }
 
 // ========== Init ==========

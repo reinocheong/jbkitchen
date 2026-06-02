@@ -953,6 +953,23 @@ body {
   transform: translateY(-1px);
   box-shadow: 0 3px 10px rgba(212,168,67,0.3);
 }
+.calc-btn-example {
+  width: 100%;
+  padding: 0.5rem;
+  background: none;
+  border: 1.5px dashed var(--green-400);
+  color: var(--green-600);
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 0.5rem;
+}
+.calc-btn-example:hover {
+  background: var(--green-50);
+  border-color: var(--green-500);
+}
 
 /* Result grid */
 .calc-result-grid {
