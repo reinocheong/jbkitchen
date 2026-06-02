@@ -7,6 +7,28 @@
 
 **操作人：AI**
 
+### 招聘数据 AI 可搜索化 + SSOT 对齐
+- 修改 scrape_jobs.py：新增 `_enrich_job` 函数，为每个职位添加 AI 可搜索字段
+  - `id`：sha256 哈希（title+company+source）
+  - `title_normalized`：标题规范化（ALL CAPS → Title Case）
+  - `category`：分类（chef/cook/kitchen-crew/fb-service/management/other）
+  - `employment_type`：雇佣类型检测（full-time/part-time/contract）
+  - `location_normalized`：位置标准化（提取 JB 区域名如 Mount Austin）
+  - `skills`：技能检测（Pastry/Baking/Chinese Cuisine 等 20+ 模式）
+  - `description`：占位（后续可补充职位描述）
+  - `salary.text_formatted`：人类可读薪资格式（RM3,000 - RM5,000/month）
+- 修改 parse_fb_jobs.py：导入 `_enrich_job` 为 FB 职位添加相同字段
+- 更新 site/layouts/chefs/list.html：新增分类标签徽章、薪资格式化显示、图标装饰
+- 新增 category-badge CSS 样式（6 种分类配色 + source-facebook）
+- 全量更新 7 个 SSOT 文档对齐当前项目状态
+  - README.md：目录树、数据源表、cron 流程（新增招聘采集+FB抓取）
+  - ARCHITECTURE.md：新增「招聘数据流」Mermaid 图、数据文件清单、模块依赖
+  - DEPLOY.md：Python 依赖（playwright/beautifulsoup4）、FB scraper cron
+  - TODO.md：标记本会话 4 项完成
+  - JOURNAL.md：追加本条目
+  - MEMORY.md：新增招聘采集/FB抓取坑位
+  - USER.md：补充 Reino/设计语言/商业模式关键点
+
 ### 行业动态板块上线
 - 重写 price_tracker.py：接入 DOSM Open API（cpi_headline + cpi_headline_inflation），获取官方 CPI 指数 + 通胀率数据
 - 重写 news_fetcher.py：Google News RSS 22 个马来西亚餐饮关键词搜索，覆盖食材价格/政策法令/行业趋势/新山本地 4 大类

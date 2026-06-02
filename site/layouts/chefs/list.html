@@ -52,13 +52,20 @@
           <div class="job-title-line">
             <span class="job-title">{{ .title }}</span>
             <span class="job-company">{{ .company }}</span>
+            {{- if .category -}}
+            <span class="category-badge category-{{ .category | urlize }}">{{ .category }}</span>
+            {{- end -}}
           </div>
           <div class="job-meta">
-            {{- if .salary.text -}}
-            <span class="job-salary">{{ .salary.text }}</span>
+            {{- if .salary -}}
+            {{- if .salary.text_formatted -}}
+            <span class="job-salary">💰 {{ .salary.text_formatted }}</span>
+            {{- else if .salary.text -}}
+            <span class="job-salary">💰 {{ .salary.text }}</span>
             {{- end -}}
-            <span class="job-location">{{ .location }}</span>
-            <span class="job-date">{{ .date }}</span>
+            {{- end -}}
+            <span class="job-location">📍 {{ .location }}</span>
+            <span class="job-date">🕒 {{ .date }}</span>
           </div>
         </div>
         <div class="job-side">

@@ -5,6 +5,31 @@
 
 ## 已知坑位
 
+### FB cookies 过期
+FB cookies（c_user, xs, fr）存储在 `scripts/fb_job_scraper.js` 中明文硬编码。
+过期后会返回登录页面而非群组内容，需要定期更新。
+解法：从浏览器导出新 cookies 替换脚本中的值。
+
+### FB headless scraping：每个群组独立浏览器
+Playwright 的 browser context 在长时间运行后会因页面累积而变慢。
+每个群组启动独立 browser 实例并立即关闭，避免内存泄漏和 session 冲突。
+
+### Maukerja Nuxt.js SSR — 需 Playwright
+Maukerja.my 使用 Nuxt.js 服务端渲染，初始 HTML 不含职位数据。
+`requests` 拿到的是空白骨架，需要 Playwright 等待 `networkidle` 后从 DOM 提取。
+
+### MyFutureJobs Angular SPA — 需 Playwright + 滚动
+MyFutureJobs 是 Angular SPA，使用虚拟滚动（virtual scrolling）加载职位。
+需要 JavaScript 自动滚动到底部并等待加载完成（约 5 秒）才能获取全部职位。
+
+### GitHub Pages 部署延迟 ~1-2 分钟
+`git push` 后 GitHub Pages 需要 1-2 分钟重新构建。
+立即访问可能看到旧内容，属于正常延迟。
+
+### FB raw data 是 append-only，永远不删除
+`fb_jobs_raw.json` 用于累积历史数据，新帖子追加到末尾。
+删除会丢失历史记录和已见链接集合，导致重复抓取。
+
 ### GitHub token 缺少 workflow scope
 Token 不支持 push workflow 文件（`.github/workflows/*.yml`）。
 解法：重新生成带 `workflow` scope 的 token，然后从 git history 恢复 workflow 文件。

@@ -1,8 +1,12 @@
 #!/usr/bin/env python3
 """Parse FB job group raw posts into structured job listings"""
-import os, re, json
+import os, re, json, sys
 from datetime import datetime, timedelta
 from zoneinfo import ZoneInfo
+
+# Import enrichment from scrape_jobs
+sys.path.insert(0, os.path.dirname(__file__))
+from scrape_jobs import _enrich_job
 
 RAW_FILE = os.path.join(os.path.dirname(__file__), "..", "data", "fb_jobs_raw.json")
 DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data")
@@ -135,6 +139,7 @@ def parse_fb_jobs():
         if info:
             info['url'] = post.get('link', '')
             info['fb_group'] = post.get('group_name', '')
+            info = _enrich_job(info)
             jobs.append(info)
 
     output = {

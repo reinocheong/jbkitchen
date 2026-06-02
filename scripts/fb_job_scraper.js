@@ -1,4 +1,5 @@
 // fb_job_scraper.js — Scrape FB groups for JB restaurant/chef job listings
+// RAW DATA IS APPEND-ONLY — never delete fb_jobs_raw.json
 const fs = require('fs');
 const path = require('path');
 const { chromium } = require('playwright');
@@ -21,10 +22,9 @@ const GROUPS = [
   { id: '299562313742588', name: 'JB Johor Part Full Time Jobs' },
 ];
 
-const OUTPUT_FILE = '/home/user/jbkitchen/data/fb_jobs_raw.json';
+const RAW_FILE = '/home/user/jbkitchen/data/fb_jobs_raw.json';
 const LOG_DIR = '/home/user/jbkitchen/.logs';
 
-// Food/kitchen keywords for filtering
 const FOOD_KW = [
   'chef', 'cook', 'kitchen', 'restaurant', 'tukang masak', 'pembantu dapur',
   'commis', 'demi', 'sous', 'pastry', 'baker', 'bakery', 'culinary',
@@ -39,6 +39,18 @@ function log(msg) {
   fs.mkdirSync(LOG_DIR, { recursive: true });
   fs.appendFileSync(path.join(LOG_DIR, 'fb_job_scraper.log'), `[${ts}] ${msg}\n`);
   console.log(`[${ts}] ${msg}`);
+}
+
+/** Load existing raw posts for dedup by link */
+function loadExisting() {
+  try {
+    if (fs.existsSync(RAW_FILE)) {
+      return JSON.parse(fs.readFileSync(RAW_FILE, 'utf-8'));
+    }
+  } catch (e) {
+    log(`读取现有数据失败: ${e.message}`);
+  }
+  return [];
 }
 
 async function scrapeGroup(group) {
@@ -65,13 +77,11 @@ async function scrapeGroup(group) {
     });
     await page.waitForTimeout(4000);
 
-    // Scroll to load more posts
     for (let i = 0; i < 6; i++) {
       await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
       await page.waitForTimeout(1500);
     }
 
-    // Extract posts
     posts = await page.evaluate((gid) => {
       const articles = document.querySelectorAll('[role="article"]');
       const results = [];
@@ -117,22 +127,41 @@ async function scrapeGroup(group) {
 
 (async () => {
   log('FB Job Scraper 启动');
-  fs.mkdirSync(path.dirname(OUTPUT_FILE), { recursive: true });
-  const allPosts = [];
+  fs.mkdirSync(path.dirname(RAW_FILE), { recursive: true });
 
+  // Load existing data for dedup (append-only: NEVER delete raw data)
+  const existing = loadExisting();
+  const seenLinks = new Set(existing.map(p => p.link).filter(Boolean));
+  log(`现有数据: ${existing.length} 条`);
+
+  let newPosts = [];
   for (const group of GROUPS) {
     const posts = await scrapeGroup(group);
-    // Keep posts that mention food/kitchen keywords
     const relevant = posts.filter(p =>
       FOOD_KW.some(kw => p.text.toLowerCase().includes(kw))
     );
-    allPosts.push(...relevant);
-    log(`  → 相关: ${relevant.length}/${posts.length}`);
 
-    // Save incrementally
-    fs.writeFileSync(OUTPUT_FILE, JSON.stringify(allPosts, null, 2));
+    // Dedup vs existing
+    const fresh = relevant.filter(p => !seenLinks.has(p.link));
+    newPosts.push(...fresh);
+
+    // Add new links to seen set for subsequent groups
+    fresh.forEach(p => { if (p.link) seenLinks.add(p.link); });
+    log(`  → 相关: ${relevant.length}/${posts.length}, 新增: ${fresh.length}`);
   }
 
-  log(`\n完成: 共 ${allPosts.length} 条相关职位帖子`);
-  console.log(`输出: ${OUTPUT_FILE}`);
+  // APPEND to existing data (NEVER delete raw data)
+  const allPosts = existing.concat(newPosts);
+  fs.writeFileSync(RAW_FILE, JSON.stringify(allPosts, null, 2));
+
+  // Also write a timestamped snapshot for history
+  const dateStr = new Date().toISOString().slice(0, 10);
+  const snapshotFile = RAW_FILE.replace('.json', `_${dateStr}.json`);
+  if (!fs.existsSync(snapshotFile)) {
+    fs.writeFileSync(snapshotFile, JSON.stringify(allPosts, null, 2));
+    log(`快照: ${snapshotFile}`);
+  }
+
+  log(`\n完成: 现有 ${existing.length} + 新增 ${newPosts.length} = ${allPosts.length} 条`);
+  console.log(`输出: ${RAW_FILE} (${allPosts.length} 条)`);
 })();

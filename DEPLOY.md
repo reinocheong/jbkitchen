@@ -24,12 +24,16 @@ git add -A && git commit -m "📦 构建更新" && git push
 
 ### 自动部署（cron）
 
-系统使用 Hermes cron job `jbkitchen — auto publish` (ID: `5c97932548d0`)：
+系统使用 Hermes cron job：
 
-- **频率：** 每天 8:00 / 12:00 / 16:00 / 20:00（鸡价通常周六下午更新，cron 覆盖全部时段）
-- **脚本：** `~/.hermes/scripts/jbkitchen-auto-publish.sh` → 调用 `scripts/auto-publish.sh`
-- **流程：** `aggregate.py`（刷新数据）→ `hugo --minify`（构建）→ `git push`（部署）
-- **无变化时：** 自动跳过 commit（`|| true` 不中断）
+- **`jbkitchen — auto publish` (ID: `5c97932548d0`)：** 每天 8:00 / 12:00 / 16:00 / 20:00
+  - 脚本：`scripts/auto-publish.sh`
+  - 流程：`aggregate.py`（刷新新闻/汇率/鸡价/招聘数据）→ `hugo --minify`（构建）→ `git push`（部署）
+
+- **`jbkitchen — FB job scraper`：** 每天 1 次
+  - 脚本：`scripts/fb_job_scraper.js`
+  - 流程：Playwright 浏览 8 个 FB 群组 → 关键词过滤 → 追加 `data/fb_jobs_raw.json`
+  - 原始数据 append-only，永不删除
 
 ### 手动部署（故障时）
 
@@ -65,7 +69,9 @@ cd .. && git add -A && git commit -m "..." && git push  # 部署
 ## Python 依赖
 
 ```bash
-pip install requests feedparser
+pip install requests feedparser beautifulsoup4
+# Playwright requires browser install:
+# playwright install chromium
 ```
 
 ## 数据同步

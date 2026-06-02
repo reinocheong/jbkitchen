@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # jbkitchen — Auto publish pipeline
-# 1. Refresh all data (news, prices, chicken prices)
+# 1. Refresh all data (news, prices, chicken prices, jobs, FB jobs)
 # 2. Build Hugo site
 # 3. Deploy to GitHub Pages
 set -euo pipefail
@@ -18,5 +18,5 @@ hugo --minify
 # Step 3: Deploy
 cd ..
 git add -A
-git commit -m "auto: data refresh $(date +'%Y-%m-%d %H:%M')" || true  # no changes = skip
+git commit -m "auto: data refresh $(date +'%Y-%m-%d %H:%M')" || true
 git push

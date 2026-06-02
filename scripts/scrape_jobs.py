@@ -8,6 +8,7 @@ import os, re, json, time, math
 from datetime import datetime, timezone, timedelta
 from zoneinfo import ZoneInfo
 from urllib.parse import urljoin
+import hashlib
 
 import requests
 from bs4 import BeautifulSoup
@@ -116,6 +117,183 @@ def _dedup_jobs(jobs: list) -> list:
         seen.add(key)
         result.append(j)
     return result
+
+
+# ── Enrichment: AI-searchable fields ────────────────────────────────────
+
+SKILL_PATTERNS = [
+    (r'\b(Pastry|Baking|Baker)\b', ["Pastry", "Baking"]),
+    (r'\b(Chinese Cuisine|Chinese Cooking|Dim Sum|Dimsum)\b', ["Chinese Cuisine", "Dim Sum"]),
+    (r'\b(Western Cuisine|Western Cooking|Western Food)\b', ["Western Cuisine"]),
+    (r'\b(Japanese Cuisine|Sushi|Ramen|Teppanyaki|Japanese)\b', ["Japanese Cuisine"]),
+    (r'\b(Korean Cuisine|Korean BBQ|Korean)\b', ["Korean Cuisine"]),
+    (r'\b(Malay Cuisine|Malay Cooking|Roti Canai|Nasi Lemak)\b', ["Malay Cuisine"]),
+    (r'\b(Indian Cuisine|Roti|Naan|Tandoori|Banana Leaf)\b', ["Indian Cuisine"]),
+    (r'\b(Italian|Pizza|Pasta)\b', ["Italian Cuisine"]),
+    (r'\b(Grill|BBQ|Barbecue)\b', ["Grill"]),
+    (r'\b(Seafood|Fish)\b', ["Seafood"]),
+    (r'\b(Butcher|Butchery|Meat Preparation)\b', ["Butchery"]),
+    (r'\b(Food Safety|HACCP|Hygiene)\b', ["Food Safety"]),
+    (r'\b(Halal)\b', ["Halal"]),
+    (r'\b(Catering|Banquet)\b', ["Catering"]),
+    (r'\b(Barista|Coffee|Beverage)\b', ["Barista"]),
+    (r'\b(Noodle|Mee|Mie)\b', ["Noodles"]),
+    (r'\b(Menu Planning|Menu Development)\b', ["Menu Planning"]),
+    (r'\b(Cost Control|Inventory|Stock)\b', ["Cost Control", "Inventory"]),
+    (r'\b(Team Lead|Supervisor|Management)\b', ["Team Leading"]),
+    (r'\b(Deep Fry|Wok|Stir Fry)\b', ["Wok Cooking"]),
+]
+
+KNOWN_JB_AREAS = [
+    "Mount Austin", "EduCity", "Iskandar Puteri", "Tebrau", "Skudai",
+    "Kulai", "Pasir Gudang", "Johor Jaya", "Desa Tebrau", "Molek",
+    "Permas Jaya", "Bukit Indah", "Nusa Bestari", "Sutera", "Senai",
+    "Ulu Tiram", "Masai", "Gelang Patah", "Kota Tinggi", "Pontian",
+    "Taman Daya", "Setia Tropika", "Johor Bahru",
+]
+
+CATEGORY_RULES = [
+    (r'\b(Head Chef|Executive Chef|Sous Chef|Demi Chef|Chef de Partie|Pastry Chef|Master Chef)\b', "chef"),
+    (r'\b(Chef\b)', "chef"),
+    (r'\b(Cook|Tukang Masak|Pembantu Dapur|Line Cook|Commis|Kitchen Crew)\b', "cook"),
+    (r'\b(Kitchen Helper|Kitchen Assistant|Steward|Dishwasher)\b', "kitchen-crew"),
+    (r'\b(Waiter|Waitress|Barista|Service Crew|Captain|Pelayan|F&B Service|FB Service)\b', "fb-service"),
+    (r'\b(Manager|Supervisor|Ops Lead|Restaurant Manager|F&B Manager|FB Manager|Outlet Manager)\b', "management"),
+]
+
+
+def _generate_id(title: str, company: str, source: str) -> str:
+    """Generate sha256 ID from title+company+source"""
+    raw = f"{title.lower()}|{company.lower()}|{source.lower()}"
+    return hashlib.sha256(raw.encode("utf-8")).hexdigest()[:16]
+
+
+def _normalize_title(title: str) -> str:
+    """Clean title: remove ALL CAPS, standardize common titles"""
+    if not title:
+        return ""
+    t = title.strip()
+
+    # Detect ALL CAPS (>=50% uppercase alpha chars)
+    alpha_chars = [c for c in t if c.isalpha()]
+    if alpha_chars and sum(1 for c in alpha_chars if c.isupper()) / len(alpha_chars) >= 0.5:
+        t = t.title()
+
+    # Standardize common titles
+    replacements = {
+        "Tukang Masak": "Tukang Masak",
+        "Pembantu Dapur": "Pembantu Dapur",
+        "Chef De Partie": "Chef de Partie",
+        "Sous Chef": "Sous Chef",
+        "Demi Chef": "Demi Chef",
+        "Head Chef": "Head Chef",
+        "Pastry Chef": "Pastry Chef",
+        "Commis Chef": "Commis Chef",
+        "Line Cook": "Line Cook",
+        "Kitchen Crew": "Kitchen Crew",
+        "Kitchen Helper": "Kitchen Helper",
+        "Restaurant Manager": "Restaurant Manager",
+        "Outlet Manager": "Outlet Manager",
+        "F&B Manager": "F&B Manager",
+        "Service Crew": "Service Crew",
+        "Barista": "Barista",
+    }
+    for pattern, standard in replacements.items():
+        if pattern.lower() in t.lower():
+            t = re.sub(re.escape(pattern), standard, t, flags=re.IGNORECASE)
+            break
+
+    return t
+
+
+def _classify_category(title: str) -> str:
+    """Classify job into: chef, cook, kitchen-crew, fb-service, management, other"""
+    if not title:
+        return "other"
+    for pattern, category in CATEGORY_RULES:
+        if re.search(pattern, title, re.IGNORECASE):
+            return category
+    return "other"
+
+
+def _detect_employment_type(title: str, salary_text: str = None) -> str | None:
+    """Detect employment type: full-time, part-time, contract, or None"""
+    combined = f"{title or ''} {salary_text or ''}"
+    cl = combined.lower()
+    if re.search(r'\bfull[- ]?time\b', cl) or 'sepenuh masa' in cl:
+        return "full-time"
+    if re.search(r'\bpart[- ]?time\b', cl) or 'separuh masa' in cl:
+        return "part-time"
+    if re.search(r'\bcontract\b|kontrak', cl):
+        return "contract"
+    return None
+
+
+def _normalize_location(location: str) -> str:
+    """Extract city area from location string"""
+    if not location:
+        return "Johor Bahru"
+    loc = location.strip()
+    for area in KNOWN_JB_AREAS:
+        if area.lower() in loc.lower():
+            return area
+    # Fallback: return cleaned version
+    loc = re.sub(r',\s*Johor\s*$', '', loc, flags=re.IGNORECASE).strip()
+    loc = re.sub(r',\s*Malaysia\s*$', '', loc, flags=re.IGNORECASE).strip()
+    return loc if loc else "Johor Bahru"
+
+
+def _detect_skills(title: str, salary_text: str = None, description: str = "") -> list:
+    """Detect skills from title and text content"""
+    combined = f"{title or ''} {salary_text or ''} {description or ''}"
+    skills = set()
+    for pattern, labels in SKILL_PATTERNS:
+        if re.search(pattern, combined, re.IGNORECASE):
+            for label in labels:
+                skills.add(label)
+    return sorted(skills)
+
+
+def _format_salary_text(salary: dict) -> str | None:
+    """Create human-readable salary string like 'RM3,000 - RM5,000/month'"""
+    if not salary:
+        return None
+    mn = salary.get("min")
+    mx = salary.get("max")
+    period = salary.get("period", "monthly")
+    period_label = {"monthly": "/month", "yearly": "/year", "hourly": "/hour"}.get(period, "/month")
+
+    if mn is not None and mx is not None:
+        if mn == mx:
+            return f"RM{mn:,.0f}{period_label}"
+        return f"RM{mn:,.0f} - RM{mx:,.0f}{period_label}"
+    elif mn is not None:
+        return f"RM{mn:,.0f}{period_label}"
+    return None
+
+
+def _enrich_job(job: dict) -> dict:
+    """Add AI-searchable fields to a job item (modifies in place, returns for chaining)"""
+    title = job.get("title", "")
+    company = job.get("company", "")
+    source = job.get("source", "")
+    salary = job.get("salary", {})
+    location = job.get("location", "")
+    salary_text = salary.get("text") if salary else None
+
+    job["id"] = _generate_id(title, company, source)
+    job["title_normalized"] = _normalize_title(title)
+    job["category"] = _classify_category(title)
+    job["employment_type"] = _detect_employment_type(title, salary_text)
+    job["location_normalized"] = _normalize_location(location)
+    job["skills"] = _detect_skills(title, salary_text)
+    job["description"] = None  # Not available from listings; may be enriched later
+    if salary:
+        formatted = _format_salary_text(salary)
+        if formatted:
+            salary["text_formatted"] = formatted
+
+    return job
 
 
 # ── Jora (requests + BS4) ──────────────────────────────────────────────
@@ -387,6 +565,11 @@ def scrape_all():
         _log(f"MyFutureJobs 错误: {e}")
 
     all_jobs = _dedup_jobs(all_jobs)
+
+    # Enrich all jobs with AI-searchable fields
+    for job in all_jobs:
+        _enrich_job(job)
+
     all_jobs.sort(key=lambda x: x.get("date", ""), reverse=True)
 
     now = datetime.now(MYT)
