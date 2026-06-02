@@ -11,9 +11,10 @@ cd "$(dirname "$0")/.."
 cd scripts
 python3 aggregate.py
 
-# Step 2: Build Hugo
+# Step 2: Build Hugo (preserve .nojekyll and CNAME)
 cd ../site
 hugo --minify
+touch ../docs/.nojekyll
 
 # Step 3: Deploy
 cd ..
