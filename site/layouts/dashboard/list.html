@@ -29,7 +29,7 @@
     <h2 style="color:var(--green-800);font-size:1.2rem;margin-bottom:0.3rem;">📈 页面浏览排行</h2>
     <p style="font-size:0.8rem;color:var(--text-3);margin-bottom:1rem;">
       价格按公式：浏览量 ÷ 1,000 × 位置系数 × RM 10
-      <a href="/advertise/" style="color:var(--green-600);">查看完整定价 →</a>
+      <a href={{ "advertise/" | absURL }} style="color:var(--green-600);">查看完整定价 →</a>
     </p>
     <div id="pageRanking" style="display:flex;flex-direction:column;gap:0.3rem;">
       <div style="text-align:center;padding:2rem;color:var(--text-3);">加载中...</div>
@@ -43,7 +43,7 @@
       购买广告位后，你的页面浏览量会出现在上方排行榜中，价格自动按公式计算。<br>
       数据公开透明，你知道自己买的每个曝光值多少钱。
     </p>
-    <a href="/advertise/" class="btn btn-primary" style="margin-top:1rem;">查看广告位与价格</a>
+    <a href={{ "advertise/" | absURL }} class="btn btn-primary" style="margin-top:1rem;">查看广告位与价格</a>
   </div>
 </div>
 

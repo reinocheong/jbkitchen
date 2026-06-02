@@ -7,7 +7,7 @@
   {{- if $chefs }}
     <p style="font-size:0.85rem;color:var(--text-3);margin-bottom:1rem;">共 {{ len $chefs }} 位厨师开放简历</p>
     {{- range $chefs }}
-    <a href="/chefs/{{ .id }}/" class="chef-list-item">
+    <a href="{{ printf "chefs/%s/" .id | absURL }}" class="chef-list-item">
       <div class="left">
         <span class="avatar">{{ .emoji }}</span>
         <div>
@@ -24,7 +24,7 @@
     <div style="text-align:center;padding:3rem;background:var(--card);border-radius:var(--radius);border:1px solid var(--border);">
       <p style="font-size:1.2rem;margin-bottom:0.5rem;">📭 还没有厨师简历</p>
       <p style="color:var(--text-3);margin-bottom:1.5rem;">成为第一个挂简历的人吧</p>
-      <a href="/chefs/submit/" class="btn btn-primary">📝 免费挂简历</a>
+      <a href={{ "chefs/submit/" | absURL }} class="btn btn-primary">📝 免费挂简历</a>
     </div>
   {{- end }}
 </div>
