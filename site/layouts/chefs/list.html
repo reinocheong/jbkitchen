@@ -33,10 +33,14 @@
           </div>
           <div class="job-card-meta">
             {{- if .salary -}}
+            {{- if reflect.IsMap .salary -}}
             {{- if .salary.text_formatted -}}
             <span class="job-salary">{{ .salary.text_formatted }}</span>
             {{- else if .salary.text -}}
             <span class="job-salary">{{ .salary.text }}</span>
+            {{- end -}}
+            {{- else -}}
+            <span class="job-salary">{{ .salary }}</span>
             {{- end -}}
             {{- end -}}
             <span class="job-location">{{ .location }}</span>
