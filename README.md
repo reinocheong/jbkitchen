@@ -86,7 +86,7 @@ jbkitchen/
 > 详细架构图和数据流见 `ARCHITECTURE.md`
 
 ```
-┌─ ① cron (每2h 8-20点) ─────────────────────┐
+┌─ ① cron (每天 8/12/16/20 点) ──────────────┐
 │  auto-publish.sh                             │
 │    ├─ python3 aggregate.py                   │
 │    │    ├─ news_fetcher.py  → news.json      │
