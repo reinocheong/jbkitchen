@@ -80,17 +80,16 @@
     <!-- 🐓 冷冻鸡价 -->
     {{- if $chan.items }}
     <div class="live-card live-card-wide">
-      <h3>🐓 Frozen Chicken Wholesale Price <span class="price-note">(RM/kg, adjusted)</span></h3>
+      <h3>🐓 Frozen Chicken Wholesale Price <span class="price-note">(RM/kg)</span></h3>
       <table class="price-table">
         <thead>
-          <tr><th>Item</th><th>Product</th><th>Source Price</th><th>Adjusted Price</th></tr>
+          <tr><th>Item</th><th>Product</th><th>Price</th></tr>
         </thead>
         <tbody>
           {{- range $chan.items }}
           <tr>
             <td class="td-item">{{ .item }}</td>
             <td class="td-name">{{ .name }}</td>
-            <td class="td-src">RM{{ lang.FormatNumber 2 .price_src }}</td>
             <td class="td-price"><strong>RM{{ lang.FormatNumber 2 .price }}</strong></td>
           </tr>
           {{- end }}
