@@ -26,12 +26,15 @@ const RAW_FILE = '/home/user/jbkitchen/data/fb_jobs_raw.json';
 const LOG_DIR = '/home/user/jbkitchen/.logs';
 
 const FOOD_KW = [
-  'chef', 'cook', 'kitchen', 'restaurant', 'tukang masak', 'pembantu dapur',
+  'chef', 'cook', 'kitchen', 'restaurant', 'restoran', 'kedai makan',
+  'tukang masak', 'pembantu dapur', 'pekerja dapur', 'crew dapur',
   'commis', 'demi', 'sous', 'pastry', 'baker', 'bakery', 'culinary',
   'food', 'fb', 'f&b', 'cafe', 'kafe', 'kopitiam', 'makanan', 'dapur',
   'hotel', 'catering', 'kitchen crew', 'line cook', 'head chef',
   'barista', 'service crew', 'waiter', 'waitress', 'captain',
-  'masak', 'grill', 'roti', 'kek', 'cake',
+  'masak', 'grill', 'roti', 'cake', 'baking',
+  'jawatan kosong', 'kerja kosong', 'vacancy', '招聘', '厨师',
+  'burger', 'pizza', 'sushi', 'nasi', 'mee', 'kuih',
 ];
 
 function log(msg) {
@@ -77,8 +80,22 @@ async function scrapeGroup(group) {
     });
     await page.waitForTimeout(4000);
 
-    for (let i = 0; i < 6; i++) {
-      await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+    // Click expand buttons to reveal hidden text (critical for job posts)
+    await page.evaluate(() => {
+      const expand = document.createTreeWalker(document.body, NodeFilter.SHOW_ELEMENT);
+      let node, clicked = 0;
+      while (node = expand.nextNode()) {
+        const text = (node.textContent || '').trim();
+        if (text === '展开' || text === 'See More' || text === 'See more') {
+          try { node.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true, view: window })); clicked++; } catch(e) {}
+        }
+      }
+      return clicked;
+    });
+    await page.waitForTimeout(2000);
+
+    // Scroll to load more posts
+    for (let i = 0; i < 12; i++) {
       await page.waitForTimeout(1500);
     }
 
