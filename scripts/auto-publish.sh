@@ -8,14 +8,14 @@ set -euo pipefail
 PROJECT_DIR="/home/user/jbkitchen"
 cd "$PROJECT_DIR"
 
-# Step 1: Refresh data
+# Step 1: Refresh data (Jora, Hiredly, Maukerja, MyFutureJobs)
 python3 scripts/aggregate.py
 
-# Step 1.5: Merge JobStreet extras if available (Windows Chrome CDP data)
-if [ -f "/mnt/c/Users/User/Desktop/fb-cookie-extract/extra_jobs_output.json" ]; then
-  echo "[auto-publish] Merging JobStreet extras..."
-  python3 scripts/merge_extra_jobs.py
-fi
+# Step 1.5: Scrape JobStreet via Windows Chrome (always on) + merge (dedup by title+company)
+echo "[auto-publish] Scraping JobStreet via Windows Chrome..."
+cmd.exe /c "cd /d C:\Users\User\Desktop\fb-cookie-extract && node scrape_extra_jobs.js" 2>/dev/null
+echo "[auto-publish] Merging JobStreet extras (dedup)..."
+python3 scripts/merge_extra_jobs.py
 
 # Step 2: Build Hugo (preserve .nojekyll and CNAME)
 cd site
