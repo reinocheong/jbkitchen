@@ -727,6 +727,71 @@ body {
 .page-header { margin-bottom: 1.5rem; }
 .page-header h1 { font-size: 1.6rem; color: var(--green-800); margin-bottom: 0.25rem; }
 .page-meta { font-size: 0.85rem; color: var(--text-3); display: flex; gap: 0.4rem; }
+
+/* ── Chef Talent Hero ── */
+.cta-hero-chef {
+  background: linear-gradient(135deg, var(--green-900), var(--green-700));
+  border-radius: var(--radius);
+  padding: 2.5rem 2rem;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+.cta-hero-chef h1 { color: var(--gold); font-size: 1.6rem; margin-bottom: 0.5rem; }
+.cta-hero-chef p { opacity: 0.85; font-size: 0.9rem; margin-bottom: 1.5rem; max-width: 500px; margin-left: auto; margin-right: auto; }
+.cta-hero-actions { display: flex; gap: 0.8rem; justify-content: center; flex-wrap: wrap; }
+.cta-btn-primary {
+  display: inline-block; background: var(--gold); color: var(--green-900);
+  font-weight: 700; padding: 0.7rem 2rem; border-radius: var(--radius-sm);
+  text-decoration: none; font-size: 0.9rem;
+}
+.cta-btn-secondary {
+  display: inline-block; background: rgba(255,255,255,0.15); color: #fff;
+  font-weight: 600; padding: 0.7rem 2rem; border-radius: var(--radius-sm);
+  text-decoration: none; font-size: 0.9rem; border: 1px solid rgba(255,255,255,0.3);
+}
+.cta-btn-primary:hover, .cta-btn-secondary:hover { opacity: 0.9; }
+
+/* ── Empty Chef State ── */
+.empty-chef-state {
+  text-align: center; padding: 3rem 1.5rem;
+  background: var(--card); border-radius: var(--radius);
+  border: 2px dashed var(--border); margin-bottom: 2rem;
+}
+.empty-icon { font-size: 3rem; margin-bottom: 0.5rem; }
+.empty-chef-state h2 { color: var(--green-700); margin-bottom: 0.5rem; font-size: 1.2rem; }
+.empty-chef-state p { color: var(--text-3); font-size: 0.85rem; margin-bottom: 1.5rem; max-width: 380px; margin-left: auto; margin-right: auto; }
+
+/* ── Market Jobs (secondary) ── */
+.job-market-section { margin-top: 2rem; }
+.section-header { display: flex; align-items: baseline; gap: 0.6rem; margin-bottom: 0.3rem; }
+.section-header h2 { font-size: 1.15rem; color: var(--green-700); }
+.section-meta { font-size: 0.8rem; color: var(--text-3); }
+.section-subtitle { font-size: 0.82rem; color: var(--text-3); margin-bottom: 1rem; }
+
+/* ── Chef Grid (when chefs exist) ── */
+.chef-showcase { margin-bottom: 2rem; }
+.chef-showcase h2 { font-size: 1.15rem; color: var(--green-700); margin-bottom: 1rem; }
+.chef-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 0.8rem; }
+.chef-card { background: var(--card); border-radius: var(--radius); padding: 1rem 1.2rem; border: 1px solid var(--border); }
+.chef-card-header { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.4rem; }
+.chef-name { font-weight: 700; color: var(--green-800); font-size: 0.95rem; }
+.chef-role { font-size: 0.78rem; color: var(--text-3); }
+.chef-specialty { font-size: 0.83rem; color: var(--text-2); margin-bottom: 0.3rem; }
+.chef-exp { font-size: 0.8rem; color: var(--text-3); }
+.chef-card-footer { margin-top: 0.5rem; display: flex; gap: 0.6rem; font-size: 0.78rem; color: var(--text-3); }
+.chef-availability { color: var(--green-600); }
+.cta-link { display: block; text-align: center; margin-top: 1rem; font-size: 0.85rem; color: var(--green-600); }
+.cta-link:hover { color: var(--gold); }
+
+/* ── Footer CTA ── */
+.footer-cta-actions { display: flex; gap: 0.8rem; justify-content: center; flex-wrap: wrap; margin-top: 0.8rem; }
+.btn-secondary {
+  display: inline-block; padding: 0.55rem 1.5rem; border-radius: var(--radius-sm);
+  font-weight: 600; font-size: 0.85rem; text-decoration: none;
+  background: transparent; color: var(--green-700); border: 1px solid var(--green-300);
+}
+.btn-secondary:hover { background: var(--green-50); }
 .page-meta .sep { color: var(--border); }
 
 .job-list { display: flex; flex-direction: column; gap: 0.5rem; }

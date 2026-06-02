@@ -1,4 +1,4 @@
 ---
-title: "Chef Talent Pool"
+title: "Chef Talent Pool — JB Kitchen"
 ---
 

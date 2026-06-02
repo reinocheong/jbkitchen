@@ -1,30 +1,67 @@
 {{ define "main" }}
 {{- $chefs := .Site.Data.chefs -}}
+{{- $chefItems := slice -}}
+{{- if reflect.IsSlice $chefs }}{{ $chefItems = $chefs }}{{ else }}{{ $chefItems = $chefs.items | default slice }}{{ end -}}
+
 {{- $jobs := .Site.Data.jobs -}}
-{{- $items := $jobs.items | default slice -}}
+{{- $jobItems := slice -}}
+{{- if reflect.IsSlice $jobs }}{{ $jobItems = $jobs }}{{ else }}{{ $jobItems = $jobs.items | default slice }}{{ end -}}
+
 <div class="page-jobs">
 
-  <!-- CTA Banner -->
-  <div class="cta-banner">
-    <h2>Post Your Resume — Free</h2>
-    <p>Let JB restaurant owners find you</p>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLScJVkyYraKTstINyqyZDlA_3wJNCVj6ohHOMCs4Gtv6nChRBw/viewform" target="_blank" rel="noopener" class="cta-btn">Submit Resume →</a>
+  <!-- Hero: Chef Talent Pool -->
+  <div class="cta-hero-chef">
+    <h1>JB Chef Talent Pool</h1>
+    <p>Restaurant owners, find your next kitchen star. Chefs, get discovered by JB's top restaurants.</p>
+    <div class="cta-hero-actions">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScJVkyYraKTstINyqyZDlA_3wJNCVj6ohHOMCs4Gtv6nChRBw/viewform" target="_blank" rel="noopener" class="cta-btn-primary">👨‍🍳 I'm a Chef — Post My Resume</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfoPVj5H343aVjuHJ91ONi-Tp_lcWnc0aDrbuZD2-PeNnBv1A/viewform" target="_blank" rel="noopener" class="cta-btn-secondary">🏪 I'm Hiring — Find Talent</a>
+    </div>
   </div>
 
-  <!-- Job Listings -->
-  {{- if $items }}
-  <section>
-    <div class="page-header">
-      <h1>JB F&amp;B Jobs</h1>
-      <div class="page-meta">
-        <span>{{ $jobs.count }} jobs</span>
-        <span class="sep">·</span>
-        <span>Updated {{ substr $jobs.updated 0 10 }}</span>
+  <!-- Registered Chefs -->
+  {{- if $chefItems }}
+  <section class="chef-showcase">
+    <h2>Available Chefs</h2>
+    <div class="chef-grid">
+      {{- range $chefItems }}
+      <div class="chef-card">
+        <div class="chef-card-header">
+          <span class="chef-name">{{ .name }}</span>
+          {{- with .role }}<span class="chef-role">{{ . }}</span>{{ end }}
+        </div>
+        {{- with .specialty }}<p class="chef-specialty">{{ . }}</p>{{ end }}
+        {{- with .experience }}<p class="chef-exp">{{ . }} years experience</p>{{ end }}
+        <div class="chef-card-footer">
+          <span class="chef-location">{{ .location | default "Johor Bahru" }}</span>
+          {{- with .availability }}<span class="chef-availability">{{ . }}</span>{{ end }}
+        </div>
       </div>
+      {{- end }}
     </div>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfoPVj5H343aVjuHJ91ONi-Tp_lcWnc0aDrbuZD2-PeNnBv1A/viewform" target="_blank" rel="noopener" class="cta-link">Interested in hiring? Tell us what you need →</a>
+  </section>
+  {{- else }}
+  <!-- Empty state -->
+  <section class="empty-chef-state">
+    <div class="empty-icon">👨‍🍳</div>
+    <h2>Be the First Chef on jbkitchen</h2>
+    <p>JB restaurant owners are looking for talent like you. Post your resume and get discovered.</p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLScJVkyYraKTstINyqyZDlA_3wJNCVj6ohHOMCs4Gtv6nChRBw/viewform" target="_blank" rel="noopener" class="cta-btn-primary">Post My Resume Now →</a>
+  </section>
+  {{- end }}
+
+  <!-- Market Jobs (Secondary) -->
+  {{- if $jobItems }}
+  <section class="job-market-section">
+    <div class="section-header">
+      <h2>Market Jobs</h2>
+      <span class="section-meta">{{ len $jobItems }} openings across JB</span>
+    </div>
+    <p class="section-subtitle">Current kitchen &amp; F&B openings in Johor Bahru — for reference and market insight</p>
 
     <div class="job-list">
-      {{- range $items -}}
+      {{- range $jobItems }}
       <a href="{{ .url }}" target="_blank" rel="noopener" class="job-card">
         <div class="job-card-body">
           <div class="job-card-top">
@@ -51,17 +88,18 @@
           <span class="src-tag src-{{ lower .source }}">{{ .source }}</span>
         </div>
       </a>
-      {{- end -}}
+      {{- end }}
     </div>
   </section>
-  {{- else }}
-  <div class="empty-state">
-    <p>Loading jobs...</p>
-  </div>
   {{- end }}
 
+  <!-- Bottom CTA -->
   <div class="page-footer-cta">
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLScJVkyYraKTstINyqyZDlA_3wJNCVj6ohHOMCs4Gtv6nChRBw/viewform" target="_blank" rel="noopener" class="btn btn-primary">Post Resume</a>
+    <p>Looking to hire or get hired in JB's F&B scene?</p>
+    <div class="footer-cta-actions">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScJVkyYraKTstINyqyZDlA_3wJNCVj6ohHOMCs4Gtv6nChRBw/viewform" target="_blank" rel="noopener" class="btn btn-primary">Submit Resume</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfoPVj5H343aVjuHJ91ONi-Tp_lcWnc0aDrbuZD2-PeNnBv1A/viewform" target="_blank" rel="noopener" class="btn btn-secondary">I'm Hiring</a>
+    </div>
   </div>
 
 </div>
