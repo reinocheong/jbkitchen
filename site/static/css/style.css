@@ -850,6 +850,20 @@ body {
 }
 .calc-tab-content { display: none; }
 .calc-tab-content.active { display: block; }
+.calc-tab-intro {
+  text-align: center;
+  margin-bottom: 1.2rem;
+}
+.calc-tab-intro h3 {
+  font-size: 1.1rem;
+  color: var(--green-800);
+  margin-bottom: 0.3rem;
+}
+.calc-tab-intro p {
+  font-size: 0.82rem;
+  color: var(--text-3);
+  line-height: 1.5;
+}
 
 /* Two column layout */
 .calc-two-col {

@@ -102,10 +102,15 @@
 
   <!-- ============ TAB 2: 多菜对比 ============ -->
   <div id="tab-compare" class="calc-tab-content">
+    <div class="calc-tab-intro">
+      <h3>📊 多菜对比</h3>
+      <p>把几道菜放在一起比，哪道利润高、哪道成本重，一眼看清。<br>先在「菜品成本卡」算完点保存，自动出现在这里。或者点下面加载示例看看效果。</p>
+    </div>
     <div id="compareWrap">
       <p style="color:var(--text-3);text-align:center;padding:2rem;" id="emptyCompare">
-        还没有保存的菜品。先在「菜品成本卡」计算后点击保存。
+        还没有保存的菜品。
       </p>
+      <button class="calc-btn-example" onclick="loadCompareExample()" style="max-width:300px;margin:0 auto 1rem;">📋 加载对比示例</button>
     </div>
     <div id="compareTableWrap" style="display:none;">
       <table class="compare-table">
@@ -122,12 +127,19 @@
         </thead>
         <tbody id="compareBody"></tbody>
       </table>
-      <button class="btn-add-ing" onclick="clearAllDishes()" style="margin-top:0.8rem;background:#fee;">🗑️ 清空所有</button>
+      <div style="display:flex;gap:0.5rem;margin-top:0.8rem;flex-wrap:wrap;">
+        <button class="btn-add-ing" onclick="clearAllDishes()" style="background:#fee;">🗑️ 清空所有</button>
+        <button class="btn-add-ing" onclick="loadCompareExample()" style="border-color:var(--gold);color:var(--gold-dark);">📋 重新加载示例</button>
+      </div>
     </div>
   </div>
 
   <!-- ============ TAB 3: 保本分析 ============ -->
   <div id="tab-breakeven" class="calc-tab-content">
+    <div class="calc-tab-intro">
+      <h3>📈 保本分析</h3>
+      <p>每个月固定开销（租金+人工+水电）要卖多少份菜才能回本？<br>输入固定成本和每份利润，马上知道答案。</p>
+    </div>
     <div class="calc-panel" style="max-width:500px;margin:0 auto;">
       <div class="calc-field">
         <label>🏠 每月固定成本 (RM)</label>
@@ -137,9 +149,12 @@
       <div class="calc-field">
         <label>🍽️ 平均每份净利润 (RM)</label>
         <span class="field-hint">用成本卡算出来每道菜赚多少，取平均值</span>
-        <input type="number" id="profitPerBE" placeholder="例：8.50" min="0" step="0.5">
+        <input type="number" id="profitPerBE" placeholder="例：4.00" min="0" step="0.5">
       </div>
-      <button class="calc-btn-calc" onclick="calcBreakeven()">📈 算保本点</button>
+      <div style="display:flex;gap:0.5rem;">
+        <button class="calc-btn-calc" onclick="calcBreakeven()" style="flex:1;">📈 算保本点</button>
+        <button class="calc-btn-example" onclick="loadBExample()" style="flex:0;white-space:nowrap;padding:0.7rem 1rem;">📋 示例</button>
+      </div>
 
       <div id="beResult" style="display:none;margin-top:1.5rem;">
         <div class="be-big" id="beMonthly">— 份/月</div>
@@ -346,6 +361,13 @@ function clearAllDishes() {
 }
 
 // ========== Breakeven ==========
+const BE_EXAMPLE = { fixed: 12000, profit: 4.00 };
+
+function loadBExample() {
+  document.getElementById('fixedCostBE').value = BE_EXAMPLE.fixed;
+  document.getElementById('profitPerBE').value = BE_EXAMPLE.profit;
+  calcBreakeven();
+}
 function calcBreakeven() {
   const fixed = parseFloat(document.getElementById('fixedCostBE').value) || 0;
   const profit = parseFloat(document.getElementById('profitPerBE').value) || 0;
@@ -378,6 +400,12 @@ const EXAMPLE_DISH = {
   ]
 };
 
+const COMPARE_EXAMPLES = [
+  { name: '咖喱鸡饭', foodCost: 4.44, sellPrice: 10.00, otherCost: 1.50, totalCost: 5.94 },
+  { name: '炒粿条', foodCost: 2.80, sellPrice: 7.00, otherCost: 1.20, totalCost: 4.00 },
+  { name: '炸鸡椰浆饭', foodCost: 3.60, sellPrice: 8.00, otherCost: 1.00, totalCost: 4.60 },
+];
+
 function loadExample() {
   document.getElementById('dishName').value = EXAMPLE_DISH.name;
   document.getElementById('sellPrice').value = EXAMPLE_DISH.sellPrice;
@@ -394,6 +422,14 @@ function loadExample() {
 
   // Auto-calculate
   calcSingleDish();
+}
+
+function loadCompareExample() {
+  localStorage.setItem('jbkitchen_dishes', JSON.stringify(COMPARE_EXAMPLES));
+  renderCompareTable();
+  // Switch to compare tab visual feedback
+  const btn = document.querySelector('[onclick*="compare"]');
+  if (btn) btn.textContent = '📊 多菜对比 (3)';
 }
 
 // ========== Init ==========
