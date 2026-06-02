@@ -79,7 +79,7 @@ body {
 }
 .nav-menu a:hover { color: var(--gold); }
 
-.nav-actions { flex-shrink: 0; }
+.nav-actions { flex-shrink: 0; display: flex; align-items: center; gap: 0.5rem; }
 
 /* ── Language Picker ── */
 .lang-picker { position: relative; display: inline-block; }
@@ -430,9 +430,18 @@ body {
   flex-shrink: 0;
 }
 .gc-icon svg { width: 22px; height: 22px; }
+/* Guide icon backgrounds */
 .gc-halal-cert { background: linear-gradient(135deg, #166534, #22a34a); }
 .gc-jb-license { background: linear-gradient(135deg, #0f766e, #14b8a6); }
 .gc-frozen-food-guide { background: linear-gradient(135deg, #d97706, #f59e0b); }
+.gc-cold-storage-temperature-standards { background: linear-gradient(135deg, #0284c7, #38bdf8); }
+.gc-employee-epf-socso-eis-2025 { background: linear-gradient(135deg, #7c3aed, #a78bfa); }
+.gc-food-handling-certificate { background: linear-gradient(135deg, #0f766e, #2dd4bf); }
+.gc-frozen-food-import-permit-malaysia { background: linear-gradient(135deg, #b45309, #fbbf24); }
+.gc-haccp-vs-iso-22000 { background: linear-gradient(135deg, #be123c, #fb7185); }
+.gc-mesti-certification { background: linear-gradient(135deg, #1d4ed8, #60a5fa); }
+.gc-sst-service-tax-restaurant { background: linear-gradient(135deg, #854d0e, #facc15); }
+.gc-start-frozen-food-business { background: linear-gradient(135deg, #15803d, #4ade80); }
 .gc-body { min-width: 0; }
 .gc-title {
   display: block;

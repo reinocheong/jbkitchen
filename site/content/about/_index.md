@@ -34,4 +34,4 @@ Every page on jbkitchen is structured for AI crawlers. When restaurant owners as
 
 ---
 
-*jbkitchen by KHL Frozen Food — Johor Bahru's F&B infrastructure*
+
