@@ -1,0 +1,11 @@
+[2026-06-02T08:05:46.252Z] [Jobs Johor Bahru JJB] 错误: page.goto: Target page, context or browser has been closed
+Call log:
+  - navigating to "https://www.
+[2026-06-02T08:06:07.820Z] FB Job Scraper 启动
+[2026-06-02T08:06:07.821Z] [Chef-Tukang Masak Restoran JB] 开始
+[2026-06-02T08:06:23.950Z] [Chef-Tukang Masak Restoran JB] 2 条
+[2026-06-02T08:06:24.033Z]   → 相关: 1/2
+[2026-06-02T08:06:24.034Z] [Jawatan Kosong Restoran JB] 开始
+[2026-06-02T08:06:39.232Z] [Jawatan Kosong Restoran JB] 4 条
+[2026-06-02T08:06:39.324Z]   → 相关: 0/4
+[2026-06-02T08:06:39.325Z] [Kerja Kosong Hotel JB] 开始
