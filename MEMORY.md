@@ -19,10 +19,11 @@ CI 中 git push 会自动推送 `docs/` 内容。
 部分马来西亚 RSS 源（BERNAMA 等）经常超时或返回空。
 当前策略：主用 TechCrunch + HN + API fallback 兜底。
 
-### 手机端 GitHub Pages 白屏
+### 手机端 GitHub Pages 白屏 — ✅ 已修复
 用户小米手机访问 GitHub Pages 出现白屏，桌面 Chrome 正常。
-可能原因：DNS 缓存、GitHub Pages CDN 节点问题、浏览器兼容性。
-排查方向：清缓存、隐私模式、确认 URL 正确。
+**根因：** Hugo 非 Jekyll 站点缺少 `.nojekyll` 文件 → GitHub Pages 运行 Jekyll 处理 docs/ 目录，输出空壳页面。
+**修复：** 在 docs/ 目录添加 `.nojekyll` 文件（空文件），禁止 Jekyll 处理。
+**教训：** 任何非 Jekyll 站点（Hugo、纯 HTML/CSS 等）用 GitHub Pages 部署时，必须在源目录放 `.nojekyll`。
 
 ### CountAPI 免费版限制
 CountAPI 免费版有请求频率和存储限制。不能用做精确统计，只适合展示趋势。
