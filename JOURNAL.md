@@ -1,18 +1,17 @@
 # JOURNAL.md
 
-## 2026-06-02 — 项目初始化
+## 2026-06-02 — 项目初始化 + 重新设计
 
 **操作人：AI**
 
-- 创建 `jbkitchen/` 项目目录
-- Hugo 站点初始化和配配置（深绿+金色主题）
-- 成本计算器（纯前端 JS）
-- 供应商目录模板（KHL 置顶）
-- KHL 详情页（产品展示 + WhatsApp 表单）
-- 3 篇经营指南（清真认证 / 执照清单 / 冷冻采购）
-- GitHub Pages 部署到 `reinocheong.github.io/jbkitchen/`
-- 自动化脚本：新闻聚合 + 汇率追踪 + 主调度器
-- SSOT 文档补全：README.md / ARCHITECTURE.md / DEPLOY.md / USER.md / TODO.md / JOURNAL.md / MEMORY.md
-- 代码合规修正：模块化拆分（news_fetcher + news_filter）+ 双日志（`.logs/error.log`）
+- 创建项目和 Hugo 骨架
+- 成本计算器、供应商目录、3 篇指南
+- GitHub Pages 部署
+- 自动化脚本：新闻聚合 + 汇率追踪
+- SSOT 文档体系补全
 
-**待办：** 见 TODO.md
+**之后 Reino 反馈：**
+1. 需要按协议 SSOT 开发 → 补了 7 文档 + 代码模块拆分
+2. 设计太毛坯 → 重新设计为人才平台方向（厨师简历 + 招聘 + 工具 + KHL 引流）
+3. 新增厨师简历模块：列表页、详情页、提交流表单（6 个样本数据）
+4. 首页 Hero 改为两条清晰路径：找厨师 / 找工作
