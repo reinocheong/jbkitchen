@@ -4,6 +4,17 @@
 {{- $items := $jobs.items | default slice -}}
 <div class="chef-list-page">
 
+  <!-- 免费挂简历 -->
+  <section class="section" style="padding-top:0;">
+    <div style="background:linear-gradient(135deg,var(--green-800),var(--green-600));border-radius:var(--radius);padding:2rem;text-align:center;color:#fff;margin-bottom:2rem;">
+      <h2 style="color:#fff;margin-bottom:0.5rem;">📝 免费挂简历</h2>
+      <p style="opacity:0.9;margin-bottom:1.5rem;">让新山 50+ 餐厅老板直接找到你</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScJVkyYraKTstINyqyZDlA_3wJNCVj6ohHOMCs4Gtv6nChRBw/viewform" target="_blank" rel="noopener" class="btn" style="background:var(--gold);color:var(--green-900);font-weight:700;padding:0.7rem 2rem;border-radius:var(--radius-sm);text-decoration:none;display:inline-block;">
+        填写简历 →
+      </a>
+    </div>
+  </section>
+
   <!-- 求职者：厨师简历 -->
   {{- if $chefs }}
   <section class="section" style="padding-top:0;">
