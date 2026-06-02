@@ -7,17 +7,21 @@
   <meta name="description" content="{{ .Param "description" | default .Site.Params.description }}">
   <link rel="stylesheet" href="/css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
   <header class="site-header">
     <nav class="nav">
-      <a href="/" class="logo">🍳 <span class="logo-text">JB Kitchen</span></a>
+      <a href="/" class="logo">🍳 <span class="logo-text">jbkitchen</span></a>
       <ul class="nav-menu">
-        {{ range .Site.Menus.main }}
-        <li><a href="{{ .URL }}">{{ .Name }}</a></li>
-        {{ end }}
+        <li><a href="/chefs/">👨‍🍳 厨师简历</a></li>
+        <li><a href="/suppliers/">🏪 供应商</a></li>
+        <li><a href="/calculator/">🧮 成本计算</a></li>
+        <li><a href="/guides/">📋 指南</a></li>
       </ul>
+      <div class="nav-actions">
+        <a href="/chefs/submit/" class="btn btn-primary btn-sm">📝 免费挂简历</a>
+      </div>
     </nav>
   </header>
 
@@ -26,20 +30,30 @@
   </main>
 
   <footer class="site-footer">
-    <div class="footer-content">
-      <div class="footer-brand">
-        <h3>JB Kitchen</h3>
-        <p>新山餐饮经营工具与指南</p>
+    <div class="footer-grid">
+      <div>
+        <h3>🍳 jbkitchen</h3>
+        <p>新山餐饮人才与服务平台</p>
+        <p class="footer-tagline">为厨师找工作 · 为老板找人才 · 为餐厅找供应商</p>
+      </div>
+      <div>
+        <h4>快速入口</h4>
+        <ul>
+          <li><a href="/chefs/">👨‍🍳 浏览厨师简历</a></li>
+          <li><a href="/chefs/submit/">📝 免费挂简历</a></li>
+          <li><a href="/suppliers/">🏪 供应商目录</a></li>
+          <li><a href="/calculator/">🧮 成本计算器</a></li>
+        </ul>
       </div>
       <div class="footer-khl">
         <h4>🥩 推荐供应商</h4>
         <p><strong>{{ .Site.Params.khl_name }}</strong></p>
         <p>{{ .Site.Params.khl_desc }}</p>
-        <p><a href="{{ .Site.Params.khl_whatsapp }}" class="btn" target="_blank">📞 联系报价</a></p>
+        <a href="/suppliers/khl-frozen-food/" class="btn btn-primary btn-sm">📞 获取报价</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; {{ now.Year }} JB Kitchen. Powered by KHL Frozen Food.</p>
+      <p>&copy; {{ now.Year }} jbkitchen · Powered by KHL Frozen Food</p>
     </div>
   </footer>
 </body>

@@ -1,0 +1,101 @@
+{{ define "main" }}
+<div class="submit-page">
+  <h1>📝 免费挂简历</h1>
+  <p class="subtitle">填写资料后，你的简历会展示在新山餐厅老板面前</p>
+
+  <div class="form-card">
+    <form id="chefForm">
+      <div class="form-group">
+        <label>你的名字 *</label>
+        <input type="text" id="name" placeholder="如：陈小明" required>
+      </div>
+      <div class="form-group">
+        <label>手机号 *</label>
+        <input type="tel" id="phone" placeholder="012-345 6789" required>
+        <p class="form-hint">仅展示给登录后的雇主，不会公开显示</p>
+      </div>
+      <div class="form-group">
+        <label>厨艺专长 *</label>
+        <select id="specialty" required>
+          <option value="">请选择</option>
+          <option value="中餐">中餐</option>
+          <option value="西餐">西餐</option>
+          <option value="日料">日料</option>
+          <option value="烘焙">烘焙</option>
+          <option value="马来餐">马来餐</option>
+          <option value="印度餐">印度餐</option>
+          <option value="综合">综合/多种菜系</option>
+          <option value="其他">其他</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>经验年限 *</label>
+        <select id="exp" required>
+          <option value="">请选择</option>
+          <option value="1">1年以下</option>
+          <option value="2">2-3年</option>
+          <option value="5">3-5年</option>
+          <option value="8">5-8年</option>
+          <option value="10">8年以上</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>所在地区 *</label>
+        <input type="text" id="location" placeholder="如：新山 Johor Bahru" required>
+      </div>
+      <div class="form-group">
+        <label>期望薪资</label>
+        <input type="text" id="salary" placeholder="如：RM 3000 - RM 4500">
+      </div>
+      <div class="form-group">
+        <label>最快到岗时间</label>
+        <select id="available">
+          <option value="随时">随时</option>
+          <option value="两周内">两周内</option>
+          <option value="一个月内">一个月内</option>
+          <option value="面议">面议</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>自我介绍</label>
+        <textarea id="desc" placeholder="简单介绍你的经历、拿手菜、曾任餐厅……"></textarea>
+      </div>
+      <div class="form-submit">
+        <button type="submit" class="btn btn-primary btn-lg">📩 提交简历</button>
+        <p class="form-hint" style="margin-top:0.8rem;">提交后我们会在 24 小时内审核上线</p>
+      </div>
+    </form>
+    <div id="submitSuccess" style="display:none;text-align:center;padding:2rem;">
+      <div style="font-size:3rem;margin-bottom:1rem;">✅</div>
+      <h3 style="color:var(--green-700);margin-bottom:0.5rem;">简历已提交！</h3>
+      <p style="color:var(--text-3);">审核通过后就会展示在简历列表中</p>
+      <p style="color:var(--text-3);margin-top:1rem;">有任何问题可联系 KHL 查询进度</p>
+      <a href="/suppliers/khl-frozen-food/" class="btn btn-primary" style="margin-top:1rem;">联系 KHL</a>
+    </div>
+  </div>
+</div>
+
+<script>
+document.getElementById('chefForm')?.addEventListener('submit', function(e) {
+  e.preventDefault();
+  const data = {
+    name: document.getElementById('name').value,
+    phone: document.getElementById('phone').value,
+    specialty: document.getElementById('specialty').value,
+    exp: document.getElementById('exp').value,
+    location: document.getElementById('location').value,
+    salary: document.getElementById('salary').value,
+    available: document.getElementById('available').value,
+    desc: document.getElementById('desc').value,
+  };
+
+  const msg = encodeURIComponent(
+    `🍳 新厨师简历\n姓名：${data.name}\n电话：${data.phone}\n专长：${data.specialty}\n经验：${data.exp}年\n地区：${data.location}\n薪资：${data.salary}\n到岗：${data.available}\n介绍：${data.desc}`
+  );
+
+  window.open(`{{ .Site.Params.khl_whatsapp }}?text=${msg}`, '_blank');
+  document.getElementById('chefForm').style.display = 'none';
+  document.getElementById('submitSuccess').style.display = 'block';
+});
+</script>
+{{ end }}
