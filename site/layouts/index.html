@@ -34,28 +34,68 @@
     <h2>📡 行业动态</h2>
   </div>
   <div class="live-grid">
+
+    <!-- 💱 汇率卡片 -->
     {{- if $prices.fx }}
     <div class="live-card">
       <h3>💱 汇率</h3>
       <div class="price-list">
-        <div class="price-row"><span>USD/MYR</span><strong>{{ $prices.fx.USD_MYR }}</strong></div>
-        <div class="price-row"><span>CNY/MYR</span><strong>{{ $prices.fx.MYR_CNY }}</strong></div>
-        <div class="price-row"><span>SGD/MYR</span><strong>{{ $prices.fx.MYR_SGD }}</strong></div>
+        <div class="price-row"><span>USD/MYR</span><strong class="text-gold">{{ $prices.fx.USD_MYR }}</strong></div>
+        <div class="price-row"><span>CNY/MYR</span><strong class="text-gold">{{ $prices.fx.CNY_MYR }}</strong></div>
+        <div class="price-row"><span>SGD/MYR</span><strong class="text-gold">{{ $prices.fx.SGD_MYR }}</strong></div>
       </div>
       <p class="live-updated">更新：{{ $prices.updated }}</p>
     </div>
     {{- end }}
-    {{- if $news }}
+
+    <!-- 📊 CPI 通胀卡片 -->
+    {{- if $prices.cpi }}
     <div class="live-card">
-      <h3>📰 最新资讯</h3>
-      <ul class="news-list">
-        {{- range first 4 $news }}
-        <li><a href="{{ .url }}" target="_blank">{{ .title }}</a></li>
+      <h3>📊 CPI 通胀指数</h3>
+      <div class="price-list">
+        {{- range $key, $val := $prices.cpi }}
+        <div class="price-row">
+          <span>{{ $val.label }}</span>
+          <strong>
+            {{- if $val.inflation_yoy }}
+              {{- if gt $val.inflation_yoy 0.0 }}
+                <span style="color:#e74c3c;">▲ {{ lang.FormatNumber 1 $val.inflation_yoy }}%</span>
+              {{- else if lt $val.inflation_yoy 0.0 }}
+                <span style="color:#27ae60;">▼ {{ lang.FormatNumber 1 (math.Abs $val.inflation_yoy) }}%</span>
+              {{- else }}
+                <span style="color:#7f8c8d;">— 0.0%</span>
+              {{- end }}
+            {{- else }}
+              <span class="text-muted">—</span>
+            {{- end }}
+          </strong>
+        </div>
         {{- end }}
-      </ul>
-      <p class="live-updated">{{ len $news }} 条自动采集 · <a href="{{ "news/" | absURL }}" style="color:var(--green-600);">更多 →</a></p>
+      </div>
+      <p class="live-updated">数据来源：DOSM · {{ $prices.updated }}</p>
     </div>
     {{- end }}
+
+    <!-- 📰 最新新闻列表 -->
+    {{- if $news.items }}
+    <div class="live-card live-card-wide">
+      <h3>📰 最新资讯</h3>
+      <ul class="news-list">
+        {{- range first 5 $news.items }}
+        <li class="news-item">
+          <a href="{{ .url }}" target="_blank" rel="noopener" class="news-link">{{ .title }}</a>
+          <span class="news-meta">
+            {{- if .source }}<span class="news-source">{{ .source }}</span>{{- end }}
+            {{- if .published }}<span class="news-date">{{ .published }}</span>{{- end }}
+            {{- if .category }}<span class="news-category">{{ .category }}</span>{{- end }}
+          </span>
+        </li>
+        {{- end }}
+      </ul>
+      <p class="live-updated">{{ len $news.items }} 条自动采集 · 更新：{{ $news.updated }}</p>
+    </div>
+    {{- end }}
+
   </div>
 </section>
 {{- end }}
