@@ -78,7 +78,34 @@ body {
 }
 .nav-menu a:hover { color: var(--gold); }
 
-.nav-actions { flex-shrink: 0; }
+.nav-actions { flex-shrink: 0; display: flex; align-items: center; gap: 0.3rem; }
+
+/* ---- Language Picker ---- */
+.lang-picker { position: relative; display: inline-flex; }
+.lang-btn {
+  background: none; border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 6px; padding: 2px 6px; cursor: pointer;
+  font-size: 16px; line-height: 1;
+}
+.lang-btn:hover { background: rgba(255,255,255,0.12); }
+.lang-dropdown {
+  display: none; position: absolute; right: 0; top: 100%;
+  margin-top: 4px; background: #fff; border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15); overflow: hidden;
+  z-index: 200; min-width: 120px;
+}
+.lang-dropdown.show { display: block; }
+.lang-dropdown a {
+  display: block; padding: 8px 14px;
+  color: #333 !important; text-decoration: none !important;
+  font-size: 0.82rem;
+}
+.lang-dropdown a:hover { background: #f0fdf4; }
+.lang-dropdown a + a { border-top: 1px solid #eee; }
+
+/* ---- Hide Google Translate Banner ---- */
+.goog-te-banner-frame { display: none !important; }
+body { top: 0px !important; }
 
 /* ---- Hero ---- */
 .hero {
@@ -109,7 +136,7 @@ body {
   justify-content: center;
   flex-wrap: wrap;
 }
-.btn-hero {
+.hero-btn {
   display: flex;
   align-items: center;
   gap: 0.8rem;
@@ -119,28 +146,52 @@ body {
   transition: all 0.25s;
   min-width: 200px;
 }
-.btn-hero-primary {
+.hero-btn-primary {
   background: rgba(255,255,255,0.12);
   border: 1px solid rgba(255,255,255,0.2);
   color: #fff;
 }
-.btn-hero-primary:hover {
+.hero-btn-primary:hover {
   background: rgba(255,255,255,0.2);
   transform: translateY(-2px);
 }
-.btn-hero-secondary {
+.hero-btn-secondary {
   background: rgba(212,168,67,0.15);
   border: 1px solid rgba(212,168,67,0.3);
   color: var(--gold-light);
 }
-.btn-hero-secondary:hover {
+.hero-btn-secondary:hover {
   background: rgba(212,168,67,0.25);
   transform: translateY(-2px);
 }
-.btn-hero-icon { font-size: 1.6rem; }
-.btn-hero-text { text-align: left; }
-.btn-hero-title { display: block; font-weight: 700; font-size: 1rem; }
-.btn-hero-desc { display: block; font-size: 0.75rem; opacity: 0.7; margin-top: 1px; }
+.hero-btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.hero-btn-body { text-align: left; }
+.hero-btn-title,
+.hero-btn-title:link,
+.hero-btn-title:visited {
+  display: block;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #ffffff !important;
+}
+.hero-btn-desc {
+  display: block;
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.55) !important;
+  margin-top: 1px;
+}
 
 /* ---- Buttons ---- */
 .btn-primary {
@@ -370,6 +421,8 @@ body {
   font-size: 0.7rem;
   padding: 0.15rem 0.45rem;
   border-radius: 4px;
+}
+
   /* ── Job listing page ── */
   .page-jobs { max-width: 720px; margin: 0 auto; padding: 0 1rem 3rem; }
   .cta-banner {
@@ -918,7 +971,7 @@ body {
   .nav-menu { order: 3; width: 100%; justify-content: center; gap: 0.6rem; }
   .nav-actions { display: none; }
   .hero h1 { font-size: 1.8rem; }
-  .btn-hero { min-width: 0; flex: 1; padding: 0.8rem 1rem; }
+  .hero-btn { min-width: 0; flex: 1; padding: 0.8rem 1rem; }
   .chef-grid { grid-template-columns: 1fr; }
   .live-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
