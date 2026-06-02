@@ -30,7 +30,7 @@
 - [x] 首页行业动态板块：汇率 + DOSM CPI + Google News RSS + WhatsApp Channel 鸡价
 - [x] WhatsApp Channel 自动抓取：Baileys 监听频道 → 解析价格 → /0.9 计算 → 网站显示
 - [x] setup/ 目录 + SHEET_SETUP_GUIDE.md（Google Sheet 部署指南）
-- [x] JB 餐饮招聘聚合：Jora / Hiredly / Maukerja / MyFutureJobs
+- [x] JB 餐饮招聘聚合：Jora / Hiredly / Maukerja / MyFutureJobs / JobStreet
 - [x] 招聘数据 AI 可搜索化：ID、分类、技能、规范化字段
 - [x] Hugo list.html 模板更新：分类标签、薪资格式化、来源彩色徽章
 - [x] 全站英文化 + Google Translate 小图标（导航栏右侧）
