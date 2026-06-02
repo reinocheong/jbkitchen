@@ -4,12 +4,22 @@ const fs = require('fs');
 const path = require('path');
 const { chromium } = require('playwright');
 
-const COOKIES = [
-  { name: 'c_user', value: '100000390330536', domain: '.facebook.com', path: '/' },
-  { name: 'xs', value: '22%3ABP076DDNtD7PnQ%3A2%3A1773550824%3A-1%3A-1%3A%3AAcw-mSgGoEFZAI_4rPrQWnZdsDrepQ1MED6H7hony9w', domain: '.facebook.com', path: '/' },
-  { name: 'fr', value: '11lkkMhtF2En5XJeD.AWeKxawEKCkeI_s_RFZZDjCg3hFSAcCmvKx2epfkf63Jt-qXC_U.BqAmQE..AAA.0.0.BqAmQE.AWcmtemPt2EE7myVwQ5QLmlSAr0', domain: '.facebook.com', path: '/' },
-  { name: 'presence', value: 'C%7B%22t3%22%3A%5B%5D%2C%22utc3%22%3A1778541574416%2C%22v%22%3A1%7D', domain: '.facebook.com', path: '/' },
-];
+// Cookies loaded from fb_cookies.json (gitignored — never commit cookies to git)
+let COOKIES = [];
+const COOKIE_FILE = path.join(__dirname, 'fb_cookies.json');
+try {
+  const raw = fs.readFileSync(COOKIE_FILE, 'utf-8');
+  const data = JSON.parse(raw);
+  COOKIES = [
+    { name: 'c_user', value: data.c_user, domain: '.facebook.com', path: '/' },
+    { name: 'xs', value: data.xs, domain: '.facebook.com', path: '/' },
+    { name: 'fr', value: data.fr, domain: '.facebook.com', path: '/' },
+    { name: 'presence', value: data.presence, domain: '.facebook.com', path: '/' },
+  ];
+} catch (e) {
+  console.error(`[fb_job_scraper] ❌ Cannot read ${COOKIE_FILE}: ${e.message}`);
+  process.exit(1);
+}
 
 const GROUPS = [
   { id: '1876719386899909', name: 'Chef-Tukang Masak Restoran JB' },
