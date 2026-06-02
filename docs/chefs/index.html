@@ -1,933 +1,125 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chef Talent Pool | JB Kitchen — 新山餐饮经营指南</title>
-  <meta name="description" content="新山餐饮经营工具与指南 — 成本计算器、供应商目录、经营攻略，帮你开好一间餐厅">
-  <link rel="stylesheet" href="https://reinocheong.github.io/jbkitchen/css/style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
-
-  
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  </script>
-
-  
-  <script>
-    (function() {
-      var pageId = location.pathname.replace(/\/$/g, '') || '/';
-      var key = 'jbkitchen' + pageId.replace(/\//g, '-');
-      fetch('https://api.countapi.xyz/hit/jbkitchen/' + encodeURIComponent(key))
-        .catch(function() {});
-    })();
-  </script>
-
-  
-  <script type="text/javascript">
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({
-        pageLanguage: 'en',
-        includedLanguages: 'zh-CN,ms',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-        autoDisplay: false
-      }, 'google_translate_element');
-      
-      var el = document.getElementById('google_translate_element');
-      if (el) el.style.display = 'none';
-    }
-  </script>
-  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-  <style>
-     
-    .goog-te-banner-frame { display: none !important; }
-    body { top: 0px !important; }
-    .goog-te-gadget-simple { display: none !important; }
-  </style>
-</head>
-<body>
-  <header class="site-header">
-    <nav class="nav">
-      <a href="https://reinocheong.github.io/jbkitchen/" class="logo"><span class="logo-text">jbkitchen</span></a>
-      <ul class="nav-menu">
-        <li><a href="https://reinocheong.github.io/jbkitchen/chefs/">Job Board</a></li>
-        <li><a href="https://reinocheong.github.io/jbkitchen/suppliers/">Suppliers</a></li>
-        <li><a href="https://reinocheong.github.io/jbkitchen/calculator/">Cost Calculator</a></li>
-        <li><a href="https://reinocheong.github.io/jbkitchen/guides/">Guides</a></li>
-      </ul>
-      <div class="nav-actions">
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLScJVkyYraKTstINyqyZDlA_3wJNCVj6ohHOMCs4Gtv6nChRBw/viewform" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Post Resume</a>
-        <div class="lang-picker">
-          <button class="lang-btn" onclick="toggleLang()">🌐</button>
-          <div class="lang-dropdown" id="langDropdown">
-            <a href="#" onclick="changeLang('en'); return false;">English</a>
-            <a href="#" onclick="changeLang('zh-CN'); return false;">中文</a>
-            <a href="#" onclick="changeLang('ms'); return false;">Bahasa Melayu</a>
-          </div>
-        </div>
-        <div id="google_translate_element" style="display:none"></div>
-      </div>
-      <script>
-      function toggleLang() {
-        document.getElementById('langDropdown').classList.toggle('show');
-      }
-      function changeLang(lang) {
-        var gt = document.querySelector('.goog-te-combo');
-        if (gt) {
-          gt.value = lang;
-          gt.dispatchEvent(new Event('change'));
-        }
-        document.getElementById('langDropdown').classList.remove('show');
-        return false;
-      }
-      window.addEventListener('click', function(e) {
-        if (!e.target.closest('.lang-picker')) {
-          var dd = document.getElementById('langDropdown');
-          if (dd) dd.classList.remove('show');
-        }
-      });
-      </script>
-    </nav>
-  </header>
-
-  <main>
-    <div class="page-jobs">
-
-  
-  <div class="cta-banner">
-    <h2>Post Your Resume — Free</h2>
-    <p>Let JB restaurant owners find you</p>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLScJVkyYraKTstINyqyZDlA_3wJNCVj6ohHOMCs4Gtv6nChRBw/viewform" target="_blank" rel="noopener" class="cta-btn">Submit Resume →</a>
-  </div>
-
-  
-  <section>
-    <div class="page-header">
-      <h1>JB F&amp;B Jobs</h1>
-      <div class="page-meta">
-        <span>60 jobs</span>
-        <span class="sep">·</span>
-        <span>Updated 2026-06-02</span>
-      </div>
-    </div>
-
-    <div class="job-list"><a href="https://my.hiredly.com/jobs-malaysia-luckin-coffee-malaysia-job-quality-assurance-executive-f-b-operations" target="_blank" rel="noopener" class="job-card">
-        <div class="job-card-body">
-          <div class="job-card-top">
-            <span class="job-title">Quality Assurance Executive (F&amp;B Operations)</span>
-            <span class="job-company">Luckin Coffee Malaysia</span>
-          </div>
-          <div class="job-card-meta"><span class="job-location">Johor Bahru</span>
-            <span class="job-date">2026-06-02</span>
-          </div>
-        </div>
-        <div class="job-card-side">
-          <span class="src-tag src-hiredly">Hiredly</span>
-        </div>
-      </a><a href="https://www.maukerja.my/job/26444255-pembantu-dapur" target="_blank" rel="noopener" class="job-card">
-        <div class="job-card-body">
-          <div class="job-card-top">
-            <span class="job-title">Pembantu Dapur</span>
-            <span class="job-company">Good Culture Sdn Bhd</span>
-          </div>
-          <div class="job-card-meta"><span class="job-salary">RM1,800/month</span><span class="job-location">Johor Bahru</span>
-            <span class="job-date">2026-06-02</span>
-          </div>
-        </div>
-        <div class="job-card-side">
-          <span class="src-tag src-maukerja">Maukerja</span>
-        </div>
-      </a><a href="https://www.facebook.com/groups/1605936663645487/posts/2067036930868789" target="_blank" rel="noopener" class="job-card">
-        <div class="job-card-body">
-          <div class="job-card-top">
-            <span class="job-title">Marina View Resort · 在 Marina View Resort · Masai · 分享对象： 公开小组 Craving for somet</span>
-            <span class="job-company"></span>
-          </div>
-          <div class="job-card-meta"><span class="job-location">Johor Bahru</span>
-            <span class="job-date">2026-06-02</span>
-          </div>
-        </div>
-        <div class="job-card-side">
-          <span class="src-tag src-facebook">Facebook</span>
-        </div>
-      </a><a href="https://www.facebook.com/groups/1605936663645487/posts/2067029930869489" target="_blank" rel="noopener" class="job-card">
-        <div class="job-card-body">
-          <div class="job-card-top">
-            <span class="job-title">Marina View Resort · 在 Marina View Resort · Masai · 分享对象： 公开小组 Craving something</span>
-            <span class="job-company"></span>
-          </div>
-          <div class="job-card-meta"><span class="job-location">Johor Bahru</span>
-            <span class="job-date">2026-06-02</span>
-          </div>
-        </div>
-        <div class="job-card-side">
-          <span class="src-tag src-facebook">Facebook</span>
-        </div>
-      </a><a href="https://www.facebook.com/groups/299562313742588/posts/2786220788410049" target="_blank" rel="noopener" class="job-card">
-        <div class="job-card-body">
-          <div class="job-card-top">
-            <span class="job-title">Cook</span>
-            <span class="job-company"></span>
-          </div>
-          <div class="job-card-meta"><span class="job-location">Johor Bahru</span>
-            <span class="job-date">2026-06-02</span>
-          </div>
-        </div>
-        <div class="job-card-side">
-          <span class="src-tag src-facebook">Facebook</span>
-        </div>
-      </a><a href="https://www.facebook.com/groups/1160503301973340/posts/1473209404036060" target="_blank" rel="noopener" class="job-card">
-        <div class="job-card-body">
-          <div class="job-card-top">
-            <span class="job-title">Ali Ali21小时 · 分享对象： 公开小组Saye berpengalaman macam masakan Asian..barat..cinaSaye </span>
-            <span class="job-company"></span>
-          </div>
-          <div class="job-card-meta"><span class="job-location">Johor Bahru</span>
-            <span class="job-date">2026-06-02</span>
-          </div>
-        </div>
-        <div class="job-card-side">
-          <span class="src-tag src-facebook">Facebook</span>
-        </div>
-      </a><a href="https://www.facebook.com/groups/1160503301973340/posts/1473209404036060" target="_blank" rel="noopener" class="job-card">
-        <div class="job-card-body">
-          <div class="job-card-top">
-            <span class="job-title">Ali Ali作者Boleh buka FB saye .Saye muslim .mulai Masak 1991.21小时赞回复 分享</span>
-            <span class="job-company"></span>
-          </div>
-          <div class="job-card-meta"><span class="job-location">Johor Bahru</span>
-            <span class="job-date">2026-06-02</span>
-          </div>
-        </div>
-        <div class="job-card-side">
-          <span class="src-tag src-facebook">Facebook</span>
-        </div>
-      </a><a href="https://www.facebook.com/groups/1736634896581390/posts/4533621126882739" target="_blank" rel="noopener" class="job-card">
-        <div class="job-card-body">
-          <div class="job-card-top">
-            <span class="job-title">Nur Syamimi10分钟 · 分享对象： 公开小组KURSUS LATIHAN PENGENDALIAN MAKANANSECARA ONLINE UND</span>
-            <span class="job-company"></span>
-          </div>
-          <div class="job-card-meta"><span class="job-salary">RM54/month</span><span class="job-location">Johor Bahru</span>
-            <span class="job-date">2026-06-02</span>
-          </div>
-        </div>
-        <div class="job-card-side">
-          <span class="src-tag src-facebook">Facebook</span>
-        </div>
-      </a><a href="https://www.facebook.com/groups/299562313742588/posts/2786830795015715" target="_blank" rel="noopener" class="job-card">
-        <div class="job-card-body">
-          <div class="job-card-top">
-            <span class="job-title">Commis</span>
-            <span class="job-company"></span>
-          </div>
-          <div class="job-card-meta"><span class="job-salary">RM120/month</span><span class="job-location">Johor Bahru</span>
-            <span class="job-date">2026-06-02</span>
-          </div>
-        </div>
-        <div class="job-card-side">
-          <span class="src-tag src-facebook">Facebook</span>
-        </div>
-      </a><a href="https://my.jora.com/job/Restaurant-Outlet-Ops-bd706cef02a3fb9c4f93fa20c445f957?abstract_type=original&amp;disallow=true&amp;fsv=true&amp;sl=Johor&#43;Bahru&#43;Johor&amp;sol_key=9b57409eb80654d590e0f23c83ee14a6&amp;sp=sserp_top&amp;sponsored=true&amp;sq=Chef&amp;sr=1&amp;tk=KmkB2Vow53TRXxbtnCb_-tWHcmwim6avFR4l6TlGZ&amp;trigger_source=serp" target="_blank" rel="noopener" class="job-card">
-        <div class="job-card-body">
-          <div class="job-card-top">
-            <span class="job-title">Restaurant Outlet Ops Lead – Johor</span>
-            <span class="job-company">Hunters International</span>
-          </div>
-          <div class="job-card-meta"><span class="job-salary">RM4,000/month</span><span class="job-location">Johor Bahru, Johor</span>
-            <span class="job-date">2026-05-31</span>
-          </div>
-        </div>
-        <div class="job-card-side">
-          <span class="src-tag src-jora">Jora</span>
-        </div>
-      </a><a href="https://www.maukerja.my/job/26352144-ketua-tukang-masak" target="_blank" rel="noopener" class="job-card">
-        <div class="job-card-body">
-          <div class="job-card-top">
-            <span class="job-title">Ketua Tukang Masak</span>
-            <span class="job-company">Billion Onsen Spa Sdn Bhd</span>
-          </div>
-          <div class="job-card-meta"><span class="job-salary">RM3,000/month</span><span class="job-location">Johor Bahru</span>
-            <span class="job-date">2026-05-31</span>
-          </div>
-        </div>
-        <div class="job-card-side">
-          <span class="src-tag src-maukerja">Maukerja</span>
-        </div>
-      </a><a href="https://my.jora.com/job/Outlet-Supervisor-cdc1d52d2afa190e5bacfce5eade0241?abstract_type=original&amp;disallow=true&amp;fsv=true&amp;sl=Johor&#43;Bahru&#43;Johor&amp;sol_key=99ec3afedaa057ce10f8e5a795e10b21&amp;sp=sserp_top&amp;sponsored=true&amp;sq=Chef&amp;sr=2&amp;tk=KmkB2Vow53TRXxbtnCb_-tWHcmwim6avFR4l6TlGZ&amp;trigger_source=serp" target="_blank" rel="noopener" class="job-card">
-        <div class="job-card-body">
-          <div class="job-card-top">
-            <span class="job-title">Restaurant Outlet Supervisor</span>
-            <span class="job-company">Hunters International</span>
-          </div>
-          <div class="job-card-meta"><span class="job-location">Johor Bahru, Johor</span>
-            <span class="job-date">2026-05-30</span>
-          </div>
-        </div>
-        <div class="job-card-side">
-          <span class="src-tag src-jora">Jora</span>
-        </div>
-      </a><a href="https://my.jora.com/job/Chef-de-Partie-319e7b510cdd45cd70260fa7340311fd?abstract_type=original&amp;disallow=true&amp;fsv=true&amp;sl=Johor&#43;Bahru&#43;Johor&amp;sol_key=1bee4392fb111648cf44530d35a05a03&amp;sp=serp&amp;sponsored=false&amp;sq=Chef&amp;sr=2&amp;tk=KmkB2Vow53TRXxbtnCb_-tWHcmwim6avFR4l6TlGZ&amp;trigger_source=serp" target="_blank" rel="noopener" class="job-card">
-        <div class="job-card-body">
-          <div class="job-card-top">
-            <span class="job-title">Chef De Partie, Butcher</span>
-            <span class="job-company">Sheraton</span>
-          </div>
-          <div class="job-card-meta"><span class="job-location">Johor Bahru, Johor</span>
-            <span class="job-date">2026-05-29</span>
-          </div>
-        </div>
-        <div class="job-card-side">
-          <span class="src-tag src-jora">Jora</span>
-        </div>
-      </a><a href="https://my.jora.com/job/Chef-de-Cuisine-44347dea7e34d9de537f4dd4a648d555?abstract_type=original&amp;disallow=true&amp;fsv=true&amp;sl=Johor&#43;Bahru&#43;Johor&amp;sol_key=0cf51c989ab3449db8c91a4f74b5f852&amp;sp=serp&amp;sponsored=false&amp;sq=Chef&amp;sr=4&amp;tk=KmkB2Vow53TRXxbtnCb_-tWHcmwim6avFR4l6TlGZ&amp;trigger_source=serp" target="_blank" rel="noopener" class="job-card">
-        <div class="job-card-body">
-          <div class="job-card-top">
-            <span class="job-title">Chef de Cuisine</span>
-            <span class="job-company">Sheraton</span>
-          </div>
-          <div class="job-card-meta"><span class="job-location">Johor Bahru, Johor</span>
-            <span class="job-date">2026-05-29</span>
-          </div>
-        </div>
-        <div class="job-card-side">
-          <span class="src-tag src-jora">Jora</span>
-        </div>
-      </a><a href="https://my.jora.com/job/Chef-de-Cuisine-fb0eced301cd46b778789517320d6f92?abstract_type=original&amp;disallow=true&amp;fsv=true&amp;sl=Johor&#43;Bahru&#43;Johor&amp;sol_key=b730ebc4c40e62705f4e02a99d5ad77a&amp;sp=serp&amp;sponsored=false&amp;sq=Chef&amp;sr=5&amp;tk=KmkB2Vow53TRXxbtnCb_-tWHcmwim6avFR4l6TlGZ&amp;trigger_source=serp" target="_blank" rel="noopener" class="job-card">
-        <div class="job-card-body">
-          <div class="job-card-top">
-            <span class="job-title">Chef de Cuisine</span>
-            <span class="job-company">Marriott International</span>
-          </div>
-          <div class="job-card-meta"><span class="job-location">Johor Bahru, Johor</span>
-            <span class="job-date">2026-05-29</span>
-          </div>
-        </div>
-        <div class="job-card-side">
-          <span class="src-tag src-jora">Jora</span>
-        </div>
-      </a><a href="https://candidates.myfuturejobs.gov.my/search-jobs/description?what=chef&amp;where=Johor%20Bahru&amp;jobId=b490f8bdab4e4a55b435ee237a88692b" target="_blank" rel="noopener" class="job-card">
-        <div class="job-card-body">
-          <div class="job-card-top">
-            <span class="job-title">Restaurant Supervisor -Southern Area / Johor Bharu</span>
-            <span class="job-company">Nando&#39;s Chickenland Malaysia Sdn Bhd</span>
-          </div>
-          <div class="job-card-meta"><span class="job-location">Johor Bahru, Johor</span>
-            <span class="job-date">2026-05-29</span>
-          </div>
-        </div>
-        <div class="job-card-side">
-          <span class="src-tag src-myfuturejobs">MyFutureJobs</span>
-        </div>
-      </a><a href="https://candidates.myfuturejobs.gov.my/search-jobs/description?what=chef&amp;where=Johor%20Bahru&amp;jobId=988717f05972438fbc751979bcda1a4d" target="_blank" rel="noopener" class="job-card">
-        <div class="job-card-body">
-          <div class="job-card-top">
-            <span class="job-title">Assistant Restaurant Manager - Southern Area / Johor Bharu</span>
-            <span class="job-company">Nando&#39;s Chickenland Malaysia Sdn Bhd</span>
-          </div>
-          <div class="job-card-meta"><span class="job-location">Johor Bahru, Johor</span>
-            <span class="job-date">2026-05-29</span>
-          </div>
-        </div>
-        <div class="job-card-side">
-          <span class="src-tag src-myfuturejobs">MyFutureJobs</span>
-        </div>
-      </a><a href="https://candidates.myfuturejobs.gov.my/search-jobs/description?what=chef&amp;where=Johor%20Bahru&amp;jobId=bdcb339682d048a4b27242d04aa417f0" target="_blank" rel="noopener" class="job-card">
-        <div class="job-card-body">
-          <div class="job-card-top">
-            <span class="job-title">Restaurant Junior Supervisor</span>
-            <span class="job-company">Local house sdn bhd</span>
-          </div>
-          <div class="job-card-meta"><span class="job-location">Johor Bahru, Johor</span>
-            <span class="job-date">2026-05-28</span>
-          </div>
-        </div>
-        <div class="job-card-side">
-          <span class="src-tag src-myfuturejobs">MyFutureJobs</span>
-        </div>
-      </a><a href="https://my.jora.com/job/Demi-Chef-d9ab9052410db95fe222c040b79089bd?abstract_type=original&amp;disallow=true&amp;fsv=true&amp;sl=Johor&#43;Bahru&#43;Johor&amp;sol_key=45196e1dcf96ebaf766dcc7c4ea33b4c&amp;sp=serp&amp;sponsored=false&amp;sq=Chef&amp;sr=6&amp;tk=KmkB2Vow53TRXxbtnCb_-tWHcmwim6avFR4l6TlGZ&amp;trigger_source=serp" target="_blank" rel="noopener" class="job-card">
-        <div class="job-card-body">
-          <div class="job-card-top">
-            <span class="job-title">Demi Chef (Cold Kitchen) - Renaissance Johor Bahru</span>
-            <span class="job-company">Renaissance Hotels</span>
-          </div>
-          <div class="job-card-meta"><span class="job-location">Johor Bahru, Johor</span>
-            <span class="job-date">2026-05-26</span>
-          </div>
-        </div>
-        <div class="job-card-side">
-          <span class="src-tag src-jora">Jora</span>
-        </div>
-      </a><a href="https://my.jora.com/job/Executive-Pastry-Chef-f9e4dfff3b8651c39f28a1bee8e0f759?abstract_type=original&amp;disallow=true&amp;fsv=true&amp;sl=Johor&#43;Bahru&#43;Johor&amp;sol_key=ba436dcf30b57240e675eba2187b4b73&amp;sp=serp&amp;sponsored=false&amp;sq=Chef&amp;sr=8&amp;tk=KmkB2Vow53TRXxbtnCb_-tWHcmwim6avFR4l6TlGZ&amp;trigger_source=serp" target="_blank" rel="noopener" class="job-card">
-        <div class="job-card-body">
-          <div class="job-card-top">
-            <span class="job-title">Executive Pastry Chef</span>
-            <span class="job-company">Grammage Foods Sdn bhd</span>
-          </div>
-          <div class="job-card-meta"><span class="job-salary">RM4,500/month</span><span class="job-location">Johor Bahru, Johor</span>
-            <span class="job-date">2026-05-26</span>
-          </div>
-        </div>
-        <div class="job-card-side">
-          <span class="src-tag src-jora">Jora</span>
-        </div>
-      </a><a href="https://my.jora.com/job/Demi-Chef-8d5cb27545eea564cb3ac4584dca3586?abstract_type=original&amp;disallow=true&amp;fsv=true&amp;sl=Johor&#43;Bahru&#43;Johor&amp;sol_key=7d5aecea2becae700533acda85891e59&amp;sp=sserp_bottom&amp;sponsored=true&amp;sq=Chef&amp;sr=5&amp;tk=KmkB2Vow53TRXxbtnCb_-tWHcmwim6avFR4l6TlGZ&amp;trigger_source=serp" target="_blank" rel="noopener" class="job-card">
-        <div class="job-card-body">
-          <div class="job-card-top">
-            <span class="job-title">Senior Commis Viennoiserie / Demi Chef</span>
-            <span class="job-company">LOAF ADAM SDN BHD</span>
-          </div>
-          <div class="job-card-meta"><span class="job-salary">RM2,300/month</span><span class="job-location">Johor Bahru, Johor</span>
-            <span class="job-date">2026-05-26</span>
-          </div>
-        </div>
-        <div class="job-card-side">
-          <span class="src-tag src-jora">Jora</span>
-        </div>
-      </a><a href="https://my.hiredly.com/jobs-malaysia-jy-spring-drink-sdn-bhd-job-senior-tearista" target="_blank" rel="noopener" class="job-card">
-        <div class="job-card-body">
-          <div class="job-card-top">
-            <span class="job-title">Senior Tearista</span>
-            <span class="job-company">JY Spring Drink Sdn Bhd</span>
-          </div>
-          <div class="job-card-meta"><span class="job-salary">RM2,400 - RM3,500/month</span><span class="job-location">Aeon Tebrau</span>
-            <span class="job-date">2026-05-26</span>
-          </div>
-        </div>
-        <div class="job-card-side">
-          <span class="src-tag src-hiredly">Hiredly</span>
-        </div>
-      </a><a href="https://my.jora.com/job/Chef-de-Partie-896805dc851374c02bcbe9aefa766058?abstract_type=original&amp;disallow=true&amp;fsv=true&amp;sl=Johor&#43;Bahru&#43;Johor&amp;sol_key=abc34b933c8cc702ac593b42780102ac&amp;sp=serp&amp;sponsored=false&amp;sq=Chef&amp;sr=7&amp;tk=KmkB2Vow53TRXxbtnCb_-tWHcmwim6avFR4l6TlGZ&amp;trigger_source=serp" target="_blank" rel="noopener" class="job-card">
-        <div class="job-card-body">
-          <div class="job-card-top">
-            <span class="job-title">Chef de Partie - Baker</span>
-            <span class="job-company">Marriott International</span>
-          </div>
-          <div class="job-card-meta"><span class="job-location">Johor Bahru, Johor</span>
-            <span class="job-date">2026-05-24</span>
-          </div>
-        </div>
-        <div class="job-card-side">
-          <span class="src-tag src-jora">Jora</span>
-        </div>
-      </a><a href="https://my.jora.com/job/Head-Chef-fba62b93fbed7b4d84346f5644176731?abstract_type=original&amp;disallow=true&amp;fsv=true&amp;sl=Johor&#43;Bahru&#43;Johor&amp;sol_key=76089592c02e03a88637761182b5777a&amp;sp=serp&amp;sponsored=false&amp;sq=Chef&amp;sr=1&amp;tk=KmkB2Vow53TRXxbtnCb_-tWHcmwim6avFR4l6TlGZ&amp;trigger_source=serp" target="_blank" rel="noopener" class="job-card">
-        <div class="job-card-body">
-          <div class="job-card-top">
-            <span class="job-title">Head Chef</span>
-            <span class="job-company">Kaysteaklobster</span>
-          </div>
-          <div class="job-card-meta"><span class="job-salary">RM5,000/month</span><span class="job-location">Johor Bahru, Johor</span>
-            <span class="job-date">2026-05-23</span>
-          </div>
-        </div>
-        <div class="job-card-side">
-          <span class="src-tag src-jora">Jora</span>
-        </div>
-      </a><a href="https://my.hiredly.com/jobs-malaysia-kaysteaklobster-sdn-bhd-job-sous-chef" target="_blank" rel="noopener" class="job-card">
-        <div class="job-card-body">
-          <div class="job-card-top">
-            <span class="job-title">Sous Chef</span>
-            <span class="job-company">KAYSTEAKLOBSTER SDN BHD</span>
-          </div>
-          <div class="job-card-meta"><span class="job-salary">RM4,000 - RM5,200/month</span><span class="job-location">SKS City Mall</span>
-            <span class="job-date">2026-05-23</span>
-          </div>
-        </div>
-        <div class="job-card-side">
-          <span class="src-tag src-hiredly">Hiredly</span>
-        </div>
-      </a><a href="https://my.hiredly.com/jobs-malaysia-kaysteaklobster-sdn-bhd-job-chef-de-partie" target="_blank" rel="noopener" class="job-card">
-        <div class="job-card-body">
-          <div class="job-card-top">
-            <span class="job-title">Chef De Partie</span>
-            <span class="job-company">KAYSTEAKLOBSTER SDN BHD</span>
-          </div>
-          <div class="job-card-meta"><span class="job-salary">RM2,800 - RM3,800/month</span><span class="job-location">SKS City Mall</span>
-            <span class="job-date">2026-05-23</span>
-          </div>
-        </div>
-        <div class="job-card-side">
-          <span class="src-tag src-hiredly">Hiredly</span>
-        </div>
-      </a><a href="https://my.hiredly.com/jobs-malaysia-kaysteaklobster-sdn-bhd-job-demi-chef" target="_blank" rel="noopener" class="job-card">
-        <div class="job-card-body">
-          <div class="job-card-top">
-            <span class="job-title">Demi Chef</span>
-            <span class="job-company">KAYSTEAKLOBSTER SDN BHD</span>
-          </div>
-          <div class="job-card-meta"><span class="job-salary">RM2,300 - RM3,000/month</span><span class="job-location">SKS City Mall</span>
-            <span class="job-date">2026-05-23</span>
-          </div>
-        </div>
-        <div class="job-card-side">
-          <span class="src-tag src-hiredly">Hiredly</span>
-        </div>
-      </a><a href="https://my.hiredly.com/jobs-malaysia-kaysteaklobster-sdn-bhd-job-commis-chef" target="_blank" rel="noopener" class="job-card">
-        <div class="job-card-body">
-          <div class="job-card-top">
-            <span class="job-title">Commis Chef</span>
-            <span class="job-company">KAYSTEAKLOBSTER SDN BHD</span>
-          </div>
-          <div class="job-card-meta"><span class="job-salary">RM2,000 - RM2,500/month</span><span class="job-location">SKS City Mall</span>
-            <span class="job-date">2026-05-23</span>
-          </div>
-        </div>
-        <div class="job-card-side">
-          <span class="src-tag src-hiredly">Hiredly</span>
-        </div>
-      </a><a href="https://my.hiredly.com/jobs-malaysia-kaysteaklobster-sdn-bhd-job-restaurant-manager-0" target="_blank" rel="noopener" class="job-card">
-        <div class="job-card-body">
-          <div class="job-card-top">
-            <span class="job-title">Restaurant Manager</span>
-            <span class="job-company">KAYSTEAKLOBSTER SDN BHD</span>
-          </div>
-          <div class="job-card-meta"><span class="job-salary">RM5,000 - RM6,500/month</span><span class="job-location">SKS City Mall JBCC</span>
-            <span class="job-date">2026-05-23</span>
-          </div>
-        </div>
-        <div class="job-card-side">
-          <span class="src-tag src-hiredly">Hiredly</span>
-        </div>
-      </a><a href="https://my.hiredly.com/jobs-malaysia-kaysteaklobster-sdn-bhd-job-service-crew-0" target="_blank" rel="noopener" class="job-card">
-        <div class="job-card-body">
-          <div class="job-card-top">
-            <span class="job-title">Service Crew</span>
-            <span class="job-company">KAYSTEAKLOBSTER SDN BHD</span>
-          </div>
-          <div class="job-card-meta"><span class="job-salary">RM2,300 - RM2,800/month</span><span class="job-location">SKS City Mall JBCC</span>
-            <span class="job-date">2026-05-23</span>
-          </div>
-        </div>
-        <div class="job-card-side">
-          <span class="src-tag src-hiredly">Hiredly</span>
-        </div>
-      </a><a href="https://my.jora.com/job/Head-Chef-3afe83a24ba49009e83106ac8547dfb2?abstract_type=original&amp;disallow=true&amp;fsv=true&amp;sl=Johor&#43;Bahru&#43;Johor&amp;sol_key=564ffa1b971ab87bc1c7091e88e800b0&amp;sp=sserp_bottom&amp;sponsored=true&amp;sq=Chef&amp;sr=4&amp;tk=KmkB2Vow53TRXxbtnCb_-tWHcmwim6avFR4l6TlGZ&amp;trigger_source=serp" target="_blank" rel="noopener" class="job-card">
-        <div class="job-card-body">
-          <div class="job-card-top">
-            <span class="job-title">Head Chef ( Nanyang &amp; Local Delight )</span>
-            <span class="job-company">Vivo Food Sdn Bhd</span>
-          </div>
-          <div class="job-card-meta"><span class="job-salary">RM5,000/month</span><span class="job-location">Johor Bahru, Johor</span>
-            <span class="job-date">2026-05-22</span>
-          </div>
-        </div>
-        <div class="job-card-side">
-          <span class="src-tag src-jora">Jora</span>
-        </div>
-      </a><a href="https://candidates.myfuturejobs.gov.my/search-jobs/description?what=chef&amp;where=Johor%20Bahru&amp;jobId=a6adff38fc384656af2f5c969e8e3f8f" target="_blank" rel="noopener" class="job-card">
-        <div class="job-card-body">
-          <div class="job-card-top">
-            <span class="job-title">Pembantu Dapur</span>
-            <span class="job-company">chendrasari niaga</span>
-          </div>
-          <div class="job-card-meta"><span class="job-location">Johor Bahru, Johor</span>
-            <span class="job-date">2026-05-22</span>
-          </div>
-        </div>
-        <div class="job-card-side">
-          <span class="src-tag src-myfuturejobs">MyFutureJobs</span>
-        </div>
-      </a><a href="https://my.hiredly.com/jobs-malaysia-the-chef-project-sdn-bhd-job-commis-ii-cdp" target="_blank" rel="noopener" class="job-card">
-        <div class="job-card-body">
-          <div class="job-card-top">
-            <span class="job-title">Commis II , CDP</span>
-            <span class="job-company">THE CHEF PROJECT SDN BHD</span>
-          </div>
-          <div class="job-card-meta"><span class="job-salary">RM2,000 - RM2,599/month</span><span class="job-location">Patisserie Central Kitchen by Project Chef</span>
-            <span class="job-date">2026-05-21</span>
-          </div>
-        </div>
-        <div class="job-card-side">
-          <span class="src-tag src-hiredly">Hiredly</span>
-        </div>
-      </a><a href="https://my.hiredly.com/jobs-malaysia-cha-lab-sdn-bhd-job-outlet-development-executive" target="_blank" rel="noopener" class="job-card">
-        <div class="job-card-body">
-          <div class="job-card-top">
-            <span class="job-title">Outlet Development Executive</span>
-            <span class="job-company">Cha Lab Sdn Bhd</span>
-          </div>
-          <div class="job-card-meta"><span class="job-salary">RM2,500 - RM3,500/month</span><span class="job-location">Johor Bahru</span>
-            <span class="job-date">2026-05-21</span>
-          </div>
-        </div>
-        <div class="job-card-side">
-          <span class="src-tag src-hiredly">Hiredly</span>
-        </div>
-      </a><a href="https://candidates.myfuturejobs.gov.my/search-jobs/description?what=chef&amp;where=Johor%20Bahru&amp;jobId=7c8e708e4cd34be4b2353f81f310de86" target="_blank" rel="noopener" class="job-card">
-        <div class="job-card-body">
-          <div class="job-card-top">
-            <span class="job-title">Commis Chef</span>
-            <span class="job-company">SERAI &amp; SPICES RESTORAN</span>
-          </div>
-          <div class="job-card-meta"><span class="job-location">Johor Bahru, Johor</span>
-            <span class="job-date">2026-05-21</span>
-          </div>
-        </div>
-        <div class="job-card-side">
-          <span class="src-tag src-myfuturejobs">MyFutureJobs</span>
-        </div>
-      </a><a href="https://candidates.myfuturejobs.gov.my/search-jobs/description?what=chef&amp;where=Johor%20Bahru&amp;jobId=605f30f8a6da49e1ada0a07bc4108115" target="_blank" rel="noopener" class="job-card">
-        <div class="job-card-body">
-          <div class="job-card-top">
-            <span class="job-title">KOREAN FOOD CHEF</span>
-            <span class="job-company">SUP BY SUPER KIMCHI SDN. BHD.</span>
-          </div>
-          <div class="job-card-meta"><span class="job-location">Johor Bahru, Johor</span>
-            <span class="job-date">2026-05-21</span>
-          </div>
-        </div>
-        <div class="job-card-side">
-          <span class="src-tag src-myfuturejobs">MyFutureJobs</span>
-        </div>
-      </a><a href="https://my.hiredly.com/jobs-malaysia-sup-by-superkimchi-job-recruiting-opening-members-for-jb-high-end-korean-restaurant" target="_blank" rel="noopener" class="job-card">
-        <div class="job-card-body">
-          <div class="job-card-top">
-            <span class="job-title">🔥 Recruiting Opening Members for JB High-end Korean Restaurant!</span>
-            <span class="job-company">SUP BY SUPERKIMCHI</span>
-          </div>
-          <div class="job-card-meta"><span class="job-salary">RM2,000 - RM5,000/month</span><span class="job-location">sks city mall jbcc</span>
-            <span class="job-date">2026-05-20</span>
-          </div>
-        </div>
-        <div class="job-card-side">
-          <span class="src-tag src-hiredly">Hiredly</span>
-        </div>
-      </a><a href="https://candidates.myfuturejobs.gov.my/search-jobs/description?what=chef&amp;where=Johor%20Bahru&amp;jobId=62b85dc809e4472eb3ab460ecc9f4462" target="_blank" rel="noopener" class="job-card">
-        <div class="job-card-body">
-          <div class="job-card-top">
-            <span class="job-title">Assistant Restaurant Manager - Mid Valley Southkey</span>
-            <span class="job-company">Nando&#39;s Chickenland Malaysia Sdn Bhd</span>
-          </div>
-          <div class="job-card-meta"><span class="job-location">Johor Bahru, Johor</span>
-            <span class="job-date">2026-05-20</span>
-          </div>
-        </div>
-        <div class="job-card-side">
-          <span class="src-tag src-myfuturejobs">MyFutureJobs</span>
-        </div>
-      </a><a href="https://candidates.myfuturejobs.gov.my/search-jobs/description?what=chef&amp;where=Johor%20Bahru&amp;jobId=dfe79731fc754bc785d023015843cca6" target="_blank" rel="noopener" class="job-card">
-        <div class="job-card-body">
-          <div class="job-card-top">
-            <span class="job-title">CHEF / CHEF ASSISTANT</span>
-            <span class="job-company">SHAJARAH BARAKAH SDN BHD</span>
-          </div>
-          <div class="job-card-meta"><span class="job-location">Johor Bahru, Johor</span>
-            <span class="job-date">2026-05-19</span>
-          </div>
-        </div>
-        <div class="job-card-side">
-          <span class="src-tag src-myfuturejobs">MyFutureJobs</span>
-        </div>
-      </a><a href="https://my.hiredly.com/jobs-malaysia-dragon-bliss-job-outlet-manager" target="_blank" rel="noopener" class="job-card">
-        <div class="job-card-body">
-          <div class="job-card-top">
-            <span class="job-title">Outlet Manager</span>
-            <span class="job-company">DRAGON BLISS</span>
-          </div>
-          <div class="job-card-meta"><span class="job-salary">RM4,000 - RM6,000/month</span><span class="job-location">SETIA TROPIKA</span>
-            <span class="job-date">2026-05-18</span>
-          </div>
-        </div>
-        <div class="job-card-side">
-          <span class="src-tag src-hiredly">Hiredly</span>
-        </div>
-      </a><a href="https://my.hiredly.com/jobs-malaysia-dragon-bliss-job-food-and-beverage-outlets-manager-0" target="_blank" rel="noopener" class="job-card">
-        <div class="job-card-body">
-          <div class="job-card-top">
-            <span class="job-title">Food and Beverage Outlets Manager</span>
-            <span class="job-company">DRAGON BLISS</span>
-          </div>
-          <div class="job-card-meta"><span class="job-salary">RM4,000 - RM6,000/month</span><span class="job-location">AUSTIN</span>
-            <span class="job-date">2026-05-18</span>
-          </div>
-        </div>
-        <div class="job-card-side">
-          <span class="src-tag src-hiredly">Hiredly</span>
-        </div>
-      </a><a href="https://candidates.myfuturejobs.gov.my/search-jobs/description?what=chef&amp;where=Johor%20Bahru&amp;jobId=d55a3c2c5ca64c98880ff09d2bf489de" target="_blank" rel="noopener" class="job-card">
-        <div class="job-card-body">
-          <div class="job-card-top">
-            <span class="job-title">DEMI CHEF JOHOR BAHRU</span>
-            <span class="job-company">JADE COMMERCIAL SERVICES</span>
-          </div>
-          <div class="job-card-meta"><span class="job-location">Johor Bahru, Johor</span>
-            <span class="job-date">2026-05-18</span>
-          </div>
-        </div>
-        <div class="job-card-side">
-          <span class="src-tag src-myfuturejobs">MyFutureJobs</span>
-        </div>
-      </a><a href="https://candidates.myfuturejobs.gov.my/search-jobs/description?what=chef&amp;where=Johor%20Bahru&amp;jobId=23daca8c2cd048e095741bd8236420dc" target="_blank" rel="noopener" class="job-card">
-        <div class="job-card-body">
-          <div class="job-card-top">
-            <span class="job-title">DEMI CHEF JOHOR BAHRU</span>
-            <span class="job-company">Job Elite TT Agency</span>
-          </div>
-          <div class="job-card-meta"><span class="job-location">Johor Bahru, Johor</span>
-            <span class="job-date">2026-05-18</span>
-          </div>
-        </div>
-        <div class="job-card-side">
-          <span class="src-tag src-myfuturejobs">MyFutureJobs</span>
-        </div>
-      </a><a href="https://www.maukerja.my/job/26468461-lead-pastry-chef" target="_blank" rel="noopener" class="job-card">
-        <div class="job-card-body">
-          <div class="job-card-top">
-            <span class="job-title">Lead Pastry Chef</span>
-            <span class="job-company">Agensi Pekerjaan CKM Sdn Bhd</span>
-          </div>
-          <div class="job-card-meta"><span class="job-salary">RM8,000/month</span><span class="job-location">Johor Bahru</span>
-            <span class="job-date">2026-05-17</span>
-          </div>
-        </div>
-        <div class="job-card-side">
-          <span class="src-tag src-maukerja">Maukerja</span>
-        </div>
-      </a><a href="https://www.maukerja.my/job/26468459-senior-bakery-chef" target="_blank" rel="noopener" class="job-card">
-        <div class="job-card-body">
-          <div class="job-card-top">
-            <span class="job-title">Senior Bakery Chef</span>
-            <span class="job-company">Agensi Pekerjaan CKM Sdn Bhd</span>
-          </div>
-          <div class="job-card-meta"><span class="job-salary">RM8,000/month</span><span class="job-location">Johor Bahru</span>
-            <span class="job-date">2026-05-17</span>
-          </div>
-        </div>
-        <div class="job-card-side">
-          <span class="src-tag src-maukerja">Maukerja</span>
-        </div>
-      </a><a href="https://www.maukerja.my/job/26468460-head-baker" target="_blank" rel="noopener" class="job-card">
-        <div class="job-card-body">
-          <div class="job-card-top">
-            <span class="job-title">Head Baker</span>
-            <span class="job-company">Agensi Pekerjaan CKM Sdn Bhd</span>
-          </div>
-          <div class="job-card-meta"><span class="job-salary">RM8,000/month</span><span class="job-location">Johor Bahru</span>
-            <span class="job-date">2026-05-17</span>
-          </div>
-        </div>
-        <div class="job-card-side">
-          <span class="src-tag src-maukerja">Maukerja</span>
-        </div>
-      </a><a href="https://www.maukerja.my/job/26468462-master-baker" target="_blank" rel="noopener" class="job-card">
-        <div class="job-card-body">
-          <div class="job-card-top">
-            <span class="job-title">Master Baker</span>
-            <span class="job-company">Agensi Pekerjaan CKM Sdn Bhd</span>
-          </div>
-          <div class="job-card-meta"><span class="job-salary">RM8,000/month</span><span class="job-location">Johor Bahru</span>
-            <span class="job-date">2026-05-17</span>
-          </div>
-        </div>
-        <div class="job-card-side">
-          <span class="src-tag src-maukerja">Maukerja</span>
-        </div>
-      </a><a href="https://candidates.myfuturejobs.gov.my/search-jobs/description?what=chef&amp;where=Johor%20Bahru&amp;jobId=25947f5161054c9c99e46a5b9f6bfd4d" target="_blank" rel="noopener" class="job-card">
-        <div class="job-card-body">
-          <div class="job-card-top">
-            <span class="job-title">Sous Chef l Taman Pelangi, Johor Bahru l RM3000-RM3500</span>
-            <span class="job-company">KEY SOLUTIONS TEAM ADVISORY SDN. BHD.</span>
-          </div>
-          <div class="job-card-meta"><span class="job-location">Johor Bahru, Johor</span>
-            <span class="job-date">2026-05-16</span>
-          </div>
-        </div>
-        <div class="job-card-side">
-          <span class="src-tag src-myfuturejobs">MyFutureJobs</span>
-        </div>
-      </a><a href="https://www.maukerja.my/job/25833305-sous-chef-novotel-johor-bahru" target="_blank" rel="noopener" class="job-card">
-        <div class="job-card-body">
-          <div class="job-card-top">
-            <span class="job-title">Sous Chef- Novotel Johor Bahru</span>
-            <span class="job-company">Novotel Johor Bahru City Centre</span>
-          </div>
-          <div class="job-card-meta"><span class="job-location">Johor Bahru</span>
-            <span class="job-date">2026-05-13</span>
-          </div>
-        </div>
-        <div class="job-card-side">
-          <span class="src-tag src-maukerja">Maukerja</span>
-        </div>
-      </a><a href="https://candidates.myfuturejobs.gov.my/search-jobs/description?what=chef&amp;where=Johor%20Bahru&amp;jobId=afb4a0a8ba444404a26d5cd435c2cc62" target="_blank" rel="noopener" class="job-card">
-        <div class="job-card-body">
-          <div class="job-card-top">
-            <span class="job-title">Restaurant Supervisor - Aeon Tebrau City</span>
-            <span class="job-company">Nando&#39;s Chickenland Malaysia Sdn Bhd</span>
-          </div>
-          <div class="job-card-meta"><span class="job-location">Johor Bahru, Johor</span>
-            <span class="job-date">2026-05-13</span>
-          </div>
-        </div>
-        <div class="job-card-side">
-          <span class="src-tag src-myfuturejobs">MyFutureJobs</span>
-        </div>
-      </a><a href="https://candidates.myfuturejobs.gov.my/search-jobs/description?what=chef&amp;where=Johor%20Bahru&amp;jobId=062ab4b1046e493f9db702ec8bf56e19" target="_blank" rel="noopener" class="job-card">
-        <div class="job-card-body">
-          <div class="job-card-top">
-            <span class="job-title">TUKANG MASAK</span>
-            <span class="job-company">THAVAS MESS RESTAURANT</span>
-          </div>
-          <div class="job-card-meta"><span class="job-location">Johor Bahru, Johor</span>
-            <span class="job-date">2026-05-12</span>
-          </div>
-        </div>
-        <div class="job-card-side">
-          <span class="src-tag src-myfuturejobs">MyFutureJobs</span>
-        </div>
-      </a><a href="https://my.jora.com/job/Head-Chef-bf4b29983f8668b16e35c65005df02c0?abstract_type=original&amp;disallow=true&amp;fsv=true&amp;sl=Johor&#43;Bahru&#43;Johor&amp;sol_key=65b020d0185cd0a14658214b7fe9fe02&amp;sp=serp&amp;sponsored=false&amp;sq=Chef&amp;sr=3&amp;tk=KmkB2Vow53TRXxbtnCb_-tWHcmwim6avFR4l6TlGZ&amp;trigger_source=serp" target="_blank" rel="noopener" class="job-card">
-        <div class="job-card-body">
-          <div class="job-card-top">
-            <span class="job-title">Head Chef, Food Services (Cook)</span>
-            <span class="job-company">KPJ Healthcare</span>
-          </div>
-          <div class="job-card-meta"><span class="job-location">Johor Bahru, Johor</span>
-            <span class="job-date">2026-05-11</span>
-          </div>
-        </div>
-        <div class="job-card-side">
-          <span class="src-tag src-jora">Jora</span>
-        </div>
-      </a><a href="https://my.hiredly.com/jobs-malaysia-double-happiness-asia-foods-m-sdn-bhd-job-marketing-manager-kilang-halal" target="_blank" rel="noopener" class="job-card">
-        <div class="job-card-body">
-          <div class="job-card-top">
-            <span class="job-title">MARKETING MANAGER (KILANG HALAL)</span>
-            <span class="job-company">DOUBLE HAPPINESS ASIA FOODS (M) SDN BHD</span>
-          </div>
-          <div class="job-card-meta"><span class="job-salary">RM5,000 - RM8,000/month</span><span class="job-location">dato&#39; onn</span>
-            <span class="job-date">2026-05-11</span>
-          </div>
-        </div>
-        <div class="job-card-side">
-          <span class="src-tag src-hiredly">Hiredly</span>
-        </div>
-      </a><a href="https://www.maukerja.my/job/26405288-head-chef-food-services-cook" target="_blank" rel="noopener" class="job-card">
-        <div class="job-card-body">
-          <div class="job-card-top">
-            <span class="job-title">Head Chef, Food Services (Cook)</span>
-            <span class="job-company">KPJ Healthcare Berhad</span>
-          </div>
-          <div class="job-card-meta"><span class="job-location">Johor Bahru</span>
-            <span class="job-date">2026-05-11</span>
-          </div>
-        </div>
-        <div class="job-card-side">
-          <span class="src-tag src-maukerja">Maukerja</span>
-        </div>
-      </a><a href="https://candidates.myfuturejobs.gov.my/search-jobs/description?what=chef&amp;where=Johor%20Bahru&amp;jobId=9c89fcd8b6ed45d4abb2ca6342e82aa2" target="_blank" rel="noopener" class="job-card">
-        <div class="job-card-body">
-          <div class="job-card-top">
-            <span class="job-title">North Indian Chef</span>
-            <span class="job-company">7 SPICES 7(M) SDN. BHD.</span>
-          </div>
-          <div class="job-card-meta"><span class="job-location">Johor Bahru, Johor</span>
-            <span class="job-date">2026-05-11</span>
-          </div>
-        </div>
-        <div class="job-card-side">
-          <span class="src-tag src-myfuturejobs">MyFutureJobs</span>
-        </div>
-      </a><a href="https://candidates.myfuturejobs.gov.my/search-jobs/description?what=chef&amp;where=Johor%20Bahru&amp;jobId=e6c05241970141ffb9c59a814793bcd4" target="_blank" rel="noopener" class="job-card">
-        <div class="job-card-body">
-          <div class="job-card-top">
-            <span class="job-title">CHEF DE PARTIE</span>
-            <span class="job-company">NOVOTEL JOHOR BAHRU CITY CENTRE</span>
-          </div>
-          <div class="job-card-meta"><span class="job-location">Johor Bahru, Johor</span>
-            <span class="job-date">2026-05-09</span>
-          </div>
-        </div>
-        <div class="job-card-side">
-          <span class="src-tag src-myfuturejobs">MyFutureJobs</span>
-        </div>
-      </a><a href="https://my.hiredly.com/jobs-malaysia-koyo-corporate-m-sdn-bhd-job-branch-manager-johor" target="_blank" rel="noopener" class="job-card">
-        <div class="job-card-body">
-          <div class="job-card-top">
-            <span class="job-title">Branch Manager Johor</span>
-            <span class="job-company">KOYO CORPORATE (M) SDN BHD</span>
-          </div>
-          <div class="job-card-meta"><span class="job-salary">RM8,000 - RM10,000/month</span><span class="job-location">80250</span>
-            <span class="job-date">2026-05-05</span>
-          </div>
-        </div>
-        <div class="job-card-side">
-          <span class="src-tag src-hiredly">Hiredly</span>
-        </div>
-      </a><a href="https://candidates.myfuturejobs.gov.my/search-jobs/description?what=chef&amp;where=Johor%20Bahru&amp;jobId=14860a41e4604b3ca25d32f89674b068" target="_blank" rel="noopener" class="job-card">
-        <div class="job-card-body">
-          <div class="job-card-top">
-            <span class="job-title">Chef / Cook</span>
-            <span class="job-company">MADAM KWAN (SUEZ TOP VENTURES SDN BHD)</span>
-          </div>
-          <div class="job-card-meta"><span class="job-location">Johor Bahru, Johor</span>
-            <span class="job-date">2026-05-05</span>
-          </div>
-        </div>
-        <div class="job-card-side">
-          <span class="src-tag src-myfuturejobs">MyFutureJobs</span>
-        </div>
-      </a><a href="https://www.maukerja.my/job/26248419-pastry-chef-cafe" target="_blank" rel="noopener" class="job-card">
-        <div class="job-card-body">
-          <div class="job-card-top">
-            <span class="job-title">Pastry Chef (Cafe)</span>
-            <span class="job-company">Agensi Pekerjaan Jobs Kreate Sdn Bhd</span>
-          </div>
-          <div class="job-card-meta"><span class="job-salary">RM2,000/month</span><span class="job-location">Johor Bahru</span>
-            <span class="job-date">2026-05-03</span>
-          </div>
-        </div>
-        <div class="job-card-side">
-          <span class="src-tag src-maukerja">Maukerja</span>
-        </div>
-      </a><a href="https://my.hiredly.com/jobs-malaysia-cendol-n-crumbs-global-m-sdn-bhd-job-barista" target="_blank" rel="noopener" class="job-card">
-        <div class="job-card-body">
-          <div class="job-card-top">
-            <span class="job-title">Barista</span>
-            <span class="job-company">CENDOL N&#39; CRUMBS GLOBAL (M) SDN BHD</span>
-          </div>
-          <div class="job-card-meta"><span class="job-salary">RM1,700 - RM2,500/month</span><span class="job-location">TAMAN RINTING, MASAI</span>
-            <span class="job-date">2026-05-02</span>
-          </div>
-        </div>
-        <div class="job-card-side">
-          <span class="src-tag src-hiredly">Hiredly</span>
-        </div>
-      </a></div>
-  </section>
-
-  <div class="page-footer-cta">
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLScJVkyYraKTstINyqyZDlA_3wJNCVj6ohHOMCs4Gtv6nChRBw/viewform" target="_blank" rel="noopener" class="btn btn-primary">Post Resume</a>
-  </div>
-
-</div>
-
-  </main>
-
-  <footer class="site-footer">
-    <div class="footer-grid">
-      <div>
-        <h3>jbkitchen</h3>
-        <p>JB F&B Talent & Business Platform</p>
-        <p class="footer-tagline">For Chefs · For Employers · For Suppliers</p>
-      </div>
-      <div>
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="https://reinocheong.github.io/jbkitchen/chefs/">Job Board</a></li>
-          <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScJVkyYraKTstINyqyZDlA_3wJNCVj6ohHOMCs4Gtv6nChRBw/viewform" target="_blank" rel="noopener">Post Resume</a></li>
-          <li><a href="https://reinocheong.github.io/jbkitchen/suppliers/">Supplier Directory</a></li>
-          <li><a href="https://reinocheong.github.io/jbkitchen/calculator/">Cost Calculator</a></li>
-          <li><a href="https://reinocheong.github.io/jbkitchen/dashboard/">Dashboard</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 jbkitchen · <a href="https://reinocheong.github.io/jbkitchen/dashboard/" style="color:var(--gold);text-decoration:none;">Dashboard</a></p>
-    </div>
-  </footer>
-</body>
-</html>
+<!doctype html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Chef Talent Pool | JB Kitchen — 新山餐饮经营指南</title>
+<meta name=description content="新山餐饮经营工具与指南 — 成本计算器、供应商目录、经营攻略，帮你开好一间餐厅"><link rel=stylesheet href=https://reinocheong.github.io/jbkitchen/css/style.css><link rel=preconnect href=https://fonts.googleapis.com><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel=stylesheet><script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-XXXXXXXXXX")</script><script>(function(){var e=location.pathname.replace(/\/$/g,"")||"/",t="jbkitchen"+e.replace(/\//g,"-");fetch("https://api.countapi.xyz/hit/jbkitchen/"+encodeURIComponent(t)).catch(function(){})})()</script><script type=text/javascript>function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:"en",includedLanguages:"zh-CN,ms",layout:google.translate.TranslateElement.InlineLayout.SIMPLE,autoDisplay:!1},"google_translate_element");var e=document.getElementById("google_translate_element");e&&(e.style.display="none")}</script><script type=text/javascript src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script><style>.goog-te-banner-frame{display:none!important}body{top:0!important}.goog-te-gadget-simple{display:none!important}</style></head><body><header class=site-header><nav class=nav><a href=https://reinocheong.github.io/jbkitchen/ class=logo><span class=logo-text>jbkitchen</span></a><ul class=nav-menu><li><a href=https://reinocheong.github.io/jbkitchen/chefs/>Job Board</a></li><li><a href=https://reinocheong.github.io/jbkitchen/suppliers/>Suppliers</a></li><li><a href=https://reinocheong.github.io/jbkitchen/calculator/>Cost Calculator</a></li><li><a href=https://reinocheong.github.io/jbkitchen/guides/>Guides</a></li></ul><div class=nav-actions><a href=https://docs.google.com/forms/d/e/1FAIpQLScJVkyYraKTstINyqyZDlA_3wJNCVj6ohHOMCs4Gtv6nChRBw/viewform target=_blank rel=noopener class="btn btn-primary btn-sm">Post Resume</a><div class=lang-picker><button class=lang-btn onclick=toggleLang()>🌐</button><div class=lang-dropdown id=langDropdown><a href=# onclick='return changeLang("en"),!1'>English</a>
+<a href=# onclick='return changeLang("zh-CN"),!1'>中文</a>
+<a href=# onclick='return changeLang("ms"),!1'>Bahasa Melayu</a></div></div><div id=google_translate_element style=display:none></div></div><script>function toggleLang(){document.getElementById("langDropdown").classList.toggle("show")}function changeLang(e){var t=document.querySelector(".goog-te-combo");return t&&(t.value=e,t.dispatchEvent(new Event("change"))),document.getElementById("langDropdown").classList.remove("show"),!1}window.addEventListener("click",function(e){if(!e.target.closest(".lang-picker")){var t=document.getElementById("langDropdown");t&&t.classList.remove("show")}})</script></nav></header><main><div class=page-jobs><div class=cta-banner><h2>Post Your Resume — Free</h2><p>Let JB restaurant owners find you</p><a href=https://docs.google.com/forms/d/e/1FAIpQLScJVkyYraKTstINyqyZDlA_3wJNCVj6ohHOMCs4Gtv6nChRBw/viewform target=_blank rel=noopener class=cta-btn>Submit Resume →</a></div><section><div class=page-header><h1>JB F&amp;B Jobs</h1><div class=page-meta><span>60 jobs</span>
+<span class=sep>·</span>
+<span>Updated 2026-06-02</span></div></div><div class=job-list><a href=https://my.hiredly.com/jobs-malaysia-luckin-coffee-malaysia-job-quality-assurance-executive-f-b-operations target=_blank rel=noopener class=job-card><div class=job-card-body><div class=job-card-top><span class=job-title>Quality Assurance Executive (F&amp;B Operations)</span>
+<span class=job-company>Luckin Coffee Malaysia</span></div><div class=job-card-meta><span class=job-location>Johor Bahru</span>
+<span class=job-date>2026-06-02</span></div></div><div class=job-card-side><span class="src-tag src-hiredly">Hiredly</span></div></a><a href=https://www.maukerja.my/job/26444255-pembantu-dapur target=_blank rel=noopener class=job-card><div class=job-card-body><div class=job-card-top><span class=job-title>Pembantu Dapur</span>
+<span class=job-company>Good Culture Sdn Bhd</span></div><div class=job-card-meta><span class=job-salary>RM1,800/month</span><span class=job-location>Johor Bahru</span>
+<span class=job-date>2026-06-02</span></div></div><div class=job-card-side><span class="src-tag src-maukerja">Maukerja</span></div></a><a href=https://www.facebook.com/groups/1605936663645487/posts/2067036930868789 target=_blank rel=noopener class=job-card><div class=job-card-body><div class=job-card-top><span class=job-title>Marina View Resort · 在 Marina View Resort · Masai · 分享对象： 公开小组 Craving for somet</span>
+<span class=job-company></span></div><div class=job-card-meta><span class=job-location>Johor Bahru</span>
+<span class=job-date>2026-06-02</span></div></div><div class=job-card-side><span class="src-tag src-facebook">Facebook</span></div></a><a href=https://www.facebook.com/groups/1605936663645487/posts/2067029930869489 target=_blank rel=noopener class=job-card><div class=job-card-body><div class=job-card-top><span class=job-title>Marina View Resort · 在 Marina View Resort · Masai · 分享对象： 公开小组 Craving something</span>
+<span class=job-company></span></div><div class=job-card-meta><span class=job-location>Johor Bahru</span>
+<span class=job-date>2026-06-02</span></div></div><div class=job-card-side><span class="src-tag src-facebook">Facebook</span></div></a><a href=https://www.facebook.com/groups/299562313742588/posts/2786220788410049 target=_blank rel=noopener class=job-card><div class=job-card-body><div class=job-card-top><span class=job-title>Cook</span>
+<span class=job-company></span></div><div class=job-card-meta><span class=job-location>Johor Bahru</span>
+<span class=job-date>2026-06-02</span></div></div><div class=job-card-side><span class="src-tag src-facebook">Facebook</span></div></a><a href=https://www.facebook.com/groups/1160503301973340/posts/1473209404036060 target=_blank rel=noopener class=job-card><div class=job-card-body><div class=job-card-top><span class=job-title>Ali Ali21小时 · 分享对象： 公开小组Saye berpengalaman macam masakan Asian..barat..cinaSaye </span><span class=job-company></span></div><div class=job-card-meta><span class=job-location>Johor Bahru</span>
+<span class=job-date>2026-06-02</span></div></div><div class=job-card-side><span class="src-tag src-facebook">Facebook</span></div></a><a href=https://www.facebook.com/groups/1160503301973340/posts/1473209404036060 target=_blank rel=noopener class=job-card><div class=job-card-body><div class=job-card-top><span class=job-title>Ali Ali作者Boleh buka FB saye .Saye muslim .mulai Masak 1991.21小时赞回复 分享</span>
+<span class=job-company></span></div><div class=job-card-meta><span class=job-location>Johor Bahru</span>
+<span class=job-date>2026-06-02</span></div></div><div class=job-card-side><span class="src-tag src-facebook">Facebook</span></div></a><a href=https://www.facebook.com/groups/1736634896581390/posts/4533621126882739 target=_blank rel=noopener class=job-card><div class=job-card-body><div class=job-card-top><span class=job-title>Nur Syamimi10分钟 · 分享对象： 公开小组KURSUS LATIHAN PENGENDALIAN MAKANANSECARA ONLINE UND</span>
+<span class=job-company></span></div><div class=job-card-meta><span class=job-salary>RM54/month</span><span class=job-location>Johor Bahru</span>
+<span class=job-date>2026-06-02</span></div></div><div class=job-card-side><span class="src-tag src-facebook">Facebook</span></div></a><a href=https://www.facebook.com/groups/299562313742588/posts/2786830795015715 target=_blank rel=noopener class=job-card><div class=job-card-body><div class=job-card-top><span class=job-title>Commis</span>
+<span class=job-company></span></div><div class=job-card-meta><span class=job-salary>RM120/month</span><span class=job-location>Johor Bahru</span>
+<span class=job-date>2026-06-02</span></div></div><div class=job-card-side><span class="src-tag src-facebook">Facebook</span></div></a><a href="https://my.jora.com/job/Restaurant-Outlet-Ops-bd706cef02a3fb9c4f93fa20c445f957?abstract_type=original&amp;disallow=true&amp;fsv=true&amp;sl=Johor+Bahru+Johor&amp;sol_key=9b57409eb80654d590e0f23c83ee14a6&amp;sp=sserp_top&amp;sponsored=true&amp;sq=Chef&amp;sr=1&amp;tk=KmkB2Vow53TRXxbtnCb_-tWHcmwim6avFR4l6TlGZ&amp;trigger_source=serp" target=_blank rel=noopener class=job-card><div class=job-card-body><div class=job-card-top><span class=job-title>Restaurant Outlet Ops Lead – Johor</span>
+<span class=job-company>Hunters International</span></div><div class=job-card-meta><span class=job-salary>RM4,000/month</span><span class=job-location>Johor Bahru, Johor</span>
+<span class=job-date>2026-05-31</span></div></div><div class=job-card-side><span class="src-tag src-jora">Jora</span></div></a><a href=https://www.maukerja.my/job/26352144-ketua-tukang-masak target=_blank rel=noopener class=job-card><div class=job-card-body><div class=job-card-top><span class=job-title>Ketua Tukang Masak</span>
+<span class=job-company>Billion Onsen Spa Sdn Bhd</span></div><div class=job-card-meta><span class=job-salary>RM3,000/month</span><span class=job-location>Johor Bahru</span>
+<span class=job-date>2026-05-31</span></div></div><div class=job-card-side><span class="src-tag src-maukerja">Maukerja</span></div></a><a href="https://my.jora.com/job/Outlet-Supervisor-cdc1d52d2afa190e5bacfce5eade0241?abstract_type=original&amp;disallow=true&amp;fsv=true&amp;sl=Johor+Bahru+Johor&amp;sol_key=99ec3afedaa057ce10f8e5a795e10b21&amp;sp=sserp_top&amp;sponsored=true&amp;sq=Chef&amp;sr=2&amp;tk=KmkB2Vow53TRXxbtnCb_-tWHcmwim6avFR4l6TlGZ&amp;trigger_source=serp" target=_blank rel=noopener class=job-card><div class=job-card-body><div class=job-card-top><span class=job-title>Restaurant Outlet Supervisor</span>
+<span class=job-company>Hunters International</span></div><div class=job-card-meta><span class=job-location>Johor Bahru, Johor</span>
+<span class=job-date>2026-05-30</span></div></div><div class=job-card-side><span class="src-tag src-jora">Jora</span></div></a><a href="https://my.jora.com/job/Chef-de-Partie-319e7b510cdd45cd70260fa7340311fd?abstract_type=original&amp;disallow=true&amp;fsv=true&amp;sl=Johor+Bahru+Johor&amp;sol_key=1bee4392fb111648cf44530d35a05a03&amp;sp=serp&amp;sponsored=false&amp;sq=Chef&amp;sr=2&amp;tk=KmkB2Vow53TRXxbtnCb_-tWHcmwim6avFR4l6TlGZ&amp;trigger_source=serp" target=_blank rel=noopener class=job-card><div class=job-card-body><div class=job-card-top><span class=job-title>Chef De Partie, Butcher</span>
+<span class=job-company>Sheraton</span></div><div class=job-card-meta><span class=job-location>Johor Bahru, Johor</span>
+<span class=job-date>2026-05-29</span></div></div><div class=job-card-side><span class="src-tag src-jora">Jora</span></div></a><a href="https://my.jora.com/job/Chef-de-Cuisine-44347dea7e34d9de537f4dd4a648d555?abstract_type=original&amp;disallow=true&amp;fsv=true&amp;sl=Johor+Bahru+Johor&amp;sol_key=0cf51c989ab3449db8c91a4f74b5f852&amp;sp=serp&amp;sponsored=false&amp;sq=Chef&amp;sr=4&amp;tk=KmkB2Vow53TRXxbtnCb_-tWHcmwim6avFR4l6TlGZ&amp;trigger_source=serp" target=_blank rel=noopener class=job-card><div class=job-card-body><div class=job-card-top><span class=job-title>Chef de Cuisine</span>
+<span class=job-company>Sheraton</span></div><div class=job-card-meta><span class=job-location>Johor Bahru, Johor</span>
+<span class=job-date>2026-05-29</span></div></div><div class=job-card-side><span class="src-tag src-jora">Jora</span></div></a><a href="https://my.jora.com/job/Chef-de-Cuisine-fb0eced301cd46b778789517320d6f92?abstract_type=original&amp;disallow=true&amp;fsv=true&amp;sl=Johor+Bahru+Johor&amp;sol_key=b730ebc4c40e62705f4e02a99d5ad77a&amp;sp=serp&amp;sponsored=false&amp;sq=Chef&amp;sr=5&amp;tk=KmkB2Vow53TRXxbtnCb_-tWHcmwim6avFR4l6TlGZ&amp;trigger_source=serp" target=_blank rel=noopener class=job-card><div class=job-card-body><div class=job-card-top><span class=job-title>Chef de Cuisine</span>
+<span class=job-company>Marriott International</span></div><div class=job-card-meta><span class=job-location>Johor Bahru, Johor</span>
+<span class=job-date>2026-05-29</span></div></div><div class=job-card-side><span class="src-tag src-jora">Jora</span></div></a><a href="https://candidates.myfuturejobs.gov.my/search-jobs/description?what=chef&amp;where=Johor%20Bahru&amp;jobId=b490f8bdab4e4a55b435ee237a88692b" target=_blank rel=noopener class=job-card><div class=job-card-body><div class=job-card-top><span class=job-title>Restaurant Supervisor -Southern Area / Johor Bharu</span>
+<span class=job-company>Nando's Chickenland Malaysia Sdn Bhd</span></div><div class=job-card-meta><span class=job-location>Johor Bahru, Johor</span>
+<span class=job-date>2026-05-29</span></div></div><div class=job-card-side><span class="src-tag src-myfuturejobs">MyFutureJobs</span></div></a><a href="https://candidates.myfuturejobs.gov.my/search-jobs/description?what=chef&amp;where=Johor%20Bahru&amp;jobId=988717f05972438fbc751979bcda1a4d" target=_blank rel=noopener class=job-card><div class=job-card-body><div class=job-card-top><span class=job-title>Assistant Restaurant Manager - Southern Area / Johor Bharu</span>
+<span class=job-company>Nando's Chickenland Malaysia Sdn Bhd</span></div><div class=job-card-meta><span class=job-location>Johor Bahru, Johor</span>
+<span class=job-date>2026-05-29</span></div></div><div class=job-card-side><span class="src-tag src-myfuturejobs">MyFutureJobs</span></div></a><a href="https://candidates.myfuturejobs.gov.my/search-jobs/description?what=chef&amp;where=Johor%20Bahru&amp;jobId=bdcb339682d048a4b27242d04aa417f0" target=_blank rel=noopener class=job-card><div class=job-card-body><div class=job-card-top><span class=job-title>Restaurant Junior Supervisor</span>
+<span class=job-company>Local house sdn bhd</span></div><div class=job-card-meta><span class=job-location>Johor Bahru, Johor</span>
+<span class=job-date>2026-05-28</span></div></div><div class=job-card-side><span class="src-tag src-myfuturejobs">MyFutureJobs</span></div></a><a href="https://my.jora.com/job/Demi-Chef-d9ab9052410db95fe222c040b79089bd?abstract_type=original&amp;disallow=true&amp;fsv=true&amp;sl=Johor+Bahru+Johor&amp;sol_key=45196e1dcf96ebaf766dcc7c4ea33b4c&amp;sp=serp&amp;sponsored=false&amp;sq=Chef&amp;sr=6&amp;tk=KmkB2Vow53TRXxbtnCb_-tWHcmwim6avFR4l6TlGZ&amp;trigger_source=serp" target=_blank rel=noopener class=job-card><div class=job-card-body><div class=job-card-top><span class=job-title>Demi Chef (Cold Kitchen) - Renaissance Johor Bahru</span>
+<span class=job-company>Renaissance Hotels</span></div><div class=job-card-meta><span class=job-location>Johor Bahru, Johor</span>
+<span class=job-date>2026-05-26</span></div></div><div class=job-card-side><span class="src-tag src-jora">Jora</span></div></a><a href="https://my.jora.com/job/Executive-Pastry-Chef-f9e4dfff3b8651c39f28a1bee8e0f759?abstract_type=original&amp;disallow=true&amp;fsv=true&amp;sl=Johor+Bahru+Johor&amp;sol_key=ba436dcf30b57240e675eba2187b4b73&amp;sp=serp&amp;sponsored=false&amp;sq=Chef&amp;sr=8&amp;tk=KmkB2Vow53TRXxbtnCb_-tWHcmwim6avFR4l6TlGZ&amp;trigger_source=serp" target=_blank rel=noopener class=job-card><div class=job-card-body><div class=job-card-top><span class=job-title>Executive Pastry Chef</span>
+<span class=job-company>Grammage Foods Sdn bhd</span></div><div class=job-card-meta><span class=job-salary>RM4,500/month</span><span class=job-location>Johor Bahru, Johor</span>
+<span class=job-date>2026-05-26</span></div></div><div class=job-card-side><span class="src-tag src-jora">Jora</span></div></a><a href="https://my.jora.com/job/Demi-Chef-8d5cb27545eea564cb3ac4584dca3586?abstract_type=original&amp;disallow=true&amp;fsv=true&amp;sl=Johor+Bahru+Johor&amp;sol_key=7d5aecea2becae700533acda85891e59&amp;sp=sserp_bottom&amp;sponsored=true&amp;sq=Chef&amp;sr=5&amp;tk=KmkB2Vow53TRXxbtnCb_-tWHcmwim6avFR4l6TlGZ&amp;trigger_source=serp" target=_blank rel=noopener class=job-card><div class=job-card-body><div class=job-card-top><span class=job-title>Senior Commis Viennoiserie / Demi Chef</span>
+<span class=job-company>LOAF ADAM SDN BHD</span></div><div class=job-card-meta><span class=job-salary>RM2,300/month</span><span class=job-location>Johor Bahru, Johor</span>
+<span class=job-date>2026-05-26</span></div></div><div class=job-card-side><span class="src-tag src-jora">Jora</span></div></a><a href=https://my.hiredly.com/jobs-malaysia-jy-spring-drink-sdn-bhd-job-senior-tearista target=_blank rel=noopener class=job-card><div class=job-card-body><div class=job-card-top><span class=job-title>Senior Tearista</span>
+<span class=job-company>JY Spring Drink Sdn Bhd</span></div><div class=job-card-meta><span class=job-salary>RM2,400 - RM3,500/month</span><span class=job-location>Aeon Tebrau</span>
+<span class=job-date>2026-05-26</span></div></div><div class=job-card-side><span class="src-tag src-hiredly">Hiredly</span></div></a><a href="https://my.jora.com/job/Chef-de-Partie-896805dc851374c02bcbe9aefa766058?abstract_type=original&amp;disallow=true&amp;fsv=true&amp;sl=Johor+Bahru+Johor&amp;sol_key=abc34b933c8cc702ac593b42780102ac&amp;sp=serp&amp;sponsored=false&amp;sq=Chef&amp;sr=7&amp;tk=KmkB2Vow53TRXxbtnCb_-tWHcmwim6avFR4l6TlGZ&amp;trigger_source=serp" target=_blank rel=noopener class=job-card><div class=job-card-body><div class=job-card-top><span class=job-title>Chef de Partie - Baker</span>
+<span class=job-company>Marriott International</span></div><div class=job-card-meta><span class=job-location>Johor Bahru, Johor</span>
+<span class=job-date>2026-05-24</span></div></div><div class=job-card-side><span class="src-tag src-jora">Jora</span></div></a><a href="https://my.jora.com/job/Head-Chef-fba62b93fbed7b4d84346f5644176731?abstract_type=original&amp;disallow=true&amp;fsv=true&amp;sl=Johor+Bahru+Johor&amp;sol_key=76089592c02e03a88637761182b5777a&amp;sp=serp&amp;sponsored=false&amp;sq=Chef&amp;sr=1&amp;tk=KmkB2Vow53TRXxbtnCb_-tWHcmwim6avFR4l6TlGZ&amp;trigger_source=serp" target=_blank rel=noopener class=job-card><div class=job-card-body><div class=job-card-top><span class=job-title>Head Chef</span>
+<span class=job-company>Kaysteaklobster</span></div><div class=job-card-meta><span class=job-salary>RM5,000/month</span><span class=job-location>Johor Bahru, Johor</span>
+<span class=job-date>2026-05-23</span></div></div><div class=job-card-side><span class="src-tag src-jora">Jora</span></div></a><a href=https://my.hiredly.com/jobs-malaysia-kaysteaklobster-sdn-bhd-job-sous-chef target=_blank rel=noopener class=job-card><div class=job-card-body><div class=job-card-top><span class=job-title>Sous Chef</span>
+<span class=job-company>KAYSTEAKLOBSTER SDN BHD</span></div><div class=job-card-meta><span class=job-salary>RM4,000 - RM5,200/month</span><span class=job-location>SKS City Mall</span>
+<span class=job-date>2026-05-23</span></div></div><div class=job-card-side><span class="src-tag src-hiredly">Hiredly</span></div></a><a href=https://my.hiredly.com/jobs-malaysia-kaysteaklobster-sdn-bhd-job-chef-de-partie target=_blank rel=noopener class=job-card><div class=job-card-body><div class=job-card-top><span class=job-title>Chef De Partie</span>
+<span class=job-company>KAYSTEAKLOBSTER SDN BHD</span></div><div class=job-card-meta><span class=job-salary>RM2,800 - RM3,800/month</span><span class=job-location>SKS City Mall</span>
+<span class=job-date>2026-05-23</span></div></div><div class=job-card-side><span class="src-tag src-hiredly">Hiredly</span></div></a><a href=https://my.hiredly.com/jobs-malaysia-kaysteaklobster-sdn-bhd-job-demi-chef target=_blank rel=noopener class=job-card><div class=job-card-body><div class=job-card-top><span class=job-title>Demi Chef</span>
+<span class=job-company>KAYSTEAKLOBSTER SDN BHD</span></div><div class=job-card-meta><span class=job-salary>RM2,300 - RM3,000/month</span><span class=job-location>SKS City Mall</span>
+<span class=job-date>2026-05-23</span></div></div><div class=job-card-side><span class="src-tag src-hiredly">Hiredly</span></div></a><a href=https://my.hiredly.com/jobs-malaysia-kaysteaklobster-sdn-bhd-job-commis-chef target=_blank rel=noopener class=job-card><div class=job-card-body><div class=job-card-top><span class=job-title>Commis Chef</span>
+<span class=job-company>KAYSTEAKLOBSTER SDN BHD</span></div><div class=job-card-meta><span class=job-salary>RM2,000 - RM2,500/month</span><span class=job-location>SKS City Mall</span>
+<span class=job-date>2026-05-23</span></div></div><div class=job-card-side><span class="src-tag src-hiredly">Hiredly</span></div></a><a href=https://my.hiredly.com/jobs-malaysia-kaysteaklobster-sdn-bhd-job-restaurant-manager-0 target=_blank rel=noopener class=job-card><div class=job-card-body><div class=job-card-top><span class=job-title>Restaurant Manager</span>
+<span class=job-company>KAYSTEAKLOBSTER SDN BHD</span></div><div class=job-card-meta><span class=job-salary>RM5,000 - RM6,500/month</span><span class=job-location>SKS City Mall JBCC</span>
+<span class=job-date>2026-05-23</span></div></div><div class=job-card-side><span class="src-tag src-hiredly">Hiredly</span></div></a><a href=https://my.hiredly.com/jobs-malaysia-kaysteaklobster-sdn-bhd-job-service-crew-0 target=_blank rel=noopener class=job-card><div class=job-card-body><div class=job-card-top><span class=job-title>Service Crew</span>
+<span class=job-company>KAYSTEAKLOBSTER SDN BHD</span></div><div class=job-card-meta><span class=job-salary>RM2,300 - RM2,800/month</span><span class=job-location>SKS City Mall JBCC</span>
+<span class=job-date>2026-05-23</span></div></div><div class=job-card-side><span class="src-tag src-hiredly">Hiredly</span></div></a><a href="https://my.jora.com/job/Head-Chef-3afe83a24ba49009e83106ac8547dfb2?abstract_type=original&amp;disallow=true&amp;fsv=true&amp;sl=Johor+Bahru+Johor&amp;sol_key=564ffa1b971ab87bc1c7091e88e800b0&amp;sp=sserp_bottom&amp;sponsored=true&amp;sq=Chef&amp;sr=4&amp;tk=KmkB2Vow53TRXxbtnCb_-tWHcmwim6avFR4l6TlGZ&amp;trigger_source=serp" target=_blank rel=noopener class=job-card><div class=job-card-body><div class=job-card-top><span class=job-title>Head Chef ( Nanyang & Local Delight )</span>
+<span class=job-company>Vivo Food Sdn Bhd</span></div><div class=job-card-meta><span class=job-salary>RM5,000/month</span><span class=job-location>Johor Bahru, Johor</span>
+<span class=job-date>2026-05-22</span></div></div><div class=job-card-side><span class="src-tag src-jora">Jora</span></div></a><a href="https://candidates.myfuturejobs.gov.my/search-jobs/description?what=chef&amp;where=Johor%20Bahru&amp;jobId=a6adff38fc384656af2f5c969e8e3f8f" target=_blank rel=noopener class=job-card><div class=job-card-body><div class=job-card-top><span class=job-title>Pembantu Dapur</span>
+<span class=job-company>chendrasari niaga</span></div><div class=job-card-meta><span class=job-location>Johor Bahru, Johor</span>
+<span class=job-date>2026-05-22</span></div></div><div class=job-card-side><span class="src-tag src-myfuturejobs">MyFutureJobs</span></div></a><a href=https://my.hiredly.com/jobs-malaysia-the-chef-project-sdn-bhd-job-commis-ii-cdp target=_blank rel=noopener class=job-card><div class=job-card-body><div class=job-card-top><span class=job-title>Commis II , CDP</span>
+<span class=job-company>THE CHEF PROJECT SDN BHD</span></div><div class=job-card-meta><span class=job-salary>RM2,000 - RM2,599/month</span><span class=job-location>Patisserie Central Kitchen by Project Chef</span>
+<span class=job-date>2026-05-21</span></div></div><div class=job-card-side><span class="src-tag src-hiredly">Hiredly</span></div></a><a href=https://my.hiredly.com/jobs-malaysia-cha-lab-sdn-bhd-job-outlet-development-executive target=_blank rel=noopener class=job-card><div class=job-card-body><div class=job-card-top><span class=job-title>Outlet Development Executive</span>
+<span class=job-company>Cha Lab Sdn Bhd</span></div><div class=job-card-meta><span class=job-salary>RM2,500 - RM3,500/month</span><span class=job-location>Johor Bahru</span>
+<span class=job-date>2026-05-21</span></div></div><div class=job-card-side><span class="src-tag src-hiredly">Hiredly</span></div></a><a href="https://candidates.myfuturejobs.gov.my/search-jobs/description?what=chef&amp;where=Johor%20Bahru&amp;jobId=7c8e708e4cd34be4b2353f81f310de86" target=_blank rel=noopener class=job-card><div class=job-card-body><div class=job-card-top><span class=job-title>Commis Chef</span>
+<span class=job-company>SERAI & SPICES RESTORAN</span></div><div class=job-card-meta><span class=job-location>Johor Bahru, Johor</span>
+<span class=job-date>2026-05-21</span></div></div><div class=job-card-side><span class="src-tag src-myfuturejobs">MyFutureJobs</span></div></a><a href="https://candidates.myfuturejobs.gov.my/search-jobs/description?what=chef&amp;where=Johor%20Bahru&amp;jobId=605f30f8a6da49e1ada0a07bc4108115" target=_blank rel=noopener class=job-card><div class=job-card-body><div class=job-card-top><span class=job-title>KOREAN FOOD CHEF</span>
+<span class=job-company>SUP BY SUPER KIMCHI SDN. BHD.</span></div><div class=job-card-meta><span class=job-location>Johor Bahru, Johor</span>
+<span class=job-date>2026-05-21</span></div></div><div class=job-card-side><span class="src-tag src-myfuturejobs">MyFutureJobs</span></div></a><a href=https://my.hiredly.com/jobs-malaysia-sup-by-superkimchi-job-recruiting-opening-members-for-jb-high-end-korean-restaurant target=_blank rel=noopener class=job-card><div class=job-card-body><div class=job-card-top><span class=job-title>🔥 Recruiting Opening Members for JB High-end Korean Restaurant!</span>
+<span class=job-company>SUP BY SUPERKIMCHI</span></div><div class=job-card-meta><span class=job-salary>RM2,000 - RM5,000/month</span><span class=job-location>sks city mall jbcc</span>
+<span class=job-date>2026-05-20</span></div></div><div class=job-card-side><span class="src-tag src-hiredly">Hiredly</span></div></a><a href="https://candidates.myfuturejobs.gov.my/search-jobs/description?what=chef&amp;where=Johor%20Bahru&amp;jobId=62b85dc809e4472eb3ab460ecc9f4462" target=_blank rel=noopener class=job-card><div class=job-card-body><div class=job-card-top><span class=job-title>Assistant Restaurant Manager - Mid Valley Southkey</span>
+<span class=job-company>Nando's Chickenland Malaysia Sdn Bhd</span></div><div class=job-card-meta><span class=job-location>Johor Bahru, Johor</span>
+<span class=job-date>2026-05-20</span></div></div><div class=job-card-side><span class="src-tag src-myfuturejobs">MyFutureJobs</span></div></a><a href="https://candidates.myfuturejobs.gov.my/search-jobs/description?what=chef&amp;where=Johor%20Bahru&amp;jobId=dfe79731fc754bc785d023015843cca6" target=_blank rel=noopener class=job-card><div class=job-card-body><div class=job-card-top><span class=job-title>CHEF / CHEF ASSISTANT</span>
+<span class=job-company>SHAJARAH BARAKAH SDN BHD</span></div><div class=job-card-meta><span class=job-location>Johor Bahru, Johor</span>
+<span class=job-date>2026-05-19</span></div></div><div class=job-card-side><span class="src-tag src-myfuturejobs">MyFutureJobs</span></div></a><a href=https://my.hiredly.com/jobs-malaysia-dragon-bliss-job-outlet-manager target=_blank rel=noopener class=job-card><div class=job-card-body><div class=job-card-top><span class=job-title>Outlet Manager</span>
+<span class=job-company>DRAGON BLISS</span></div><div class=job-card-meta><span class=job-salary>RM4,000 - RM6,000/month</span><span class=job-location>SETIA TROPIKA</span>
+<span class=job-date>2026-05-18</span></div></div><div class=job-card-side><span class="src-tag src-hiredly">Hiredly</span></div></a><a href=https://my.hiredly.com/jobs-malaysia-dragon-bliss-job-food-and-beverage-outlets-manager-0 target=_blank rel=noopener class=job-card><div class=job-card-body><div class=job-card-top><span class=job-title>Food and Beverage Outlets Manager</span>
+<span class=job-company>DRAGON BLISS</span></div><div class=job-card-meta><span class=job-salary>RM4,000 - RM6,000/month</span><span class=job-location>AUSTIN</span>
+<span class=job-date>2026-05-18</span></div></div><div class=job-card-side><span class="src-tag src-hiredly">Hiredly</span></div></a><a href="https://candidates.myfuturejobs.gov.my/search-jobs/description?what=chef&amp;where=Johor%20Bahru&amp;jobId=d55a3c2c5ca64c98880ff09d2bf489de" target=_blank rel=noopener class=job-card><div class=job-card-body><div class=job-card-top><span class=job-title>DEMI CHEF JOHOR BAHRU</span>
+<span class=job-company>JADE COMMERCIAL SERVICES</span></div><div class=job-card-meta><span class=job-location>Johor Bahru, Johor</span>
+<span class=job-date>2026-05-18</span></div></div><div class=job-card-side><span class="src-tag src-myfuturejobs">MyFutureJobs</span></div></a><a href="https://candidates.myfuturejobs.gov.my/search-jobs/description?what=chef&amp;where=Johor%20Bahru&amp;jobId=23daca8c2cd048e095741bd8236420dc" target=_blank rel=noopener class=job-card><div class=job-card-body><div class=job-card-top><span class=job-title>DEMI CHEF JOHOR BAHRU</span>
+<span class=job-company>Job Elite TT Agency</span></div><div class=job-card-meta><span class=job-location>Johor Bahru, Johor</span>
+<span class=job-date>2026-05-18</span></div></div><div class=job-card-side><span class="src-tag src-myfuturejobs">MyFutureJobs</span></div></a><a href=https://www.maukerja.my/job/26468461-lead-pastry-chef target=_blank rel=noopener class=job-card><div class=job-card-body><div class=job-card-top><span class=job-title>Lead Pastry Chef</span>
+<span class=job-company>Agensi Pekerjaan CKM Sdn Bhd</span></div><div class=job-card-meta><span class=job-salary>RM8,000/month</span><span class=job-location>Johor Bahru</span>
+<span class=job-date>2026-05-17</span></div></div><div class=job-card-side><span class="src-tag src-maukerja">Maukerja</span></div></a><a href=https://www.maukerja.my/job/26468459-senior-bakery-chef target=_blank rel=noopener class=job-card><div class=job-card-body><div class=job-card-top><span class=job-title>Senior Bakery Chef</span>
+<span class=job-company>Agensi Pekerjaan CKM Sdn Bhd</span></div><div class=job-card-meta><span class=job-salary>RM8,000/month</span><span class=job-location>Johor Bahru</span>
+<span class=job-date>2026-05-17</span></div></div><div class=job-card-side><span class="src-tag src-maukerja">Maukerja</span></div></a><a href=https://www.maukerja.my/job/26468460-head-baker target=_blank rel=noopener class=job-card><div class=job-card-body><div class=job-card-top><span class=job-title>Head Baker</span>
+<span class=job-company>Agensi Pekerjaan CKM Sdn Bhd</span></div><div class=job-card-meta><span class=job-salary>RM8,000/month</span><span class=job-location>Johor Bahru</span>
+<span class=job-date>2026-05-17</span></div></div><div class=job-card-side><span class="src-tag src-maukerja">Maukerja</span></div></a><a href=https://www.maukerja.my/job/26468462-master-baker target=_blank rel=noopener class=job-card><div class=job-card-body><div class=job-card-top><span class=job-title>Master Baker</span>
+<span class=job-company>Agensi Pekerjaan CKM Sdn Bhd</span></div><div class=job-card-meta><span class=job-salary>RM8,000/month</span><span class=job-location>Johor Bahru</span>
+<span class=job-date>2026-05-17</span></div></div><div class=job-card-side><span class="src-tag src-maukerja">Maukerja</span></div></a><a href="https://candidates.myfuturejobs.gov.my/search-jobs/description?what=chef&amp;where=Johor%20Bahru&amp;jobId=25947f5161054c9c99e46a5b9f6bfd4d" target=_blank rel=noopener class=job-card><div class=job-card-body><div class=job-card-top><span class=job-title>Sous Chef l Taman Pelangi, Johor Bahru l RM3000-RM3500</span>
+<span class=job-company>KEY SOLUTIONS TEAM ADVISORY SDN. BHD.</span></div><div class=job-card-meta><span class=job-location>Johor Bahru, Johor</span>
+<span class=job-date>2026-05-16</span></div></div><div class=job-card-side><span class="src-tag src-myfuturejobs">MyFutureJobs</span></div></a><a href=https://www.maukerja.my/job/25833305-sous-chef-novotel-johor-bahru target=_blank rel=noopener class=job-card><div class=job-card-body><div class=job-card-top><span class=job-title>Sous Chef- Novotel Johor Bahru</span>
+<span class=job-company>Novotel Johor Bahru City Centre</span></div><div class=job-card-meta><span class=job-location>Johor Bahru</span>
+<span class=job-date>2026-05-13</span></div></div><div class=job-card-side><span class="src-tag src-maukerja">Maukerja</span></div></a><a href="https://candidates.myfuturejobs.gov.my/search-jobs/description?what=chef&amp;where=Johor%20Bahru&amp;jobId=afb4a0a8ba444404a26d5cd435c2cc62" target=_blank rel=noopener class=job-card><div class=job-card-body><div class=job-card-top><span class=job-title>Restaurant Supervisor - Aeon Tebrau City</span>
+<span class=job-company>Nando's Chickenland Malaysia Sdn Bhd</span></div><div class=job-card-meta><span class=job-location>Johor Bahru, Johor</span>
+<span class=job-date>2026-05-13</span></div></div><div class=job-card-side><span class="src-tag src-myfuturejobs">MyFutureJobs</span></div></a><a href="https://candidates.myfuturejobs.gov.my/search-jobs/description?what=chef&amp;where=Johor%20Bahru&amp;jobId=062ab4b1046e493f9db702ec8bf56e19" target=_blank rel=noopener class=job-card><div class=job-card-body><div class=job-card-top><span class=job-title>TUKANG MASAK</span>
+<span class=job-company>THAVAS MESS RESTAURANT</span></div><div class=job-card-meta><span class=job-location>Johor Bahru, Johor</span>
+<span class=job-date>2026-05-12</span></div></div><div class=job-card-side><span class="src-tag src-myfuturejobs">MyFutureJobs</span></div></a><a href="https://my.jora.com/job/Head-Chef-bf4b29983f8668b16e35c65005df02c0?abstract_type=original&amp;disallow=true&amp;fsv=true&amp;sl=Johor+Bahru+Johor&amp;sol_key=65b020d0185cd0a14658214b7fe9fe02&amp;sp=serp&amp;sponsored=false&amp;sq=Chef&amp;sr=3&amp;tk=KmkB2Vow53TRXxbtnCb_-tWHcmwim6avFR4l6TlGZ&amp;trigger_source=serp" target=_blank rel=noopener class=job-card><div class=job-card-body><div class=job-card-top><span class=job-title>Head Chef, Food Services (Cook)</span>
+<span class=job-company>KPJ Healthcare</span></div><div class=job-card-meta><span class=job-location>Johor Bahru, Johor</span>
+<span class=job-date>2026-05-11</span></div></div><div class=job-card-side><span class="src-tag src-jora">Jora</span></div></a><a href=https://my.hiredly.com/jobs-malaysia-double-happiness-asia-foods-m-sdn-bhd-job-marketing-manager-kilang-halal target=_blank rel=noopener class=job-card><div class=job-card-body><div class=job-card-top><span class=job-title>MARKETING MANAGER (KILANG HALAL)</span>
+<span class=job-company>DOUBLE HAPPINESS ASIA FOODS (M) SDN BHD</span></div><div class=job-card-meta><span class=job-salary>RM5,000 - RM8,000/month</span><span class=job-location>dato' onn</span>
+<span class=job-date>2026-05-11</span></div></div><div class=job-card-side><span class="src-tag src-hiredly">Hiredly</span></div></a><a href=https://www.maukerja.my/job/26405288-head-chef-food-services-cook target=_blank rel=noopener class=job-card><div class=job-card-body><div class=job-card-top><span class=job-title>Head Chef, Food Services (Cook)</span>
+<span class=job-company>KPJ Healthcare Berhad</span></div><div class=job-card-meta><span class=job-location>Johor Bahru</span>
+<span class=job-date>2026-05-11</span></div></div><div class=job-card-side><span class="src-tag src-maukerja">Maukerja</span></div></a><a href="https://candidates.myfuturejobs.gov.my/search-jobs/description?what=chef&amp;where=Johor%20Bahru&amp;jobId=9c89fcd8b6ed45d4abb2ca6342e82aa2" target=_blank rel=noopener class=job-card><div class=job-card-body><div class=job-card-top><span class=job-title>North Indian Chef</span>
+<span class=job-company>7 SPICES 7(M) SDN. BHD.</span></div><div class=job-card-meta><span class=job-location>Johor Bahru, Johor</span>
+<span class=job-date>2026-05-11</span></div></div><div class=job-card-side><span class="src-tag src-myfuturejobs">MyFutureJobs</span></div></a><a href="https://candidates.myfuturejobs.gov.my/search-jobs/description?what=chef&amp;where=Johor%20Bahru&amp;jobId=e6c05241970141ffb9c59a814793bcd4" target=_blank rel=noopener class=job-card><div class=job-card-body><div class=job-card-top><span class=job-title>CHEF DE PARTIE</span>
+<span class=job-company>NOVOTEL JOHOR BAHRU CITY CENTRE</span></div><div class=job-card-meta><span class=job-location>Johor Bahru, Johor</span>
+<span class=job-date>2026-05-09</span></div></div><div class=job-card-side><span class="src-tag src-myfuturejobs">MyFutureJobs</span></div></a><a href=https://my.hiredly.com/jobs-malaysia-koyo-corporate-m-sdn-bhd-job-branch-manager-johor target=_blank rel=noopener class=job-card><div class=job-card-body><div class=job-card-top><span class=job-title>Branch Manager Johor</span>
+<span class=job-company>KOYO CORPORATE (M) SDN BHD</span></div><div class=job-card-meta><span class=job-salary>RM8,000 - RM10,000/month</span><span class=job-location>80250</span>
+<span class=job-date>2026-05-05</span></div></div><div class=job-card-side><span class="src-tag src-hiredly">Hiredly</span></div></a><a href="https://candidates.myfuturejobs.gov.my/search-jobs/description?what=chef&amp;where=Johor%20Bahru&amp;jobId=14860a41e4604b3ca25d32f89674b068" target=_blank rel=noopener class=job-card><div class=job-card-body><div class=job-card-top><span class=job-title>Chef / Cook</span>
+<span class=job-company>MADAM KWAN (SUEZ TOP VENTURES SDN BHD)</span></div><div class=job-card-meta><span class=job-location>Johor Bahru, Johor</span>
+<span class=job-date>2026-05-05</span></div></div><div class=job-card-side><span class="src-tag src-myfuturejobs">MyFutureJobs</span></div></a><a href=https://www.maukerja.my/job/26248419-pastry-chef-cafe target=_blank rel=noopener class=job-card><div class=job-card-body><div class=job-card-top><span class=job-title>Pastry Chef (Cafe)</span>
+<span class=job-company>Agensi Pekerjaan Jobs Kreate Sdn Bhd</span></div><div class=job-card-meta><span class=job-salary>RM2,000/month</span><span class=job-location>Johor Bahru</span>
+<span class=job-date>2026-05-03</span></div></div><div class=job-card-side><span class="src-tag src-maukerja">Maukerja</span></div></a><a href=https://my.hiredly.com/jobs-malaysia-cendol-n-crumbs-global-m-sdn-bhd-job-barista target=_blank rel=noopener class=job-card><div class=job-card-body><div class=job-card-top><span class=job-title>Barista</span>
+<span class=job-company>CENDOL N' CRUMBS GLOBAL (M) SDN BHD</span></div><div class=job-card-meta><span class=job-salary>RM1,700 - RM2,500/month</span><span class=job-location>TAMAN RINTING, MASAI</span>
+<span class=job-date>2026-05-02</span></div></div><div class=job-card-side><span class="src-tag src-hiredly">Hiredly</span></div></a></div></section><div class=page-footer-cta><a href=https://docs.google.com/forms/d/e/1FAIpQLScJVkyYraKTstINyqyZDlA_3wJNCVj6ohHOMCs4Gtv6nChRBw/viewform target=_blank rel=noopener class="btn btn-primary">Post Resume</a></div></div></main><footer class=site-footer><div class=footer-grid><div><h3>jbkitchen</h3><p>JB F&B Talent & Business Platform</p><p class=footer-tagline>For Chefs · For Employers · For Suppliers</p></div><div><h4>Quick Links</h4><ul><li><a href=https://reinocheong.github.io/jbkitchen/chefs/>Job Board</a></li><li><a href=https://docs.google.com/forms/d/e/1FAIpQLScJVkyYraKTstINyqyZDlA_3wJNCVj6ohHOMCs4Gtv6nChRBw/viewform target=_blank rel=noopener>Post Resume</a></li><li><a href=https://reinocheong.github.io/jbkitchen/suppliers/>Supplier Directory</a></li><li><a href=https://reinocheong.github.io/jbkitchen/calculator/>Cost Calculator</a></li><li><a href=https://reinocheong.github.io/jbkitchen/dashboard/>Dashboard</a></li></ul></div></div><div class=footer-bottom><p>&copy; 2026 jbkitchen · <a href=https://reinocheong.github.io/jbkitchen/dashboard/ style=color:var(--gold);text-decoration:none>Dashboard</a></p></div></footer></body></html>
