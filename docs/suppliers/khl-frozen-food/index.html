@@ -34,11 +34,21 @@
       new google.translate.TranslateElement({
         pageLanguage: 'en',
         includedLanguages: 'zh-CN,ms',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: false
       }, 'google_translate_element');
+      
+      var el = document.getElementById('google_translate_element');
+      if (el) el.style.display = 'none';
     }
   </script>
   <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <style>
+     
+    .goog-te-banner-frame { display: none !important; }
+    body { top: 0px !important; }
+    .goog-te-gadget-simple { display: none !important; }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -52,8 +62,36 @@
       </ul>
       <div class="nav-actions">
         <a href="https://docs.google.com/forms/d/e/1FAIpQLScJVkyYraKTstINyqyZDlA_3wJNCVj6ohHOMCs4Gtv6nChRBw/viewform" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Post Resume</a>
-        <div id="google_translate_element"></div>
+        <div class="lang-picker">
+          <button class="lang-btn" onclick="toggleLang()">🌐</button>
+          <div class="lang-dropdown" id="langDropdown">
+            <a href="#" onclick="changeLang('en'); return false;">English</a>
+            <a href="#" onclick="changeLang('zh-CN'); return false;">中文</a>
+            <a href="#" onclick="changeLang('ms'); return false;">Bahasa Melayu</a>
+          </div>
+        </div>
+        <div id="google_translate_element" style="display:none"></div>
       </div>
+      <script>
+      function toggleLang() {
+        document.getElementById('langDropdown').classList.toggle('show');
+      }
+      function changeLang(lang) {
+        var gt = document.querySelector('.goog-te-combo');
+        if (gt) {
+          gt.value = lang;
+          gt.dispatchEvent(new Event('change'));
+        }
+        document.getElementById('langDropdown').classList.remove('show');
+        return false;
+      }
+      window.addEventListener('click', function(e) {
+        if (!e.target.closest('.lang-picker')) {
+          var dd = document.getElementById('langDropdown');
+          if (dd) dd.classList.remove('show');
+        }
+      });
+      </script>
     </nav>
   </header>
 

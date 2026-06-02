@@ -63,7 +63,12 @@
       <div class="price-list">
         {{- range $key, $val := $prices.cpi }}
         <div class="price-row">
-          <span>{{ $val.label }}</span>
+          <span>
+            {{- if eq $key "food_beverages" }}Food &amp; Beverage
+            {{- else if eq $key "housing" }}Housing &amp; Utilities
+            {{- else if eq $key "transport" }}Transport
+            {{- else if eq $key "overall" }}Overall CPI
+            {{- else }}{{ $val.label }}{{ end }}</span>
           <strong>
             {{- if $val.inflation_yoy }}
               {{- if gt $val.inflation_yoy 0.0 }}
