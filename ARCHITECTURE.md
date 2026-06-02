@@ -1,88 +1,161 @@
-# ARCHITECTURE.md
+# ARCHITECTURE.md — 系统架构与工作流手册
 
 > **开发信条：** 厨师简历栏 = 免费招聘栏位 → 吸引厨师注册 → 拿到线索 → KHL 销售谈供应。
 > KHL 不介入安排厨师工作，不做中介。所有开发决策以此为准。
 
-## 系统拓扑
+---
+
+## 一、完整数据流（三路并行）
 
 ```mermaid
 graph TD
-    subgraph "数据采集层 (Python)"
-        NF[news_fetcher.py<br/>Google News RSS 22关键词] -->|feedparser| DATA[(data/*.json)]
-        PT[price_tracker.py<br/>DOSM CPI API + 汇率API] --> DATA
-        AG[aggregate.py<br/>主调度器] --> NF
-        AG --> PT
+    subgraph "① 定时刷新 (cron 每2h)"
+        CRON[cron: 0 8,10,12,14,16,18,20 * * *] -->|auto-publish.sh| AG[aggregate.py]
+        AG --> NF[news_fetcher.py<br/>Google News RSS ×22关键词]
+        AG --> PT[price_tracker.py<br/>DOSM CPI + exchangerate-api]
+        AG --> CP[chan_prices.py<br/>解析鸡价 /0.9 计算]
+        NF --> NEWS[(site/data/news.json)]
+        PT --> PRICES[(site/data/prices.json)]
     end
 
-    subgraph "表单录入层 (Google)"
-        FORM[厨师提交表<br/>site/chefs/submit/] -->|WhatsApp| KHL_PHONE[KHL WhatsApp]
-        FORM -->|Google Apps Script| SHEET[(Google Sheet)]
+    subgraph "② 实时抓取 (WhatsApp Channel)"
+        DAEMON[wa_daemon3.js<br/>PID 174813 :3456] -->|newsletterSubscribe| CHANNEL[鸡价频道<br/>120363405976277555@newsletter]
+        DAEMON -->|messages.upsert| RAW[(data/chan_raw.json)]
+        CP --> CHAN_PRICES[(site/data/chan_prices.json)]
     end
 
-    subgraph "数据层"
-        DATA --> SYNC[同步到 site/data/]
-        SITE_DATA[(site/data/*.json)] --> HUGO
-        CHEFS_JSON[site/data/chefs.json<br/>手动维护] --> HUGO
+    subgraph "③ 构建部署 (auto-publish.sh)"
+        SITE_DATA[(site/data/*.json)] -->|Hugo 读取| HUGO[hugo --minify]
+        HUGO --> DOCS[(docs/ 静态站)]
+        DOCS -->|git push| GH[GitHub Pages<br/>reinocheong.github.io/jbkitchen]
     end
 
-    subgraph "展示层 (Hugo)"
-        MD[content/*.md<br/>指南/供应商/厨师] --> HUGO
-        HUGO[Hugo Build] --> HTML[docs/ 静态页面]
-    end
-
-    subgraph "外部服务"
-        HTML --> CI[CountAPI<br/>每页独立计数]
-        HTML --> GA[(GA4<br/>埋点)]
-    end
-
-    subgraph "部署"
-        HTML --> GH[GitHub Pages<br/>/docs 目录]
-        GH --> USER[访客<br/>厨师/老板/供应商]
-    end
-
-    subgraph "引流链路"
-        USER -->|搜到 SEO 内容| SITE[网站页面]
-        SITE -->|供应商目录| KHL[KHL 详情页]
-        KHL -->|WhatsApp 询价| LEAD[KHL 销售跟进]
-        SITE -->|简历浏览| CONTACT[老板直接联系厨师]
-        LEAD_SALES[KHL 销售] -->|从 Sheet 获取线索| CONTACT_CHEF[联系厨师谈供应]
+    subgraph "展示层"
+        GH --> HOME[首页 行业动态]
+        HOME --> FX[💱 汇率<br/>USD/CNY/SGD]
+        HOME --> CPI[📊 CPI 通胀<br/>DOSM 4类]
+        HOME --> CHICKEN[🐓 鸡价表<br/>46项批发]
+        HOME --> NEWS_FEED[📰 新闻<br/>5条最新]
     end
 ```
 
-## 数据流向
+## 二、每次操作什么时间点做什么
+
+### 日常运行（自动）
+
+| 时间 | 动作 | 触发 | 数据源 | 影响 |
+|:---|:---|:---|:---|:---|
+| 8:00 / 10:00 / 12:00 / 14:00 / 16:00 / 18:00 / 20:00 | `auto-publish.sh` 执行 | cron `5c97932548d0` | 新闻RSS + DOSM CPI + 汇率API + 鸡价原始消息 | 网站自动更新 |
+| 随时 | 供营商在频道发新价目表 | `messages.upsert` 事件 | WhatsApp Channel | 覆盖 `chan_raw.json`，下次 cron 自动解析上线 |
+| 每日(不固定) | DOSM 发布新月度 CPI | `price_tracker.py` 下次运行时 | DOSM API (cpi_headline) | 通胀数据月度更新 |
+
+### 故障排查（人工）
+
+> **第一步永远先跑 `./scripts/auto-publish.sh`** — 这步会刷新所有数据并部署，能解决90%的「数据不更新」问题。
+
+**症状诊断表：**
+
+| 症状 | 查什么 | 怎么修 |
+|:---|:---|:---|
+| 汇率/CPI 不动 | `cat site/data/prices.json \| jq .updated` | 手动跑 `python3 scripts/price_tracker.py` |
+| 鸡价没更新 | `cat site/data/chan_raw.json \| jq .updated` | 检查 daemon 是否还活着 |
+| 新闻没更新 | `cat site/data/news.json \| jq '.items \| length'` | 手动跑 `python3 scripts/news_fetcher.py` |
+| 网站白屏/样式没了 | `curl -s https://reinocheong.github.io/jbkitchen/index.html \| head -5` | 检查 `.nojekyll` 文件是否存在、路径是否 `absURL` |
+| 整个网站404 | `curl -sI https://reinocheong.github.io/jbkitchen/` | 检查 GitHub Pages 是否开启、docs/ 目录是否存在 |
+
+### Daemon 相关操作
+
+> **🚨 不要随意重启 daemon。** 频繁重启会触发 WhatsApp 封号（403/463错误）。
+
+**daemon 状态检查：**
+```bash
+curl http://127.0.0.1:3456/health
+# 期望: {"ok":true,"pid":174813,"connected":true,"uptime":"..."}
+```
+
+**daemon 日志：**
+```bash
+tail -50 /tmp/wa_daemon3.log
+```
+
+**daemon 必须重启（session 丢失/进程崩溃）时：**
+```bash
+# 1. 杀旧进程
+pkill -f "node wa_daemon3.js"
+sleep 2
+# 2. 确认 session 文件还在
+ls ~/leadpilot/wa/wa_session/creds.json && echo "session OK（无需扫码）" || echo "session 丢失，需要重新扫码"
+# 3. 启动新 daemon
+cd ~/leadpilot/wa && nohup node wa_daemon3.js > /tmp/wa_daemon3.log 2>&1 &
+# 4. 等待连接
+sleep 5
+curl http://127.0.0.1:3456/health
+```
+
+**频道订阅确认（正常情况不需要重复执行，除非频道取消关注）：**
+```bash
+curl "http://127.0.0.1:3456/fetch_channel?invite=0029Vb6p7Qq5Ejy68g8VCj1U"
+```
+
+---
+
+## 三、数据文件清单
+
+| 文件 | 用途 | 更新方式 | 更新频率 |
+|:---|:---|:---|:---|
+| `site/data/prices.json` | 汇率 + CPI | `price_tracker.py` → `auto-publish.sh` | 每2h (cron) |
+| `site/data/news.json` | 新闻列表 (30条) | `news_fetcher.py` → `auto-publish.sh` | 每2h (cron) |
+| `site/data/chan_raw.json` | 鸡价原始消息 (daemon写入) | `wa_daemon3.js` `messages.upsert` | 供营商发新消息时 |
+| `site/data/chan_prices.json` | 鸡价解析结果 (46项) | `chan_prices.py` → `auto-publish.sh` | 每2h (cron)，只要有新原始数据 |
+| `site/data/chefs.json` | 厨师样本数据 | 手动维护 | 按需 |
+| `docs/` | 静态站输出 | `hugo --minify` → `auto-publish.sh` | 每2h + 手动 |
+
+---
+
+## 四、模块依赖关系
 
 ```
-DOSM CPI API / 汇率 API / Google News RSS
-    ↓ (手动运行 aggregate.py)
-Python 采集 → data/*.json
-    ↓
-site/data/*.json → Hugo 读取 (.Site.Data.prices / .Site.Data.news)
-    ↓
-手动 Hugo 构建 → docs/ 输出
-    ↓
-git push → GitHub Pages
+auto-publish.sh
+  ├── aggregate.py
+  │     ├── news_fetcher.py    → site/data/news.json
+  │     ├── price_tracker.py   → site/data/prices.json
+  │     └── chan_prices.py     → site/data/chan_prices.json
+  │
+  ├── hugo --minify            → docs/ (读取 site/data/*.json)
+  │
+  └── git add + commit + push → GitHub Pages
 
-厨师表单:
-网站提交 → WhatsApp 通知老板
-        → Google Sheet 记录存档
+wa_daemon3.js (独立进程 PID 174813)
+  └── messages.upsert          → site/data/chan_raw.json
 ```
 
-## 页面计数
+## 五、鸡价解析规则
 
 ```
-每个页面加载时:
-CountAPI hit → 存到云端计数器
-Dashboard 读取: CountAPI get → 按流量排序展示
-GA4: 标准 page_view 事件（需替换真实 Measurement ID）
+原始: (32) mid Joint Wing 12.50
+  ↓ 解析
+{item: "32", name: "Mid Joint Wing", price_src: 12.50}
+  ↓ /0.9 计算
+price_calc: 13.8889
+  ↓ 四舍五入到 0.10
+price: 13.90
+
+名称清理规则:
+- BB → Boneless Breast
+- SBB → Skinless Boneless Breast  
+- BL → Boneless Leg
+- WL → Whole Leg
+- *IM* → Import, *LO* → Local
+- 品牌名保持大写 (CARGIL, TYSON)
+- 尺寸范围 (0.8-0.9) 自动过滤（不是价格）
 ```
 
-## 模块依赖
+## 六、关键坑位
 
-```
-aggregate.py  ← 依赖 ← news_fetcher.py
-aggregate.py  ← 依赖 ← price_tracker.py
-Hugo layouts   ← 读取 ← site/data/prices.json（行业动态—汇率+CPI）
-Hugo layouts   ← 读取 ← site/data/news.json（行业动态—新闻列表）
-Hugo layouts   ← 读取 ← site/data/chefs.json（手动维护）
-无循环依赖。所有数据单向流动。
-```
+| 问题 | 原因 | 处理 |
+|:---|:---|:---|
+| websiteFetchMessages 超时 | Baileys 7.0.0-rc13 bug | 不走拉取，依赖 live `messages.upsert` |
+| daemon 重启频繁 → 封号 | WhatsApp 检测频繁配对 | 分钟级指数退避，不重启 |
+| 网站文件旧 | docs/ 没重新构建 | 手动跑 `auto-publish.sh` 或等 cron |
+| cron 跑了但数据没变 | Python 脚本本身没出错但数据源无新内容 | 正常 — 数据源本身更新频率低于 cron |
+| 鸡价显示缺项 | 供商家消息中无价格的商品（如"(1c) bb local "） | 自动跳过，只显示有价格的项 |
