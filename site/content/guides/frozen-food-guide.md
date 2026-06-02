@@ -1,5 +1,6 @@
 ---
 title: "Frozen Food Procurement Guide — Cut Costs by Half with the Right Supplier"
+description: "Inspection standards, storage temperatures, delivery checks... essential frozen food knowledge for restaurant owners"
 date: 2026-06-02
 ---
 
@@ -52,7 +53,7 @@ B is more expensive but 100% usable → actually the better deal
 
 ## Recommended Frozen Food Supplier in JB
 
-> 🥩 **KHL Frozen Food** — Johor Bahru Frozen Food Wholesale Specialist
+> **KHL Frozen Food** — Johor Bahru Frozen Food Wholesale Specialist
 > - Halal-certified products
 > - Delivery across all of Johor
 > - Full range: chicken, seafood, processed foods

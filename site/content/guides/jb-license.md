@@ -1,5 +1,6 @@
 ---
 title: "Essential Licenses for Opening a Restaurant in Johor Bahru"
+description: "From SSM registration to Majlis Bandaraya business license, all the mandatory procedures for opening a restaurant in JB"
 date: 2026-06-02
 ---
 

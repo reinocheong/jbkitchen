@@ -1,5 +1,6 @@
 ---
 title: "JAKIM Halal Certification Application Guide 2026"
+description: "What are the requirements for restaurant halal certification? How to prepare documents? How long does approval take?"
 date: 2026-06-02
 ---
 
@@ -61,4 +62,4 @@ A: It must be sourced from suppliers holding JAKIM halal certification.
 **Q: How do I renew an expiring certificate?**
 A: Begin the renewal application 3 months before expiry. The process is similar to the initial application.
 
-> 💡 **Tip**: Use KHL Frozen Food — all products are JAKIM halal-certified, eliminating the supplier audit step.
+> **Tip**: Use KHL Frozen Food — all products are JAKIM halal-certified, eliminating the supplier audit step.

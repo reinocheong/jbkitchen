@@ -19,14 +19,7 @@
   </script>
 
   <!-- Page view tracking — per-page counts -->
-  <script>
-    (function() {
-      var pageId = location.pathname.replace(/\/$/g, '') || '/';
-      var key = 'jbkitchen' + pageId.replace(/\//g, '-');
-      fetch('https://api.countapi.xyz/hit/jbkitchen/' + encodeURIComponent(key))
-        .catch(function() {});
-    })();
-  </script>
+  <script async src="https://api.countapi.xyz/hit/jbkitchen/{{ with .RelPermalink }}{{ urlize . }}{{ else }}/{{ end }}"></script>
 
   <!-- Google Translate - lightweight, no banner -->
   <script type="text/javascript">
@@ -59,6 +52,7 @@
         <li><a href="{{ "suppliers/" | absURL }}">Suppliers</a></li>
         <li><a href="{{ "calculator/" | absURL }}">Cost Calculator</a></li>
         <li><a href="{{ "guides/" | absURL }}">Guides</a></li>
+        <li><a href="{{ "about/" | absURL }}">About</a></li>
       </ul>
       <div class="nav-actions">
         <a href="https://docs.google.com/forms/d/e/1FAIpQLScJVkyYraKTstINyqyZDlA_3wJNCVj6ohHOMCs4Gtv6nChRBw/viewform" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Post Resume</a>
@@ -110,6 +104,7 @@
         <h4>Quick Links</h4>
         <ul>
           <li><a href="{{ "chefs/" | absURL }}">Job Board</a></li>
+          <li><a href="{{ "about/" | absURL }}">About</a></li>
           <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScJVkyYraKTstINyqyZDlA_3wJNCVj6ohHOMCs4Gtv6nChRBw/viewform" target="_blank" rel="noopener">Post Resume</a></li>
           <li><a href="{{ "suppliers/" | absURL }}">Supplier Directory</a></li>
           <li><a href="{{ "calculator/" | absURL }}">Cost Calculator</a></li>

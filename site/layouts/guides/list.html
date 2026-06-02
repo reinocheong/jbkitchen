@@ -1,21 +1,41 @@
 {{ define "main" }}
-<div class="page-content">
+<section class="section page-guides">
   <h1>Business Guides</h1>
-  <p>The complete Johor Bahru F&B operations guide — from license applications to ingredient sourcing, helping you avoid detours</p>
-</div>
-
-<div class="guide-list" style="max-width:800px;margin:0 auto;padding:0 2rem 4rem;">
-  <a href={{ "guides/halal-cert/" | absURL }} class="guide-item">
-    <h3>JAKIM Halal Certification Application Guide 2026</h3>
-    <p>What are the requirements for restaurant halal certification? How to prepare documents? How long does approval take?</p>
-  </a>
-  <a href={{ "guides/jb-license/" | absURL }} class="guide-item">
-    <h3>Essential License Checklist for Opening a Restaurant in JB</h3>
-    <p>From SSM registration to Majlis Bandaraya business license, all the mandatory procedures</p>
-  </a>
-  <a href={{ "guides/frozen-food-guide/" | absURL }} class="guide-item">
-    <h3>Frozen Food Procurement Guide — choose the right supplier and save half the cost</h3>
-    <p>Inspection standards, storage temperatures, delivery checks... essential frozen food knowledge for restaurant owners</p>
-  </a>
-</div>
+  <p class="page-subtitle">The complete Johor Bahru F&B operations guide — from license applications to ingredient sourcing, helping you avoid detours</p>
+  <div class="guides-grid">
+    {{ range .Pages }}
+    <a href="{{ .RelPermalink }}" class="guide-card">
+      <span class="gc-icon gc-{{ .File.ContentBaseName }}">
+        {{- if eq .File.ContentBaseName "halal-cert" }}
+        <!-- Crescent & star -->
+        <svg viewBox="0 0 32 32" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M16 4 C10 4 6 10 6 16 C6 22 10 28 16 28 C18 28 20 27.5 22 26.5 C18 25 15 21.5 15 17 C15 12.5 18 9 22 7.5 C20 5.5 18 4 16 4Z"/>
+          <circle cx="20" cy="10" r="1" fill="#fff" stroke="none"/>
+          <circle cx="22" cy="14" r="0.8" fill="#fff" stroke="none"/>
+        </svg>
+        {{- else if eq .File.ContentBaseName "jb-license" }}
+        <!-- Document with check -->
+        <svg viewBox="0 0 32 32" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M8 4 L8 28 L24 28 L24 10 L18 4 Z"/>
+          <line x1="8" y1="10" x2="18" y2="10"/>
+          <polyline points="12,18 15,21 20,15"/>
+        </svg>
+        {{- else }}
+        <!-- Snowflake / frozen -->
+        <svg viewBox="0 0 32 32" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round">
+          <line x1="16" y1="4" x2="16" y2="28"/>
+          <line x1="6" y1="8" x2="26" y2="24"/>
+          <line x1="6" y1="24" x2="26" y2="8"/>
+          <line x1="4" y1="16" x2="28" y2="16"/>
+        </svg>
+        {{- end }}
+      </span>
+      <span class="gc-body">
+        <span class="gc-title">{{ .Title }}</span>
+        <span class="gc-desc">{{ .Description }}</span>
+      </span>
+    </a>
+    {{ end }}
+  </div>
+</section>
 {{ end }}
