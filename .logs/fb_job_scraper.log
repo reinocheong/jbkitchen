@@ -9,3 +9,22 @@ Call log:
 [2026-06-02T08:06:39.232Z] [Jawatan Kosong Restoran JB] 4 条
 [2026-06-02T08:06:39.324Z]   → 相关: 0/4
 [2026-06-02T08:06:39.325Z] [Kerja Kosong Hotel JB] 开始
+[2026-06-02T08:06:54.938Z] [Kerja Kosong Hotel JB] 3 条
+[2026-06-02T08:06:55.048Z]   → 相关: 3/3
+[2026-06-02T08:06:55.049Z] [JAWATAN KOSONG JOHOR BHARU] 开始
+[2026-06-02T08:07:14.613Z] [JAWATAN KOSONG JOHOR BHARU] 3 条
+[2026-06-02T08:07:14.711Z]   → 相关: 0/3
+[2026-06-02T08:07:14.711Z] [Jobs Johor Bahru JJB] 开始
+[2026-06-02T08:07:30.942Z] [Jobs Johor Bahru JJB] 4 条
+[2026-06-02T08:07:31.040Z]   → 相关: 0/4
+[2026-06-02T08:07:31.040Z] [Job Vacancies Johor] 开始
+[2026-06-02T08:07:51.628Z] [Job Vacancies Johor] 3 条
+[2026-06-02T08:07:51.732Z]   → 相关: 0/3
+[2026-06-02T08:07:51.733Z] [Job Vacancy Johor Bahru] 开始
+[2026-06-02T08:08:07.560Z] [Job Vacancy Johor Bahru] 错误: page.waitForTimeout: Target page, context or browser has been closed
+[2026-06-02T08:08:07.634Z]   → 相关: 0/0
+[2026-06-02T08:08:07.634Z] [JB Johor Part Full Time Jobs] 开始
+[2026-06-02T08:08:23.794Z] [JB Johor Part Full Time Jobs] 5 条
+[2026-06-02T08:08:23.887Z]   → 相关: 1/5
+[2026-06-02T08:08:23.888Z] 
+完成: 共 5 条相关职位帖子
