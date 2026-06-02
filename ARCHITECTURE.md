@@ -41,8 +41,8 @@ graph TD
         USER -->|搜到 SEO 内容| SITE[网站页面]
         SITE -->|供应商目录| KHL[KHL 详情页]
         KHL -->|WhatsApp 询价| LEAD[KHL 销售跟进]
-        SITE -->|简历浏览| CONTACT[联系厨师]
-        CONTACT --> COORD[KHL协调安排]
+        SITE -->|简历浏览| CONTACT[老板直接联系厨师]
+        LEAD_SALES[KHL 销售] -->|从 Sheet 获取线索| CONTACT_CHEF[联系厨师谈供应]
     end
 ```
 
