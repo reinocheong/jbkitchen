@@ -4,11 +4,11 @@
 
   <!-- Header -->
   <div class="rp-header">
-    <h1>供应商排行榜</h1>
-    <p class="rp-subtitle">新山餐饮食材供应商综合排行 — 帮你找到最靠谱的货源</p>
+    <h1>Supplier Rankings</h1>
+    <p class="rp-subtitle">Johor Bahru F&amp;B Ingredient Supplier Rankings — Find the Most Reliable Sources</p>
   </div>
 
-  <!-- ===== #1 KHL 卡 ===== -->
+  <!-- ===== #1 KHL Card ===== -->
   {{ range where $suppliers "rank" 1 }}
   <div class="rp-top">
     <div class="rp-top-inner">
@@ -29,14 +29,14 @@
       <div class="rp-top-footer">
         <a href="{{ .cta_link }}" class="rp-btn rp-btn-primary" target="_blank" rel="noopener">{{ .cta }}</a>
         {{ if .website }}
-        <a href="{{ .website }}" class="rp-btn rp-btn-outline" target="_blank" rel="noopener">访问网站</a>
+        <a href="{{ .website }}" class="rp-btn rp-btn-outline" target="_blank" rel="noopener">Visit Website</a>
         {{ end }}
       </div>
     </div>
   </div>
   {{ end }}
 
-  <!-- ===== 排名列表 (#2 起) ===== -->
+  <!-- ===== Rankings (#2 onwards) ===== -->
   <div class="rp-list">
     {{ range where $suppliers "rank" "gt" 1 }}
     <div class="rp-card">
@@ -61,10 +61,10 @@
 
         <div class="rp-card-footer">
           {{ if .website }}
-          <a href="{{ .website }}" class="rp-btn-sm rp-link" target="_blank" rel="noopener">访问网站</a>
+          <a href="{{ .website }}" class="rp-btn-sm rp-link" target="_blank" rel="noopener">Visit Website</a>
           {{ end }}
           {{ if .since }}
-          <span class="rp-since">成立于 {{ .since }}</span>
+          <span class="rp-since">Est. {{ .since }}</span>
           {{ end }}
           {{ if .location }}
           <span class="rp-location">{{ .location }}</span>
@@ -79,9 +79,9 @@
   <div class="rp-cta-card">
     <div class="rp-cta-icon">+</div>
     <div>
-      <h3>你是供应商？免费加入排行</h3>
-      <p>提交公司信息，免费收录到新山供应商排行榜，让更多餐厅找到你</p>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfAK08xHqOtUeKfBvM44NlEPsm6jBvrSxaidtGKkBWHenMY6A/viewform" target="_blank" rel="noopener" class="rp-btn rp-btn-primary">商家提交</a>
+      <h3>Are You a Supplier? Join the Rankings for Free</h3>
+      <p>Submit your company info and get listed in the JB supplier rankings for free, so more restaurants can find you</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfAK08xHqOtUeKfBvM44NlEPsm6jBvrSxaidtGKkBWHenMY6A/viewform" target="_blank" rel="noopener" class="rp-btn rp-btn-primary">Submit Listing</a>
     </div>
   </div>
 

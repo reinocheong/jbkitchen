@@ -7,59 +7,59 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-content">
-    <h1>新山餐饮<br><span class="text-gold">人才与经营平台</span></h1>
-    <p class="hero-sub">厨师找工作 · 老板找人才 · 餐厅找供应商</p>
+    <h1>JB Kitchen<br><span class="text-gold">Talent &amp; Business Platform</span></h1>
+    <p class="hero-sub">Find a Job · Hire Staff · Source Suppliers</p>
     <div class="hero-actions">
       <a href="{{ "suppliers/" | absURL }}" class="hero-btn hero-btn-supplier">
-        <span class="hero-btn-icon">供</span>
+        <span class="hero-btn-icon">Supply</span>
         <span class="hero-btn-body">
-          <span class="hero-btn-title">找供应商</span>
-          <span class="hero-btn-desc">找货源、比价格</span>
+          <span class="hero-btn-title">Find Suppliers</span>
+          <span class="hero-btn-desc">Compare prices &amp; sources</span>
         </span>
       </a>
       <a href="{{ "chefs/" | absURL }}" class="hero-btn hero-btn-chef">
-        <span class="hero-btn-icon">招</span>
+        <span class="hero-btn-icon">Hire</span>
         <span class="hero-btn-body">
-          <span class="hero-btn-title">找厨师</span>
-          <span class="hero-btn-desc">招人才、建团队</span>
+          <span class="hero-btn-title">Find Chefs</span>
+          <span class="hero-btn-desc">Hire &amp; build your team</span>
         </span>
       </a>
       <a href="https://docs.google.com/forms/d/e/1FAIpQLScJVkyYraKTstINyqyZDlA_3wJNCVj6ohHOMCs4Gtv6nChRBw/viewform" target="_blank" rel="noopener" class="hero-btn hero-btn-job">
-        <span class="hero-btn-icon">工</span>
+        <span class="hero-btn-icon">Job</span>
         <span class="hero-btn-body">
-          <span class="hero-btn-title">我想找工作</span>
-          <span class="hero-btn-desc">投简历、等联系</span>
+          <span class="hero-btn-title">I Want a Job</span>
+          <span class="hero-btn-desc">Submit your resume</span>
         </span>
       </a>
     </div>
   </div>
 </section>
 
-<!-- 行业动态（置顶） -->
+<!-- Market Updates (Pinned) -->
 {{- if or $news $prices }}
 <section class="section">
   <div class="section-header">
-    <h2>行业动态</h2>
+    <h2>Market Updates</h2>
   </div>
   <div class="live-grid">
 
-    <!-- 汇率卡片 -->
+    <!-- Exchange Rates Card -->
     {{- if $prices.fx }}
     <div class="live-card">
-      <h3>汇率</h3>
+      <h3>Exchange Rates</h3>
       <div class="price-list">
         <div class="price-row"><span>USD/MYR</span><strong class="text-gold">{{ $prices.fx.USD_MYR }}</strong></div>
         <div class="price-row"><span>CNY/MYR</span><strong class="text-gold">{{ $prices.fx.CNY_MYR }}</strong></div>
         <div class="price-row"><span>SGD/MYR</span><strong class="text-gold">{{ $prices.fx.SGD_MYR }}</strong></div>
       </div>
-      <p class="live-updated">更新：{{ $prices.updated }}</p>
+      <p class="live-updated">Updated: {{ $prices.updated }}</p>
     </div>
     {{- end }}
 
-    <!-- CPI 通胀卡片 -->
+    <!-- CPI Inflation Card -->
     {{- if $prices.cpi }}
     <div class="live-card">
-      <h3>CPI 通胀指数</h3>
+      <h3>CPI Inflation</h3>
       <div class="price-list">
         {{- range $key, $val := $prices.cpi }}
         <div class="price-row">
@@ -80,11 +80,11 @@
         </div>
         {{- end }}
       </div>
-      <p class="live-updated">数据来源：DOSM · {{ $prices.updated }}</p>
+      <p class="live-updated">Source: DOSM · {{ $prices.updated }}</p>
     </div>
     {{- end }}
 
-    <!-- 冷冻鸡价 -->
+    <!-- Frozen Chicken Prices -->
     {{- if $chan.items }}
     <div class="live-card live-card-wide">
       <h3>Frozen Chicken Wholesale Price <span class="price-note">(RM/kg)</span></h3>
@@ -106,10 +106,10 @@
     </div>
     {{- end }}
 
-    <!-- 最新新闻列表 -->
+    <!-- Latest News List -->
     {{- if $news.items }}
     <div class="live-card live-card-wide">
-      <h3>最新资讯</h3>
+      <h3>Latest News</h3>
       <ul class="news-list">
         {{- range first 5 $news.items }}
         <li class="news-item">
@@ -122,7 +122,7 @@
         </li>
         {{- end }}
       </ul>
-      <p class="live-updated">{{ len $news.items }} 条自动采集 · 更新：{{ $news.updated }}</p>
+      <p class="live-updated">{{ len $news.items }} items · Auto-collected · Updated: {{ $news.updated }}</p>
     </div>
     {{- end }}
 
@@ -130,12 +130,12 @@
 </section>
 {{- end }}
 
-<!-- 最新厨师简历 -->
+<!-- Recent Chefs -->
 {{- if gt (len $chefs) 0 }}
 <section class="section bg-light">
   <div class="section-header">
-    <h2>最新厨师简历</h2>
-    <a href="{{ "chefs/" | absURL }}" class="btn-outline">查看全部 →</a>
+    <h2>Recent Chefs</h2>
+    <a href="{{ "chefs/" | absURL }}" class="btn-outline">View All →</a>
   </div>
   <div class="chef-grid">
     {{- range first 6 $chefs }}
@@ -144,7 +144,7 @@
       <div class="chef-info">
         <h3>{{ .name }}</h3>
         <p class="chef-spec">{{ .specialty }}</p>
-        <p class="chef-meta">{{ .exp_years }}年 · {{ .location }}</p>
+        <p class="chef-meta">{{ .exp_years }} yrs · {{ .location }}</p>
       </div>
     </a>
     {{- end }}
@@ -152,31 +152,31 @@
 </section>
 {{- end }}
 
-<!-- 经营工具 -->
+<!-- Business Tools -->
 <section class="section">
   <div class="section-header">
-    <h2>经营工具</h2>
+    <h2>Business Tools</h2>
   </div>
   <div class="tool-grid">
     <a href="{{ "calculator/" | absURL }}" class="tool-card">
-      <span class="tool-icon">计</span>
-      <h3>成本计算器</h3>
-      <p>算成本、知利润</p>
+      <span class="tool-icon">Calc</span>
+      <h3>Cost Calculator</h3>
+      <p>Know your costs &amp; profits</p>
     </a>
     <a href="{{ "suppliers/" | absURL }}" class="tool-card">
-      <span class="tool-icon">供</span>
-      <h3>供应商排行</h3>
-      <p>找货源、比价格</p>
+      <span class="tool-icon">Supply</span>
+      <h3>Supplier Rankings</h3>
+      <p>Source products, compare prices</p>
     </a>
     <a href="{{ "guides/" | absURL }}" class="tool-card">
-      <span class="tool-icon">指</span>
-      <h3>经营指南</h3>
-      <p>清真认证、执照、采购</p>
+      <span class="tool-icon">Guide</span>
+      <h3>Business Guides</h3>
+      <p>Halal cert, licenses, sourcing</p>
     </a>
     <a href="{{ "chefs/" | absURL }}" class="tool-card">
-      <span class="tool-icon">招</span>
-      <h3>餐饮招聘</h3>
-      <p>浏览招聘信息与厨师简历</p>
+      <span class="tool-icon">Hire</span>
+      <h3>Job Board</h3>
+      <p>Browse jobs &amp; chef resumes</p>
     </a>
   </div>
 </section>

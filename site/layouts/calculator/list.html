@@ -1,173 +1,173 @@
 {{ define "main" }}
 <div class="calc-page">
-  <h1 class="calc-title">菜品成本计算器</h1>
-  <p class="calc-sub">输入食材清单，自动算成本、毛利率、建议售价。支持多菜对比。</p>
+  <h1 class="calc-title">Dish Cost Calculator</h1>
+  <p class="calc-sub">Enter ingredient list, auto-calculate cost, gross margin, and suggested pricing. Supports multi-dish comparison.</p>
 
   <!-- Tab Nav -->
   <div class="calc-tabs">
-    <button class="calc-tab active" onclick="switchTab('single')">菜品成本卡</button>
-    <button class="calc-tab" onclick="switchTab('compare')">多菜对比</button>
-    <button class="calc-tab" onclick="switchTab('breakeven')">保本分析</button>
+    <button class="calc-tab active" onclick="switchTab('single')">Dish Cost Card</button>
+    <button class="calc-tab" onclick="switchTab('compare')">Multi-Dish Compare</button>
+    <button class="calc-tab" onclick="switchTab('breakeven')">Breakeven Analysis</button>
   </div>
 
-  <!-- ============ TAB 1: 单菜成本卡 ============ -->
+  <!-- ============ TAB 1: Dish Cost Card ============ -->
   <div id="tab-single" class="calc-tab-content active">
     <div class="calc-two-col">
       <!-- Left: Form -->
       <div class="calc-panel">
         <div class="calc-field">
-          <label>菜名</label>
-          <input type="text" id="dishName" placeholder="例：咖喱鸡" style="font-weight:600;">
+          <label>Dish Name</label>
+          <input type="text" id="dishName" placeholder="e.g. Curry Chicken" style="font-weight:600;">
         </div>
         <div class="calc-field">
-          <label>售价 (RM)</label>
-          <input type="number" id="sellPrice" placeholder="例：18.00" min="0" step="0.5">
+          <label>Selling Price (RM)</label>
+          <input type="number" id="sellPrice" placeholder="e.g. 18.00" min="0" step="0.5">
         </div>
 
         <div class="calc-ingredients">
-          <h4>食材清单 <span style="font-weight:400;font-size:0.75rem;color:var(--text-3);">填一份的用量</span></h4>
+          <h4>Ingredient List <span style="font-weight:400;font-size:0.75rem;color:var(--text-3);">per serving quantity</span></h4>
           <div id="ingredientList">
             <!-- Template row -->
             <div class="ing-row">
-              <input type="text" class="ing-name" placeholder="食材名" style="width:28%;">
-              <input type="number" class="ing-qty" placeholder="用量" min="0" step="0.1" style="width:15%;">
+              <input type="text" class="ing-name" placeholder="Ingredient" style="width:28%;">
+              <input type="number" class="ing-qty" placeholder="Qty" min="0" step="0.1" style="width:15%;">
               <select class="ing-unit" style="width:18%;">
-                <option value="g">克 (g)</option>
-                <option value="kg">公斤 (kg)</option>
-                <option value="ml">毫升 (ml)</option>
-                <option value="pcs">个/pcs</option>
-                <option value="pack">包</option>
-                <option value="tbsp">汤匙</option>
+                <option value="g">g</option>
+                <option value="kg">kg</option>
+                <option value="ml">ml</option>
+                <option value="pcs">pcs</option>
+                <option value="pack">pack</option>
+                <option value="tbsp">tbsp</option>
               </select>
-              <input type="number" class="ing-price" placeholder="单价(RM)" min="0" step="0.1" style="width:18%;">
-              <span class="ing-unit-label">/单位</span>
+              <input type="number" class="ing-price" placeholder="Unit Price (RM)" min="0" step="0.1" style="width:18%;">
+              <span class="ing-unit-label">/unit</span>
               <button class="ing-remove" onclick="removeIngredient(this)">✕</button>
             </div>
           </div>
-          <button class="btn-add-ing" onclick="addIngredient()">＋ 添加食材</button>
+          <button class="btn-add-ing" onclick="addIngredient()">＋ Add Ingredient</button>
         </div>
 
         <div class="calc-field calc-field-row">
-          <label>人工/其他成本 (RM)</label>
-          <input type="number" id="otherCostSingle" placeholder="例：3.00" min="0" step="0.1" style="width:120px;">
+          <label>Labor/Other Costs (RM)</label>
+          <input type="number" id="otherCostSingle" placeholder="e.g. 3.00" min="0" step="0.1" style="width:120px;">
         </div>
 
-        <button class="calc-btn-calc" onclick="calcSingleDish()">计算</button>
-        <button class="calc-btn-example" onclick="loadExample()">加载示例</button>
+        <button class="calc-btn-calc" onclick="calcSingleDish()">Calculate</button>
+        <button class="calc-btn-example" onclick="loadExample()">Load Example</button>
       </div>
 
       <!-- Right: Results -->
       <div class="calc-panel" id="singleResult" style="display:none;">
-        <h3 class="result-title"><span id="resultDishName">—</span> 成本分析</h3>
+        <h3 class="result-title"><span id="resultDishName">—</span> Cost Analysis</h3>
         
         <div class="calc-result-grid">
           <div class="cr-item">
-            <span class="cr-label">总食材成本</span>
+            <span class="cr-label">Total Food Cost</span>
             <span class="cr-value" id="totalFoodCost">—</span>
           </div>
           <div class="cr-item">
-            <span class="cr-label">食材成本率</span>
+            <span class="cr-label">Food Cost Rate</span>
             <span class="cr-value" id="foodCostRate">—</span>
           </div>
           <div class="cr-item">
-            <span class="cr-label">毛利率</span>
+            <span class="cr-label">Gross Margin</span>
             <span class="cr-value" id="marginRate">—</span>
           </div>
           <div class="cr-item">
-            <span class="cr-label">每份净利润</span>
+            <span class="cr-label">Net Profit per Serving</span>
             <span class="cr-value" id="profitPerUnit">—</span>
           </div>
         </div>
 
         <div class="calc-suggest-box">
-          <h4>建议售价 <span style="font-weight:400;font-size:0.7rem;color:var(--text-3);">大马餐饮常见目标成本率</span></h4>
+          <h4>Suggested Price <span style="font-weight:400;font-size:0.7rem;color:var(--text-3);">Common target cost rates for Malaysian F&B</span></h4>
           <div class="suggest-row">
-            <span>目标成本率 40%</span>
+            <span>Target Cost Rate 40%</span>
             <span class="sg-price" id="suggest40">—</span>
           </div>
           <div class="suggest-row">
-            <span>目标成本率 45%</span>
+            <span>Target Cost Rate 45%</span>
             <span class="sg-price" id="suggest45">—</span>
           </div>
           <div class="suggest-row">
-            <span>目标成本率 50%</span>
+            <span>Target Cost Rate 50%</span>
             <span class="sg-price" id="suggest50">—</span>
           </div>
         </div>
 
-        <button class="calc-btn-save" onclick="saveDish()">保存到对比表</button>
+        <button class="calc-btn-save" onclick="saveDish()">Save to Comparison</button>
       </div>
     </div>
   </div>
 
-  <!-- ============ TAB 2: 多菜对比 ============ -->
+  <!-- ============ TAB 2: Multi-Dish Compare ============ -->
   <div id="tab-compare" class="calc-tab-content">
     <div class="calc-tab-intro">
-      <h3>多菜对比</h3>
-      <p>把几道菜放在一起比，哪道利润高、哪道成本重，一眼看清。<br>先在「菜品成本卡」算完点保存，自动出现在这里。或者点下面加载示例看看效果。</p>
+      <h3>Multi-Dish Compare</h3>
+      <p>Compare multiple dishes side by side to see which has the highest profit and which costs the most, at a glance.<br>First calculate and save on the "Dish Cost Card", they'll appear here automatically. Or load the example below to preview.</p>
     </div>
     <div id="compareWrap">
       <p style="color:var(--text-3);text-align:center;padding:2rem;" id="emptyCompare">
-        还没有保存的菜品。
+        No saved dishes yet.
       </p>
-      <button class="calc-btn-example" onclick="loadCompareExample()" style="max-width:300px;margin:0 auto 1rem;">加载对比示例</button>
+      <button class="calc-btn-example" onclick="loadCompareExample()" style="max-width:300px;margin:0 auto 1rem;">Load Comparison Example</button>
     </div>
     <div id="compareTableWrap" style="display:none;">
       <table class="compare-table">
         <thead>
           <tr>
-            <th>菜品</th>
-            <th>食材成本</th>
-            <th>成本率</th>
-            <th>售价</th>
-            <th>毛利率</th>
-            <th>每份利润</th>
+            <th>Dish</th>
+            <th>Food Cost</th>
+            <th>Cost Rate</th>
+            <th>Price</th>
+            <th>Gross Margin</th>
+            <th>Profit/Serving</th>
             <th></th>
           </tr>
         </thead>
         <tbody id="compareBody"></tbody>
       </table>
       <div style="display:flex;gap:0.5rem;margin-top:0.8rem;flex-wrap:wrap;">
-        <button class="btn-add-ing" onclick="clearAllDishes()" style="background:#fee;">清空所有</button>
-        <button class="btn-add-ing" onclick="loadCompareExample()" style="border-color:var(--gold);color:var(--gold-dark);">重新加载示例</button>
+        <button class="btn-add-ing" onclick="clearAllDishes()" style="background:#fee;">Clear All</button>
+        <button class="btn-add-ing" onclick="loadCompareExample()" style="border-color:var(--gold);color:var(--gold-dark);">Reload Example</button>
       </div>
     </div>
   </div>
 
-  <!-- ============ TAB 3: 保本分析 ============ -->
+  <!-- ============ TAB 3: Breakeven Analysis ============ -->
   <div id="tab-breakeven" class="calc-tab-content">
     <div class="calc-tab-intro">
-      <h3>保本分析</h3>
-      <p>每个月固定开销（租金+人工+水电）要卖多少份菜才能回本？<br>输入固定成本和每份利润，马上知道答案。</p>
+      <h3>Breakeven Analysis</h3>
+      <p>How many servings must you sell each month to cover fixed costs (rent + labor + utilities)?<br>Enter your fixed costs and profit per serving to find out.</p>
     </div>
     <div class="calc-panel" style="max-width:500px;margin:0 auto;">
       <div class="calc-field">
-        <label>每月固定成本 (RM)</label>
-        <span class="field-hint">租金 + 人工 + 水电 + 杂费</span>
-        <input type="number" id="fixedCostBE" placeholder="例：15000" min="0" step="100">
+        <label>Monthly Fixed Costs (RM)</label>
+        <span class="field-hint">Rent + Labor + Utilities + Misc</span>
+        <input type="number" id="fixedCostBE" placeholder="e.g. 15000" min="0" step="100">
       </div>
       <div class="calc-field">
-        <label>平均每份净利润 (RM)</label>
-        <span class="field-hint">用成本卡算出来每道菜赚多少，取平均值</span>
-        <input type="number" id="profitPerBE" placeholder="例：4.00" min="0" step="0.5">
+        <label>Avg Net Profit per Serving (RM)</label>
+        <span class="field-hint">Use the cost card to calculate profit per dish, take the average</span>
+        <input type="number" id="profitPerBE" placeholder="e.g. 4.00" min="0" step="0.5">
       </div>
       <div style="display:flex;gap:0.5rem;">
-        <button class="calc-btn-calc" onclick="calcBreakeven()" style="flex:1;">算保本点</button>
-        <button class="calc-btn-example" onclick="loadBExample()" style="flex:0;white-space:nowrap;padding:0.7rem 1rem;">示例</button>
+        <button class="calc-btn-calc" onclick="calcBreakeven()" style="flex:1;">Calc Breakeven</button>
+        <button class="calc-btn-example" onclick="loadBExample()" style="flex:0;white-space:nowrap;padding:0.7rem 1rem;">Example</button>
       </div>
 
       <div id="beResult" style="display:none;margin-top:1.5rem;">
-        <div class="be-big" id="beMonthly">— 份/月</div>
-        <div class="be-label">每月至少卖这么多才能回本</div>
-        <div class="be-big" id="beDaily">— 份/天</div>
-        <div class="be-label">每天需卖（30天算）</div>
+        <div class="be-big" id="beMonthly">— servings/mo</div>
+        <div class="be-label">Monthly minimum to break even</div>
+        <div class="be-big" id="beDaily">— servings/day</div>
+        <div class="be-label">Daily required (based on 30 days)</div>
       </div>
     </div>
   </div>
 
   <!-- CTA -->
   <div class="calc-footer-note">
-    <p>想批量计算整家店的成本？<a href="{{ "suppliers/khl-frozen-food/" | absURL }}" style="color:var(--green-600);">联系我们</a>获取完整 Excel 成本管理模板</p>
+    <p>Want to calculate costs for your entire store? <a href="{{ "suppliers/khl-frozen-food/" | absURL }}" style="color:var(--green-600);">Contact us</a> for a complete Excel cost management template</p>
   </div>
 </div>
 
@@ -178,18 +178,18 @@ function addIngredient(values) {
   const row = document.createElement('div');
   row.className = 'ing-row';
   row.innerHTML = `
-    <input type="text" class="ing-name" placeholder="食材名" style="width:28%;" value="${values?.name || ''}">
-    <input type="number" class="ing-qty" placeholder="用量" min="0" step="0.1" style="width:15%;" value="${values?.qty || ''}">
+    <input type="text" class="ing-name" placeholder="Ingredient" style="width:28%;" value="${values?.name || ''}">
+    <input type="number" class="ing-qty" placeholder="Qty" min="0" step="0.1" style="width:15%;" value="${values?.qty || ''}">
     <select class="ing-unit" style="width:18%;">
-      <option value="g" ${values?.unit==='g'?'selected':''}>克 (g)</option>
-      <option value="kg" ${values?.unit==='kg'?'selected':''}>公斤 (kg)</option>
-      <option value="ml" ${values?.unit==='ml'?'selected':''}>毫升 (ml)</option>
-      <option value="pcs" ${values?.unit==='pcs'?'selected':''}>个/pcs</option>
-      <option value="pack" ${values?.unit==='pack'?'selected':''}>包</option>
-      <option value="tbsp" ${values?.unit==='tbsp'?'selected':''}>汤匙</option>
+      <option value="g" ${values?.unit==='g'?'selected':''}>g</option>
+      <option value="kg" ${values?.unit==='kg'?'selected':''}>kg</option>
+      <option value="ml" ${values?.unit==='ml'?'selected':''}>ml</option>
+      <option value="pcs" ${values?.unit==='pcs'?'selected':''}>pcs</option>
+      <option value="pack" ${values?.unit==='pack'?'selected':''}>pack</option>
+      <option value="tbsp" ${values?.unit==='tbsp'?'selected':''}>tbsp</option>
     </select>
-    <input type="number" class="ing-price" placeholder="单价(RM)" min="0" step="0.1" style="width:18%;" value="${values?.price || ''}">
-    <span class="ing-unit-label">/单位</span>
+    <input type="number" class="ing-price" placeholder="Unit Price (RM)" min="0" step="0.1" style="width:18%;" value="${values?.price || ''}">
+    <span class="ing-unit-label">/unit</span>
     <button class="ing-remove" onclick="removeIngredient(this)">✕</button>
   `;
   list.appendChild(row);
@@ -243,13 +243,13 @@ function getIngredientData() {
 }
 
 function calcSingleDish() {
-  const name = document.getElementById('dishName').value.trim() || '未命名菜品';
+  const name = document.getElementById('dishName').value.trim() || 'Unnamed Dish';
   const sellPrice = parseFloat(document.getElementById('sellPrice').value) || 0;
   const otherCost = parseFloat(document.getElementById('otherCostSingle').value) || 0;
   const ingredients = getIngredientData();
 
   if (ingredients.length === 0) {
-    alert('请至少填一种食材的用量和单价');
+    alert('Please fill in at least one ingredient quantity and unit price');
     return;
   }
 
@@ -276,9 +276,9 @@ function calcSingleDish() {
     document.getElementById('profitPerUnit').textContent = 'RM ' + profit.toFixed(2);
     document.getElementById('profitPerUnit').className = 'cr-value rate-' + (profit <= 0 ? 'bad' : 'good');
   } else {
-    document.getElementById('foodCostRate').textContent = '需填售价';
-    document.getElementById('marginRate').textContent = '需填售价';
-    document.getElementById('profitPerUnit').textContent = '需填售价';
+    document.getElementById('foodCostRate').textContent = 'Price needed';
+    document.getElementById('marginRate').textContent = 'Price needed';
+    document.getElementById('profitPerUnit').textContent = 'Price needed';
   }
 
   // Suggested prices
@@ -309,7 +309,7 @@ function saveDish() {
     totalCost: d.totalCost
   });
   localStorage.setItem('jbkitchen_dishes', JSON.stringify(saved));
-  alert('已保存「' + d.name + '」到对比表');
+  alert('Saved "' + d.name + '" to comparison table');
 }
 
 function renderCompareTable() {
@@ -355,7 +355,7 @@ function removeDish(id) {
 }
 
 function clearAllDishes() {
-  if (!confirm('清空所有保存的菜品？')) return;
+  if (!confirm('Clear all saved dishes?')) return;
   localStorage.removeItem('jbkitchen_dishes');
   renderCompareTable();
 }
@@ -373,37 +373,37 @@ function calcBreakeven() {
   const profit = parseFloat(document.getElementById('profitPerBE').value) || 0;
 
   if (fixed <= 0 || profit <= 0) {
-    alert('请填写固定成本和每份利润');
+    alert('Please fill in fixed costs and profit per serving');
     return;
   }
 
   const monthly = Math.ceil(fixed / profit);
   const daily = Math.ceil(monthly / 30);
 
-  document.getElementById('beMonthly').textContent = monthly + ' 份/月';
-  document.getElementById('beDaily').textContent = daily + ' 份/天';
+  document.getElementById('beMonthly').textContent = monthly + ' servings/mo';
+  document.getElementById('beDaily').textContent = daily + ' servings/day';
   document.getElementById('beResult').style.display = 'block';
   document.getElementById('beResult').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
 // ========== Example Data ==========
 const EXAMPLE_DISH = {
-  name: '咖喱鸡饭（1份）',
+  name: 'Curry Chicken Rice (1 serving)',
   sellPrice: 10.00,
   otherCost: 1.50,
   ingredients: [
-    { name: '鸡腿肉', qty: 120, unit: 'g', price: 13 },
-    { name: '马铃薯', qty: 80, unit: 'g', price: 3.5 },
-    { name: '咖喱酱料', qty: 1, unit: 'pcs', price: 1.5 },
-    { name: '白饭', qty: 200, unit: 'g', price: 3 },
-    { name: '配菜(黄瓜/生菜)', qty: 1, unit: 'pcs', price: 0.5 },
+    { name: 'Chicken Thigh', qty: 120, unit: 'g', price: 13 },
+    { name: 'Potato', qty: 80, unit: 'g', price: 3.5 },
+    { name: 'Curry Paste', qty: 1, unit: 'pcs', price: 1.5 },
+    { name: 'Rice', qty: 200, unit: 'g', price: 3 },
+    { name: 'Side (Cucumber/Lettuce)', qty: 1, unit: 'pcs', price: 0.5 },
   ]
 };
 
 const COMPARE_EXAMPLES = [
-  { name: '咖喱鸡饭', foodCost: 4.44, sellPrice: 10.00, otherCost: 1.50, totalCost: 5.94 },
-  { name: '炒粿条', foodCost: 2.80, sellPrice: 7.00, otherCost: 1.20, totalCost: 4.00 },
-  { name: '炸鸡椰浆饭', foodCost: 3.60, sellPrice: 8.00, otherCost: 1.00, totalCost: 4.60 },
+  { name: 'Curry Chicken Rice', foodCost: 4.44, sellPrice: 10.00, otherCost: 1.50, totalCost: 5.94 },
+  { name: 'Char Kway Teow', foodCost: 2.80, sellPrice: 7.00, otherCost: 1.20, totalCost: 4.00 },
+  { name: 'Fried Chicken Nasi Lemak', foodCost: 3.60, sellPrice: 8.00, otherCost: 1.00, totalCost: 4.60 },
 ];
 
 function loadExample() {
@@ -429,7 +429,7 @@ function loadCompareExample() {
   renderCompareTable();
   // Switch to compare tab visual feedback
   const btn = document.querySelector('[onclick*="compare"]');
-  if (btn) btn.textContent = '多菜对比 (3)';
+  if (btn) btn.textContent = 'Multi-Dish Compare (3)';
 }
 
 // ========== Init ==========
@@ -443,7 +443,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const saved = JSON.parse(localStorage.getItem('jbkitchen_dishes') || '[]');
   if (saved.length > 0) {
     document.querySelector('[onclick="switchTab(\'compare\')"]').textContent = 
-      `多菜对比 (${saved.length})`;
+      `Multi-Dish Compare (${saved.length})`;
   }
 });
 </script>

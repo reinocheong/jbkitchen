@@ -1,61 +1,61 @@
 ---
-title: "冷冻食品采购指南 — 选对供应商省一半成本"
+title: "Frozen Food Procurement Guide — Cut Costs by Half with the Right Supplier"
 date: 2026-06-02
 ---
 
-开餐厅，食材成本通常占 **30-40%** 的营收。冷冻食品选对了，一年省下的钱不是小数目。
+Running a restaurant, ingredient costs typically account for **30-40%** of revenue. Choosing the right frozen food can save you a significant amount each year.
 
-## 为什么要选冷冻食品？
+## Why Choose Frozen Food?
 
-- **价格稳定** — 不受季节性波动影响
-- **保存期长** — 减少损耗浪费
-- **标准化** — 每批品质一致
-- **方便存储** — 一次采购量大，减少采购频率
+- **Stable Pricing** — unaffected by seasonal fluctuations
+- **Long Shelf Life** — reduces spoilage and waste
+- **Standardized Quality** — consistent quality across every batch
+- **Convenient Storage** — buy in bulk less frequently, reducing procurement frequency
 
-## 怎么选冷冻食品供应商
+## How to Choose a Frozen Food Supplier
 
-### 1. 检查清真认证
+### 1. Check Halal Certification
 
-如果你面向穆斯林顾客，供应商必须有 JAKIM 清真认证。**没有认证的供应商，你的清真认证也批不下来。**
+If you serve Muslim customers, your supplier must have JAKIM halal certification. **Without a certified supplier, your own halal certification won't be approved either.**
 
-### 2. 看配送能力
+### 2. Assess Delivery Capability
 
-新山的餐厅，要选能 **全柔佛配送** 的供应商：
-- 每日/隔日配送
-- 冷链运输（冷冻车）
-- 准时率（最好问现有客户）
+For restaurants in Johor Bahru, choose a supplier that can deliver **across all of Johor**:
+- Daily / every-other-day delivery
+- Cold chain transport (refrigerated trucks)
+- On-time rate (best to ask existing customers)
 
-### 3. 验货标准
+### 3. Receiving Inspection Checklist
 
-每次收货检查这 5 点：
+Check these 5 points on every delivery:
 
-| 检查项 | 标准 |
+| Check Item | Standard |
 |-------|------|
-| 温度 | ≤ -18°C（冷冻）|
-| 包装 | 无破损、无结霜 |
-| 外观 | 无变色、无冰晶过多 |
-| 日期 | 保质期剩余 > 70% |
-| 份量 | 实际重量符合标注 |
+| Temperature | ≤ -18°C (frozen) |
+| Packaging | No damage, no frost buildup |
+| Appearance | No discoloration, no excessive ice crystals |
+| Expiry Date | Remaining shelf life > 70% |
+| Weight | Actual weight matches label |
 
-### 4. 比价不能只看单价
+### 4. Don't Compare Prices Based on Unit Price Alone
 
-冷冻食品要算 **实际可用成本**：
+For frozen foods, calculate the **actual usable cost**:
 
 ```
-例：A 供应商鸡腿 RM8/kg（含骨含皮）
-     B 供应商去骨鸡腿肉 RM15/kg
-     
-A 看起来便宜，但去骨后实际可用只有 70%
-实际成本 = 8 / 0.7 = RM11.43/kg
-B 虽然贵，但 100% 可用 → 实际更划算
+Example: Supplier A chicken leg RM8/kg (bone-in, skin-on)
+         Supplier B boneless chicken thigh RM15/kg
+
+A looks cheaper, but after deboning only ~70% is usable
+Actual cost = 8 / 0.7 = RM11.43/kg
+B is more expensive but 100% usable → actually the better deal
 ```
 
-## 新山冷冻食品推荐
+## Recommended Frozen Food Supplier in JB
 
-> 🥩 **KHL Frozen Food** — 新山冷冻食品批发专家
-> - 清真认证产品
-> - 全柔佛配送
-> - 鸡肉、海鲜、加工食品全品类
-> - 餐厅批发价
+> 🥩 **KHL Frozen Food** — Johor Bahru Frozen Food Wholesale Specialist
+> - Halal-certified products
+> - Delivery across all of Johor
+> - Full range: chicken, seafood, processed foods
+> - Wholesale restaurant pricing
 
-[查看 KHL 完整产品目录 →](/suppliers/khl-frozen-food/)
+[View KHL Complete Product Catalog →](/suppliers/khl-frozen-food/)

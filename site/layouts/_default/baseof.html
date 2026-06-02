@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
 
-  <!-- Google Analytics (GA4) — 替换为你的 Measurement ID -->
+  <!-- Google Analytics (GA4) — replace with your Measurement ID -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -18,7 +18,7 @@
     gtag('config', 'G-XXXXXXXXXX');
   </script>
 
-  <!-- 页面浏览追踪 — 每页独立计数 -->
+  <!-- Page view tracking — per-page counts -->
   <script>
     (function() {
       var pageId = location.pathname.replace(/\/$/g, '') || '/';
@@ -27,19 +27,32 @@
         .catch(function() {});
     })();
   </script>
+
+  <!-- Google Translate -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'zh-CN,ms',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </head>
 <body>
   <header class="site-header">
     <nav class="nav">
       <a href="{{ "" | absURL }}" class="logo"><span class="logo-text">jbkitchen</span></a>
       <ul class="nav-menu">
-        <li><a href="{{ "chefs/" | absURL }}">餐饮招聘</a></li>
-        <li><a href="{{ "suppliers/" | absURL }}">供应商</a></li>
-        <li><a href="{{ "calculator/" | absURL }}">成本计算</a></li>
-        <li><a href="{{ "guides/" | absURL }}">指南</a></li>
+        <li><a href="{{ "chefs/" | absURL }}">Job Board</a></li>
+        <li><a href="{{ "suppliers/" | absURL }}">Suppliers</a></li>
+        <li><a href="{{ "calculator/" | absURL }}">Cost Calculator</a></li>
+        <li><a href="{{ "guides/" | absURL }}">Guides</a></li>
       </ul>
       <div class="nav-actions">
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLScJVkyYraKTstINyqyZDlA_3wJNCVj6ohHOMCs4Gtv6nChRBw/viewform" target="_blank" rel="noopener" class="btn btn-primary btn-sm">免费挂简历</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScJVkyYraKTstINyqyZDlA_3wJNCVj6ohHOMCs4Gtv6nChRBw/viewform" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Post Resume</a>
+        <div id="google_translate_element"></div>
       </div>
     </nav>
   </header>
@@ -52,22 +65,22 @@
     <div class="footer-grid">
       <div>
         <h3>jbkitchen</h3>
-        <p>新山餐饮人才与服务平台</p>
-        <p class="footer-tagline">为厨师找工作 · 为老板找人才 · 为餐厅找供应商</p>
+        <p>JB F&B Talent & Business Platform</p>
+        <p class="footer-tagline">For Chefs · For Employers · For Suppliers</p>
       </div>
       <div>
-        <h4>快速入口</h4>
+        <h4>Quick Links</h4>
         <ul>
-          <li><a href="{{ "chefs/" | absURL }}">餐饮招聘</a></li>
-          <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScJVkyYraKTstINyqyZDlA_3wJNCVj6ohHOMCs4Gtv6nChRBw/viewform" target="_blank" rel="noopener">免费挂简历</a></li>
-          <li><a href="{{ "suppliers/" | absURL }}">供应商目录</a></li>
-          <li><a href="{{ "calculator/" | absURL }}">成本计算器</a></li>
-          <li><a href="{{ "dashboard/" | absURL }}">流量统计</a></li>
+          <li><a href="{{ "chefs/" | absURL }}">Job Board</a></li>
+          <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScJVkyYraKTstINyqyZDlA_3wJNCVj6ohHOMCs4Gtv6nChRBw/viewform" target="_blank" rel="noopener">Post Resume</a></li>
+          <li><a href="{{ "suppliers/" | absURL }}">Supplier Directory</a></li>
+          <li><a href="{{ "calculator/" | absURL }}">Cost Calculator</a></li>
+          <li><a href="{{ "dashboard/" | absURL }}">Dashboard</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; {{ now.Year }} jbkitchen · <a href="{{ "dashboard/" | absURL }}" style="color:var(--gold);text-decoration:none;">流量统计</a></p>
+      <p>&copy; {{ now.Year }} jbkitchen · <a href="{{ "dashboard/" | absURL }}" style="color:var(--gold);text-decoration:none;">Dashboard</a></p>
     </div>
   </footer>
 </body>

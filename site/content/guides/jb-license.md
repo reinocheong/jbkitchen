@@ -1,59 +1,59 @@
 ---
-title: "新山开餐厅必备执照清单"
+title: "Essential Licenses for Opening a Restaurant in Johor Bahru"
 date: 2026-06-02
 ---
 
-## 新山开餐厅，这些执照缺一不可
+## Opening a Restaurant in JB? These Licenses Are Essential
 
-在马来西亚开餐厅，尤其是在新山，涉及的执照比你想象的多。下面是完整清单：
+Opening a restaurant in Malaysia, especially in Johor Bahru, involves more licenses than you might think. Here is the complete checklist:
 
-## 1. SSM 商业注册
+## 1. SSM Business Registration
 
-**所有餐厅的起点。**
+**The starting point for every restaurant.**
 
-- 注册公司名称（推荐 Sdn Bhd 或 Enterprise）
-- 费用：Enterprise RM30-60 / Sdn Bhd RM1,000+
-- 时间：1-3 工作日
-- [在线注册](https://www.ssm.com.my)
+- Register a company name (Sdn Bhd or Enterprise recommended)
+- Cost: Enterprise RM30-60 / Sdn Bhd RM1,000+
+- Time: 1-3 working days
+- [Register Online](https://www.ssm.com.my)
 
-## 2. 营业执照（Majlis Bandaraya）
+## 2. Business License (Majlis Bandaraya)
 
-向 **Majlis Bandaraya Johor Bahru (MBJB)** 或 **Majlis Perbandaran Johor Bahru (MPJB)** 申请，取决于餐厅位置。
+Apply with **Majlis Bandaraya Johor Bahru (MBJB)** or **Majlis Perbandaran Johor Bahru (MPJB)**, depending on your restaurant location.
 
-需要的文件：
-- SSM 注册证明
-- 租约或地契
-- 餐厅平面图
-- 消防认证
-- 健康部门批准
+Required documents:
+- SSM Registration Certificate
+- Tenancy agreement or land title
+- Restaurant floor plan
+- Fire safety certification
+- Health department approval
 
-## 3. 卫生许可
+## 3. Health Permit
 
-**Kementerian Kesihatan Malaysia (KKM)** 卫生部门检查：
-- 厨房卫生标准
-- 员工健康检查
-- 食品处理培训证书
+**Kementerian Kesihatan Malaysia (KKM)** health department inspection:
+- Kitchen hygiene standards
+- Staff health screening
+- Food handling training certificate
 
-## 4. 清真认证（可选但推荐）
+## 4. Halal Certification (Optional but Recommended)
 
-见 [JAKIM 清真认证申请全流程](/guides/halal-cert/)
+See [JAKIM Halal Certification Application Guide](/guides/halal-cert/)
 
-## 5. 其他可能需要的
+## 5. Other Licenses You May Need
 
-- **招牌执照**（Tanda Niaga）— 餐厅招牌需向市议会申请
-- **酒牌**（如果要卖酒）— 申请难度较高
-- **音乐版权执照**（如果有播放音乐）
-- **外卖平台注册**（GrabFood / foodpanda）
+- **Signage License** (Tanda Niaga) — restaurant signage requires municipal council approval
+- **Liquor License** (if selling alcohol) — relatively difficult to obtain
+- **Music Copyright License** (if playing music)
+- **Food Delivery Platform Registration** (GrabFood / foodpanda)
 
-## 总费用参考
+## Estimated Total Costs
 
-| 项目 | 费用（RM） |
+| Item | Cost (RM) |
 |------|-----------|
-| SSM 注册 | 30 - 1,000 |
-| 营业执照 | 100 - 500/年 |
-| 卫生许可 | 50 - 200 |
-| 招牌执照 | 100 - 300 |
-| 清真认证 | 500 - 2,000 |
-| **合计预估** | **~800 - 4,000** |
+| SSM Registration | 30 - 1,000 |
+| Business License | 100 - 500/year |
+| Health Permit | 50 - 200 |
+| Signage License | 100 - 300 |
+| Halal Certification | 500 - 2,000 |
+| **Total Estimate** | **~800 - 4,000** |
 
-> **注意**：以上为大致参考，实际费用以政府最新规定为准。建议咨询专业秘书公司协助办理。
+> **Note**: The above figures are approximate. Actual costs are subject to the latest government regulations. It is recommended to engage a professional company secretary to assist with the application process.

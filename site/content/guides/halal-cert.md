@@ -1,64 +1,64 @@
 ---
-title: "JAKIM 清真认证申请全流程 2026"
+title: "JAKIM Halal Certification Application Guide 2026"
 date: 2026-06-02
 ---
 
-## 什么是 JAKIM 清真认证？
+## What is JAKIM Halal Certification?
 
-JAKIM（马来西亚伊斯兰发展局）清真认证是马来西亚最权威的食品清真认证。餐厅持有此认证，可以吸引穆斯林顾客，扩大客源。
+JAKIM (Department of Islamic Development Malaysia) Halal Certification is Malaysia's most authoritative food halal certification. Restaurants holding this certification can attract Muslim customers and expand their customer base.
 
-## 申请条件
+## Requirements
 
-1. **餐厅必须由穆斯林经营**或与穆斯林合作经营
-2. **所有食材必须来自 JAKIM 认证供应商**
-3. **厨房必须符合清真标准**（分开存放和处理清真与非清真食材）
-4. **员工中必须有穆斯林**负责监督清真流程
+1. **The restaurant must be operated by Muslims** or in partnership with Muslims
+2. **All ingredients must come from JAKIM-certified suppliers**
+3. **The kitchen must meet halal standards** (separate storage and handling of halal and non-halal ingredients)
+4. **There must be Muslim staff** responsible for supervising halal processes
 
-## 申请流程
+## Application Process
 
-### 第一步：准备材料
-- SSM 注册证明
-- 餐厅营业执照
-- 菜单列表（含所有食材来源）
-- 供应商清单（含 JAKIM 证书副本）
-- 厨房平面图
+### Step 1: Prepare Documents
+- SSM Registration Certificate
+- Restaurant Business License
+- Menu list (including all ingredient sources)
+- Supplier list (with copies of JAKIM certificates)
+- Kitchen floor plan
 
-### 第二步：在线申请
-1. 登录 [JAKIM 清真门户网站](https://myehalal.halal.gov.my)
-2. 注册账户
-3. 填写申请表并上传材料
-4. 支付申请费
+### Step 2: Online Application
+1. Log in to the [JAKIM Halal Portal](https://myehalal.halal.gov.my)
+2. Register an account
+3. Fill out the application form and upload documents
+4. Pay the application fee
 
-### 第三步：现场审核
-JAKIM 官员会到餐厅现场检查：
-- 厨房清洁程度
-- 食材存储方式
-- 食品处理流程
-- 员工卫生习惯
+### Step 3: On-Site Audit
+JAKIM officers will conduct an on-site inspection of the restaurant:
+- Kitchen cleanliness
+- Ingredient storage methods
+- Food handling procedures
+- Staff hygiene practices
 
-### 第四步：获批发证
-审核通过后，JAKIM 颁发清真证书，有效期通常为 **2 年**，需到期续证。
+### Step 4: Approval and Certification
+After passing the audit, JAKIM issues the halal certificate, typically valid for **2 years**, with renewal required upon expiry.
 
-## 申请时间线
+## Application Timeline
 
-| 阶段 | 预计时间 |
+| Stage | Estimated Time |
 |------|---------|
-| 材料准备 | 1-2 周 |
-| 在线申请 | 1-3 工作日 |
-| 审核排队 | 2-4 周 |
-| 现场审核 | 1 天 |
-| 发证 | 1-2 周 |
-| **总计** | **约 1-2 个月** |
+| Document Preparation | 1-2 weeks |
+| Online Application | 1-3 working days |
+| Audit Queue | 2-4 weeks |
+| On-Site Audit | 1 day |
+| Certificate Issuance | 1-2 weeks |
+| **Total** | **Approx. 1-2 months** |
 
-## 常见问题
+## FAQ
 
-**问：没有穆斯林员工可以申请吗？**
-答：不可以。必须有至少一名穆斯林员工负责清真监督。
+**Q: Can I apply without Muslim staff?**
+A: No. You must have at least one Muslim staff member responsible for halal supervision.
 
-**问：冷冻肉需要什么认证？**
-答：必须从持有 JAKIM 清真认证的供应商采购。
+**Q: What certification is needed for frozen meat?**
+A: It must be sourced from suppliers holding JAKIM halal certification.
 
-**问：证书到期怎么续？**
-答：到期前 3 个月开始续证申请，流程与首次申请类似。
+**Q: How do I renew an expiring certificate?**
+A: Begin the renewal application 3 months before expiry. The process is similar to the initial application.
 
-> 💡 **小提示**：使用 KHL 冷冻食品，所有产品均为 JAKIM 清真认证，省去供应商审核环节。
+> 💡 **Tip**: Use KHL Frozen Food — all products are JAKIM halal-certified, eliminating the supplier audit step.

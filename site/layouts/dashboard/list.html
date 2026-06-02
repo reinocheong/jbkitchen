@@ -1,31 +1,31 @@
 {{ define "main" }}
 <div class="page-content" style="max-width:900px;">
-  <h1>流量统计面板</h1>
-  <p style="color:var(--text-3);margin-bottom:0.3rem;">实时数据 · 每页独立统计</p>
-  <p style="color:var(--text-3);font-size:0.85rem;margin-bottom:2rem;">数据来源：CountAPI + Google Analytics</p>
+  <h1>Dashboard</h1>
+  <p style="color:var(--text-3);margin-bottom:0.3rem;">Real-time data · per-page statistics</p>
+  <p style="color:var(--text-3);font-size:0.85rem;margin-bottom:2rem;">Data source: CountAPI + Google Analytics</p>
 
-  <!-- 总计概览 -->
+  <!-- Overview -->
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem;margin-bottom:2rem;">
     <div style="background:var(--card);border-radius:var(--radius);padding:1.2rem;text-align:center;border:1px solid var(--border);">
-      <div style="font-size:0.8rem;color:var(--text-3);">总访问量</div>
+      <div style="font-size:0.8rem;color:var(--text-3);">Total Views</div>
       <div id="totalViews" class="stat-number">—</div>
     </div>
     <div style="background:var(--card);border-radius:var(--radius);padding:1.2rem;text-align:center;border:1px solid var(--border);">
-      <div style="font-size:0.8rem;color:var(--text-3);">页面总数</div>
+      <div style="font-size:0.8rem;color:var(--text-3);">Total Pages</div>
       <div id="totalPages" class="stat-number">—</div>
     </div>
     <div style="background:var(--card);border-radius:var(--radius);padding:1.2rem;text-align:center;border:1px solid var(--border);background:var(--green-50);">
-      <div style="font-size:0.8rem;color:var(--text-3);">日均访问</div>
+      <div style="font-size:0.8rem;color:var(--text-3);">Daily Avg</div>
       <div id="dailyAvg" class="stat-number">—</div>
     </div>
   </div>
 
-  <!-- 页面浏览排行 -->
+  <!-- Page View Rankings -->
   <div style="background:var(--card);border-radius:var(--radius);padding:1.5rem;border:1px solid var(--border);margin-bottom:2rem;">
-    <h2 style="color:var(--green-800);font-size:1.2rem;margin-bottom:0.3rem;">页面浏览排行</h2>
-    <p style="font-size:0.8rem;color:var(--text-3);margin-bottom:1rem;">各页面实时访问量统计</p>
+    <h2 style="color:var(--green-800);font-size:1.2rem;margin-bottom:0.3rem;">Page View Rankings</h2>
+    <p style="font-size:0.8rem;color:var(--text-3);margin-bottom:1rem;">Real-time page view statistics</p>
     <div id="pageRanking" style="display:flex;flex-direction:column;gap:0.3rem;">
-      <div style="text-align:center;padding:2rem;color:var(--text-3);">加载中...</div>
+      <div style="text-align:center;padding:2rem;color:var(--text-3);">Loading...</div>
     </div>
   </div>
 
@@ -45,25 +45,25 @@
 </style>
 
 <script>
-// 页面列表
+// Page list
 var PAGES = [
-  { key: 'jbkitchen-', label: '首页', url: '/' },
-  { key: 'jbkitchen-chefs', label: '厨师列表', url: '/chefs/' },
-  { key: 'jbkitchen-chefs-submit', label: '提交简历', url: '/chefs/submit/' },
-  { key: 'jbkitchen-chefs-chef-001', label: '陈小明简历', url: '/chefs/chef-001/' },
-  { key: 'jbkitchen-chefs-chef-002', label: '林秀英简历', url: '/chefs/chef-002/' },
-  { key: 'jbkitchen-chefs-chef-003', label: '阿明简历', url: '/chefs/chef-003/' },
-  { key: 'jbkitchen-chefs-chef-004', label: '黄志强简历', url: '/chefs/chef-004/' },
-  { key: 'jbkitchen-chefs-chef-005', label: '张丽华简历', url: '/chefs/chef-005/' },
-  { key: 'jbkitchen-chefs-chef-006', label: '李国华简历', url: '/chefs/chef-006/' },
-  { key: 'jbkitchen-suppliers', label: '供应商目录', url: '/suppliers/' },
-  { key: 'jbkitchen-suppliers-khl-frozen-food', label: 'KHL 详情', url: '/suppliers/khl-frozen-food/' },
-  { key: 'jbkitchen-calculator', label: '成本计算器', url: '/calculator/' },
-  { key: 'jbkitchen-guides', label: '指南列表', url: '/guides/' },
-  { key: 'jbkitchen-guides-halal-cert', label: '清真认证', url: '/guides/halal-cert/' },
-  { key: 'jbkitchen-guides-jb-license', label: '执照清单', url: '/guides/jb-license/' },
-  { key: 'jbkitchen-guides-frozen-food-guide', label: '冷冻采购', url: '/guides/frozen-food-guide/' },
-  { key: 'jbkitchen-dashboard', label: '流量面板', url: '/dashboard/' },
+  { key: 'jbkitchen-', label: 'Home', url: '/' },
+  { key: 'jbkitchen-chefs', label: 'Chef Directory', url: '/chefs/' },
+  { key: 'jbkitchen-chefs-submit', label: 'Submit Resume', url: '/chefs/submit/' },
+  { key: 'jbkitchen-chefs-chef-001', label: 'Chen Xiaoming Resume', url: '/chefs/chef-001/' },
+  { key: 'jbkitchen-chefs-chef-002', label: 'Lin Xiuying Resume', url: '/chefs/chef-002/' },
+  { key: 'jbkitchen-chefs-chef-003', label: 'Ah Ming Resume', url: '/chefs/chef-003/' },
+  { key: 'jbkitchen-chefs-chef-004', label: 'Huang Zhiqiang Resume', url: '/chefs/chef-004/' },
+  { key: 'jbkitchen-chefs-chef-005', label: 'Zhang Lihua Resume', url: '/chefs/chef-005/' },
+  { key: 'jbkitchen-chefs-chef-006', label: 'Li Guohua Resume', url: '/chefs/chef-006/' },
+  { key: 'jbkitchen-suppliers', label: 'Supplier Directory', url: '/suppliers/' },
+  { key: 'jbkitchen-suppliers-khl-frozen-food', label: 'KHL Details', url: '/suppliers/khl-frozen-food/' },
+  { key: 'jbkitchen-calculator', label: 'Cost Calculator', url: '/calculator/' },
+  { key: 'jbkitchen-guides', label: 'Guide List', url: '/guides/' },
+  { key: 'jbkitchen-guides-halal-cert', label: 'Halal Certification', url: '/guides/halal-cert/' },
+  { key: 'jbkitchen-guides-jb-license', label: 'License Checklist', url: '/guides/jb-license/' },
+  { key: 'jbkitchen-guides-frozen-food-guide', label: 'Frozen Food Procurement', url: '/guides/frozen-food-guide/' },
+  { key: 'jbkitchen-dashboard', label: 'Dashboard', url: '/dashboard/' },
 ];
 
 async function loadDashboard() {
@@ -92,7 +92,7 @@ async function loadDashboard() {
     html += '<div class="rank-row">'
       + '<span class="rank-pos">#' + (i+1) + '</span>'
       + '<span class="rank-page"><a href="' + r.page.url + '">' + r.page.label + '</a></span>'
-      + '<span class="rank-views">' + r.views.toLocaleString() + ' 次</span>'
+      + '<span class="rank-views">' + r.views.toLocaleString() + ' views</span>'
       + '</div>'
       + '<div class="rank-bar"><div class="rank-bar-fill" style="width:' + pct + '%;"></div></div>';
   });

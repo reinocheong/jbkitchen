@@ -1,4 +1,4 @@
 ---
-title: "流量统计面板"
+title: "Traffic Dashboard"
 ---
 

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>流量统计面板 | JB Kitchen — 新山餐饮经营指南</title>
+  <title>Traffic Dashboard | JB Kitchen — 新山餐饮经营指南</title>
   <meta name="description" content="新山餐饮经营工具与指南 — 成本计算器、供应商目录、经营攻略，帮你开好一间餐厅">
   <link rel="stylesheet" href="https://reinocheong.github.io/jbkitchen/css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,19 +27,32 @@
         .catch(function() {});
     })();
   </script>
+
+  
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'zh-CN,ms',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </head>
 <body>
   <header class="site-header">
     <nav class="nav">
       <a href="https://reinocheong.github.io/jbkitchen/" class="logo"><span class="logo-text">jbkitchen</span></a>
       <ul class="nav-menu">
-        <li><a href="https://reinocheong.github.io/jbkitchen/chefs/">餐饮招聘</a></li>
-        <li><a href="https://reinocheong.github.io/jbkitchen/suppliers/">供应商</a></li>
-        <li><a href="https://reinocheong.github.io/jbkitchen/calculator/">成本计算</a></li>
-        <li><a href="https://reinocheong.github.io/jbkitchen/guides/">指南</a></li>
+        <li><a href="https://reinocheong.github.io/jbkitchen/chefs/">Job Board</a></li>
+        <li><a href="https://reinocheong.github.io/jbkitchen/suppliers/">Suppliers</a></li>
+        <li><a href="https://reinocheong.github.io/jbkitchen/calculator/">Cost Calculator</a></li>
+        <li><a href="https://reinocheong.github.io/jbkitchen/guides/">Guides</a></li>
       </ul>
       <div class="nav-actions">
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLScJVkyYraKTstINyqyZDlA_3wJNCVj6ohHOMCs4Gtv6nChRBw/viewform" target="_blank" rel="noopener" class="btn btn-primary btn-sm">免费挂简历</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScJVkyYraKTstINyqyZDlA_3wJNCVj6ohHOMCs4Gtv6nChRBw/viewform" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Post Resume</a>
+        <div id="google_translate_element"></div>
       </div>
     </nav>
   </header>
@@ -47,32 +60,32 @@
   <main>
     
 <div class="page-content" style="max-width:900px;">
-  <h1>流量统计面板</h1>
-  <p style="color:var(--text-3);margin-bottom:0.3rem;">实时数据 · 每页独立统计</p>
-  <p style="color:var(--text-3);font-size:0.85rem;margin-bottom:2rem;">数据来源：CountAPI + Google Analytics</p>
+  <h1>Dashboard</h1>
+  <p style="color:var(--text-3);margin-bottom:0.3rem;">Real-time data · per-page statistics</p>
+  <p style="color:var(--text-3);font-size:0.85rem;margin-bottom:2rem;">Data source: CountAPI + Google Analytics</p>
 
   
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem;margin-bottom:2rem;">
     <div style="background:var(--card);border-radius:var(--radius);padding:1.2rem;text-align:center;border:1px solid var(--border);">
-      <div style="font-size:0.8rem;color:var(--text-3);">总访问量</div>
+      <div style="font-size:0.8rem;color:var(--text-3);">Total Views</div>
       <div id="totalViews" class="stat-number">—</div>
     </div>
     <div style="background:var(--card);border-radius:var(--radius);padding:1.2rem;text-align:center;border:1px solid var(--border);">
-      <div style="font-size:0.8rem;color:var(--text-3);">页面总数</div>
+      <div style="font-size:0.8rem;color:var(--text-3);">Total Pages</div>
       <div id="totalPages" class="stat-number">—</div>
     </div>
     <div style="background:var(--card);border-radius:var(--radius);padding:1.2rem;text-align:center;border:1px solid var(--border);background:var(--green-50);">
-      <div style="font-size:0.8rem;color:var(--text-3);">日均访问</div>
+      <div style="font-size:0.8rem;color:var(--text-3);">Daily Avg</div>
       <div id="dailyAvg" class="stat-number">—</div>
     </div>
   </div>
 
   
   <div style="background:var(--card);border-radius:var(--radius);padding:1.5rem;border:1px solid var(--border);margin-bottom:2rem;">
-    <h2 style="color:var(--green-800);font-size:1.2rem;margin-bottom:0.3rem;">页面浏览排行</h2>
-    <p style="font-size:0.8rem;color:var(--text-3);margin-bottom:1rem;">各页面实时访问量统计</p>
+    <h2 style="color:var(--green-800);font-size:1.2rem;margin-bottom:0.3rem;">Page View Rankings</h2>
+    <p style="font-size:0.8rem;color:var(--text-3);margin-bottom:1rem;">Real-time page view statistics</p>
     <div id="pageRanking" style="display:flex;flex-direction:column;gap:0.3rem;">
-      <div style="text-align:center;padding:2rem;color:var(--text-3);">加载中...</div>
+      <div style="text-align:center;padding:2rem;color:var(--text-3);">Loading...</div>
     </div>
   </div>
 
@@ -94,23 +107,23 @@
 <script>
 
 var PAGES = [
-  { key: 'jbkitchen-', label: '首页', url: '/' },
-  { key: 'jbkitchen-chefs', label: '厨师列表', url: '/chefs/' },
-  { key: 'jbkitchen-chefs-submit', label: '提交简历', url: '/chefs/submit/' },
-  { key: 'jbkitchen-chefs-chef-001', label: '陈小明简历', url: '/chefs/chef-001/' },
-  { key: 'jbkitchen-chefs-chef-002', label: '林秀英简历', url: '/chefs/chef-002/' },
-  { key: 'jbkitchen-chefs-chef-003', label: '阿明简历', url: '/chefs/chef-003/' },
-  { key: 'jbkitchen-chefs-chef-004', label: '黄志强简历', url: '/chefs/chef-004/' },
-  { key: 'jbkitchen-chefs-chef-005', label: '张丽华简历', url: '/chefs/chef-005/' },
-  { key: 'jbkitchen-chefs-chef-006', label: '李国华简历', url: '/chefs/chef-006/' },
-  { key: 'jbkitchen-suppliers', label: '供应商目录', url: '/suppliers/' },
-  { key: 'jbkitchen-suppliers-khl-frozen-food', label: 'KHL 详情', url: '/suppliers/khl-frozen-food/' },
-  { key: 'jbkitchen-calculator', label: '成本计算器', url: '/calculator/' },
-  { key: 'jbkitchen-guides', label: '指南列表', url: '/guides/' },
-  { key: 'jbkitchen-guides-halal-cert', label: '清真认证', url: '/guides/halal-cert/' },
-  { key: 'jbkitchen-guides-jb-license', label: '执照清单', url: '/guides/jb-license/' },
-  { key: 'jbkitchen-guides-frozen-food-guide', label: '冷冻采购', url: '/guides/frozen-food-guide/' },
-  { key: 'jbkitchen-dashboard', label: '流量面板', url: '/dashboard/' },
+  { key: 'jbkitchen-', label: 'Home', url: '/' },
+  { key: 'jbkitchen-chefs', label: 'Chef Directory', url: '/chefs/' },
+  { key: 'jbkitchen-chefs-submit', label: 'Submit Resume', url: '/chefs/submit/' },
+  { key: 'jbkitchen-chefs-chef-001', label: 'Chen Xiaoming Resume', url: '/chefs/chef-001/' },
+  { key: 'jbkitchen-chefs-chef-002', label: 'Lin Xiuying Resume', url: '/chefs/chef-002/' },
+  { key: 'jbkitchen-chefs-chef-003', label: 'Ah Ming Resume', url: '/chefs/chef-003/' },
+  { key: 'jbkitchen-chefs-chef-004', label: 'Huang Zhiqiang Resume', url: '/chefs/chef-004/' },
+  { key: 'jbkitchen-chefs-chef-005', label: 'Zhang Lihua Resume', url: '/chefs/chef-005/' },
+  { key: 'jbkitchen-chefs-chef-006', label: 'Li Guohua Resume', url: '/chefs/chef-006/' },
+  { key: 'jbkitchen-suppliers', label: 'Supplier Directory', url: '/suppliers/' },
+  { key: 'jbkitchen-suppliers-khl-frozen-food', label: 'KHL Details', url: '/suppliers/khl-frozen-food/' },
+  { key: 'jbkitchen-calculator', label: 'Cost Calculator', url: '/calculator/' },
+  { key: 'jbkitchen-guides', label: 'Guide List', url: '/guides/' },
+  { key: 'jbkitchen-guides-halal-cert', label: 'Halal Certification', url: '/guides/halal-cert/' },
+  { key: 'jbkitchen-guides-jb-license', label: 'License Checklist', url: '/guides/jb-license/' },
+  { key: 'jbkitchen-guides-frozen-food-guide', label: 'Frozen Food Procurement', url: '/guides/frozen-food-guide/' },
+  { key: 'jbkitchen-dashboard', label: 'Dashboard', url: '/dashboard/' },
 ];
 
 async function loadDashboard() {
@@ -139,7 +152,7 @@ async function loadDashboard() {
     html += '<div class="rank-row">'
       + '<span class="rank-pos">#' + (i+1) + '</span>'
       + '<span class="rank-page"><a href="' + r.page.url + '">' + r.page.label + '</a></span>'
-      + '<span class="rank-views">' + r.views.toLocaleString() + ' 次</span>'
+      + '<span class="rank-views">' + r.views.toLocaleString() + ' views</span>'
       + '</div>'
       + '<div class="rank-bar"><div class="rank-bar-fill" style="width:' + pct + '%;"></div></div>';
   });
@@ -156,22 +169,22 @@ loadDashboard();
     <div class="footer-grid">
       <div>
         <h3>jbkitchen</h3>
-        <p>新山餐饮人才与服务平台</p>
-        <p class="footer-tagline">为厨师找工作 · 为老板找人才 · 为餐厅找供应商</p>
+        <p>JB F&B Talent & Business Platform</p>
+        <p class="footer-tagline">For Chefs · For Employers · For Suppliers</p>
       </div>
       <div>
-        <h4>快速入口</h4>
+        <h4>Quick Links</h4>
         <ul>
-          <li><a href="https://reinocheong.github.io/jbkitchen/chefs/">餐饮招聘</a></li>
-          <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScJVkyYraKTstINyqyZDlA_3wJNCVj6ohHOMCs4Gtv6nChRBw/viewform" target="_blank" rel="noopener">免费挂简历</a></li>
-          <li><a href="https://reinocheong.github.io/jbkitchen/suppliers/">供应商目录</a></li>
-          <li><a href="https://reinocheong.github.io/jbkitchen/calculator/">成本计算器</a></li>
-          <li><a href="https://reinocheong.github.io/jbkitchen/dashboard/">流量统计</a></li>
+          <li><a href="https://reinocheong.github.io/jbkitchen/chefs/">Job Board</a></li>
+          <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScJVkyYraKTstINyqyZDlA_3wJNCVj6ohHOMCs4Gtv6nChRBw/viewform" target="_blank" rel="noopener">Post Resume</a></li>
+          <li><a href="https://reinocheong.github.io/jbkitchen/suppliers/">Supplier Directory</a></li>
+          <li><a href="https://reinocheong.github.io/jbkitchen/calculator/">Cost Calculator</a></li>
+          <li><a href="https://reinocheong.github.io/jbkitchen/dashboard/">Dashboard</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 jbkitchen · <a href="https://reinocheong.github.io/jbkitchen/dashboard/" style="color:var(--gold);text-decoration:none;">流量统计</a></p>
+      <p>&copy; 2026 jbkitchen · <a href="https://reinocheong.github.io/jbkitchen/dashboard/" style="color:var(--gold);text-decoration:none;">Dashboard</a></p>
     </div>
   </footer>
 </body>

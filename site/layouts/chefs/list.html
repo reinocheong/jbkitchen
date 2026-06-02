@@ -6,20 +6,20 @@
 
   <!-- CTA Banner -->
   <div class="cta-banner">
-    <h2>免费挂简历</h2>
-    <p>让新山餐厅老板直接找到你</p>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLScJVkyYraKTstINyqyZDlA_3wJNCVj6ohHOMCs4Gtv6nChRBw/viewform" target="_blank" rel="noopener" class="cta-btn">填写简历 →</a>
+    <h2>Post Your Resume — Free</h2>
+    <p>Let JB restaurant owners find you</p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLScJVkyYraKTstINyqyZDlA_3wJNCVj6ohHOMCs4Gtv6nChRBw/viewform" target="_blank" rel="noopener" class="cta-btn">Submit Resume →</a>
   </div>
 
   <!-- Job Listings -->
   {{- if $items }}
   <section>
     <div class="page-header">
-      <h1>JB 餐饮招聘</h1>
+      <h1>JB F&amp;B Jobs</h1>
       <div class="page-meta">
-        <span>{{ $jobs.count }} 个职位</span>
+        <span>{{ $jobs.count }} jobs</span>
         <span class="sep">·</span>
-        <span>更新于 {{ substr $jobs.updated 0 10 }}</span>
+        <span>Updated {{ substr $jobs.updated 0 10 }}</span>
       </div>
     </div>
 
@@ -52,12 +52,12 @@
   </section>
   {{- else }}
   <div class="empty-state">
-    <p>正在加载职位数据...</p>
+    <p>Loading jobs...</p>
   </div>
   {{- end }}
 
   <div class="page-footer-cta">
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLScJVkyYraKTstINyqyZDlA_3wJNCVj6ohHOMCs4Gtv6nChRBw/viewform" target="_blank" rel="noopener" class="btn btn-primary">免费挂简历</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLScJVkyYraKTstINyqyZDlA_3wJNCVj6ohHOMCs4Gtv6nChRBw/viewform" target="_blank" rel="noopener" class="btn btn-primary">Post Resume</a>
   </div>
 
 </div>

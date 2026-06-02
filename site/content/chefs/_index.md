@@ -1,4 +1,4 @@
 ---
-title: "厨师人才库"
+title: "Chef Talent Pool"
 ---
 

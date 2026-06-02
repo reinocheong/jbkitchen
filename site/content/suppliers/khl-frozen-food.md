@@ -1,4 +1,4 @@
 ---
-title: "KHL Frozen Food — 新山冷冻食品批发"
+title: "KHL Frozen Food — Johor Bahru Frozen Food Wholesale"
 ---
 
