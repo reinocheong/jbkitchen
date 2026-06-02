@@ -11,6 +11,12 @@ cd "$PROJECT_DIR"
 # Step 1: Refresh data
 python3 scripts/aggregate.py
 
+# Step 1.5: Merge JobStreet extras if available (Windows Chrome CDP data)
+if [ -f "/mnt/c/Users/User/Desktop/fb-cookie-extract/extra_jobs_output.json" ]; then
+  echo "[auto-publish] Merging JobStreet extras..."
+  python3 scripts/merge_extra_jobs.py
+fi
+
 # Step 2: Build Hugo (preserve .nojekyll and CNAME)
 cd site
 hugo --minify
