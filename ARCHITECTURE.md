@@ -32,10 +32,10 @@ graph TD
 
     subgraph "展示层"
         GH --> HOME[首页 行业动态]
-        HOME --> FX[💱 汇率<br/>USD/CNY/SGD]
-        HOME --> CPI[📊 CPI 通胀<br/>DOSM 4类]
-        HOME --> CHICKEN[🐓 鸡价表<br/>46项批发]
-        HOME --> NEWS_FEED[📰 新闻<br/>5条最新]
+        HOME --> FX[汇率<br/>USD/CNY/SGD]
+        HOME --> CPI[CPI 通胀<br/>DOSM 4类]
+        HOME --> CHICKEN[鸡价表<br/>46项批发]
+        HOME --> NEWS_FEED[新闻<br/>5条最新]
     end
 ```
 

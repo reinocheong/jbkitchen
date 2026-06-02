@@ -1,13 +1,13 @@
 {{ define "main" }}
 <div class="calc-page">
-  <h1 class="calc-title">🧮 菜品成本计算器</h1>
+  <h1 class="calc-title">菜品成本计算器</h1>
   <p class="calc-sub">输入食材清单，自动算成本、毛利率、建议售价。支持多菜对比。</p>
 
   <!-- Tab Nav -->
   <div class="calc-tabs">
-    <button class="calc-tab active" onclick="switchTab('single')">📋 菜品成本卡</button>
-    <button class="calc-tab" onclick="switchTab('compare')">📊 多菜对比</button>
-    <button class="calc-tab" onclick="switchTab('breakeven')">📈 保本分析</button>
+    <button class="calc-tab active" onclick="switchTab('single')">菜品成本卡</button>
+    <button class="calc-tab" onclick="switchTab('compare')">多菜对比</button>
+    <button class="calc-tab" onclick="switchTab('breakeven')">保本分析</button>
   </div>
 
   <!-- ============ TAB 1: 单菜成本卡 ============ -->
@@ -25,7 +25,7 @@
         </div>
 
         <div class="calc-ingredients">
-          <h4>🥩 食材清单 <span style="font-weight:400;font-size:0.75rem;color:var(--text-3);">填一份的用量</span></h4>
+          <h4>食材清单 <span style="font-weight:400;font-size:0.75rem;color:var(--text-3);">填一份的用量</span></h4>
           <div id="ingredientList">
             <!-- Template row -->
             <div class="ing-row">
@@ -52,8 +52,8 @@
           <input type="number" id="otherCostSingle" placeholder="例：3.00" min="0" step="0.1" style="width:120px;">
         </div>
 
-        <button class="calc-btn-calc" onclick="calcSingleDish()">🧮 计算</button>
-        <button class="calc-btn-example" onclick="loadExample()">📋 加载示例</button>
+        <button class="calc-btn-calc" onclick="calcSingleDish()">计算</button>
+        <button class="calc-btn-example" onclick="loadExample()">加载示例</button>
       </div>
 
       <!-- Right: Results -->
@@ -80,7 +80,7 @@
         </div>
 
         <div class="calc-suggest-box">
-          <h4>💡 建议售价 <span style="font-weight:400;font-size:0.7rem;color:var(--text-3);">大马餐饮常见目标成本率</span></h4>
+          <h4>建议售价 <span style="font-weight:400;font-size:0.7rem;color:var(--text-3);">大马餐饮常见目标成本率</span></h4>
           <div class="suggest-row">
             <span>目标成本率 40%</span>
             <span class="sg-price" id="suggest40">—</span>
@@ -95,7 +95,7 @@
           </div>
         </div>
 
-        <button class="calc-btn-save" onclick="saveDish()">💾 保存到对比表</button>
+        <button class="calc-btn-save" onclick="saveDish()">保存到对比表</button>
       </div>
     </div>
   </div>
@@ -103,14 +103,14 @@
   <!-- ============ TAB 2: 多菜对比 ============ -->
   <div id="tab-compare" class="calc-tab-content">
     <div class="calc-tab-intro">
-      <h3>📊 多菜对比</h3>
+      <h3>多菜对比</h3>
       <p>把几道菜放在一起比，哪道利润高、哪道成本重，一眼看清。<br>先在「菜品成本卡」算完点保存，自动出现在这里。或者点下面加载示例看看效果。</p>
     </div>
     <div id="compareWrap">
       <p style="color:var(--text-3);text-align:center;padding:2rem;" id="emptyCompare">
         还没有保存的菜品。
       </p>
-      <button class="calc-btn-example" onclick="loadCompareExample()" style="max-width:300px;margin:0 auto 1rem;">📋 加载对比示例</button>
+      <button class="calc-btn-example" onclick="loadCompareExample()" style="max-width:300px;margin:0 auto 1rem;">加载对比示例</button>
     </div>
     <div id="compareTableWrap" style="display:none;">
       <table class="compare-table">
@@ -128,8 +128,8 @@
         <tbody id="compareBody"></tbody>
       </table>
       <div style="display:flex;gap:0.5rem;margin-top:0.8rem;flex-wrap:wrap;">
-        <button class="btn-add-ing" onclick="clearAllDishes()" style="background:#fee;">🗑️ 清空所有</button>
-        <button class="btn-add-ing" onclick="loadCompareExample()" style="border-color:var(--gold);color:var(--gold-dark);">📋 重新加载示例</button>
+        <button class="btn-add-ing" onclick="clearAllDishes()" style="background:#fee;">清空所有</button>
+        <button class="btn-add-ing" onclick="loadCompareExample()" style="border-color:var(--gold);color:var(--gold-dark);">重新加载示例</button>
       </div>
     </div>
   </div>
@@ -137,23 +137,23 @@
   <!-- ============ TAB 3: 保本分析 ============ -->
   <div id="tab-breakeven" class="calc-tab-content">
     <div class="calc-tab-intro">
-      <h3>📈 保本分析</h3>
+      <h3>保本分析</h3>
       <p>每个月固定开销（租金+人工+水电）要卖多少份菜才能回本？<br>输入固定成本和每份利润，马上知道答案。</p>
     </div>
     <div class="calc-panel" style="max-width:500px;margin:0 auto;">
       <div class="calc-field">
-        <label>🏠 每月固定成本 (RM)</label>
+        <label>每月固定成本 (RM)</label>
         <span class="field-hint">租金 + 人工 + 水电 + 杂费</span>
         <input type="number" id="fixedCostBE" placeholder="例：15000" min="0" step="100">
       </div>
       <div class="calc-field">
-        <label>🍽️ 平均每份净利润 (RM)</label>
+        <label>平均每份净利润 (RM)</label>
         <span class="field-hint">用成本卡算出来每道菜赚多少，取平均值</span>
         <input type="number" id="profitPerBE" placeholder="例：4.00" min="0" step="0.5">
       </div>
       <div style="display:flex;gap:0.5rem;">
-        <button class="calc-btn-calc" onclick="calcBreakeven()" style="flex:1;">📈 算保本点</button>
-        <button class="calc-btn-example" onclick="loadBExample()" style="flex:0;white-space:nowrap;padding:0.7rem 1rem;">📋 示例</button>
+        <button class="calc-btn-calc" onclick="calcBreakeven()" style="flex:1;">算保本点</button>
+        <button class="calc-btn-example" onclick="loadBExample()" style="flex:0;white-space:nowrap;padding:0.7rem 1rem;">示例</button>
       </div>
 
       <div id="beResult" style="display:none;margin-top:1.5rem;">
@@ -309,7 +309,7 @@ function saveDish() {
     totalCost: d.totalCost
   });
   localStorage.setItem('jbkitchen_dishes', JSON.stringify(saved));
-  alert('✅ 已保存「' + d.name + '」到对比表');
+  alert('已保存「' + d.name + '」到对比表');
 }
 
 function renderCompareTable() {
@@ -429,7 +429,7 @@ function loadCompareExample() {
   renderCompareTable();
   // Switch to compare tab visual feedback
   const btn = document.querySelector('[onclick*="compare"]');
-  if (btn) btn.textContent = '📊 多菜对比 (3)';
+  if (btn) btn.textContent = '多菜对比 (3)';
 }
 
 // ========== Init ==========
@@ -443,7 +443,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const saved = JSON.parse(localStorage.getItem('jbkitchen_dishes') || '[]');
   if (saved.length > 0) {
     document.querySelector('[onclick="switchTab(\'compare\')"]').textContent = 
-      `📊 多菜对比 (${saved.length})`;
+      `多菜对比 (${saved.length})`;
   }
 });
 </script>

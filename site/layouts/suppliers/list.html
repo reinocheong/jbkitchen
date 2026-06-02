@@ -4,7 +4,7 @@
 
   <!-- Header -->
   <div class="rp-header">
-    <h1>🏪 供应商排行榜</h1>
+    <h1>供应商排行榜</h1>
     <p class="rp-subtitle">新山餐饮食材供应商综合排行 — 帮你找到最靠谱的货源</p>
   </div>
 
@@ -29,7 +29,7 @@
       <div class="rp-top-footer">
         <a href="{{ .cta_link }}" class="rp-btn rp-btn-primary" target="_blank" rel="noopener">{{ .cta }}</a>
         {{ if .website }}
-        <a href="{{ .website }}" class="rp-btn rp-btn-outline" target="_blank" rel="noopener">🌐 访问网站 →</a>
+        <a href="{{ .website }}" class="rp-btn rp-btn-outline" target="_blank" rel="noopener">访问网站</a>
         {{ end }}
       </div>
     </div>
@@ -61,13 +61,13 @@
 
         <div class="rp-card-footer">
           {{ if .website }}
-          <a href="{{ .website }}" class="rp-btn-sm rp-link" target="_blank" rel="noopener">🌐 访问网站 →</a>
+          <a href="{{ .website }}" class="rp-btn-sm rp-link" target="_blank" rel="noopener">访问网站</a>
           {{ end }}
           {{ if .since }}
-          <span class="rp-since">🕐 成立于 {{ .since }}</span>
+          <span class="rp-since">成立于 {{ .since }}</span>
           {{ end }}
           {{ if .location }}
-          <span class="rp-location">📍 {{ .location }}</span>
+          <span class="rp-location">{{ .location }}</span>
           {{ end }}
         </div>
       </div>
@@ -75,13 +75,13 @@
     {{ end }}
   </div>
 
-  <!-- CTA -->
+  <!-- CTA: Supplier submission form -->
   <div class="rp-cta-card">
-    <div class="rp-cta-icon">📋</div>
+    <div class="rp-cta-icon">+</div>
     <div>
       <h3>你是供应商？免费加入排行</h3>
-      <p>联系 KHL 提交公司信息，免费收录到新山供应商排行榜，让更多餐厅找到你</p>
-      <a href="{{ "suppliers/khl-frozen-food/" | absURL }}" class="rp-btn rp-btn-primary">📞 联系收录</a>
+      <p>提交公司信息，免费收录到新山供应商排行榜，让更多餐厅找到你</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfAK08xHqOtUeKfBvM44NlEPsm6jBvrSxaidtGKkBWHenMY6A/viewform" target="_blank" rel="noopener" class="rp-btn rp-btn-primary">商家提交</a>
     </div>
   </div>
 

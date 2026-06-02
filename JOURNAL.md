@@ -7,6 +7,18 @@
 
 **操作人：AI**
 
+### 站点重构 — 移除广告 + 全站 emoji 清理 + 供应商表单
+- 移除 advertise 页面（content/_index.md + layouts/list.html）
+- 从导航栏、footer、dashboard 中移除所有广告引用
+- 全站模板 emoji 清理：baseof.html, index.html, chefs/list.html, suppliers/list.html, suppliers/khl-frozen-food.html, dashboard/list.html, calculator/list.html, guides/list.html, guides/single.html
+- emoji 替换方案：hero 按钮 icon 移除，工具卡片用单字替代，纯文字标题
+- suppliers 页面：KHL 保持 #1 金色卡片，「推荐供应商」替代 ⭐；新增「商家提交」按钮 → Google Form
+- 商家提交表单（Google Forms API）：商家名称、联系人、联系电话、地址、主要产品、备注
+- hugo.toml：广告菜单项替换为流量面板
+- 站点定位：100% 免费，无广告，无收费
+- 设计语言：纯文字，无 emoji，保持专业干净
+- 构建验证通过（hugo --minify）
+
 ### 招聘数据 AI 可搜索化 + SSOT 对齐
 - 修改 scrape_jobs.py：新增 `_enrich_job` 函数，为每个职位添加 AI 可搜索字段
   - `id`：sha256 哈希（title+company+source）

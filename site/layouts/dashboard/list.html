@@ -1,7 +1,7 @@
 {{ define "main" }}
 <div class="page-content" style="max-width:900px;">
-  <h1>📊 流量统计面板</h1>
-  <p style="color:var(--text-3);margin-bottom:0.3rem;">实时数据 · 每页独立统计 · 广告费按浏览量自动计算</p>
+  <h1>流量统计面板</h1>
+  <p style="color:var(--text-3);margin-bottom:0.3rem;">实时数据 · 每页独立统计</p>
   <p style="color:var(--text-3);font-size:0.85rem;margin-bottom:2rem;">数据来源：CountAPI + Google Analytics</p>
 
   <!-- 总计概览 -->
@@ -14,37 +14,21 @@
       <div style="font-size:0.8rem;color:var(--text-3);">页面总数</div>
       <div id="totalPages" class="stat-number">—</div>
     </div>
-    <div style="background:var(--card);border-radius:var(--radius);padding:1.2rem;text-align:center;border:1px solid var(--border);">
-      <div style="font-size:0.8rem;color:var(--text-3);">广告位曝光</div>
-      <div id="adViews" class="stat-number">—</div>
-    </div>
     <div style="background:var(--card);border-radius:var(--radius);padding:1.2rem;text-align:center;border:1px solid var(--border);background:var(--green-50);">
       <div style="font-size:0.8rem;color:var(--text-3);">日均访问</div>
       <div id="dailyAvg" class="stat-number">—</div>
     </div>
   </div>
 
-  <!-- 页面浏览排行 + 价格 -->
+  <!-- 页面浏览排行 -->
   <div style="background:var(--card);border-radius:var(--radius);padding:1.5rem;border:1px solid var(--border);margin-bottom:2rem;">
-    <h2 style="color:var(--green-800);font-size:1.2rem;margin-bottom:0.3rem;">📈 页面浏览排行</h2>
-    <p style="font-size:0.8rem;color:var(--text-3);margin-bottom:1rem;">
-      价格按公式：浏览量 ÷ 1,000 × 位置系数 × RM 10
-      <a href={{ "advertise/" | absURL }} style="color:var(--green-600);">查看完整定价 →</a>
-    </p>
+    <h2 style="color:var(--green-800);font-size:1.2rem;margin-bottom:0.3rem;">页面浏览排行</h2>
+    <p style="font-size:0.8rem;color:var(--text-3);margin-bottom:1rem;">各页面实时访问量统计</p>
     <div id="pageRanking" style="display:flex;flex-direction:column;gap:0.3rem;">
       <div style="text-align:center;padding:2rem;color:var(--text-3);">加载中...</div>
     </div>
   </div>
 
-  <!-- 广告主权益 -->
-  <div style="background:var(--green-50);border-radius:var(--radius);padding:1.5rem;text-align:center;">
-    <h3 style="color:var(--green-800);margin-bottom:0.5rem;">📢 广告主权益</h3>
-    <p style="color:var(--text-3);font-size:0.9rem;">
-      购买广告位后，你的页面浏览量会出现在上方排行榜中，价格自动按公式计算。<br>
-      数据公开透明，你知道自己买的每个曝光值多少钱。
-    </p>
-    <a href={{ "advertise/" | absURL }} class="btn btn-primary" style="margin-top:1rem;">查看广告位与价格</a>
-  </div>
 </div>
 
 <style>
@@ -56,32 +40,30 @@
 .rank-page a { color: var(--text); text-decoration: none; }
 .rank-page a:hover { color: var(--green-600); }
 .rank-views { font-weight: 600; color: var(--green-600); min-width: 80px; text-align: right; font-size: 0.85rem; }
-.rank-price { font-weight: 700; color: var(--gold-dark); min-width: 70px; text-align: right; font-size: 0.9rem; }
 .rank-bar { height: 4px; background: var(--green-100); border-radius: 2px; margin: 0 0 0 28px; overflow: hidden; }
 .rank-bar-fill { height: 100%; background: var(--green-500); border-radius: 2px; transition: width 0.5s; }
 </style>
 
 <script>
-// 页面列表 + 位置系数（只有广告位有系数，其他页面系数=0不显示价格）
+// 页面列表
 var PAGES = [
-  { key: 'jbkitchen-', label: '🏠 首页', url: '/', factor: 2.5 },
-  { key: 'jbkitchen-chefs', label: '👨‍🍳 厨师列表', url: '/chefs/', factor: 1.8 },
-  { key: 'jbkitchen-chefs-submit', label: '📝 提交简历', url: '/chefs/submit/', factor: 0 },
-  { key: 'jbkitchen-chefs-chef-001', label: '👨‍🍳 陈小明简历', url: '/chefs/chef-001/', factor: 1.2 },
-  { key: 'jbkitchen-chefs-chef-002', label: '👩‍🍳 林秀英简历', url: '/chefs/chef-002/', factor: 1.2 },
-  { key: 'jbkitchen-chefs-chef-003', label: '👨‍🍳 阿明简历', url: '/chefs/chef-003/', factor: 1.2 },
-  { key: 'jbkitchen-chefs-chef-004', label: '👨‍🍳 黄志强简历', url: '/chefs/chef-004/', factor: 1.2 },
-  { key: 'jbkitchen-chefs-chef-005', label: '👩‍🍳 张丽华简历', url: '/chefs/chef-005/', factor: 1.2 },
-  { key: 'jbkitchen-chefs-chef-006', label: '👨‍🍳 李国华简历', url: '/chefs/chef-006/', factor: 1.2 },
-  { key: 'jbkitchen-suppliers', label: '🏪 供应商目录', url: '/suppliers/', factor: 1.8 },
-  { key: 'jbkitchen-suppliers-khl-frozen-food', label: '🥩 KHL 详情', url: '/suppliers/khl-frozen-food/', factor: 0 },
-  { key: 'jbkitchen-calculator', label: '🧮 成本计算器', url: '/calculator/', factor: 0 },
-  { key: 'jbkitchen-guides', label: '📋 指南列表', url: '/guides/', factor: 0 },
-  { key: 'jbkitchen-guides-halal-cert', label: '📋 清真认证', url: '/guides/halal-cert/', factor: 1.0 },
-  { key: 'jbkitchen-guides-jb-license', label: '📋 执照清单', url: '/guides/jb-license/', factor: 1.0 },
-  { key: 'jbkitchen-guides-frozen-food-guide', label: '📋 冷冻采购', url: '/guides/frozen-food-guide/', factor: 1.0 },
-  { key: 'jbkitchen-advertise', label: '📢 广告合作', url: '/advertise/', factor: 0 },
-  { key: 'jbkitchen-dashboard', label: '📊 流量面板', url: '/dashboard/', factor: 0 },
+  { key: 'jbkitchen-', label: '首页', url: '/' },
+  { key: 'jbkitchen-chefs', label: '厨师列表', url: '/chefs/' },
+  { key: 'jbkitchen-chefs-submit', label: '提交简历', url: '/chefs/submit/' },
+  { key: 'jbkitchen-chefs-chef-001', label: '陈小明简历', url: '/chefs/chef-001/' },
+  { key: 'jbkitchen-chefs-chef-002', label: '林秀英简历', url: '/chefs/chef-002/' },
+  { key: 'jbkitchen-chefs-chef-003', label: '阿明简历', url: '/chefs/chef-003/' },
+  { key: 'jbkitchen-chefs-chef-004', label: '黄志强简历', url: '/chefs/chef-004/' },
+  { key: 'jbkitchen-chefs-chef-005', label: '张丽华简历', url: '/chefs/chef-005/' },
+  { key: 'jbkitchen-chefs-chef-006', label: '李国华简历', url: '/chefs/chef-006/' },
+  { key: 'jbkitchen-suppliers', label: '供应商目录', url: '/suppliers/' },
+  { key: 'jbkitchen-suppliers-khl-frozen-food', label: 'KHL 详情', url: '/suppliers/khl-frozen-food/' },
+  { key: 'jbkitchen-calculator', label: '成本计算器', url: '/calculator/' },
+  { key: 'jbkitchen-guides', label: '指南列表', url: '/guides/' },
+  { key: 'jbkitchen-guides-halal-cert', label: '清真认证', url: '/guides/halal-cert/' },
+  { key: 'jbkitchen-guides-jb-license', label: '执照清单', url: '/guides/jb-license/' },
+  { key: 'jbkitchen-guides-frozen-food-guide', label: '冷冻采购', url: '/guides/frozen-food-guide/' },
+  { key: 'jbkitchen-dashboard', label: '流量面板', url: '/dashboard/' },
 ];
 
 async function loadDashboard() {
@@ -98,32 +80,19 @@ async function loadDashboard() {
   var total = results.reduce(function(s, r) { return s + r.views; }, 0);
   var maxViews = results[0]?.views || 1;
 
-  // 统计概览
   document.getElementById('totalViews').textContent = total.toLocaleString();
   document.getElementById('totalPages').textContent = results.length;
-
-  var adViews = results.filter(function(r) { return r.page.factor > 0; }).reduce(function(s, r) { return s + r.views; }, 0);
-  document.getElementById('adViews').textContent = adViews.toLocaleString();
 
   var daysSinceLaunch = Math.max(1, Math.round((new Date() - new Date('2026-06-02')) / (1000*60*60*24)) + 1);
   document.getElementById('dailyAvg').textContent = Math.round(total / daysSinceLaunch).toLocaleString();
 
-  // 渲染排行榜（带价格）
   var html = '';
   results.forEach(function(r, i) {
     var pct = Math.round((r.views / maxViews) * 100);
-    // 广告费（只有 factor > 0 的才显示价格）
-    var priceStr = '';
-    if (r.page.factor > 0) {
-      var price = Math.round((r.views / 1000) * r.page.factor * 10);
-      priceStr = 'RM ' + price + '/月';
-    }
-
     html += '<div class="rank-row">'
       + '<span class="rank-pos">#' + (i+1) + '</span>'
       + '<span class="rank-page"><a href="' + r.page.url + '">' + r.page.label + '</a></span>'
       + '<span class="rank-views">' + r.views.toLocaleString() + ' 次</span>'
-      + (priceStr ? '<span class="rank-price">' + priceStr + '</span>' : '')
       + '</div>'
       + '<div class="rank-bar"><div class="rank-bar-fill" style="width:' + pct + '%;"></div></div>';
   });

@@ -5,6 +5,12 @@
 
 ## 已知坑位
 
+### 用户明确拒绝 emoji — 用纯文字
+用户明确要求所有界面不得使用 emoji（"they make it look cheap"）。
+设计方案：纯文字界面，保持专业干净。CSS 设计不变，仅移除 emoji 字符。
+工具卡片使用汉字单字图标（计、供、指、招、简）替代原 emoji。
+所有标题、按钮、标签等使用纯文字。
+
 ### FB cookies 过期
 FB cookies（c_user, xs, fr）存储在 `scripts/fb_job_scraper.js` 中明文硬编码。
 过期后会返回登录页面而非群组内容，需要定期更新。

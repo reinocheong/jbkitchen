@@ -11,21 +11,18 @@
     <p class="hero-sub">厨师找工作 · 老板找人才 · 餐厅找供应商</p>
     <div class="hero-actions">
       <a href="{{ "chefs/" | absURL }}" class="btn-hero btn-hero-primary">
-        <span class="btn-hero-icon">👨‍🍳</span>
         <span class="btn-hero-text">
           <span class="btn-hero-title">我找厨师</span>
           <span class="btn-hero-desc">浏览简历，找到你的团队</span>
         </span>
       </a>
       <a href="{{ "chefs/" | absURL }}" class="btn-hero btn-hero-primary">
-        <span class="btn-hero-icon">💼</span>
         <span class="btn-hero-text">
           <span class="btn-hero-title">我找工作</span>
           <span class="btn-hero-desc">浏览招聘信息与厨师简历</span>
         </span>
       </a>
       <a href="{{ "chefs/submit/" | absURL }}" class="btn-hero btn-hero-secondary">
-        <span class="btn-hero-icon">📝</span>
         <span class="btn-hero-text">
           <span class="btn-hero-title">挂简历</span>
           <span class="btn-hero-desc">让老板主动找到你</span>
@@ -39,14 +36,14 @@
 {{- if or $news $prices }}
 <section class="section">
   <div class="section-header">
-    <h2>📡 行业动态</h2>
+    <h2>行业动态</h2>
   </div>
   <div class="live-grid">
 
-    <!-- 💱 汇率卡片 -->
+    <!-- 汇率卡片 -->
     {{- if $prices.fx }}
     <div class="live-card">
-      <h3>💱 汇率</h3>
+      <h3>汇率</h3>
       <div class="price-list">
         <div class="price-row"><span>USD/MYR</span><strong class="text-gold">{{ $prices.fx.USD_MYR }}</strong></div>
         <div class="price-row"><span>CNY/MYR</span><strong class="text-gold">{{ $prices.fx.CNY_MYR }}</strong></div>
@@ -56,10 +53,10 @@
     </div>
     {{- end }}
 
-    <!-- 📊 CPI 通胀卡片 -->
+    <!-- CPI 通胀卡片 -->
     {{- if $prices.cpi }}
     <div class="live-card">
-      <h3>📊 CPI 通胀指数</h3>
+      <h3>CPI 通胀指数</h3>
       <div class="price-list">
         {{- range $key, $val := $prices.cpi }}
         <div class="price-row">
@@ -84,10 +81,10 @@
     </div>
     {{- end }}
 
-    <!-- 🐓 冷冻鸡价 -->
+    <!-- 冷冻鸡价 -->
     {{- if $chan.items }}
     <div class="live-card live-card-wide">
-      <h3>🐓 Frozen Chicken Wholesale Price <span class="price-note">(RM/kg)</span></h3>
+      <h3>Frozen Chicken Wholesale Price <span class="price-note">(RM/kg)</span></h3>
       <table class="price-table">
         <thead>
           <tr><th>Item</th><th>Product</th><th>Price</th></tr>
@@ -106,10 +103,10 @@
     </div>
     {{- end }}
 
-    <!-- 📰 最新新闻列表 -->
+    <!-- 最新新闻列表 -->
     {{- if $news.items }}
     <div class="live-card live-card-wide">
-      <h3>📰 最新资讯</h3>
+      <h3>最新资讯</h3>
       <ul class="news-list">
         {{- range first 5 $news.items }}
         <li class="news-item">
@@ -134,7 +131,7 @@
 {{- if gt (len $chefs) 0 }}
 <section class="section bg-light">
   <div class="section-header">
-    <h2>🔥 最新厨师简历</h2>
+    <h2>最新厨师简历</h2>
     <a href="{{ "chefs/" | absURL }}" class="btn-outline">查看全部 →</a>
   </div>
   <div class="chef-grid">
@@ -155,31 +152,31 @@
 <!-- 经营工具 -->
 <section class="section">
   <div class="section-header">
-    <h2>🧰 经营工具</h2>
+    <h2>经营工具</h2>
   </div>
   <div class="tool-grid">
     <a href="{{ "calculator/" | absURL }}" class="tool-card">
-      <span class="tool-icon">🧮</span>
+      <span class="tool-icon">计</span>
       <h3>成本计算器</h3>
       <p>算成本、知利润</p>
     </a>
     <a href="{{ "suppliers/" | absURL }}" class="tool-card">
-      <span class="tool-icon">🏪</span>
+      <span class="tool-icon">供</span>
       <h3>供应商排行</h3>
       <p>找货源、比价格</p>
     </a>
     <a href="{{ "guides/" | absURL }}" class="tool-card">
-      <span class="tool-icon">📋</span>
+      <span class="tool-icon">指</span>
       <h3>经营指南</h3>
       <p>清真认证、执照、采购</p>
     </a>
     <a href="{{ "chefs/" | absURL }}" class="tool-card">
-      <span class="tool-icon">💼</span>
+      <span class="tool-icon">招</span>
       <h3>餐饮招聘</h3>
       <p>浏览招聘信息与厨师简历</p>
     </a>
     <a href="{{ "chefs/submit/" | absURL }}" class="tool-card">
-      <span class="tool-icon">📝</span>
+      <span class="tool-icon">简</span>
       <h3>挂简历</h3>
       <p>免费展示你的履历</p>
     </a>
