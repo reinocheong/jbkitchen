@@ -51,3 +51,10 @@
 - 更新 aggregate.py 加入 chan_prices 模块
 - 数据源：WhatsApp Channel（邀请链接关注 + subscribeNewsletterUpdates 订阅）
 - 已知限制：newsletterFetchMessages 在 Baileys 7.0.0-rc13 中超时，改用 live messages.upsert 监听
+
+### SSOT 对齐审计
+- 确认 cron job `5c97932548d0` 已启用，`0 8,12,16,20 * * *`（每天4次），与供营商周六下午更新节奏一致
+- 修正 README.md / ARCHITECTURE.md 中「每2h」→「每天4次(8/12/16/20)」
+- TODO.md 「设置 cron」已勾选完成
+- 标记 7 个测试/废弃脚本为 DEPRECATED（check_commodities/check_prices/demo_cpi_data/list_dos_datasets/test_dosm_api/news_aggregator/news_filter）
+- 网站 live HTTP 200，`.nojekyll` 存在，无旧协议副本，无僵尸 docs/ 引用

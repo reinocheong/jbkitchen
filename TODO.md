@@ -26,7 +26,7 @@
 
 ## ⏳ 待办
 
-- [ ] 设置 cron 定时运行 aggregate.py（新闻+汇率+鸡价自动刷新）
+- [x] 设置 cron 定时运行 aggregate.py（每天4次：8/12/16/20）
 - [ ] 手机部署 Google Apps Script（需要电脑或手机 GAS 编辑）
 - [ ] GitHub token 添加 workflow scope → 启用自动化 CI/CD
 - [ ] 供应商名单补全（需要 Reino 提供）

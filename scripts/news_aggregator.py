@@ -1,8 +1,8 @@
-#!/usr/bin/env python3
+# ⛔ DEPRECATED — 已被 news_fetcher.py 替代，请勿使用
 """
-jbkitchen — 新闻聚合器
-薄层封装：过滤 + 写 JSON
-"""
+jbkitchen — (DEPRECATED) 新闻聚合器
+
+
 
 import os, json
 from datetime import datetime

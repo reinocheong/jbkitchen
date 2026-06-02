@@ -106,7 +106,7 @@ jbkitchen/
 **数据更新来源：**
 | 数据 | 来源 | 频率 |
 |:---|:---|:---|
-| 💱 汇率 | exchangerate-api.com | cron 每2h |
-| 📊 CPI 通胀 | DOSM Open API (cpi_headline) | cron 每2h / 每月更新 |
-| 🐓 鸡价 | WhatsApp Channel (120363405976277555@newsletter) | 供营商每次发新消息 + cron 解析 |
-| 📰 新闻 | Google News RSS ×22关键词 | cron 每2h |
+| 💱 汇率 | exchangerate-api.com | 每天4次 (cron 8/12/16/20) |
+| 📊 CPI 通胀 | DOSM Open API (cpi_headline) | 每天4次 / 每月更新 |
+| 🐓 鸡价 | WhatsApp Channel (120363405976277555@newsletter) | 供营商(通常周六下午)发消息 + cron 解析 |
+| 📰 新闻 | Google News RSS ×22关键词 | 每天4次 (cron 8/12/16/20) |

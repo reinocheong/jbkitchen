@@ -1,6 +1,7 @@
+# ⛔ DEPRECATED — 关联 news_aggregator.py，均被 news_fetcher.py 替代
 #!/usr/bin/env python3
 """
-jbkitchen — 新闻过滤器
+jbkitchen — (DEPRECATED) 新闻过滤器
 负责：餐饮关键词过滤、API 补充、去重
 """
 

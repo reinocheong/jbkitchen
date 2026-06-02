@@ -9,7 +9,7 @@
 
 ```mermaid
 graph TD
-    subgraph "① 定时刷新 (cron 每2h)"
+    subgraph "① 定时刷新 (每天4次 8/12/16/20)"
         CRON[cron: 0 8,10,12,14,16,18,20 * * *] -->|auto-publish.sh| AG[aggregate.py]
         AG --> NF[news_fetcher.py<br/>Google News RSS ×22关键词]
         AG --> PT[price_tracker.py<br/>DOSM CPI + exchangerate-api]
@@ -103,12 +103,12 @@ curl "http://127.0.0.1:3456/fetch_channel?invite=0029Vb6p7Qq5Ejy68g8VCj1U"
 
 | 文件 | 用途 | 更新方式 | 更新频率 |
 |:---|:---|:---|:---|
-| `site/data/prices.json` | 汇率 + CPI | `price_tracker.py` → `auto-publish.sh` | 每2h (cron) |
-| `site/data/news.json` | 新闻列表 (30条) | `news_fetcher.py` → `auto-publish.sh` | 每2h (cron) |
+| `site/data/prices.json` | 汇率 + CPI | `price_tracker.py` → `auto-publish.sh` | 每天4次 (cron 8/12/16/20) |
+| `site/data/news.json` | 新闻列表 (30条) | `news_fetcher.py` → `auto-publish.sh` | 每天4次 (cron 8/12/16/20) |
 | `site/data/chan_raw.json` | 鸡价原始消息 (daemon写入) | `wa_daemon3.js` `messages.upsert` | 供营商发新消息时 |
-| `site/data/chan_prices.json` | 鸡价解析结果 (46项) | `chan_prices.py` → `auto-publish.sh` | 每2h (cron)，只要有新原始数据 |
+| `site/data/chan_prices.json` | 鸡价解析结果 (46项) | `chan_prices.py` → `auto-publish.sh` | 每天4次，只要有新原始数据 |
 | `site/data/chefs.json` | 厨师样本数据 | 手动维护 | 按需 |
-| `docs/` | 静态站输出 | `hugo --minify` → `auto-publish.sh` | 每2h + 手动 |
+| `docs/` | 静态站输出 | `hugo --minify` → `auto-publish.sh` | 每天4次 + 手动 |
 
 ---
 
