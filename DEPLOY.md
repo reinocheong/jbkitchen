@@ -53,6 +53,16 @@ cd .. && git add -A && git commit -m "..." && git push  # 部署
 2. git checkout 回 workflow 文件（从 git history 找回）
 3. 重新 push
 
+## 部署后验证清单
+
+部署完成后的快速检查项：
+
+- [ ] `curl -sI https://reinocheong.github.io/jbkitchen/` → 200 OK
+- [ ] 检查首页行业动态数据是否刷新（汇率/CPI/鸡价/新闻）
+- [ ] 检查 CSS 样式是否加载（非紫色链接、非白屏）
+- [ ] 手机端测试汉堡菜单是否正常工作
+- [ ] 如修改过 CSS，确保版本号已更新（?v3 → ?v4）
+
 ## 外部依赖
 
 | 服务 | 用途 | 状态 |

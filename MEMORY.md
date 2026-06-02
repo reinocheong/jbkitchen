@@ -5,11 +5,32 @@
 
 ## 已知坑位
 
-### 用户明确拒绝 emoji — 用纯文字
+### 用户明确拒绝 emoji — 用纯文字 + SVG 几何图案
 用户明确要求所有界面不得使用 emoji（"they make it look cheap"）。
-设计方案：纯文字界面，保持专业干净。CSS 设计不变，仅移除 emoji 字符。
-工具卡片使用汉字单字图标（计、供、指、招、简）替代原 emoji。
-所有标题、按钮、标签等使用纯文字。
+设计方案：纯文字界面，工具卡片使用 36px 彩色方块 + 白色 SVG 几何图案作为图标。
+导航/按钮/标签等使用纯文字。
+所有 emoji 在模板中替换为 SVG 或留空。
+
+### CSS 大括号未闭合 — 最隐蔽的 CSS bug
+`.source-badge {` 第 369 行未闭合 → 第 370~848 行全部被嵌套进 `.source-badge` 内
+症状：所有样式失效（紫色链接、无边框、位置散乱），但无 JS 报错
+修复：找到未闭合的大括号并闭合，重新定义被发现丢失的 hero-btn 等 class
+教训：CSS 大括号未闭合是最危险的 bug——不会报错，只是后续样式全失效
+
+### GitHub Pages CDN 缓存 — CSS 更新后需版本号
+更改 CSS/HTML 后，GitHub Pages CDN 会缓存旧版本 ~1-2 分钟
+修复：在 CSS 链接加 ?v3 版本号：`<link href="/css/chef.css?v3">`
+下次更新时递增版本号（?v4, ?v5…）
+
+### Google Translate 顶部横幅适配问题
+Google Translate 默认顶部横幅在手机端很丑
+修复：改为导航栏右侧小地球 SVG 图标，点击弹出语言选择列表
+关键：用 `googleTranslateElementInit` 配置 `layout: google.translate.TranslateElement.InlineLayout.SIMPLE`
+
+### 手机端导航 — 汉堡菜单替代两行导航
+两行导航在手机端太丑
+实现：三条横线 SVG → 点击展开全屏菜单（带 fade-in 动画）→ X 图标关闭
+CSS 用 `@media (max-width: 768px)` 隐藏桌面 nav，显示汉堡按钮
 
 ### FB cookies 过期
 FB cookies（c_user, xs, fr）存储在 `scripts/fb_job_scraper.js` 中明文硬编码。
@@ -59,7 +80,7 @@ CI 中 git push 会自动推送 `docs/` 内容。
 - 部分 division（如 08 通讯）在 index API 中更新滞后（至 2025-12），而 inflation API 已到 2026-04
 - 无 division 11（餐饮住宿），实际只使用 overall/01/04/07/08
 
-### 手机端 GitHub Pages 白屏 — ✅ 已修复
+### 手机端 GitHub Pages 白屏 — 需 .nojekyll
 用户小米手机访问 GitHub Pages 出现白屏，桌面 Chrome 正常。
 **根因：** Hugo 非 Jekyll 站点缺少 `.nojekyll` 文件 → GitHub Pages 运行 Jekyll 处理 docs/ 目录，输出空壳页面。
 **修复：** 在 docs/ 目录添加 `.nojekyll` 文件（空文件），禁止 Jekyll 处理。
@@ -81,3 +102,7 @@ CountAPI 免费版有请求频率和存储限制。不能用做精确统计，�
 - 原始消息存 `chan_raw.json`，解析后存 `chan_prices.json`
 - 不显示 Source Price 列，只看调整后价格
 - 供营商通常周六下午更新价目表，cron 每天 8/12/16/20 点自动解析上线
+
+### 全站英文化后 Google Translate 备用
+站点主要语言为英文，右上角 Google Translate 小图标供中文/马来文用户切换。
+注意：Google Translate 自动翻译无法保证 100% 准确，专业术语建议在原文旁标注。

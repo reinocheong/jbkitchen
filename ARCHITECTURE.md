@@ -36,6 +36,7 @@ graph TD
         HOME --> CPI[CPI 通胀<br/>DOSM 4类]
         HOME --> CHICKEN[鸡价表<br/>46项批发]
         HOME --> NEWS_FEED[新闻<br/>5条最新]
+        HOME --> TOOLS[工具卡片<br/>4功能: 计算器/供应商/指南/招聘]
     end
 ```
 
@@ -61,7 +62,8 @@ graph TD
 | 汇率/CPI 不动 | `cat site/data/prices.json \| jq .updated` | 手动跑 `python3 scripts/price_tracker.py` |
 | 鸡价没更新 | `cat site/data/chan_raw.json \| jq .updated` | 检查 daemon 是否还活着 |
 | 新闻没更新 | `cat site/data/news.json \| jq '.items \| length'` | 手动跑 `python3 scripts/news_fetcher.py` |
-| 网站白屏/样式没了 | `curl -s https://reinocheong.github.io/jbkitchen/index.html \| head -5` | 检查 `.nojekyll` 文件是否存在、路径是否 `absURL` |
+| 网站白屏/样式没了 | `curl -s https://reinocheong.github.io/jbkitchen/index.html \| head -5` | 检查 `.nojekyll` 文件是否存在、路径是否 `absURL`、?v3 版本号 |
+| CSS 样式不对 | 查看浏览器 Console 的 404 错误 | 确认 CSS 链接加了 ?v3 版本号（GitHub Pages CDN 缓存） |
 | 整个网站404 | `curl -sI https://reinocheong.github.io/jbkitchen/` | 检查 GitHub Pages 是否开启、docs/ 目录是否存在 |
 
 ### Daemon 相关操作
@@ -194,7 +196,41 @@ graph TD
     end
 ```
 
-## 七、关键坑位
+## 七、内容页面架构
+
+```
+site/content/
+├── _index.md                    # 首页（汇率+CPI+新闻+鸡价+工具卡片）
+├── chefs/
+│   ├── _index.md                # 厨师简历列表
+│   └── submit.md                # 厨师提交表单
+├── suppliers/
+│   ├── _index.md                # 供应商排行榜（15家）
+│   └── khl-frozen-food.md       # KHL 详情页
+├── calculator/
+│   └── _index.md                # 成本计算器 V2
+├── guides/
+│   ├── _index.md                # 指南列表（卡片式）
+│   ├── halal-cert.md            # 清真认证
+│   ├── jb-license.md            # 餐饮执照
+│   ├── frozen-food-guide.md     # 冷冻食材采购
+│   ├── mesti-certification.md   # MeSTI 认证
+│   ├── haccp-vs-iso-22000.md    # HACCP vs ISO 22000
+│   ├── food-handling-certificate.md # 食品处理证书
+│   ├── sst-service-tax-restaurant.md # SST 服务税
+│   ├── start-frozen-food-business.md # 开冷冻食品生意
+│   ├── cold-storage-temperature-standards.md # 冷库标准
+│   ├── employee-epf-socso-eis-2025.md # EPF/SOCSO
+│   └── frozen-food-import-permit-malaysia.md # 进口准证
+├── about/
+│   └── _index.md                # 关于 jbkitchen
+├── contribute/
+│   └── _index.md                # 行业投稿
+└── dashboard/
+    └── _index.md                # 流量统计面板
+```
+
+## 八、关键坑位
 
 | 问题 | 原因 | 处理 |
 |:---|:---|:---|
@@ -203,3 +239,5 @@ graph TD
 | 网站文件旧 | docs/ 没重新构建 | 手动跑 `auto-publish.sh` 或等 cron |
 | cron 跑了但数据没变 | Python 脚本本身没出错但数据源无新内容 | 正常 — 数据源本身更新频率低于 cron |
 | 鸡价显示缺项 | 供商家消息中无价格的商品（如"(1c) bb local "） | 自动跳过，只显示有价格的项 |
+| CSS 嵌套 bug | `.source-badge {` 未闭合导致后续 848 行样式失效 | 确保每个 CSS class 正确闭合 |
+| GitHub Pages CDN 缓存 | 更改 CSS/HTML 后浏览器看到旧版本 | 在 CSS 链接加 ?v3 版本号强制刷新 |

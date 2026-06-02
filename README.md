@@ -67,24 +67,44 @@ jbkitchen/
 
 | 页面 | 功能 | 目标用户 |
 |------|------|---------|
-| `/` | 首页：行业动态(汇率/CPI/鸡价/新闻) | 所有人 |
+| `/` | 首页：行业动态(汇率/CPI/鸡价/新闻) + 工具卡片(4功能) | 所有人 |
 | `/chefs/` | 厨师简历列表+详情 | 餐厅老板 |
 | `/chefs/submit/` | 厨师免费挂简历（→WhatsApp→Sheet） | 厨师 |
 | `/suppliers/` | 供应商排行榜（15家，KHL #1 + 商家提交入口） | 餐厅老板 |
 | `/suppliers/khl-frozen-food/` | KHL 详情+询价表单 | 潜在客户 |
 | `/calculator/` | 菜品成本计算器 V2（成本卡+多菜对比+保本分析） | 准备/已开餐厅 |
-| `/guides/` | 经营指南（清真认证/执照/采购） | 准备开餐厅 |
+| `/guides/` | 经营指南（11篇，含SEO结构化+FAQ） | 准备开餐厅 |
+| `/about/` | 关于 jbkitchen | 所有人 |
+| `/contribute/` | 行业投稿邀请 | 行业人士 |
 | `/dashboard/` | 流量统计面板 | jbkitchen 运营 |
+
+## 11 篇经营指南
+
+| # | 指南 | 搜索主题 |
+|---|------|---------|
+| 1 | Halal Certification (JAKIM) | 清真认证流程 |
+| 2 | Essential License & Permit | 餐饮执照清单 |
+| 3 | Frozen Food Procurement | 冷冻食材采购 |
+| 4 | MeSTI Certification | KKM 食品安全认证 |
+| 5 | HACCP vs ISO 22000 | 食品安全体系对比 |
+| 6 | Food Handling Certificate | 食品处理证书 |
+| 7 | SST Service Tax | 服务税指南 |
+| 8 | Start Frozen Food Business | 开冷冻食品生意 |
+| 9 | Cold Storage Standards | 冷库温度标准 |
+| 10 | EPF SOCSO EIS 2025 | 员工缴交率 |
+| 11 | Frozen Food Import Permit | 进口准证 AP |
 
 ## 关键约定
 
 - 单脚本 ≤150 行
 - 新闻 RSS 源必须经过餐饮关键词过滤
-- KHL 在所有供应商列表排第一位，带「推荐供应商」标签
+- KHL 在所有供应商列表排第一位，金色边框突出
 - 所有指南底部有 KHL CTA
-- 站点 100% 免费 — 无广告，无收费（已移除广告页面和 CPM 定价）
+- 站点 100% 免费 — 无广告，无收费
 - 厨师注册数据流向：网站表单 → WhatsApp 通知 → Google Sheet 记录
-- **设计语言：纯文字，无 emoji** — 保持专业干净的外观
+- **设计语言：纯文字，无 emoji，使用 SVG 几何图案** — 保持专业干净
+- 手机端导航采用汉堡菜单（三条横线）
+- 全站英文，右上角 Google Translate 小图标切换中文/马来文
 
 ## 系统工作流
 
@@ -109,7 +129,7 @@ jbkitchen/
 │    ├─ 关键词过滤 → fb_jobs_raw.json (append)   │
 │    └─ 下次 auto-publish.sh 自动解析上线         │
 └──────────────────────────────────────────────┘
-```
+
 ┌─ ③ WhatsApp Channel (实时) ──────────────────┐
 │  供营商发价 → wa_daemon3.js (PID 174813)     │
 │    → messages.upsert → chan_raw.json         │
