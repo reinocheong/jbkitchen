@@ -566,19 +566,7 @@ def scrape_all():
 
     all_jobs = _dedup_jobs(all_jobs)
 
-    # Merge Facebook parsed jobs
-    fb_file = os.path.join(DATA_DIR, "fb_jobs_parsed.json")
-    if os.path.exists(fb_file):
-        try:
-            with open(fb_file, 'r', encoding='utf-8') as f:
-                fb_data = json.load(f)
-            fb_items = fb_data.get("items", [])
-            all_jobs.extend(fb_items)
-            _log(f"FB 合并: {len(fb_items)} 条")
-        except Exception as e:
-            _log(f"FB 合并失败: {e}")
-
-    all_jobs = _dedup_jobs(all_jobs)
+    _log(f"共 {len(all_jobs)} 条 (去重后)")
 
     # Enrich all jobs with AI-searchable fields
     for job in all_jobs:

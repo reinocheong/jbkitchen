@@ -25,7 +25,7 @@
 | 生成器 | Hugo v0.145 (extended) |
 | 数据采集 | Python 3.11 (requests + BeautifulSoup + Playwright), Node.js + Playwright (FB groups) |
 | 数据源（行业） | DOSM Open API（CPI）, exchangerate-api.com（汇率）, Google News RSS（新闻）, WhatsApp Channel（冷冻鸡批发价） |
-| 数据源（招聘） | Jora, Hiredly, Maukerja, MyFutureJobs（JB 餐饮招聘）+ Facebook groups |
+| 数据源（招聘） | Jora, Hiredly, Maukerja, MyFutureJobs, JobStreet, Indeed（JB 餐饮招聘） |
 | 部署 | GitHub Pages（`/docs` 目录，main 分支） |
 | 自动化 | 手动构建推送（token 缺少 workflow scope） |
 | 计数 | CountAPI（免费云端计数） |
@@ -48,8 +48,7 @@ jbkitchen/
 │   ├── price_tracker.py    # DOSM CPI + 汇率
 │   ├── chan_prices.py      # WhatsApp Channel 鸡价解析 /0.9
 │   ├── scrape_jobs.py      # JB 餐饮招聘聚合（Jora/Hiredly/Maukerja/MyFutureJobs）
-│   ├── parse_fb_jobs.py    # Facebook 群组招聘帖子解析
-│   ├── fb_job_scraper.js   # Facebook 群组职位帖子抓取
+
 │   └── auto-publish.sh     # cron 包装脚本（数据→构建→部署）
 ├── data/             # 原始 JSON
 ├── docs/             # 构建输出 → GitHub Pages
@@ -118,17 +117,12 @@ jbkitchen/
 │    │    ├─ price_tracker.py   → prices.json   │
 │    │    ├─ chan_prices.py     → chan_prices.json│
 │    │    ├─ scrape_jobs.py     → jobs.json      │
-│    │    └─ parse_fb_jobs.py   → fb_jobs_parsed.json│
+
 │    ├─ hugo --minify          → docs/          │
 │    └─ git push               → GitHub Pages   │
 └──────────────────────────────────────────────┘
 
-┌─ ② Facebook 群组抓取 (每天 1 次) ─────────────┐
-│  fb_job_scraper.js                            │
-│    ├─ Playwright → 8 个 FB 群组浏览            │
-│    ├─ 关键词过滤 → fb_jobs_raw.json (append)   │
-│    └─ 下次 auto-publish.sh 自动解析上线         │
-└──────────────────────────────────────────────┘
+
 
 ┌─ ③ WhatsApp Channel (实时) ──────────────────┐
 │  供营商发价 → wa_daemon3.js (PID 174813)     │

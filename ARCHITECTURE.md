@@ -47,7 +47,7 @@ graph TD
 | 时间 | 动作 | 触发 | 数据源 | 影响 |
 |:---|:---|:---|:---|:---|
 | 8:00 / 12:00 / 16:00 / 20:00 | `auto-publish.sh` 执行 | cron `5c97932548d0` | 新闻RSS + DOSM CPI + 汇率API + 鸡价原始消息 + 4大招聘网站 + FB招聘解析 | 网站自动更新 |
-| 每日(不固定) | FB群组职位抓取 | cron `fb_job_scraper.js` | 8个FB厨房招聘群组 | 追加 `fb_jobs_raw.json`，下次cron自动解析上线 |
+
 | 随时(通常周六下午) | 供营商在频道发新价目表 | `messages.upsert` 事件 | WhatsApp Channel | 覆盖 `chan_raw.json`，下次 cron (8/12/16/20点) 自动解析上线 |
 | 每日(不固定) | DOSM 发布新月度 CPI | `price_tracker.py` 下次运行时 | DOSM API (cpi_headline) | 通胀数据月度更新 |
 
@@ -111,8 +111,7 @@ curl "http://127.0.0.1:3456/fetch_channel?invite=0029Vb6p7Qq5Ejy68g8VCj1U"
 | `site/data/chan_raw.json` | 鸡价原始消息 (daemon写入) | `wa_daemon3.js` `messages.upsert` | 供营商发新消息时 |
 | `site/data/chan_prices.json` | 鸡价解析结果 (46项) | `chan_prices.py` → `auto-publish.sh` | 每天4次，只要有新原始数据 |
 | `site/data/jobs.json` | JB餐饮招聘 (web聚合) | `scrape_jobs.py` → `auto-publish.sh` | 每天4次 (cron 8/12/16/20) |
-| `data/fb_jobs_raw.json` | FB群组原始帖子 (append-only) | `fb_job_scraper.js` | 每天1次 |
-| `data/fb_jobs_parsed.json` | FB职位解析结果 | `parse_fb_jobs.py` → `auto-publish.sh` | 每天4次 |
+
 | `site/data/chefs.json` | 厨师样本数据 | 手动维护 | 按需 |
 | `docs/` | 静态站输出 | `hugo --minify` → `auto-publish.sh` | 每天4次 + 手动 |
 
@@ -127,15 +126,12 @@ auto-publish.sh
   │     ├── price_tracker.py   → site/data/prices.json
   │     ├── chan_prices.py     → site/data/chan_prices.json
   │     ├── scrape_jobs.py     → site/data/jobs.json + data/jobs.json
-  │     └── parse_fb_jobs.py   → data/fb_jobs_parsed.json
+
   │
   ├── hugo --minify            → docs/ (读取 site/data/*.json)
   │
   └── git add + commit + push → GitHub Pages
 
-fb_job_scraper.js (每天1次 cron)
-  ├── Playwright → 8 个 FB 群组浏览
-  └── 追加 data/fb_jobs_raw.json (append-only)
 
 wa_daemon3.js (独立进程 PID 174813)
   └── messages.upsert          → site/data/chan_raw.json
@@ -178,11 +174,6 @@ graph TD
         SJ --> JOBSJSON[(site/data/jobs.json)]
     end
 
-    subgraph "FB 群组抓取 (每天1次)"
-        FBSCRAPER[fb_job_scraper.js<br/>Playwright 8群组] --> RAW[(data/fb_jobs_raw.json<br/>APPEND ONLY)]
-        RAW --> PARSE[parse_fb_jobs.py]
-        PARSE --> FBJSON[(data/fb_jobs_parsed.json)]
-    end
 
     subgraph "丰富化 (AI-searchable fields)"
         JOBSJSON --> ENRICH[_enrich_job: id/category/skills/location]
@@ -191,7 +182,6 @@ graph TD
 
     subgraph "Hugo 模板"
         JOBSJSON --> LIST[list.html]
-        FBJSON -.-> LIST
         LIST --> DEPLOY[GitHub Pages]
     end
 ```

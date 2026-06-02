@@ -30,10 +30,6 @@ git add -A && git commit -m "📦 构建更新" && git push
   - 脚本：`scripts/auto-publish.sh`
   - 流程：`aggregate.py`（刷新新闻/汇率/鸡价/招聘数据）→ `hugo --minify`（构建）→ `git push`（部署）
 
-- **`jbkitchen — FB job scraper`：** 每天 1 次
-  - 脚本：`scripts/fb_job_scraper.js`
-  - 流程：Playwright 浏览 8 个 FB 群组 → 关键词过滤 → 追加 `data/fb_jobs_raw.json`
-  - 原始数据 append-only，永不删除
 
 ### 手动部署（故障时）
 
