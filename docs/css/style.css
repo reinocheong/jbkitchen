@@ -370,11 +370,9 @@ body {
   font-size: 0.7rem;
   padding: 0.15rem 0.45rem;
   border-radius: 4px;
-}
-
-/* ── Job listing page ── */
-.page-jobs { max-width: 720px; margin: 0 auto; padding: 0 1rem 3rem; }
-.cta-banner {
+  /* ── Job listing page ── */
+  .page-jobs { max-width: 720px; margin: 0 auto; padding: 0 1rem 3rem; }
+  .cta-banner {
     background: linear-gradient(135deg, var(--green-800), var(--green-600));
     border-radius: var(--radius);
     padding: 2rem;
@@ -396,79 +394,79 @@ body {
     transition: opacity 0.15s;
   }
   .cta-btn:hover { opacity: 0.9; }
+
   .page-header { margin-bottom: 1.5rem; }
   .page-header h1 { font-size: 1.6rem; color: var(--green-800); margin-bottom: 0.25rem; }
   .page-meta { font-size: 0.85rem; color: var(--text-3); display: flex; gap: 0.4rem; }
   .page-meta .sep { color: var(--border); }
+
   .job-list { display: flex; flex-direction: column; gap: 0.5rem; }
   .job-card {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    padding: 1rem 1.2rem;
+    justify-content: space-between;
+    gap: 0.75rem;
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: var(--radius-sm);
+    padding: 0.85rem 1rem;
     text-decoration: none;
-    color: inherit;
-    transition: border-color 0.15s, box-shadow 0.15s;
+    transition: all 0.15s ease;
   }
   .job-card:hover {
     border-color: var(--green-400);
-    box-shadow: var(--shadow);
+    box-shadow: var(--shadow-md);
   }
   .job-card-body { flex: 1; min-width: 0; }
   .job-card-top { margin-bottom: 0.25rem; }
-  .job-card-top .job-title {
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: var(--green-700);
-    display: block;
+  .job-title {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--green-800);
   }
-  .job-card-top .job-company {
+  .job-company {
     font-size: 0.8rem;
     color: var(--text-2);
-    display: block;
-    margin-top: 0.1rem;
+    margin-left: 0.35rem;
   }
   .job-card-meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.35rem 0.8rem;
     font-size: 0.78rem;
     color: var(--text-3);
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
   }
+  .job-salary { color: var(--gold-dark); font-weight: 600; }
   .job-card-side { flex-shrink: 0; }
-  .job-salary {
-    font-weight: 700;
-    color: var(--gold-dark);
-    background: #fff9e6;
-    padding: 0.1rem 0.5rem;
-    border-radius: 4px;
-    font-size: 0.82rem;
-  }
-  .job-location { white-space: nowrap; }
-  .job-date { white-space: nowrap; }
+
   .src-tag {
-    font-size: 0.7rem;
-    padding: 0.15rem 0.5rem;
+    font-size: 0.65rem;
+    padding: 0.15rem 0.4rem;
     border-radius: 4px;
-    color: #fff;
-    white-space: nowrap;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
   }
-  .src-hiredly { background: #4a5568; }
-  .src-jora { background: #2d6a4f; }
-  .src-maukerja { background: #b91c1c; }
-  .src-myfuturejobs { background: #1e40af; }
-  .src-facebook { background: #1877f2; }
-  .page-footer-cta {
-    text-align: center;
-    margin-top: 2.5rem;
-  }
+  .src-jora { background: #e8f5e9; color: #2e7d32; }
+  .src-hiredly { background: #e3f2fd; color: #1565c0; }
+  .src-maukerja { background: #fff3e0; color: #e65100; }
+  .src-myfuturejobs { background: #f3e5f5; color: #7b1fa2; }
+  .src-facebook { background: #e8eaf6; color: #3949ab; }
+
+  .page-footer-cta { text-align: center; margin-top: 2rem; }
   .empty-state {
     text-align: center;
-    padding: 4rem 2rem;
+    padding: 3rem;
+    background: var(--card);
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
     color: var(--text-3);
+  }
+
+  @media (max-width: 600px) {
+    .job-card { flex-direction: column; align-items: flex-start; }
+    .job-card-side { align-self: flex-end; }
+    .job-title { font-size: 0.85rem; }
   }
 .chef-list-item {
   background: var(--card);
