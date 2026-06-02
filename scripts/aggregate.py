@@ -14,17 +14,22 @@ from price_tracker import track_prices
 
 DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data")
 SITE_DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "site", "data")
+LOG_DIR = os.path.join(os.path.dirname(__file__), "..", ".logs")
 SH_TZ = ZoneInfo("Asia/Shanghai")
+
+
+def _log(msg):
+    os.makedirs(LOG_DIR, exist_ok=True)
+    with open(os.path.join(LOG_DIR, "error.log"), "a") as f:
+        f.write(f"[{datetime.now().isoformat()}] {msg}\n")
 
 
 def sync_to_site():
     os.makedirs(SITE_DATA_DIR, exist_ok=True)
     count = 0
-    for filename in os.listdir(DATA_DIR):
-        if filename.endswith(".json"):
-            src = os.path.join(DATA_DIR, filename)
-            dst = os.path.join(SITE_DATA_DIR, filename)
-            shutil.copy2(src, dst)
+    for fname in os.listdir(DATA_DIR):
+        if fname.endswith(".json"):
+            shutil.copy2(os.path.join(DATA_DIR, fname), os.path.join(SITE_DATA_DIR, fname))
             count += 1
     return f"同步 {count} 个文件"
 
@@ -36,44 +41,36 @@ def main():
 
     results = {}
 
-    # Phase 1: 新闻采集
     print("\n📰 采集新闻...")
     try:
         r = collect_news()
         results["news"] = f"✅ {r}"
         print(f"  → {r}")
     except Exception as e:
+        _log(f"collect_news 失败: {e}")
         results["news"] = f"❌ {e}"
-        print(f"  → ❌ {e}")
 
-    # Phase 2: 价格数据
     print("\n💱 获取价格...")
     try:
         r = track_prices()
         results["prices"] = f"✅ {r}"
         print(f"  → {r}")
     except Exception as e:
+        _log(f"track_prices 失败: {e}")
         results["prices"] = f"❌ {e}"
-        print(f"  → ❌ {e}")
 
-    # Phase 3: 同步到站点
     print("\n📦 同步数据...")
     r = sync_to_site()
     results["sync"] = f"✅ {r}"
-    print(f"  → {r}")
 
-    # 写入元数据
-    meta = {
-        "last_update": datetime.now(SH_TZ).strftime("%Y-%m-%d %H:%M:%S"),
-        "results": results,
-    }
-    for dir_path in [DATA_DIR, SITE_DATA_DIR]:
-        with open(os.path.join(dir_path, "meta.json"), "w", encoding="utf-8") as f:
+    meta = {"last_update": datetime.now(SH_TZ).strftime("%Y-%m-%d %H:%M:%S"), "results": results}
+    for d in [DATA_DIR, SITE_DATA_DIR]:
+        with open(os.path.join(d, "meta.json"), "w", encoding="utf-8") as f:
             json.dump(meta, f, ensure_ascii=False, indent=2)
 
-    success = sum(1 for v in results.values() if v.startswith("✅"))
+    ok = sum(1 for v in results.values() if v.startswith("✅"))
     fail = sum(1 for v in results.values() if v.startswith("❌"))
-    print(f"\n📊 {success} 成功 / {fail} 失败")
+    print(f"\n📊 {ok} 成功 / {fail} 失败")
 
 
 if __name__ == "__main__":

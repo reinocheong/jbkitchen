@@ -4,19 +4,22 @@ jbkitchen — 汇率+食材价格追踪
 免费 API 获取 MYR 汇率和商品价格
 """
 
-import os, sys, json
+import os, json
 from datetime import datetime
 from zoneinfo import ZoneInfo
 
-try:
-    import requests
-except ImportError:
-    os.system("pip install requests -q")
-    import requests
+import requests
 
 DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data")
 SITE_DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "site", "data")
+LOG_DIR = os.path.join(os.path.dirname(__file__), "..", ".logs")
 SH_TZ = ZoneInfo("Asia/Shanghai")
+
+
+def _log_error(msg):
+    os.makedirs(LOG_DIR, exist_ok=True)
+    with open(os.path.join(LOG_DIR, "error.log"), "a") as f:
+        f.write(f"[{datetime.now().isoformat()}] [price_tracker] {msg}\n")
 
 
 def track_prices():
@@ -26,7 +29,6 @@ def track_prices():
         "commodities": {},
     }
 
-    # 1. MYR 汇率（免费 exchangerate-api）
     try:
         resp = requests.get("https://api.exchangerate-api.com/v4/latest/MYR", timeout=10)
         if resp.status_code == 200:
@@ -38,19 +40,7 @@ def track_prices():
                 "USD_MYR": round(rates.get("USD", 0), 4),
             }
     except Exception as e:
-        print(f"  ⚠️ 汇率获取失败: {e}")
-
-    # 2. 大宗商品（免费 API - 取最新价）
-    # 玉米、大豆影响饲料→肉价
-    try:
-        # 用 data-as-json 免费源
-        resp = requests.get(
-            "https://api.allorigins.win/get?url=https://www.investing.com/common/commodities.php",
-            timeout=10,
-        )
-        # fallback: 如果失败，用上次值
-    except:
-        pass
+        _log_error(f"汇率获取失败: {e}")
 
     os.makedirs(DATA_DIR, exist_ok=True)
     os.makedirs(SITE_DATA_DIR, exist_ok=True)
@@ -59,9 +49,9 @@ def track_prices():
         with open(os.path.join(dir_path, "prices.json"), "w", encoding="utf-8") as f:
             json.dump(prices, f, ensure_ascii=False, indent=2)
 
-    return f"汇率: USD/MYR={prices['fx'].get('USD_MYR','?')}"
+    return f"USD/MYR={prices['fx'].get('USD_MYR', '?')}"
 
 
 if __name__ == "__main__":
-    result = track_prices()
-    print(f"✅ {result}")
+    r = track_prices()
+    print(f"✅ {r}")
