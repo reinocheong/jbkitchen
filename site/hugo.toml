@@ -1,8 +1,9 @@
-baseURL = "https://jbkitchen.com"
+baseURL = "https://reinocheong.github.io/jbkitchen"
 languageCode = "zh-CN"
 title = "JB Kitchen — 新山餐饮经营指南"
 disableKinds = ["taxonomy", "term"]
 enableRobotsTXT = true
+publishDir = "../docs"
 
 [params]
   description = "新山餐饮经营工具与指南 — 成本计算器、供应商目录、经营攻略，帮你开好一间餐厅"
