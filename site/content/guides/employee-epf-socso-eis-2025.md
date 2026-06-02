@@ -1,5 +1,5 @@
 ---
-title: "Employer EPF SOCSO EIS Contribution Rates 2025: Restaurant & F&B Guide"
+title: "Employer EPF SOCSO EIS 2025: Restaurant & F&B Guide"
 description: "Complete guide to EPF, SOCSO, and EIS contribution rates for Malaysian restaurant and frozen food business employers in 2025 — rates, categories, registration, and penalties."
 date: 2026-06-02
 ---

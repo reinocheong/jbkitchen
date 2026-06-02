@@ -1,5 +1,5 @@
 ---
-title: "MeSTI Certification Malaysia: Complete Guide for Frozen Food & Restaurant Businesses 2026"
+title: "MeSTI Certification: Guide for Frozen Food & Restaurant Businesses"
 description: "Everything you need to know about MeSTI certification (Makanan Selamat Tanggungjawab Industri) for frozen food and restaurant businesses in Malaysia — requirements, cost, application process, and audit checklist."
 date: 2026-06-02
 ---

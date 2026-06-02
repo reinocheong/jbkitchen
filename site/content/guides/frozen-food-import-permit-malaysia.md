@@ -1,5 +1,5 @@
 ---
-title: "Frozen Food Import Permit Malaysia: AP License & Customs Guide"
+title: "Frozen Food Import Permit Malaysia: AP License Guide"
 description: "Complete guide to importing frozen food into Malaysia — Approved Permit (AP), customs declaration, halal import requirements, port clearance, and quarantine procedures."
 date: 2026-06-02
 ---

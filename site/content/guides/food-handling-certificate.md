@@ -1,5 +1,5 @@
 ---
-title: "Food Handling Certificate Malaysia 2026: Complete Guide (Kursus Pengendali Makanan)"
+title: "Food Handling Certificate Malaysia: Guide (Kursus Pengendali Makanan)"
 description: "Everything about the mandatory food handling certificate for Malaysian restaurant and food business workers — how to get it online, cost RM50-120, validity, and training providers."
 date: 2026-06-02
 ---

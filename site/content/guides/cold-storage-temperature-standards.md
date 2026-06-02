@@ -1,5 +1,5 @@
 ---
-title: "Cold Storage Temperature Standards Malaysia: Frozen Food Storage Guide"
+title: "Cold Storage Temperature Standards: Frozen Food Guide"
 description: "Complete guide to cold storage and frozen food temperature requirements in Malaysia — legal standards, KKM inspection checklist, storage best practices, and temperature monitoring."
 date: 2026-06-02
 ---
