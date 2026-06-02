@@ -2,6 +2,7 @@
 {{- $chefs := .Site.Data.chefs -}}
 {{- $news := .Site.Data.news -}}
 {{- $prices := .Site.Data.prices -}}
+{{- $chan := .Site.Data.chan_prices -}}
 
 <!-- HERO -->
 <section class="hero">
@@ -73,6 +74,22 @@
         {{- end }}
       </div>
       <p class="live-updated">数据来源：DOSM · {{ $prices.updated }}</p>
+    </div>
+    {{- end }}
+
+    <!-- 🐓 冷冻鸡价 -->
+    {{- if $chan.highlights }}
+    <div class="live-card">
+      <h3>🐓 冷冻鸡价 <span class="price-note">(批发价/kg)</span></h3>
+      <div class="price-list">
+        {{- range $chan.highlights }}
+        <div class="price-row">
+          <span>{{ .display }}</span>
+          <strong class="text-gold">RM{{ lang.FormatNumber 2 .price }}</strong>
+        </div>
+        {{- end }}
+      </div>
+      <p class="live-updated">更新：{{ $chan.date }} | {{ $chan.source }}</p>
     </div>
     {{- end }}
 

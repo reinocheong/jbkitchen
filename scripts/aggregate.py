@@ -5,11 +5,13 @@ sys.path.insert(0, os.path.dirname(__file__))
 
 from news_fetcher import fetch_news
 from price_tracker import track_prices
+from chan_prices import main as parse_chan
 
 
 def aggregate():
     r1 = fetch_news()
     r2 = track_prices()
+    parse_chan()
     print(f"✅ 聚合完成: {r1} | {r2}")
 
 

@@ -1,0 +1,514 @@
+{
+  "date": "2026-06-01",
+  "updated": "2026-06-02 13:37",
+  "source": "冷冻鸡批发价",
+  "note": "价格已含/0.9调整，四舍五入至0.10",
+  "items": [
+    {
+      "item": "1",
+      "code": "BB",
+      "name": "去骨鸡胸肉原装",
+      "name_raw": "BB(boneless breast)original (panus/centago)",
+      "price_src": 9.6,
+      "price_calc": 10.6667,
+      "price": 10.7
+    },
+    {
+      "item": "1a",
+      "code": "BB",
+      "name": "去骨鸡胸肉",
+      "name_raw": "bb butterfly ( cargil / thaifood)",
+      "price_src": 9.0,
+      "price_calc": 10.0,
+      "price": 10.0
+    },
+    {
+      "item": "1b",
+      "code": "BB",
+      "name": "去骨鸡胸肉",
+      "name_raw": "bb china",
+      "price_src": 9.4,
+      "price_calc": 10.4444,
+      "price": 10.4
+    },
+    {
+      "item": "2",
+      "code": "KEEL",
+      "name": "鸡胸柳 (Keel)",
+      "name_raw": "keel",
+      "price_src": 9.8,
+      "price_calc": 10.8889,
+      "price": 10.9
+    },
+    {
+      "item": "3",
+      "code": "SBB",
+      "name": "去皮去骨鸡胸肉",
+      "name_raw": "SBB salt (skinless Boneless breast)(With salt)(12k/box),(15k/box)",
+      "price_src": 10.0,
+      "price_calc": 11.1111,
+      "price": 11.1
+    },
+    {
+      "item": "4",
+      "code": "SBB",
+      "name": "去皮去骨鸡胸肉",
+      "name_raw": "SBB iM(skinless Boneless Breast)",
+      "price_src": 10.2,
+      "price_calc": 11.3333,
+      "price": 11.3
+    },
+    {
+      "item": "4b",
+      "code": "SBB",
+      "name": "去皮去骨鸡胸肉本地",
+      "name_raw": "sbb local (skinless Boneless breast)",
+      "price_src": 10.1,
+      "price_calc": 11.2222,
+      "price": 11.2
+    },
+    {
+      "item": "5",
+      "code": "SBB",
+      "name": "鸡肉丁进口",
+      "name_raw": "SBB -cube- *IM*/*LO*",
+      "price_src": 9.0,
+      "price_calc": 10.0,
+      "price": 10.0
+    },
+    {
+      "item": "5b",
+      "code": "SBL",
+      "name": "鸡肉丁",
+      "name_raw": "sbL cube",
+      "price_src": 9.0,
+      "price_calc": 10.0,
+      "price": 10.0
+    },
+    {
+      "item": "5c",
+      "code": "OYSTER",
+      "name": "去皮去骨鸡腿肉",
+      "name_raw": "oyster meat (skinless Boneless leg k)",
+      "price_src": 10.5,
+      "price_calc": 11.6667,
+      "price": 11.7
+    },
+    {
+      "item": "6",
+      "code": "BL",
+      "name": "去骨鸡腿肉进口",
+      "name_raw": "BL(Boneless leg)im( (12k/) *IM*",
+      "price_src": 13.2,
+      "price_calc": 14.6667,
+      "price": 14.7
+    },
+    {
+      "item": "6a",
+      "code": "BL",
+      "name": "去骨鸡腿肉本地",
+      "name_raw": "bL (Boneless leg)*Lo*",
+      "price_src": 13.0,
+      "price_calc": 14.4444,
+      "price": 14.4
+    },
+    {
+      "item": "10a",
+      "code": "CHOP",
+      "name": "鸡块 Chop",
+      "name_raw": "Chop (6 pcs)",
+      "price_src": 14.0,
+      "price_calc": 15.5556,
+      "price": 15.6
+    },
+    {
+      "item": "11",
+      "code": "CHOP",
+      "name": "鸡块 Chop",
+      "name_raw": "Chop (7pcs)",
+      "price_src": 14.0,
+      "price_calc": 15.5556,
+      "price": 15.6
+    },
+    {
+      "item": "12",
+      "code": "CHOP",
+      "name": "鸡块 Chop",
+      "name_raw": "Chop (8.)",
+      "price_src": 14.7,
+      "price_calc": 16.3333,
+      "price": 16.3
+    },
+    {
+      "item": "12c",
+      "code": "CHOP",
+      "name": "鸡块 Chop",
+      "name_raw": "Chop (9)",
+      "price_src": 15.0,
+      "price_calc": 16.6667,
+      "price": 16.7
+    },
+    {
+      "item": "12a",
+      "code": "CHOP",
+      "name": "鸡块 Chop",
+      "name_raw": "Chop (10.)",
+      "price_src": 15.4,
+      "price_calc": 17.1111,
+      "price": 17.1
+    },
+    {
+      "item": "12b",
+      "code": "CHOP",
+      "name": "鸡块 Chop",
+      "name_raw": "chop",
+      "price_src": 15.5,
+      "price_calc": 17.2222,
+      "price": 17.2
+    },
+    {
+      "item": "13",
+      "code": "CHOP",
+      "name": "鸡块 Chop",
+      "name_raw": "Chop (14)",
+      "price_src": 14.6,
+      "price_calc": 16.2222,
+      "price": 16.2
+    },
+    {
+      "item": "14",
+      "code": "SPRING",
+      "name": "童子鸡 (Spring)",
+      "name_raw": "spring( 0.8-0.9 )",
+      "price_src": 8.3,
+      "price_calc": 9.2222,
+      "price": 9.2
+    },
+    {
+      "item": "14a",
+      "code": "SPRING",
+      "name": "童子鸡 (Spring)",
+      "name_raw": "spring dinding",
+      "price_src": 7.7,
+      "price_calc": 8.5556,
+      "price": 8.6
+    },
+    {
+      "item": "18",
+      "code": "WHOLE",
+      "name": "全鸡",
+      "name_raw": "whole chicken (free size)",
+      "price_src": 7.9,
+      "price_calc": 8.7778,
+      "price": 8.8
+    },
+    {
+      "item": "21a",
+      "code": "WING",
+      "name": "鸡翅进口",
+      "name_raw": "wing import size(m/L)",
+      "price_src": 11.7,
+      "price_calc": 13.0,
+      "price": 13.0
+    },
+    {
+      "item": "21b",
+      "code": "WING",
+      "name": "鸡翅本地",
+      "name_raw": "wing local",
+      "price_src": 10.9,
+      "price_calc": 12.1111,
+      "price": 12.1
+    },
+    {
+      "item": "22b",
+      "code": "WING",
+      "name": "鸡翅进口",
+      "name_raw": "wing import（tyson) size(s)",
+      "price_src": 10.3,
+      "price_calc": 11.4444,
+      "price": 11.4
+    },
+    {
+      "item": "22a",
+      "code": "WING",
+      "name": "鸡翅",
+      "name_raw": "wing patah rm",
+      "price_src": 6.6,
+      "price_calc": 7.3333,
+      "price": 7.3
+    },
+    {
+      "item": "23",
+      "code": "WL",
+      "name": "全鸡腿进口",
+      "name_raw": "WL JC(Whole leg size (m.L) (big food/Lpf/betagro/tyson/ panus/thai poultry)*IM*",
+      "price_src": 10.9,
+      "price_calc": 12.1111,
+      "price": 12.1
+    },
+    {
+      "item": "23a",
+      "code": "WL",
+      "name": "全鸡腿",
+      "name_raw": "wL jc (Whole leg size) (s) tyson",
+      "price_src": 10.9,
+      "price_calc": 12.1111,
+      "price": 12.1
+    },
+    {
+      "item": "23b",
+      "code": "WL",
+      "name": "全鸡腿",
+      "name_raw": "wL jc Cargill/ thaifood/leamtong",
+      "price_src": 10.1,
+      "price_calc": 11.2222,
+      "price": 11.2
+    },
+    {
+      "item": "27",
+      "code": "FILLET",
+      "name": "鸡柳肉",
+      "name_raw": "Fillet Lo/im",
+      "price_src": 10.2,
+      "price_calc": 11.3333,
+      "price": 11.3
+    },
+    {
+      "item": "31a",
+      "code": "DRUMMET",
+      "name": "小鸡腿 (Drummet)",
+      "name_raw": "drummet (thai/Lo)",
+      "price_src": 11.1,
+      "price_calc": 12.3333,
+      "price": 12.3
+    },
+    {
+      "item": "32",
+      "code": "MID",
+      "name": "鸡中翅",
+      "name_raw": "mid Joint Wing",
+      "price_src": 12.5,
+      "price_calc": 13.8889,
+      "price": 13.9
+    },
+    {
+      "item": "33",
+      "code": "DRUMSTICK",
+      "name": "鸡腿 (Drumstick)",
+      "name_raw": "drumstick *Im/Lo*",
+      "price_src": 10.8,
+      "price_calc": 12.0,
+      "price": 12.0
+    },
+    {
+      "item": "35",
+      "code": "RIB",
+      "name": "鸡肋骨",
+      "name_raw": "rib",
+      "price_src": 6.0,
+      "price_calc": 6.6667,
+      "price": 6.7
+    },
+    {
+      "item": "36a",
+      "code": "THIGH",
+      "name": "鸡大腿肉本地",
+      "name_raw": "thigh local",
+      "price_src": 9.6,
+      "price_calc": 10.6667,
+      "price": 10.7
+    },
+    {
+      "item": "37",
+      "code": "THIGH",
+      "name": "鸡大腿肉进口",
+      "name_raw": "thigh import",
+      "price_src": 11.4,
+      "price_calc": 12.6667,
+      "price": 12.7
+    },
+    {
+      "item": "38",
+      "code": "CHICKEN",
+      "name": "鸡肉丁",
+      "name_raw": "chicken cube",
+      "price_src": 8.0,
+      "price_calc": 8.8889,
+      "price": 8.9
+    },
+    {
+      "item": "40",
+      "code": "BUNTUT",
+      "name": "鸡屁股",
+      "name_raw": "Buntut",
+      "price_src": 8.0,
+      "price_calc": 8.8889,
+      "price": 8.9
+    },
+    {
+      "item": "41",
+      "code": "NECK",
+      "name": "鸡颈",
+      "name_raw": "neck",
+      "price_src": 2.2,
+      "price_calc": 2.4444,
+      "price": 2.4
+    },
+    {
+      "item": "42",
+      "code": "PEDAL",
+      "name": "鸡脚",
+      "name_raw": "Pedal(im)",
+      "price_src": 6.2,
+      "price_calc": 6.8889,
+      "price": 6.9
+    },
+    {
+      "item": "42a",
+      "code": "PEDAL",
+      "name": "鸡脚",
+      "name_raw": "Pedal (lo)",
+      "price_src": 6.1,
+      "price_calc": 6.7778,
+      "price": 6.8
+    },
+    {
+      "item": "44a",
+      "code": "BODY",
+      "name": "鸡皮",
+      "name_raw": "body skin(lo)",
+      "price_src": 6.6,
+      "price_calc": 7.3333,
+      "price": 7.3
+    },
+    {
+      "item": "45",
+      "code": "NECK",
+      "name": "鸡颈皮",
+      "name_raw": "neck Skin",
+      "price_src": 4.5,
+      "price_calc": 5.0,
+      "price": 5.0
+    },
+    {
+      "item": "46",
+      "code": "RANGKA",
+      "name": "鸡骨架 (Carcass)",
+      "name_raw": "Rangka (carcass) rm",
+      "price_src": 1.3,
+      "price_calc": 1.4444,
+      "price": 1.4
+    },
+    {
+      "item": "47",
+      "code": "KAKI",
+      "name": "鸡脚",
+      "name_raw": "Kaki",
+      "price_src": 3.8,
+      "price_calc": 4.2222,
+      "price": 4.2
+    },
+    {
+      "item": "47a",
+      "code": "KAKI",
+      "name": "鸡脚",
+      "name_raw": "Kaki jumbo dinding",
+      "price_src": 5.2,
+      "price_calc": 5.7778,
+      "price": 5.8
+    }
+  ],
+  "highlights": [
+    {
+      "item": "1a",
+      "code": "BB",
+      "name": "去骨鸡胸肉",
+      "name_raw": "bb butterfly ( cargil / thaifood)",
+      "price_src": 9.0,
+      "price_calc": 10.0,
+      "price": 10.0,
+      "display": "去骨鸡胸肉蝴蝶"
+    },
+    {
+      "item": "18",
+      "code": "WHOLE",
+      "name": "全鸡",
+      "name_raw": "whole chicken (free size)",
+      "price_src": 7.9,
+      "price_calc": 8.7778,
+      "price": 8.8,
+      "display": "全鸡"
+    },
+    {
+      "item": "21a",
+      "code": "WING",
+      "name": "鸡翅进口",
+      "name_raw": "wing import size(m/L)",
+      "price_src": 11.7,
+      "price_calc": 13.0,
+      "price": 13.0,
+      "display": "鸡翅进口"
+    },
+    {
+      "item": "21b",
+      "code": "WING",
+      "name": "鸡翅本地",
+      "name_raw": "wing local",
+      "price_src": 10.9,
+      "price_calc": 12.1111,
+      "price": 12.1,
+      "display": "鸡翅本地"
+    },
+    {
+      "item": "27",
+      "code": "FILLET",
+      "name": "鸡柳肉",
+      "name_raw": "Fillet Lo/im",
+      "price_src": 10.2,
+      "price_calc": 11.3333,
+      "price": 11.3,
+      "display": "鸡柳肉"
+    },
+    {
+      "item": "32",
+      "code": "MID",
+      "name": "鸡中翅",
+      "name_raw": "mid Joint Wing",
+      "price_src": 12.5,
+      "price_calc": 13.8889,
+      "price": 13.9,
+      "display": "鸡中翅"
+    },
+    {
+      "item": "33",
+      "code": "DRUMSTICK",
+      "name": "鸡腿 (Drumstick)",
+      "name_raw": "drumstick *Im/Lo*",
+      "price_src": 10.8,
+      "price_calc": 12.0,
+      "price": 12.0,
+      "display": "鸡腿"
+    },
+    {
+      "item": "36a",
+      "code": "THIGH",
+      "name": "鸡大腿肉本地",
+      "name_raw": "thigh local",
+      "price_src": 9.6,
+      "price_calc": 10.6667,
+      "price": 10.7,
+      "display": "鸡大腿肉本地"
+    },
+    {
+      "item": "37",
+      "code": "THIGH",
+      "name": "鸡大腿肉进口",
+      "name_raw": "thigh import",
+      "price_src": 11.4,
+      "price_calc": 12.6667,
+      "price": 12.7,
+      "display": "鸡大腿肉进口"
+    }
+  ]
+}
