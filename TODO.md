@@ -49,17 +49,16 @@
 - [x] GitHub Pages CDN 缓存修复（CSS 加 ?v3 版本号）
 - [x] SSOT 7 文档全面更新对齐（含本次会话所有变更）
 
-## ⏳ 待办
+## ⏳ 待办（以下需用户配合 / 外部依赖）
 
+- [ ] 打开 3 个 Google Form 邮件通知（Post Resume / Contribute / Inquiry → setting reinocheong@gmail.com）
 - [ ] 手机部署 Google Apps Script（需要电脑或手机 GAS 编辑）
-- [ ] GitHub token 添加 workflow scope → 启用自动化 CI/CD
 - [ ] KHL 真实 WhatsApp 号码
 - [ ] GA4 Measurement ID 替换为真实 ID
 - [ ] 域名购买 `jbkitchen.com`
 - [ ] Google Search Console 接入
 - [ ] 厨师注册数据导出到 XLSX 功能（通过 Google Sheets 导出）
 - [ ] 提交 sitemap 到 Google Search Console
-- [ ] Contribute 页专用 Google Form
 
 ## ⚠️ 已知问题
 

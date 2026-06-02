@@ -137,6 +137,21 @@
 - 标记 7 个测试/废弃脚本为 DEPRECATED（check_commodities/check_prices/demo_cpi_data/list_dos_datasets/test_dosm_api/news_aggregator/news_filter）
 - 网站 live HTTP 200，`.nojekyll` 存在，无旧协议副本，无僵尸 docs/ 引用
 
+### 管道修复 + JobStreet 自动化 + SSOT 审计
+
+**操作人：AI** — 2026-06-02 21:00
+
+- 发现 cron 报错：`fb_job_scraper.js` 已被删除但 `~/.hermes/scripts/jbkitchen-full-pipeline.sh` 还在调用它
+- 修复：更新 `~/.hermes/scripts/jbkitchen-full-pipeline.sh` 为最新版本（直接调 `auto-publish.sh`）
+- 修复 `auto-publish.sh`：JobStreet 爬虫不再手动触发，加入管道自动执行（Windows Chrome 24/7 在线）
+- `merge_extra_jobs.py` 已内置**去重合并**（title+company 复合键），不会覆盖已有数据
+- 完整管道验证：53 内置 → 92 条（+39)，Hugo 30 页 → git push ✅
+- SSOT 7 文档全部存在、相互引对齐
+- `scripts/` 目录所有依赖脚本存在，无亡脚本引用
+- 硬编码凭据搜索：无（0 命中）
+- `docs/.nojekyll` 存在，`docs/` 目录干净（纯 Hugo 输出）
+- 更新 jbkitchen skill 对齐管道变更
+
 ### 供应商排行榜上线 + 计算器重做
 - 使用 Windows Chrome CDP 通过 Google 搜索调研 JB 冷冻食品供应商，搜到实际结果
 - 创建 `site/data/suppliers.json`（15家供应商，含名/描述/分类/网址/成立年份）
