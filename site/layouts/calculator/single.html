@@ -1,120 +1,381 @@
 {{ define "main" }}
-<div class="calculator-wrap">
-  <h1 style="text-align:center;color:var(--green-800);margin-bottom:0.5rem;">🧮 菜品成本计算器</h1>
-  <p style="text-align:center;color:var(--text-light);margin-bottom:2rem;">输入售价和成本，秒算毛利率和保本销量</p>
+<div class="calc-page">
+  <h1 class="calc-title">🧮 菜品成本计算器</h1>
+  <p class="calc-sub">输入食材清单，自动算成本、毛利率、建议售价。支持多菜对比。</p>
 
-  <div class="calc-card">
-    <div class="form-group">
-      <label>🍽️ 菜品售价 (RM)</label>
-      <input type="number" id="price" placeholder="例：25.00" min="0" step="0.5">
-    </div>
-    <div class="form-group">
-      <label>🥩 食材成本 (RM)</label>
-      <input type="number" id="foodCost" placeholder="例：8.00" min="0" step="0.1">
-    </div>
-    <div class="form-group">
-      <label>👨‍🍳 人工/其他成本 (RM)</label>
-      <input type="number" id="otherCost" placeholder="例：3.00" min="0" step="0.1">
-    </div>
-    <div class="form-group">
-      <label>🏠 每月固定成本 (RM) <span style="font-weight:400;color:var(--text-light);">租金+水电+工资</span></label>
-      <input type="number" id="fixedCost" placeholder="例：15000" min="0" step="100">
-    </div>
-    <div style="text-align:center;">
-      <button class="btn btn-primary" onclick="calcCost()">计算</button>
-      <button class="btn btn-outline" onclick="resetCalc()" style="margin-left:0.5rem;">重置</button>
-    </div>
+  <!-- Tab Nav -->
+  <div class="calc-tabs">
+    <button class="calc-tab active" onclick="switchTab('single')">📋 菜品成本卡</button>
+    <button class="calc-tab" onclick="switchTab('compare')">📊 多菜对比</button>
+    <button class="calc-tab" onclick="switchTab('breakeven')">📈 保本分析</button>
+  </div>
 
-    <div id="result" class="calc-result" style="display:none;">
-      <div class="result-item">
-        <span class="label">食材成本率</span>
-        <span class="value" id="foodCostPct">—</span>
+  <!-- ============ TAB 1: 单菜成本卡 ============ -->
+  <div id="tab-single" class="calc-tab-content active">
+    <div class="calc-two-col">
+      <!-- Left: Form -->
+      <div class="calc-panel">
+        <div class="calc-field">
+          <label>菜名</label>
+          <input type="text" id="dishName" placeholder="例：咖喱鸡" style="font-weight:600;">
+        </div>
+        <div class="calc-field">
+          <label>售价 (RM)</label>
+          <input type="number" id="sellPrice" placeholder="例：18.00" min="0" step="0.5">
+        </div>
+
+        <div class="calc-ingredients">
+          <h4>🥩 食材清单 <span style="font-weight:400;font-size:0.75rem;color:var(--text-3);">填一份的用量</span></h4>
+          <div id="ingredientList">
+            <!-- Template row -->
+            <div class="ing-row">
+              <input type="text" class="ing-name" placeholder="食材名" style="width:28%;">
+              <input type="number" class="ing-qty" placeholder="用量" min="0" step="0.1" style="width:15%;">
+              <select class="ing-unit" style="width:18%;">
+                <option value="g">克 (g)</option>
+                <option value="kg">公斤 (kg)</option>
+                <option value="ml">毫升 (ml)</option>
+                <option value="pcs">个/pcs</option>
+                <option value="pack">包</option>
+                <option value="tbsp">汤匙</option>
+              </select>
+              <input type="number" class="ing-price" placeholder="单价(RM)" min="0" step="0.1" style="width:18%;">
+              <span class="ing-unit-label">/单位</span>
+              <button class="ing-remove" onclick="removeIngredient(this)">✕</button>
+            </div>
+          </div>
+          <button class="btn-add-ing" onclick="addIngredient()">＋ 添加食材</button>
+        </div>
+
+        <div class="calc-field calc-field-row">
+          <label>人工/其他成本 (RM)</label>
+          <input type="number" id="otherCostSingle" placeholder="例：3.00" min="0" step="0.1" style="width:120px;">
+        </div>
+
+        <button class="calc-btn-calc" onclick="calcSingleDish()">🧮 计算</button>
       </div>
-      <div class="result-item">
-        <span class="label">毛利率</span>
-        <span class="value" id="grossMargin">—</span>
-      </div>
-      <div class="result-item">
-        <span class="label">净利润率</span>
-        <span class="value" id="netMargin">—</span>
-      </div>
-      <div class="result-item">
-        <span class="label">每份利润</span>
-        <span class="value" id="profitPerUnit">—</span>
-      </div>
-      <div class="result-item">
-        <span class="label">每月需卖 <span style="font-weight:400;color:var(--text-light);">才能回本</span></span>
-        <span class="value good" id="breakeven">—</span>
-      </div>
-      <div class="result-item">
-        <span class="label">每天需卖 <span style="font-weight:400;color:var(--text-light);">（30天）</span></span>
-        <span class="value" id="dailyNeed">—</span>
+
+      <!-- Right: Results -->
+      <div class="calc-panel" id="singleResult" style="display:none;">
+        <h3 class="result-title"><span id="resultDishName">—</span> 成本分析</h3>
+        
+        <div class="calc-result-grid">
+          <div class="cr-item">
+            <span class="cr-label">总食材成本</span>
+            <span class="cr-value" id="totalFoodCost">—</span>
+          </div>
+          <div class="cr-item">
+            <span class="cr-label">食材成本率</span>
+            <span class="cr-value" id="foodCostRate">—</span>
+          </div>
+          <div class="cr-item">
+            <span class="cr-label">毛利率</span>
+            <span class="cr-value" id="marginRate">—</span>
+          </div>
+          <div class="cr-item">
+            <span class="cr-label">每份净利润</span>
+            <span class="cr-value" id="profitPerUnit">—</span>
+          </div>
+        </div>
+
+        <div class="calc-suggest-box">
+          <h4>💡 建议售价</h4>
+          <div class="suggest-row">
+            <span>目标成本率 30%</span>
+            <span class="sg-price" id="suggest30">—</span>
+          </div>
+          <div class="suggest-row">
+            <span>目标成本率 35%</span>
+            <span class="sg-price" id="suggest35">—</span>
+          </div>
+          <div class="suggest-row">
+            <span>目标成本率 40%</span>
+            <span class="sg-price" id="suggest40">—</span>
+          </div>
+        </div>
+
+        <button class="calc-btn-save" onclick="saveDish()">💾 保存到对比表</button>
       </div>
     </div>
   </div>
 
-  <div class="calc-cta">
-    <h3>📊 想要完整的成本控制表格？</h3>
-    <p>包含食材损耗、员工排班、月度利润分析</p>
-    <a href="{{ .Site.Params.khl_whatsapp }}" class="btn btn-primary" target="_blank">📞 联系 KHL 获取</a>
-    <p style="margin-top:0.5rem;font-size:0.8rem;color:var(--text-light);">填表后发送完整 Excel 成本管理模板</p>
+  <!-- ============ TAB 2: 多菜对比 ============ -->
+  <div id="tab-compare" class="calc-tab-content">
+    <div id="compareWrap">
+      <p style="color:var(--text-3);text-align:center;padding:2rem;" id="emptyCompare">
+        还没有保存的菜品。先在「菜品成本卡」计算后点击保存。
+      </p>
+    </div>
+    <div id="compareTableWrap" style="display:none;">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>菜品</th>
+            <th>食材成本</th>
+            <th>成本率</th>
+            <th>售价</th>
+            <th>毛利率</th>
+            <th>每份利润</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="compareBody"></tbody>
+      </table>
+      <button class="btn-add-ing" onclick="clearAllDishes()" style="margin-top:0.8rem;background:#fee;">🗑️ 清空所有</button>
+    </div>
+  </div>
+
+  <!-- ============ TAB 3: 保本分析 ============ -->
+  <div id="tab-breakeven" class="calc-tab-content">
+    <div class="calc-panel" style="max-width:500px;margin:0 auto;">
+      <div class="calc-field">
+        <label>🏠 每月固定成本 (RM)</label>
+        <span class="field-hint">租金 + 人工 + 水电 + 杂费</span>
+        <input type="number" id="fixedCostBE" placeholder="例：15000" min="0" step="100">
+      </div>
+      <div class="calc-field">
+        <label>🍽️ 平均每份净利润 (RM)</label>
+        <span class="field-hint">用成本卡算出来每道菜赚多少，取平均值</span>
+        <input type="number" id="profitPerBE" placeholder="例：8.50" min="0" step="0.5">
+      </div>
+      <button class="calc-btn-calc" onclick="calcBreakeven()">📈 算保本点</button>
+
+      <div id="beResult" style="display:none;margin-top:1.5rem;">
+        <div class="be-big" id="beMonthly">— 份/月</div>
+        <div class="be-label">每月至少卖这么多才能回本</div>
+        <div class="be-big" id="beDaily">— 份/天</div>
+        <div class="be-label">每天需卖（30天算）</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="calc-footer-note">
+    <p>想批量计算整家店的成本？<a href="{{ "suppliers/khl-frozen-food/" | absURL }}" style="color:var(--green-600);">联系我们</a>获取完整 Excel 成本管理模板</p>
   </div>
 </div>
 
 <script>
-function calcCost() {
-  const price = parseFloat(document.getElementById('price').value) || 0;
-  const foodCost = parseFloat(document.getElementById('foodCost').value) || 0;
-  const otherCost = parseFloat(document.getElementById('otherCost').value) || 0;
-  const fixedCost = parseFloat(document.getElementById('fixedCost').value) || 0;
+// ========== Ingredient Management ==========
+function addIngredient(values) {
+  const list = document.getElementById('ingredientList');
+  const row = document.createElement('div');
+  row.className = 'ing-row';
+  row.innerHTML = `
+    <input type="text" class="ing-name" placeholder="食材名" style="width:28%;" value="${values?.name || ''}">
+    <input type="number" class="ing-qty" placeholder="用量" min="0" step="0.1" style="width:15%;" value="${values?.qty || ''}">
+    <select class="ing-unit" style="width:18%;">
+      <option value="g" ${values?.unit==='g'?'selected':''}>克 (g)</option>
+      <option value="kg" ${values?.unit==='kg'?'selected':''}>公斤 (kg)</option>
+      <option value="ml" ${values?.unit==='ml'?'selected':''}>毫升 (ml)</option>
+      <option value="pcs" ${values?.unit==='pcs'?'selected':''}>个/pcs</option>
+      <option value="pack" ${values?.unit==='pack'?'selected':''}>包</option>
+      <option value="tbsp" ${values?.unit==='tbsp'?'selected':''}>汤匙</option>
+    </select>
+    <input type="number" class="ing-price" placeholder="单价(RM)" min="0" step="0.1" style="width:18%;" value="${values?.price || ''}">
+    <span class="ing-unit-label">/单位</span>
+    <button class="ing-remove" onclick="removeIngredient(this)">✕</button>
+  `;
+  list.appendChild(row);
+}
 
-  if (price <= 0 || foodCost <= 0) {
-    alert('请至少输入售价和食材成本');
+function removeIngredient(btn) {
+  const rows = document.querySelectorAll('#ingredientList .ing-row');
+  if (rows.length <= 1) return; // keep at least one
+  btn.closest('.ing-row').remove();
+}
+
+// ========== Tab Switching ==========
+function switchTab(tab) {
+  document.querySelectorAll('.calc-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.calc-tab-content').forEach(c => c.classList.remove('active'));
+  
+  if (tab === 'single') {
+    document.querySelectorAll('.calc-tab')[0].classList.add('active');
+    document.getElementById('tab-single').classList.add('active');
+  } else if (tab === 'compare') {
+    document.querySelectorAll('.calc-tab')[1].classList.add('active');
+    document.getElementById('tab-compare').classList.add('active');
+    renderCompareTable();
+  } else {
+    document.querySelectorAll('.calc-tab')[2].classList.add('active');
+    document.getElementById('tab-breakeven').classList.add('active');
+  }
+}
+
+// ========== Single Dish Calculation ==========
+function getIngredientData() {
+  const rows = document.querySelectorAll('#ingredientList .ing-row');
+  const ingredients = [];
+  rows.forEach(row => {
+    const name = row.querySelector('.ing-name').value.trim();
+    const qty = parseFloat(row.querySelector('.ing-qty').value) || 0;
+    const unit = row.querySelector('.ing-unit').value;
+    const price = parseFloat(row.querySelector('.ing-price').value) || 0;
+    if (name && qty > 0 && price > 0) {
+      // Convert to standard unit cost
+      let cost = 0;
+      if (unit === 'g') cost = (qty / 1000) * price;
+      else if (unit === 'kg') cost = qty * price;
+      else if (unit === 'ml') cost = (qty / 1000) * price;
+      else cost = qty * price; // pcs, pack, tbsp
+      
+      ingredients.push({ name, qty, unit, price, cost });
+    }
+  });
+  return ingredients;
+}
+
+function calcSingleDish() {
+  const name = document.getElementById('dishName').value.trim() || '未命名菜品';
+  const sellPrice = parseFloat(document.getElementById('sellPrice').value) || 0;
+  const otherCost = parseFloat(document.getElementById('otherCostSingle').value) || 0;
+  const ingredients = getIngredientData();
+
+  if (ingredients.length === 0) {
+    alert('请至少填一种食材的用量和单价');
     return;
   }
 
-  const totalVarCost = foodCost + otherCost;
-  const grossProfit = price - foodCost;
-  const netProfit = price - totalVarCost;
-  const foodCostPct = (foodCost / price * 100);
-  const grossMargin = (grossProfit / price * 100);
-  const netMargin = (netProfit / price * 100);
+  const totalFoodCost = ingredients.reduce((sum, ing) => sum + ing.cost, 0);
+  const totalCost = totalFoodCost + otherCost;
 
-  let breakeven = fixedCost > 0 ? Math.ceil(fixedCost / netProfit) : 0;
-  let dailyNeed = breakeven > 0 ? Math.ceil(breakeven / 30) : 0;
+  // Show results
+  document.getElementById('resultDishName').textContent = name;
+  document.getElementById('totalFoodCost').textContent = 'RM ' + totalFoodCost.toFixed(2);
+  
+  if (sellPrice > 0) {
+    const foodCostRate = (totalFoodCost / sellPrice * 100);
+    const margin = ((sellPrice - totalCost) / sellPrice * 100);
+    const profit = sellPrice - totalCost;
 
-  const foodEl = document.getElementById('foodCostPct');
-  const gmEl = document.getElementById('grossMargin');
-  const nmEl = document.getElementById('netMargin');
-  const ppEl = document.getElementById('profitPerUnit');
-  const beEl = document.getElementById('breakeven');
-  const dnEl = document.getElementById('dailyNeed');
+    const fcrEl = document.getElementById('foodCostRate');
+    fcrEl.textContent = foodCostRate.toFixed(1) + '%';
+    fcrEl.className = 'cr-value rate-' + (foodCostRate > 40 ? 'bad' : foodCostRate > 30 ? 'warn' : 'good');
 
-  foodEl.textContent = foodCostPct.toFixed(1) + '%';
-  foodEl.className = 'value' + (foodCostPct > 40 ? ' bad' : foodCostPct > 30 ? ' warn' : ' good');
+    const mEl = document.getElementById('marginRate');
+    mEl.textContent = margin.toFixed(1) + '%';
+    mEl.className = 'cr-value rate-' + (margin < 50 ? 'bad' : margin < 60 ? 'warn' : 'good');
 
-  gmEl.textContent = grossMargin.toFixed(1) + '%';
-  gmEl.className = 'value' + (grossMargin < 50 ? ' bad' : grossMargin < 60 ? ' warn' : ' good');
-
-  nmEl.textContent = netMargin.toFixed(1) + '%';
-
-  ppEl.textContent = 'RM ' + netProfit.toFixed(2);
-  ppEl.className = 'value' + (netProfit <= 0 ? ' bad' : ' good');
-
-  if (breakeven > 0) {
-    beEl.textContent = breakeven + ' 份/月';
-    dnEl.textContent = dailyNeed + ' 份/天';
+    document.getElementById('profitPerUnit').textContent = 'RM ' + profit.toFixed(2);
+    document.getElementById('profitPerUnit').className = 'cr-value rate-' + (profit <= 0 ? 'bad' : 'good');
   } else {
-    beEl.textContent = '—';
-    dnEl.textContent = '—';
+    document.getElementById('foodCostRate').textContent = '需填售价';
+    document.getElementById('marginRate').textContent = '需填售价';
+    document.getElementById('profitPerUnit').textContent = '需填售价';
   }
 
-  document.getElementById('result').style.display = 'block';
+  // Suggested prices
+  if (totalFoodCost > 0) {
+    document.getElementById('suggest30').textContent = 'RM ' + (totalFoodCost / 0.30).toFixed(2);
+    document.getElementById('suggest35').textContent = 'RM ' + (totalFoodCost / 0.35).toFixed(2);
+    document.getElementById('suggest40').textContent = 'RM ' + (totalFoodCost / 0.40).toFixed(2);
+  }
+
+  document.getElementById('singleResult').style.display = 'block';
+  document.getElementById('singleResult').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+  // Store for compare
+  window._lastDish = { name, totalFoodCost, sellPrice, totalCost, otherCost };
 }
 
-function resetCalc() {
-  document.querySelectorAll('.form-group input').forEach(i => i.value = '');
-  document.getElementById('result').style.display = 'none';
+// ========== Save & Compare ==========
+function saveDish() {
+  if (!window._lastDish) return;
+  const d = window._lastDish;
+  let saved = JSON.parse(localStorage.getItem('jbkitchen_dishes') || '[]');
+  saved.push({
+    id: Date.now(),
+    name: d.name,
+    foodCost: d.totalFoodCost,
+    sellPrice: d.sellPrice,
+    otherCost: d.otherCost,
+    totalCost: d.totalCost
+  });
+  localStorage.setItem('jbkitchen_dishes', JSON.stringify(saved));
+  alert('✅ 已保存「' + d.name + '」到对比表');
 }
+
+function renderCompareTable() {
+  const saved = JSON.parse(localStorage.getItem('jbkitchen_dishes') || '[]');
+  const emptyEl = document.getElementById('emptyCompare');
+  const tableWrap = document.getElementById('compareTableWrap');
+  const tbody = document.getElementById('compareBody');
+
+  if (saved.length === 0) {
+    emptyEl.style.display = 'block';
+    tableWrap.style.display = 'none';
+    return;
+  }
+
+  emptyEl.style.display = 'none';
+  tableWrap.style.display = 'block';
+  tbody.innerHTML = '';
+
+  saved.forEach(d => {
+    const margin = d.sellPrice > 0 ? ((d.sellPrice - d.totalCost) / d.sellPrice * 100) : 0;
+    const costRate = d.sellPrice > 0 ? (d.foodCost / d.sellPrice * 100) : 0;
+    const profit = d.sellPrice > 0 ? (d.sellPrice - d.totalCost) : 0;
+
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td><strong>${d.name}</strong></td>
+      <td>RM ${d.foodCost.toFixed(2)}</td>
+      <td class="rate-${costRate > 40 ? 'bad' : costRate > 30 ? 'warn' : 'good'}">${costRate.toFixed(1)}%</td>
+      <td>${d.sellPrice > 0 ? 'RM '+d.sellPrice.toFixed(2) : '—'}</td>
+      <td class="rate-${margin < 50 ? 'bad' : margin < 60 ? 'warn' : 'good'}">${d.sellPrice > 0 ? margin.toFixed(1)+'%' : '—'}</td>
+      <td>${d.sellPrice > 0 ? 'RM '+profit.toFixed(2) : '—'}</td>
+      <td><button class="ing-remove" onclick="removeDish(${d.id})">✕</button></td>
+    `;
+    tbody.appendChild(tr);
+  });
+}
+
+function removeDish(id) {
+  let saved = JSON.parse(localStorage.getItem('jbkitchen_dishes') || '[]');
+  saved = saved.filter(d => d.id !== id);
+  localStorage.setItem('jbkitchen_dishes', JSON.stringify(saved));
+  renderCompareTable();
+}
+
+function clearAllDishes() {
+  if (!confirm('清空所有保存的菜品？')) return;
+  localStorage.removeItem('jbkitchen_dishes');
+  renderCompareTable();
+}
+
+// ========== Breakeven ==========
+function calcBreakeven() {
+  const fixed = parseFloat(document.getElementById('fixedCostBE').value) || 0;
+  const profit = parseFloat(document.getElementById('profitPerBE').value) || 0;
+
+  if (fixed <= 0 || profit <= 0) {
+    alert('请填写固定成本和每份利润');
+    return;
+  }
+
+  const monthly = Math.ceil(fixed / profit);
+  const daily = Math.ceil(monthly / 30);
+
+  document.getElementById('beMonthly').textContent = monthly + ' 份/月';
+  document.getElementById('beDaily').textContent = daily + ' 份/天';
+  document.getElementById('beResult').style.display = 'block';
+  document.getElementById('beResult').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+// ========== Init ==========
+// Add initial ingredient row on page load
+document.addEventListener('DOMContentLoaded', () => {
+  // Ensure at least one ingredient row
+  if (document.querySelectorAll('#ingredientList .ing-row').length === 0) {
+    addIngredient();
+  }
+  // Restore saved dishes count
+  const saved = JSON.parse(localStorage.getItem('jbkitchen_dishes') || '[]');
+  if (saved.length > 0) {
+    document.querySelector('[onclick="switchTab(\'compare\')"]').textContent = 
+      `📊 多菜对比 (${saved.length})`;
+  }
+});
 </script>
 {{ end }}
