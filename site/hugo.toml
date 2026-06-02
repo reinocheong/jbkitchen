@@ -1,0 +1,35 @@
+baseURL = "https://jbkitchen.com"
+languageCode = "zh-CN"
+title = "JB Kitchen — 新山餐饮经营指南"
+disableKinds = ["taxonomy", "term"]
+enableRobotsTXT = true
+
+[params]
+  description = "新山餐饮经营工具与指南 — 成本计算器、供应商目录、经营攻略，帮你开好一间餐厅"
+  author = "KHL Frozen Food"
+  khl_name = "KHL Frozen Food 冷冻食品批发"
+  khl_phone = "016-XXX XXXX"
+  khl_whatsapp = "https://wa.me/6016XXXXXXX"
+  khl_desc = "新山冷冻食品批发专家 — 鸡肉、海鲜、加工食品，全柔佛配送"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[[menu.main]]
+  name = "首页"
+  url = "/"
+  weight = 1
+[[menu.main]]
+  name = "供应商"
+  url = "/suppliers/"
+  weight = 2
+[[menu.main]]
+  name = "成本计算器"
+  url = "/calculator/"
+  weight = 3
+[[menu.main]]
+  name = "经营指南"
+  url = "/guides/"
+  weight = 4

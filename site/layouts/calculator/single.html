@@ -1,0 +1,120 @@
+{{ define "main" }}
+<div class="calculator-wrap">
+  <h1 style="text-align:center;color:var(--green-800);margin-bottom:0.5rem;">🧮 菜品成本计算器</h1>
+  <p style="text-align:center;color:var(--text-light);margin-bottom:2rem;">输入售价和成本，秒算毛利率和保本销量</p>
+
+  <div class="calc-card">
+    <div class="form-group">
+      <label>🍽️ 菜品售价 (RM)</label>
+      <input type="number" id="price" placeholder="例：25.00" min="0" step="0.5">
+    </div>
+    <div class="form-group">
+      <label>🥩 食材成本 (RM)</label>
+      <input type="number" id="foodCost" placeholder="例：8.00" min="0" step="0.1">
+    </div>
+    <div class="form-group">
+      <label>👨‍🍳 人工/其他成本 (RM)</label>
+      <input type="number" id="otherCost" placeholder="例：3.00" min="0" step="0.1">
+    </div>
+    <div class="form-group">
+      <label>🏠 每月固定成本 (RM) <span style="font-weight:400;color:var(--text-light);">租金+水电+工资</span></label>
+      <input type="number" id="fixedCost" placeholder="例：15000" min="0" step="100">
+    </div>
+    <div style="text-align:center;">
+      <button class="btn btn-primary" onclick="calcCost()">计算</button>
+      <button class="btn btn-outline" onclick="resetCalc()" style="margin-left:0.5rem;">重置</button>
+    </div>
+
+    <div id="result" class="calc-result" style="display:none;">
+      <div class="result-item">
+        <span class="label">食材成本率</span>
+        <span class="value" id="foodCostPct">—</span>
+      </div>
+      <div class="result-item">
+        <span class="label">毛利率</span>
+        <span class="value" id="grossMargin">—</span>
+      </div>
+      <div class="result-item">
+        <span class="label">净利润率</span>
+        <span class="value" id="netMargin">—</span>
+      </div>
+      <div class="result-item">
+        <span class="label">每份利润</span>
+        <span class="value" id="profitPerUnit">—</span>
+      </div>
+      <div class="result-item">
+        <span class="label">每月需卖 <span style="font-weight:400;color:var(--text-light);">才能回本</span></span>
+        <span class="value good" id="breakeven">—</span>
+      </div>
+      <div class="result-item">
+        <span class="label">每天需卖 <span style="font-weight:400;color:var(--text-light);">（30天）</span></span>
+        <span class="value" id="dailyNeed">—</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="calc-cta">
+    <h3>📊 想要完整的成本控制表格？</h3>
+    <p>包含食材损耗、员工排班、月度利润分析</p>
+    <a href="{{ .Site.Params.khl_whatsapp }}" class="btn btn-primary" target="_blank">📞 联系 KHL 获取</a>
+    <p style="margin-top:0.5rem;font-size:0.8rem;color:var(--text-light);">填表后发送完整 Excel 成本管理模板</p>
+  </div>
+</div>
+
+<script>
+function calcCost() {
+  const price = parseFloat(document.getElementById('price').value) || 0;
+  const foodCost = parseFloat(document.getElementById('foodCost').value) || 0;
+  const otherCost = parseFloat(document.getElementById('otherCost').value) || 0;
+  const fixedCost = parseFloat(document.getElementById('fixedCost').value) || 0;
+
+  if (price <= 0 || foodCost <= 0) {
+    alert('请至少输入售价和食材成本');
+    return;
+  }
+
+  const totalVarCost = foodCost + otherCost;
+  const grossProfit = price - foodCost;
+  const netProfit = price - totalVarCost;
+  const foodCostPct = (foodCost / price * 100);
+  const grossMargin = (grossProfit / price * 100);
+  const netMargin = (netProfit / price * 100);
+
+  let breakeven = fixedCost > 0 ? Math.ceil(fixedCost / netProfit) : 0;
+  let dailyNeed = breakeven > 0 ? Math.ceil(breakeven / 30) : 0;
+
+  const foodEl = document.getElementById('foodCostPct');
+  const gmEl = document.getElementById('grossMargin');
+  const nmEl = document.getElementById('netMargin');
+  const ppEl = document.getElementById('profitPerUnit');
+  const beEl = document.getElementById('breakeven');
+  const dnEl = document.getElementById('dailyNeed');
+
+  foodEl.textContent = foodCostPct.toFixed(1) + '%';
+  foodEl.className = 'value' + (foodCostPct > 40 ? ' bad' : foodCostPct > 30 ? ' warn' : ' good');
+
+  gmEl.textContent = grossMargin.toFixed(1) + '%';
+  gmEl.className = 'value' + (grossMargin < 50 ? ' bad' : grossMargin < 60 ? ' warn' : ' good');
+
+  nmEl.textContent = netMargin.toFixed(1) + '%';
+
+  ppEl.textContent = 'RM ' + netProfit.toFixed(2);
+  ppEl.className = 'value' + (netProfit <= 0 ? ' bad' : ' good');
+
+  if (breakeven > 0) {
+    beEl.textContent = breakeven + ' 份/月';
+    dnEl.textContent = dailyNeed + ' 份/天';
+  } else {
+    beEl.textContent = '—';
+    dnEl.textContent = '—';
+  }
+
+  document.getElementById('result').style.display = 'block';
+}
+
+function resetCalc() {
+  document.querySelectorAll('.form-group input').forEach(i => i.value = '');
+  document.getElementById('result').style.display = 'none';
+}
+</script>
+{{ end }}

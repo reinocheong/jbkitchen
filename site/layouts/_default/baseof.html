@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+  <meta name="description" content="{{ .Param "description" | default .Site.Params.description }}">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a href="/" class="logo">🍳 <span class="logo-text">JB Kitchen</span></a>
+      <ul class="nav-menu">
+        {{ range .Site.Menus.main }}
+        <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+        {{ end }}
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    {{ block "main" . }}{{ end }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>JB Kitchen</h3>
+        <p>新山餐饮经营工具与指南</p>
+      </div>
+      <div class="footer-khl">
+        <h4>🥩 推荐供应商</h4>
+        <p><strong>{{ .Site.Params.khl_name }}</strong></p>
+        <p>{{ .Site.Params.khl_desc }}</p>
+        <p><a href="{{ .Site.Params.khl_whatsapp }}" class="btn" target="_blank">📞 联系报价</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; {{ now.Year }} JB Kitchen. Powered by KHL Frozen Food.</p>
+    </div>
+  </footer>
+</body>
+</html>

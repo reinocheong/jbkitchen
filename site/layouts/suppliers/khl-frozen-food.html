@@ -1,0 +1,90 @@
+{{ define "main" }}
+<div class="page-content">
+  <span style="display:inline-block;background:var(--gold);color:var(--green-900);padding:0.2rem 0.8rem;border-radius:4px;font-size:0.8rem;font-weight:700;margin-bottom:1rem;">⭐ 推荐供应商</span>
+  <h1>{{ .Site.Params.khl_name }}</h1>
+  <p style="font-size:1.1rem;margin-bottom:2rem;">{{ .Site.Params.khl_desc }}</p>
+
+  <div style="background:var(--card-bg);border-radius:var(--radius);padding:2rem;box-shadow:var(--shadow);margin-bottom:2rem;">
+    <h2 style="color:var(--green-800);margin-bottom:1rem;">📦 主营产品</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;">
+      <div style="background:var(--green-100);border-radius:8px;padding:1.2rem;text-align:center;">
+        <div style="font-size:2rem;margin-bottom:0.5rem;">🍗</div>
+        <h3 style="font-size:1rem;color:var(--green-700);">鸡肉类</h3>
+        <p style="font-size:0.85rem;color:var(--text-light);">全鸡、鸡腿、鸡翅、鸡胸</p>
+      </div>
+      <div style="background:var(--green-100);border-radius:8px;padding:1.2rem;text-align:center;">
+        <div style="font-size:2rem;margin-bottom:0.5rem;">🦐</div>
+        <h3 style="font-size:1rem;color:var(--green-700);">海鲜类</h3>
+        <p style="font-size:0.85rem;color:var(--text-light);">虾、鱼片、鱿鱼、蟹肉棒</p>
+      </div>
+      <div style="background:var(--green-100);border-radius:8px;padding:1.2rem;text-align:center;">
+        <div style="font-size:2rem;margin-bottom:0.5rem;">🥟</div>
+        <h3 style="font-size:1rem;color:var(--green-700);">加工食品</h3>
+        <p style="font-size:0.85rem;color:var(--text-light);">春卷、烧卖、鱼丸、汉堡肉</p>
+      </div>
+      <div style="background:var(--green-100);border-radius:8px;padding:1.2rem;text-align:center;">
+        <div style="font-size:2rem;margin-bottom:0.5rem;">🥩</div>
+        <h3 style="font-size:1rem;color:var(--green-700);">牛肉/羊肉</h3>
+        <p style="font-size:0.85rem;color:var(--text-light);">进口冷冻牛肉、羊肉片</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="background:var(--card-bg);border-radius:var(--radius);padding:2rem;box-shadow:var(--shadow);margin-bottom:2rem;">
+    <h2 style="color:var(--green-800);margin-bottom:1rem;">✅ 为什么选 KHL</h2>
+    <ul style="list-style:none;padding:0;">
+      <li style="padding:0.6rem 0;border-bottom:1px solid #f0f0f0;">✔ 清真认证产品，放心供应</li>
+      <li style="padding:0.6rem 0;border-bottom:1px solid #f0f0f0;">✔ 全柔佛配送，准时到达</li>
+      <li style="padding:0.6rem 0;border-bottom:1px solid #f0f0f0;">✔ 批发价，餐厅/酒店长期合作</li>
+      <li style="padding:0.6rem 0;">✔ 稳定供货，不缺货不断货</li>
+    </ul>
+  </div>
+
+  <div style="background:var(--card-bg);border-radius:var(--radius);padding:2rem;box-shadow:var(--shadow);text-align:center;">
+    <h2 style="color:var(--green-800);margin-bottom:0.5rem;">📞 获取报价单</h2>
+    <p style="color:var(--text-light);margin-bottom:1.5rem;">留下你的需求，我们会在 2 小时内回复</p>
+
+    <form id="leadForm" style="max-width:400px;margin:0 auto;text-align:left;">
+      <div class="form-group">
+        <label>餐厅名称</label>
+        <input type="text" id="restName" placeholder="你的餐厅名" required>
+      </div>
+      <div class="form-group">
+        <label>联系人</label>
+        <input type="text" id="contactName" placeholder="你的名字" required>
+      </div>
+      <div class="form-group">
+        <label>手机号</label>
+        <input type="tel" id="phone" placeholder="012-345 6789" required>
+      </div>
+      <div class="form-group">
+        <label>需求产品</label>
+        <input type="text" id="product" placeholder="如：鸡翅、虾仁">
+      </div>
+      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">📩 获取报价</button>
+      <p style="font-size:0.75rem;color:var(--text-light);margin-top:0.5rem;text-align:center;">提交后即有专人联系你</p>
+    </form>
+    <div id="formSuccess" style="display:none;">
+      <div style="font-size:3rem;margin-bottom:1rem;">✅</div>
+      <h3 style="color:var(--green-700);">已收到！</h3>
+      <p style="color:var(--text-light);">我们会尽快联系你</p>
+    </div>
+  </div>
+</div>
+
+<script>
+document.getElementById('leadForm')?.addEventListener('submit', function(e) {
+  e.preventDefault();
+  const name = document.getElementById('restName').value;
+  const contact = document.getElementById('contactName').value;
+  const phone = document.getElementById('phone').value;
+  const product = document.getElementById('product').value;
+
+  const msg = encodeURIComponent(`新客户询价\n餐厅：${name}\n联系人：${contact}\n电话：${phone}\n需求：${product}`);
+  window.open(`{{ .Site.Params.khl_whatsapp }}?text=${msg}`, '_blank');
+
+  document.getElementById('leadForm').style.display = 'none';
+  document.getElementById('formSuccess').style.display = 'block';
+});
+</script>
+{{ end }}
