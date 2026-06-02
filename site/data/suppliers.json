@@ -1,0 +1,143 @@
+[
+  {
+    "rank": 1,
+    "name": "KHL Frozen Food 冷冻食品批发",
+    "tagline": "新山餐厅冷冻食材首选",
+    "desc": "专注餐厅冷冻食品供应，鸡肉、海鲜、加工品全品类覆盖。作为 jbkitchen 平台创办者，KHL 不仅提供高性价比的冷冻食材，还免费为餐厅提供厨师招聘、成本计算、行业资讯等服务。",
+    "why": [
+      "🏪 新山本地企业，专注餐厅供应",
+      "📱 直接 WhatsApp 询价，回复快速",
+      "💰 在线透明定价，无隐藏费用",
+      "🚚 全柔佛配送，覆盖 JB/Skudai/Kulai/ Pasir Gudang",
+      "🎁 免费附加价值：成本计算器 + 厨师招聘 + 经营指南",
+      "✅ 清真认证，品质保障"
+    ],
+    "cta": "📞 WhatsApp 询价",
+    "cta_link": "https://wa.me/60123456789",
+    "website": "https://khlfrozenfood.com",
+    "categories": ["冷冻", "清真", "鸡肉", "海鲜", "加工食品", "配送"],
+    "badge": "🏆 平台推荐",
+    "badge_color": "gold"
+  },
+  {
+    "rank": 2,
+    "name": "South East Asia Frozen Food Sdn Bhd",
+    "tagline": "Sea Frozen Food · 超30年历史",
+    "desc": "成立于1995年，JB 老牌冷冻食品批发商，HACCP 及清真认证。产品线极广，适合大批量采购。",
+    "website": "https://www.seafrozenfood.com",
+    "categories": ["冷冻", "清真", "HACCP"],
+    "since": "1995"
+  },
+  {
+    "rank": 3,
+    "name": "Ocean Pacific Seafood & Meat Sdn Bhd",
+    "tagline": "海洋海产 · 海鲜肉类冷冻全系列",
+    "desc": "JB 总部设于 Taman Perniagaan Setia，主打海鲜（鲍鱼、蛤、螃蟹、鱼、虾）、火锅料、鸡肉、肉类。",
+    "website": "https://www.oceanpacificseafood.com",
+    "categories": ["海鲜", "冷冻", "火锅料", "肉类"],
+    "location": "Taman Perniagaan Setia, JB"
+  },
+  {
+    "rank": 4,
+    "name": "Harvest Frozen Food Sdn Bhd",
+    "tagline": "家族经营 · 冷冻冷藏肉批发零售",
+    "desc": "家庭式冷冻冷藏肉批发零售商，供应精选冷冻肉品、优质食材，覆盖餐厅及家庭客户。设有 Butcher Shop。",
+    "website": "https://www.harvestfrozen.com",
+    "categories": ["冷冻肉", "冷藏", "批发", "零售"]
+  },
+  {
+    "rank": 5,
+    "name": "Winter Frozen Enterprise Sdn Bhd",
+    "tagline": "冷冻进口分销 · 牛羊禽即食",
+    "desc": "JB 冷冻食品进口与分销商，供应水牛肉、牛肉、羊肉、家禽、海鲜及即食食品。中英双语网站，覆盖餐厅与批发商。",
+    "website": "https://www.winterfrozen.com.my",
+    "categories": ["冷冻", "进口", "牛羊", "家禽", "即食"],
+    "location": "Johor Bahru"
+  },
+  {
+    "rank": 6,
+    "name": "L & L Frozen Food Sdn Bhd",
+    "tagline": "No.1 冷冻鸡专精 JB",
+    "desc": "JB 冷冻鸡专家，专注高品质清真冷冻鸡产品批发。严格卫生标准及清真认证。",
+    "website": "https://www.llfrozenfood.com",
+    "categories": ["冷冻鸡", "清真", "批发"]
+  },
+  {
+    "rank": 7,
+    "name": "NBS Cash & Carry Sdn Bhd",
+    "tagline": "新蓝星 · 清真/非清真冷冻杂货",
+    "desc": "NBS 提供清真及非清真冷冻食品、新鲜蔬果、杂货等，超过40名员工，自有车队配送。一站式 Cash & Carry。",
+    "website": "https://www.nbsgrocery.com",
+    "categories": ["清真", "非清真", "冷冻", "杂货", "蔬果"]
+  },
+  {
+    "rank": 8,
+    "name": "Pak Soon Frozen Seafoods Sdn Bhd",
+    "tagline": "冷冻海鲜出口进口批发",
+    "desc": "JB 可信赖的冷冻海鲜供应商，也供应鸡肉。适合批发商、零售商及餐厅。",
+    "website": "https://www.paksoonfrozenseafoods.com",
+    "categories": ["海鲜", "冷冻", "鸡肉", "批发"]
+  },
+  {
+    "rank": 9,
+    "name": "Lean Hup Shun Marine Seafood Sdn Bhd",
+    "tagline": "冷冻海鲜 · 2014年至今",
+    "desc": "供应新鲜及冷冻海鲜、肉类、加工肉品、熟食、乳制品，以及牛羊肉丸、薯条等冷冻食品。",
+    "website": "https://www.lhsmarineseafood.com",
+    "categories": ["海鲜", "冷冻", "肉类", "加工食品"]
+  },
+  {
+    "rank": 10,
+    "name": "Ao Ke Frozen Food Sdn Bhd",
+    "tagline": "奥科冷冻 · 冷冻海鲜专家",
+    "desc": "前身为 Ao Ke Trading，成立于1999年。马来西亚著名冷冻海鲜品供应商，总部位于哥打丁宜。",
+    "website": "https://www.aokefrozen.com",
+    "categories": ["海鲜", "冷冻"],
+    "since": "1999",
+    "location": "Kota Tinggi, Johor"
+  },
+  {
+    "rank": 11,
+    "name": "Raihanah Cold Storage Sdn Bhd",
+    "tagline": "冷冻肉类批发· JB 中部",
+    "desc": "冷冻冷藏肉类批发零售商，位于 JB 市中心区域。供应鸡肉、牛肉、羊肉等。",
+    "website": "https://www.raihanahfrozenmeat.com",
+    "categories": ["冷冻肉", "鸡肉", "牛肉", "羊肉"]
+  },
+  {
+    "rank": 12,
+    "name": "77 Foods Industry",
+    "tagline": "冷冻鸡批发 · Kulai",
+    "desc": "成立于2021年，位于 Kulai 的冷冻鸡零件批发供应商，专注高品质清真鸡肉。",
+    "website": "https://www.77s-hub.com",
+    "categories": ["冷冻鸡", "清真", "批发"],
+    "location": "Kulai, Johor"
+  },
+  {
+    "rank": 13,
+    "name": "Yong Heng Yang Sdn Bhd 永兴扬",
+    "tagline": "干粮杂货+冷冻 · Ulu Tiram",
+    "desc": "成立于2017年，批发各种食品饮料给餐饮业及零售商。总部位于乌鲁地南。",
+    "website": "https://www.yonghengyang.com.my",
+    "categories": ["干粮", "冷冻", "杂货", "饮料"],
+    "since": "2017",
+    "location": "Ulu Tiram, Johor"
+  },
+  {
+    "rank": 14,
+    "name": "Pelangi Fresh Supply Sdn Bhd",
+    "tagline": "一站式食品供应商· 2001年至今",
+    "desc": "柔佛新山一站式食品供应商，超过300种产品。覆盖冷冻、干粮、酱料等。",
+    "website": null,
+    "categories": ["冷冻", "干粮", "酱料", "杂货"],
+    "since": "2001"
+  },
+  {
+    "rank": 15,
+    "name": "San San Frozen Food Marketing Sdn Bhd",
+    "tagline": "JB 冷冻食品营销",
+    "desc": "JB 冷冻食品供应商，服务本地市场。",
+    "website": "http://www.ssjb.com.my",
+    "categories": ["冷冻", "批发"]
+  }
+]

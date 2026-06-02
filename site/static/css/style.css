@@ -535,6 +535,324 @@ body {
 .ranking-cta h3 { font-size: 1rem; color: var(--green-800); margin-bottom: 0.3rem; }
 .ranking-cta p { font-size: 0.83rem; color: var(--text-3); margin-bottom: 1rem; }
 
+/* ---- Ranking Page v2 ---- */
+.ranking-page-new {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem;
+}
+.rp-header { text-align: center; margin-bottom: 2rem; }
+.rp-header h1 { font-size: 1.8rem; color: var(--green-800); margin-bottom: 0.3rem; }
+.rp-subtitle { color: var(--text-3); font-size: 0.9rem; }
+
+/* Champion Card (#1) */
+.rp-champion {
+  border-radius: var(--radius);
+  border: 2px solid var(--gold);
+  background: linear-gradient(135deg, #fffdf0, #fff8dc, #fffdf0);
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+.rp-champ-ribbon {
+  background: var(--gold);
+  color: var(--green-900);
+  text-align: center;
+  font-weight: 800;
+  font-size: 0.8rem;
+  padding: 0.3rem 0;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.rp-champ-inner {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1.8rem;
+}
+.rp-champ-left { flex-shrink: 0; }
+.rp-champ-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+.rp-rank-big {
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: var(--gold-dark);
+  line-height: 1;
+}
+.rp-rank-label {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: var(--gold-dark);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.rp-champ-body { flex: 1; }
+.rp-champ-head {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+.rp-champ-head h2 {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--green-900);
+}
+.rp-champ-tagline {
+  font-size: 0.95rem;
+  color: var(--gold-dark);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.rp-champ-desc {
+  font-size: 0.85rem;
+  color: var(--text-2);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Why KHL section */
+.rp-why-section {
+  background: rgba(212,168,67,0.08);
+  border-radius: var(--radius-sm);
+  padding: 1rem 1.2rem;
+  margin-bottom: 1rem;
+}
+.rp-why-section h4 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--green-800);
+  margin-bottom: 0.5rem;
+}
+.rp-why-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.35rem;
+}
+.rp-why-item {
+  font-size: 0.78rem;
+  color: var(--text-2);
+  padding: 0.2rem 0;
+}
+
+/* Champion actions */
+.rp-champ-tags {
+  display: flex;
+  gap: 0.3rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+.rp-champ-actions {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+/* Buttons */
+.rp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.7rem 1.5rem;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.2s;
+  border: none;
+  cursor: pointer;
+}
+.rp-btn-primary {
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: var(--green-900);
+}
+.rp-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(212,168,67,0.4);
+}
+.rp-btn-outline {
+  background: transparent;
+  border: 1px solid var(--gold);
+  color: var(--gold-dark);
+}
+.rp-btn-outline:hover {
+  background: rgba(212,168,67,0.1);
+  transform: translateY(-1px);
+}
+.rp-btn-sm {
+  padding: 0.35rem 0.9rem;
+  font-size: 0.8rem;
+}
+
+/* Methodology */
+.rp-methodology {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+.rp-meth-item {
+  flex: 1;
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+  background: var(--card);
+  padding: 0.8rem 1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+}
+.rp-meth-icon { font-size: 1.2rem; }
+.rp-meth-item strong {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--green-700);
+}
+.rp-meth-item span:last-child {
+  font-size: 0.75rem;
+  color: var(--text-3);
+}
+
+/* Ranking List (#2+) */
+.rp-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.rp-card {
+  display: flex;
+  gap: 1rem;
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 1.2rem 1.1rem;
+  border: 1px solid var(--border);
+  transition: all 0.2s;
+}
+.rp-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--green-300);
+  transform: translateX(3px);
+}
+.rp-card-rank { flex-shrink: 0; }
+.rp-card-num {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.85rem;
+  background: var(--green-100);
+  color: var(--green-700);
+}
+.rp-card-head {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.2rem;
+}
+.rp-card-head h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--green-800);
+}
+.rp-card-body { flex: 1; }
+.rp-card-tagline {
+  font-size: 0.8rem;
+  color: var(--green-600);
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+.rp-card-desc {
+  font-size: 0.8rem;
+  color: var(--text-2);
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+.rp-card-tags {
+  display: flex;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+.rp-card-footer {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Tags */
+.rp-tag {
+  display: inline-block;
+  background: var(--green-100);
+  color: var(--green-700);
+  padding: 0.08rem 0.45rem;
+  border-radius: 3px;
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+.rp-tag-gold {
+  background: rgba(212,168,67,0.15);
+  color: var(--gold-dark);
+}
+.rp-badge {
+  display: inline-block;
+  padding: 0.08rem 0.5rem;
+  border-radius: 3px;
+  font-size: 0.65rem;
+  font-weight: 700;
+}
+.rp-badge-gold {
+  background: var(--gold);
+  color: var(--green-900);
+}
+.rp-badge-green {
+  background: var(--green-100);
+  color: var(--green-700);
+}
+
+/* Links */
+.rp-link {
+  color: var(--green-600);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+.rp-link:hover { color: var(--green-500); }
+.rp-since, .rp-location {
+  font-size: 0.75rem;
+  color: var(--text-3);
+}
+
+/* CTA Card */
+.rp-cta-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, var(--green-900), var(--green-700));
+  border-radius: var(--radius);
+  color: #fff;
+}
+.rp-cta-icon { font-size: 2.5rem; }
+.rp-cta-card h3 {
+  font-size: 1rem;
+  color: var(--gold-light);
+  margin-bottom: 0.2rem;
+}
+.rp-cta-card p {
+  font-size: 0.8rem;
+  opacity: 0.8;
+  margin-bottom: 0.7rem;
+}
+
 /* ---- Responsive ---- */
 @media (max-width: 768px) {
   .nav { flex-wrap: wrap; height: auto; padding: 0.6rem 1rem; gap: 0.5rem; }
@@ -550,4 +868,8 @@ body {
   .chef-list-item .left { flex-direction: column; }
   .tool-grid { grid-template-columns: 1fr 1fr; }
   .rank-footer { flex-direction: column; align-items: flex-start; }
+  .rp-champ-inner { flex-direction: column; }
+  .rp-why-grid { grid-template-columns: 1fr; }
+  .rp-methodology { flex-direction: column; }
+  .rp-cta-card { flex-direction: column; text-align: center; }
 }

@@ -1,54 +1,126 @@
 {{ define "main" }}
-<div class="ranking-page">
-  <h1>🏪 供应商排行榜</h1>
-  <p class="ranking-sub">新山餐饮食材供应商综合排行，帮你找到最靠谱的货源</p>
+{{ $suppliers := sort .Site.Data.suppliers "rank" }}
+<div class="ranking-page-new">
 
-  <div class="ranking-list">
-    <div class="ranking-card rank-1">
-      <div class="rank-num">1</div>
-      <div class="rank-body">
-        <div class="rank-head">
-          <h3>KHL Frozen Food 冷冻食品批发</h3>
-          <span class="rank-badge">⭐ 值得推荐</span>
+  <!-- Header -->
+  <div class="rp-header">
+    <h1>🏪 供应商排行榜</h1>
+    <p class="rp-subtitle">新山餐饮食材供应商综合排行 — 帮你找到最靠谱的货源</p>
+  </div>
+
+  <!-- ===== #1 KHL 特大冠军卡 ===== -->
+  {{ range where $suppliers "rank" 1 }}
+  <div class="rp-champion">
+    <div class="rp-champ-ribbon">🏆 冠军推荐</div>
+    <div class="rp-champ-inner">
+      <div class="rp-champ-left">
+        <div class="rp-champ-badge">
+          <span class="rp-rank-big">1</span>
+          <span class="rp-rank-label">#1</span>
         </div>
-        <p class="rank-desc">新山冷冻食品批发专家 — 鸡肉、海鲜、加工食品，全柔佛配送</p>
-        <div class="rank-tags">
-          <span class="tag">冷冻</span>
-          <span class="tag">清真</span>
-          <span class="tag">全柔配送</span>
-          <span class="tag">批发价</span>
+      </div>
+      <div class="rp-champ-body">
+        <div class="rp-champ-head">
+          <h2>{{ .name }}</h2>
+          <span class="rp-badge rp-badge-gold">{{ .badge }}</span>
         </div>
-        <div class="rank-footer">
-          <div class="rank-meta">
-            <span>✅ 稳定供应</span>
-            <span>✅ 品质保证</span>
+        <p class="rp-champ-tagline">{{ .tagline }}</p>
+        <p class="rp-champ-desc">{{ .desc }}</p>
+        
+        <div class="rp-why-section">
+          <h4>为什么 KHL 是 #1？</h4>
+          <div class="rp-why-grid">
+            {{ range .why }}
+            <div class="rp-why-item">{{ . }}</div>
+            {{ end }}
           </div>
-          <a href="{{ "suppliers/khl-frozen-food/" | absURL }}" class="btn-primary btn-sm">查看详情 →</a>
+        </div>
+
+        <div class="rp-champ-tags">
+          {{ range .categories }}
+          <span class="rp-tag rp-tag-gold">{{ . }}</span>
+          {{ end }}
+        </div>
+
+        <div class="rp-champ-actions">
+          <a href="{{ .cta_link }}" class="rp-btn rp-btn-primary" target="_blank" rel="noopener">{{ .cta }}</a>
+          {{ if .website }}
+          <a href="{{ .website }}" class="rp-btn rp-btn-outline" target="_blank" rel="noopener">🌐 访问网站 →</a>
+          {{ end }}
         </div>
       </div>
     </div>
+  </div>
+  {{ end }}
 
-    <div class="ranking-card rank-empty">
-      <div class="rank-num">2</div>
-      <div class="rank-body">
-        <h3 style="color:var(--text-3);">收录中…</h3>
-        <p style="color:var(--text-3);font-size:0.85rem;">更多供应商即将上线</p>
+  <!-- ===== 排名说明 ===== -->
+  <div class="rp-methodology">
+    <div class="rp-meth-item">
+      <span class="rp-meth-icon">📐</span>
+      <div>
+        <strong>排名标准</strong>
+        <span>产品丰富度 · 本地服务能力 · 清真认证 · 配送覆盖 · 行业口碑</span>
       </div>
     </div>
-
-    <div class="ranking-card rank-empty">
-      <div class="rank-num">3</div>
-      <div class="rank-body">
-        <h3 style="color:var(--text-3);">收录中…</h3>
-        <p style="color:var(--text-3);font-size:0.85rem;">更多供应商即将上线</p>
+    <div class="rp-meth-item">
+      <span class="rp-meth-icon">🔄</span>
+      <div>
+        <strong>持续更新</strong>
+        <span>排名定期调整，欢迎供应商免费加入</span>
       </div>
     </div>
   </div>
 
-  <div class="ranking-cta">
-    <h3>📋 你是供应商？免费加入排行</h3>
-    <p>联系 KHL 提交信息，免费收录到新山供应商排行榜</p>
-    <a href="{{ "suppliers/khl-frozen-food/" | absURL }}" class="btn-primary">📞 联系收录</a>
+  <!-- ===== 排名列表 (#2 起) ===== -->
+  <div class="rp-list">
+    {{ range where $suppliers "rank" "gt" 1 }}
+    <div class="rp-card">
+      <div class="rp-card-rank">
+        <span class="rp-card-num">{{ .rank }}</span>
+      </div>
+      <div class="rp-card-body">
+        <div class="rp-card-head">
+          <h3>{{ .name }}</h3>
+          {{ if .badge }}
+          <span class="rp-badge rp-badge-green">{{ .badge }}</span>
+          {{ end }}
+        </div>
+        <p class="rp-card-tagline">{{ .tagline }}</p>
+        <p class="rp-card-desc">{{ .desc }}</p>
+        
+        <div class="rp-card-tags">
+          {{ range .categories }}
+          <span class="rp-tag">{{ . }}</span>
+          {{ end }}
+        </div>
+
+        {{ if or .website }}
+        <div class="rp-card-footer">
+          {{ if .website }}
+          <a href="{{ .website }}" class="rp-btn-sm rp-link" target="_blank" rel="noopener">🌐 访问网站 →</a>
+          {{ end }}
+          {{ if .since }}
+          <span class="rp-since">🕐 成立于 {{ .since }}</span>
+          {{ end }}
+          {{ if .location }}
+          <span class="rp-location">📍 {{ .location }}</span>
+          {{ end }}
+        </div>
+        {{ end }}
+      </div>
+    </div>
+    {{ end }}
   </div>
+
+  <!-- CTA -->
+  <div class="rp-cta-card">
+    <div class="rp-cta-icon">📋</div>
+    <div>
+      <h3>你是供应商？免费加入排行</h3>
+      <p>联系 KHL 提交公司信息，免费收录到新山供应商排行榜，让更多餐厅找到你</p>
+      <a href="{{ "suppliers/khl-frozen-food/" | absURL }}" class="rp-btn rp-btn-primary">📞 联系收录</a>
+    </div>
+  </div>
+
 </div>
 {{ end }}
