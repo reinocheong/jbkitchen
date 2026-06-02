@@ -8,9 +8,9 @@
 ```mermaid
 graph TD
     subgraph "数据采集层 (Python)"
-        NA[news_aggregator.py<br/>RSS 新闻采集] --> DATA[(data/*.json)]
-        PT[price_tracker.py<br/>汇率 API] --> DATA
-        AG[aggregate.py<br/>主调度器] --> NA
+        NF[news_fetcher.py<br/>Google News RSS 22关键词] -->|feedparser| DATA[(data/*.json)]
+        PT[price_tracker.py<br/>DOSM CPI API + 汇率API] --> DATA
+        AG[aggregate.py<br/>主调度器] --> NF
         AG --> PT
     end
 
@@ -52,11 +52,11 @@ graph TD
 ## 数据流向
 
 ```
-RSS 源 / 汇率 API
-    ↓ (手动构建)
+DOSM CPI API / 汇率 API / Google News RSS
+    ↓ (手动运行 aggregate.py)
 Python 采集 → data/*.json
     ↓
-site/data/*.json → Hugo 读取
+site/data/*.json → Hugo 读取 (.Site.Data.prices / .Site.Data.news)
     ↓
 手动 Hugo 构建 → docs/ 输出
     ↓
@@ -79,9 +79,10 @@ GA4: 标准 page_view 事件（需替换真实 Measurement ID）
 ## 模块依赖
 
 ```
-aggregate.py  ← 依赖 ← news_aggregator.py
+aggregate.py  ← 依赖 ← news_fetcher.py
 aggregate.py  ← 依赖 ← price_tracker.py
-Hugo layouts   ← 读取 ← site/data/*.json（运行时）
+Hugo layouts   ← 读取 ← site/data/prices.json（行业动态—汇率+CPI）
+Hugo layouts   ← 读取 ← site/data/news.json（行业动态—新闻列表）
 Hugo layouts   ← 读取 ← site/data/chefs.json（手动维护）
 无循环依赖。所有数据单向流动。
 ```

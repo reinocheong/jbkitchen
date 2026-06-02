@@ -15,6 +15,7 @@
 - [x] 简历提交表单（WhatsApp 推送）
 - [x] GitHub Pages 部署
 - [x] 新闻 + 汇率自动采集脚本
+- [x] DOSM CPI 数据接入 + Google News RSS 马来西亚餐饮新闻（行业动态板块）✅
 - [x] SSOT 文档体系（7 文档）
 - [x] 广告合作页面（4 个定价层级 + CPM 公式）
 - [x] 页面浏览追踪（CountAPI + GA4 占位）
@@ -30,7 +31,6 @@
 - [ ] GA4 Measurement ID 替换为真实 ID
 - [ ] 域名购买 `jbkitchen.com`
 - [ ] Google Search Console 接入
-- [ ] 马来西亚本地餐饮 RSS 源补充
 - [ ] 广告位管理后台（更完善的上下架机制）
 - [ ] 厨师注册数据导出到 XLSX 功能（通过 Google Sheets 导出）
 

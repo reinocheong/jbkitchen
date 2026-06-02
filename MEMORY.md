@@ -20,7 +20,13 @@ CI 中 git push 会自动推送 `docs/` 内容。
 
 ### 新闻 RSS 源不可靠
 部分马来西亚 RSS 源（BERNAMA 等）经常超时或返回空。
-当前策略：主用 TechCrunch + HN + API fallback 兜底。
+当前策略：使用 Google News RSS（22 个马来西亚餐饮关键词，4 大类），feedparser 解析，稳定可用。
+取代原 TechCrunch + HN + API fallback 兜底方案。
+
+### DOSM API 数据限制
+- cpi_headline API 返回 1980 年至今的月度 CPI 指数，limit=5000 才能取到最新数据
+- 部分 division（如 08 通讯）在 index API 中更新滞后（至 2025-12），而 inflation API 已到 2026-04
+- 无 division 11（餐饮住宿），实际只使用 overall/01/04/07/08
 
 ### 手机端 GitHub Pages 白屏 — ✅ 已修复
 用户小米手机访问 GitHub Pages 出现白屏，桌面 Chrome 正常。

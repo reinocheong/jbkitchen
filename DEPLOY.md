@@ -39,6 +39,15 @@ git add -A && git commit -m "📦 构建更新" && git push
 | Google Analytics GA4 | 深度流量分析 | ⚠️ Measurement ID 为占位符，需替换 |
 | Google Apps Script | 厨师注册表单→Google Sheet | ⚠️ 需要部署（见 setup/SHEET_SETUP_GUIDE.md） |
 | Google Sheets | 厨师注册数据存档 | ⚠️ 需要创建（见 setup/SHEET_SETUP_GUIDE.md） |
+| DOSM Open API | CPI 指数 + 通胀率 | ✅ 免费开放数据，无需 API key |
+| exchangerate-api.com | MYR 实时汇率 | ✅ 免费，无需 API key |
+| Google News RSS | 马来西亚餐饮新闻（22 关键词） | ✅ 免费 RSS，无需 API key |
+
+## Python 依赖
+
+```bash
+pip install requests feedparser
+```
 
 ## 数据同步
 

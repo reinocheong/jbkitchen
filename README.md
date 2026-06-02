@@ -23,6 +23,7 @@
 |---|------|
 | 生成器 | Hugo v0.145 (extended) |
 | 数据采集 | Python 3.11 + feedparser + requests |
+| 数据源 | DOSM Open API（CPI 指数+通胀率）, exchangerate-api.com（汇率）, Google News RSS（新闻） |
 | 部署 | GitHub Pages（`/docs` 目录，main 分支） |
 | 自动化 | 手动构建推送（token 缺少 workflow scope） |
 | 计数 | CountAPI（免费云端计数） |

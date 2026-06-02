@@ -7,6 +7,15 @@
 
 **操作人：AI**
 
+### 行业动态板块上线
+- 重写 price_tracker.py：接入 DOSM Open API（cpi_headline + cpi_headline_inflation），获取官方 CPI 指数 + 通胀率数据
+- 重写 news_fetcher.py：Google News RSS 22 个马来西亚餐饮关键词搜索，覆盖食材价格/政策法令/行业趋势/新山本地 4 大类
+- 重写 aggregate.py：简化为直接调用 news_fetcher + price_tracker 双模块
+- 修改首页模板：新增 CPI 通胀卡片（含 ▲/▼ 箭头 + 红绿颜色），汇率数值使用金色高亮，新闻列表显示来源/日期/分类标签
+- 新增 CSS 样式：news-item, news-meta, news-category, live-card-wide
+- 构建部署成功，git push 到 GitHub Pages
+- 数据源：DOSM API（免费开放数据，最新 2026-04-01）、exchangerate-api.com（实时汇率）、Google News RSS（无 API key）
+
 ### 项目初始化
 - 创建项目、Hugo 骨架、成本计算器、供应商目录、3 篇指南
 - GitHub Pages 部署 + 自动化采集脚本（新闻+汇率）
