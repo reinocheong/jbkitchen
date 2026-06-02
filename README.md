@@ -1,16 +1,24 @@
-# jbkitchen — 新山餐饮经营工具站
+# jbkitchen — 新山餐饮人才与经营平台
 
-> RESTAURANT 经营工具 + 自动内容引流 → KHL Frozen Food
+> 厨师找工作 · 老板找人才 · 餐厅找供应商 → KHL Frozen Food
 
 ## 一句话定位
 
-不为做"最大的信息站"，做"最有用的餐饮经营工具站"——成本计算器、供应商目录、经营指南，自动更新内容，自然引导餐厅老板到 KHL。
+新山餐饮双面市场平台：厨师挂简历找工作，餐厅老板找人才+找供应商+算成本，自然引导到 KHL。
 
 ## 商业模式
 
-免费工具站 → SEO 自然流量 → 供应商目录 KHL 置顶 → 详情页留下联系方式 → KHL 销售跟进。
-
-不是内容媒体，是**获客工具**。
+```
+免费工具（成本计算器/指南/供应商目录） → 吸引流量
+         ↓
+厨师简历（厨师找工作）                   → 吸引餐厅老板
+         ↓
+供应商目录（KHL 置顶 ⭐）               → 信任 → 询价
+         ↓
+KHL 详情页 + WhatsApp 表单               → 销售线索 → 成交
+         ↓
+广告系统（CPM 明码标价）                → 额外收入
+```
 
 ## 技术栈
 
@@ -18,29 +26,54 @@
 |---|------|
 | 生成器 | Hugo v0.145 (extended) |
 | 数据采集 | Python 3.11 + feedparser + requests |
-| 部署 | GitHub Pages（`/docs` 目录） |
-| 自动化 | GitHub Actions（每 12h） |
-| 域名 | 开发期 `reinocheong.github.io/jbkitchen` 正式期 `jbkitchen.com` |
+| 部署 | GitHub Pages（`/docs` 目录，main 分支） |
+| 自动化 | 手动构建推送（token 缺少 workflow scope） |
+| 计数 | CountAPI（免费云端计数） |
+| 表单 | Google Apps Script → Google Sheets（厨师注册） |
+| 域名 | 当前 `reinocheong.github.io/jbkitchen`，正式期 `jbkitchen.com` |
 
 ## 项目目录
 
 ```
 jbkitchen/
-├── site/           # Hugo 静态站点
-│   ├── content/    # 指南文章（Markdown）
-│   ├── layouts/    # 模板（Go HTML）
-│   ├── static/     # CSS
-│   ├── data/       # 自动生成的 JSON 数据
-│   └── hugo.toml   # Hugo 配置
-├── scripts/        # Python 自动化
-├── data/           # 原始 JSON 数据
-├── docs/           # 构建输出（GitHub Pages 源）
-└── .github/workflows/  # CI/CD
+├── site/             # Hugo 源码
+│   ├── content/      # Markdown 页面
+│   ├── layouts/      # Go HTML 模板
+│   ├── static/       # CSS
+│   ├── data/         # Hugo 读取的 JSON（含自动+手动数据）
+│   └── hugo.toml     # Hugo 配置
+├── scripts/          # Python 自动化（新闻/汇率采集）
+├── data/             # 原始 JSON（自动采集结果）
+├── docs/             # 构建输出 → GitHub Pages
+├── setup/            # 部署/集成指南（如 GAS Sheet 设置）
+├── README.md         # ← 你现在在这
+├── ARCHITECTURE.md   # 系统拓扑
+├── DEPLOY.md         # 部署流程
+├── TODO.md           # 开发状态
+├── JOURNAL.md        # 开发日志
+├── MEMORY.md         # 踩坑记录
+└── USER.md           # 用户画像
 ```
+
+## 核心页面
+
+| 页面 | 功能 | 目标用户 |
+|------|------|---------|
+| `/` | 首页：两条路径(找厨师/找工作) | 所有人 |
+| `/chefs/` | 厨师简历列表+详情 | 餐厅老板 |
+| `/chefs/submit/` | 厨师免费挂简历（→WhatsApp→Sheet） | 厨师 |
+| `/suppliers/` | 供应商目录（KHL 置顶） | 餐厅老板 |
+| `/suppliers/khl-frozen-food/` | KHL 详情+询价表单 | 潜在客户 |
+| `/calculator/` | 成本计算器（纯前端 JS） | 准备/已开餐厅 |
+| `/guides/` | 经营指南（清真认证/执照/采购） | 准备开餐厅 |
+| `/advertise/` | 广告合作（4 个定价层级+CPM 公式） | 供应商/广告主 |
+| `/dashboard/` | 流量统计面板 | jbkitchen 运营 |
 
 ## 关键约定
 
 - 单脚本 ≤150 行
-- 数据 JSON 写入 `data/` 和 `site/data/`（双向同步）
 - 新闻 RSS 源必须经过餐饮关键词过滤
-- KHL 置顶在所有供应商列表第一位
+- KHL 在所有供应商列表排第一位，带 ⭐ 标签
+- 所有指南底部有 KHL CTA
+- 广告定价：CPM 公式（流速÷1000×位置系数×RM 10）
+- 厨师注册数据流向：网站表单 → WhatsApp 通知 → Google Sheet 记录

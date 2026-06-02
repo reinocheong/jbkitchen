@@ -19,7 +19,10 @@
 ### Reino 反馈 #3 — 加广告系统
 - `/advertise/` 页面：4 个广告位，CPM 公式定价
 - 公式：`浏览量 ÷ 1,000 × 位置系数 × RM 10`
-- 位置系数：首页 2.5 / 分类置顶 1.8 / 详情页 1.2 / 文章 1.0
-- 价格随浏览量自动调整，流量越大价格越高但每千次成本不变
-- CountAPI 每页独立计数 + GA4 追踪
+- CountAPI 每页独立计数 + GA4 追踪（占位符）
 - `/dashboard/` 实时显示所有页面浏览量 + 自动算出的广告价格
+
+### Reino 反馈 #4 — 用 XLSX/Sheet 记录厨师
+- 创建 setup/SHEET_SETUP_GUIDE.md（Google Sheet + Apps Script 部署指南）
+- 明确厨师注册流程：表单 → WhatsApp + Google Sheet 双记录
+- 更新 SSOT 文档对齐全部变更

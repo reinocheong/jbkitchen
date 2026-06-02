@@ -11,25 +11,38 @@ graph TD
         AG --> PT
     end
 
+    subgraph "表单录入层 (Google)"
+        FORM[厨师提交表<br/>site/chefs/submit/] -->|WhatsApp| KHL_PHONE[KHL WhatsApp]
+        FORM -->|Google Apps Script| SHEET[(Google Sheet)]
+    end
+
     subgraph "数据层"
         DATA --> SYNC[同步到 site/data/]
+        SITE_DATA[(site/data/*.json)] --> HUGO
+        CHEFS_JSON[site/data/chefs.json<br/>手动维护] --> HUGO
     end
 
     subgraph "展示层 (Hugo)"
-        SYNC --> HUGO[Hugo Build]
-        MD[content/*.md<br/>指南文章] --> HUGO
-        HUGO --> HTML[docs/ 静态页面]
+        MD[content/*.md<br/>指南/供应商/厨师] --> HUGO
+        HUGO[Hugo Build] --> HTML[docs/ 静态页面]
+    end
+
+    subgraph "外部服务"
+        HTML --> CI[CountAPI<br/>每页独立计数]
+        HTML --> GA[(GA4<br/>埋点)]
     end
 
     subgraph "部署"
-        HTML --> GH[GitHub Pages]
-        GH --> USER[餐厅老板]
+        HTML --> GH[GitHub Pages<br/>/docs 目录]
+        GH --> USER[访客<br/>厨师/老板/供应商]
     end
 
     subgraph "引流链路"
         USER -->|搜到 SEO 内容| SITE[网站页面]
         SITE -->|供应商目录| KHL[KHL 详情页]
-        KHL -->|留下联系方式| LEAD[KHL 销售跟进]
+        KHL -->|WhatsApp 询价| LEAD[KHL 销售跟进]
+        SITE -->|简历浏览| CONTACT[联系厨师]
+        CONTACT --> COORD[KHL协调安排]
     end
 ```
 
@@ -37,12 +50,27 @@ graph TD
 
 ```
 RSS 源 / 汇率 API
-    ↓ (每 12h GitHub Actions)
+    ↓ (手动构建)
 Python 采集 → data/*.json
-    ↓ (同步)
-site/data/*.json → Hugo 读取 → 静态页面
-    ↓ (自动部署)
-GitHub Pages → 用户浏览器
+    ↓
+site/data/*.json → Hugo 读取
+    ↓
+手动 Hugo 构建 → docs/ 输出
+    ↓
+git push → GitHub Pages
+
+厨师表单:
+网站提交 → WhatsApp 通知老板
+        → Google Sheet 记录存档
+```
+
+## 页面计数
+
+```
+每个页面加载时:
+CountAPI hit → 存到云端计数器
+Dashboard 读取: CountAPI get → 按流量排序展示
+GA4: 标准 page_view 事件（需替换真实 Measurement ID）
 ```
 
 ## 模块依赖
@@ -50,7 +78,7 @@ GitHub Pages → 用户浏览器
 ```
 aggregate.py  ← 依赖 ← news_aggregator.py
 aggregate.py  ← 依赖 ← price_tracker.py
-Hugo layouts   ← 读取 ← site/data/*.json （运行时）
-```
-
+Hugo layouts   ← 读取 ← site/data/*.json（运行时）
+Hugo layouts   ← 读取 ← site/data/chefs.json（手动维护）
 无循环依赖。所有数据单向流动。
+```
