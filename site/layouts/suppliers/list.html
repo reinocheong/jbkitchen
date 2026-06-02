@@ -1,34 +1,54 @@
 {{ define "main" }}
-<div class="supplier-list-page">
-  <h1>🏪 新山餐饮供应商目录</h1>
-  <p style="color:var(--text-3);margin-bottom:2rem;">帮你找到新山最靠谱的食材和设备供应商</p>
+<div class="ranking-page">
+  <h1>🏪 供应商排行榜</h1>
+  <p class="ranking-sub">新山餐饮食材供应商综合排行，帮你找到最靠谱的货源</p>
 
-  <div class="supplier-card khl">
-    <div>
-      <h3>KHL Frozen Food <span class="khl-badge">⭐ 推荐</span></h3>
-      <p style="font-size:0.85rem;color:var(--text-3);">冷冻食品批发 · 全柔佛配送 · 清真认证</p>
-      <div style="margin-top:0.4rem;">
-        <span class="tag">冷冻</span>
-        <span class="tag">清真</span>
-        <span class="tag">配送</span>
-        <span class="tag">批发</span>
+  <div class="ranking-list">
+    <div class="ranking-card rank-1">
+      <div class="rank-num">1</div>
+      <div class="rank-body">
+        <div class="rank-head">
+          <h3>KHL Frozen Food 冷冻食品批发</h3>
+          <span class="rank-badge">⭐ 值得推荐</span>
+        </div>
+        <p class="rank-desc">新山冷冻食品批发专家 — 鸡肉、海鲜、加工食品，全柔佛配送</p>
+        <div class="rank-tags">
+          <span class="tag">冷冻</span>
+          <span class="tag">清真</span>
+          <span class="tag">全柔配送</span>
+          <span class="tag">批发价</span>
+        </div>
+        <div class="rank-footer">
+          <div class="rank-meta">
+            <span>✅ 稳定供应</span>
+            <span>✅ 品质保证</span>
+          </div>
+          <a href="{{ "suppliers/khl-frozen-food/" | absURL }}" class="btn-primary btn-sm">查看详情 →</a>
+        </div>
       </div>
     </div>
-    <a href={{ "suppliers/khl-frozen-food/" | absURL }} class="btn btn-primary btn-sm">查看详情 →</a>
-  </div>
 
-  <div class="supplier-card" style="opacity:0.5;cursor:default;">
-    <div>
-      <h3 style="color:var(--text-3);">更多供应商收录中…</h3>
-      <p style="font-size:0.85rem;color:var(--text-3);">如果你是食材/设备供应商，免费加入本目录</p>
+    <div class="ranking-card rank-empty">
+      <div class="rank-num">2</div>
+      <div class="rank-body">
+        <h3 style="color:var(--text-3);">收录中…</h3>
+        <p style="color:var(--text-3);font-size:0.85rem;">更多供应商即将上线</p>
+      </div>
     </div>
-    <span style="color:var(--text-3);font-size:0.85rem;">即将上线</span>
+
+    <div class="ranking-card rank-empty">
+      <div class="rank-num">3</div>
+      <div class="rank-body">
+        <h3 style="color:var(--text-3);">收录中…</h3>
+        <p style="color:var(--text-3);font-size:0.85rem;">更多供应商即将上线</p>
+      </div>
+    </div>
   </div>
 
-  <div style="text-align:center;margin-top:2rem;padding:2rem;background:var(--card);border-radius:var(--radius);border:1px solid var(--border);">
-    <h3 style="color:var(--green-800);margin-bottom:0.5rem;">📋 你是供应商？免费收录</h3>
-    <p style="color:var(--text-3);margin-bottom:1rem;">联系 KHL 提交信息，免费加入新山供应商目录</p>
-    <a href={{ "suppliers/khl-frozen-food/" | absURL }} class="btn btn-primary">📞 联系收录</a>
+  <div class="ranking-cta">
+    <h3>📋 你是供应商？免费加入排行</h3>
+    <p>联系 KHL 提交信息，免费收录到新山供应商排行榜</p>
+    <a href="{{ "suppliers/khl-frozen-food/" | absURL }}" class="btn-primary">📞 联系收录</a>
   </div>
 </div>
 {{ end }}

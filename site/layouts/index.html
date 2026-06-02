@@ -3,103 +3,31 @@
 {{- $news := .Site.Data.news -}}
 {{- $prices := .Site.Data.prices -}}
 
-<!-- HERO — 两条清晰路径 -->
-<section class="hero-split">
-  <div class="hero-split-bg"></div>
+<!-- HERO -->
+<section class="hero">
   <div class="hero-content">
     <h1>新山餐饮<br><span class="text-gold">人才与经营平台</span></h1>
     <p class="hero-sub">厨师找工作 · 老板找人才 · 餐厅找供应商</p>
-    <div class="hero-paths">
-      <a href={{ "chefs/" | absURL }} class="path-card path-chef">
-        <span class="path-icon">👨‍🍳</span>
-        <span class="path-title">我找厨师</span>
-        <span class="path-desc">浏览简历，找到你的团队</span>
+    <div class="hero-actions">
+      <a href="{{ "chefs/" | absURL }}" class="btn-hero btn-hero-primary">
+        <span class="btn-hero-icon">👨‍🍳</span>
+        <span class="btn-hero-text">
+          <span class="btn-hero-title">我找厨师</span>
+          <span class="btn-hero-desc">浏览简历，找到你的团队</span>
+        </span>
       </a>
-      <a href={{ "chefs/submit/" | absURL }} class="path-card path-job">
-        <span class="path-icon">📝</span>
-        <span class="path-title">我找工作</span>
-        <span class="path-desc">免费挂简历，让老板找到你</span>
+      <a href="{{ "chefs/submit/" | absURL }}" class="btn-hero btn-hero-secondary">
+        <span class="btn-hero-icon">📝</span>
+        <span class="btn-hero-text">
+          <span class="btn-hero-title">我找工作</span>
+          <span class="btn-hero-desc">免费挂简历，让老板找到你</span>
+        </span>
       </a>
     </div>
   </div>
 </section>
 
-<!-- 最新厨师简历 -->
-{{- if $chefs }}
-<section class="section">
-  <div class="section-header">
-    <h2>🔥 最新厨师简历</h2>
-    <a href={{ "chefs/" | absURL }} class="btn btn-outline btn-sm">查看全部 →</a>
-  </div>
-  <div class="chef-grid">
-    {{- range first 6 $chefs }}
-    <a href="{{ printf "chefs/%s/" .id | absURL }}" class="chef-card">
-      <div class="chef-avatar">{{ .emoji }}</div>
-      <div class="chef-info">
-        <h3>{{ .name }}</h3>
-        <p class="chef-spec">{{ .specialty }}</p>
-        <p class="chef-meta">{{ .exp_years }}年经验 · {{ .location }}</p>
-        <div class="chef-tags">
-          <span class="tag">{{ .exp_years }}年</span>
-          <span class="tag">{{ .specialty }}</span>
-        </div>
-      </div>
-    </a>
-    {{- end }}
-  </div>
-</section>
-{{- end }}
-
-<!-- 快速工具 -->
-<section class="section bg-light">
-  <div class="section-header">
-    <h2>🧰 经营工具</h2>
-  </div>
-  <div class="tool-grid">
-    <a href={{ "calculator/" | absURL }} class="tool-card">
-      <span class="tool-icon">🧮</span>
-      <h3>成本计算器</h3>
-      <p>算毛利率、保本销量</p>
-    </a>
-    <a href={{ "suppliers/" | absURL }} class="tool-card">
-      <span class="tool-icon">🏪</span>
-      <h3>供应商目录</h3>
-      <p>找靠谱的食材供应商</p>
-    </a>
-    <a href={{ "guides/" | absURL }} class="tool-card">
-      <span class="tool-icon">📋</span>
-      <h3>经营指南</h3>
-      <p>清真认证、执照、采购</p>
-    </a>
-    <a href={{ "chefs/submit/" | absURL }} class="tool-card">
-      <span class="tool-icon">📝</span>
-      <h3>挂简历</h3>
-      <p>免费展示你的履历</p>
-    </a>
-  </div>
-</section>
-
-<!-- KHL 推荐位 -->
-<section class="khl-banner">
-  <div class="khl-banner-content">
-    <div class="khl-banner-text">
-      <span class="khl-badge">⭐ 推荐供应商</span>
-      <h2>{{ .Site.Params.khl_name }}</h2>
-      <p>{{ .Site.Params.khl_desc }}</p>
-      <ul>
-        <li>✅ 鸡肉 · 海鲜 · 加工食品 · 牛羊肉</li>
-        <li>✅ 全柔佛配送 · 清真认证</li>
-        <li>✅ 餐厅批发价 · 稳定供货</li>
-      </ul>
-    </div>
-    <div class="khl-banner-cta">
-      <a href={{ "suppliers/khl-frozen-food/" | absURL }} class="btn btn-primary btn-lg">📞 获取报价单</a>
-      <p class="khl-hint">留下需求，2小时内回复</p>
-    </div>
-  </div>
-</section>
-
-<!-- 实时数据 -->
+<!-- 行业动态（置顶） -->
 {{- if or $news $prices }}
 <section class="section">
   <div class="section-header">
@@ -122,13 +50,64 @@
       <h3>📰 最新资讯</h3>
       <ul class="news-list">
         {{- range first 4 $news }}
-        <li><span class="news-source">{{ .source }}</span> <a href="{{ .url }}" target="_blank">{{ .title }}</a></li>
+        <li><a href="{{ .url }}" target="_blank">{{ .title }}</a></li>
         {{- end }}
       </ul>
-      <p class="live-updated">{{ len $news }} 条自动采集</p>
+      <p class="live-updated">{{ len $news }} 条自动采集 · <a href="{{ "news/" | absURL }}" style="color:var(--green-600);">更多 →</a></p>
     </div>
     {{- end }}
   </div>
 </section>
 {{- end }}
+
+<!-- 最新厨师简历 -->
+{{- if $chefs }}
+<section class="section bg-light">
+  <div class="section-header">
+    <h2>🔥 最新厨师简历</h2>
+    <a href="{{ "chefs/" | absURL }}" class="btn-outline">查看全部 →</a>
+  </div>
+  <div class="chef-grid">
+    {{- range first 6 $chefs }}
+    <a href="{{ printf "chefs/%s/" .id | absURL }}" class="chef-card">
+      <div class="chef-avatar">{{ .emoji }}</div>
+      <div class="chef-info">
+        <h3>{{ .name }}</h3>
+        <p class="chef-spec">{{ .specialty }}</p>
+        <p class="chef-meta">{{ .exp_years }}年 · {{ .location }}</p>
+      </div>
+    </a>
+    {{- end }}
+  </div>
+</section>
+{{- end }}
+
+<!-- 经营工具 -->
+<section class="section">
+  <div class="section-header">
+    <h2>🧰 经营工具</h2>
+  </div>
+  <div class="tool-grid">
+    <a href="{{ "calculator/" | absURL }}" class="tool-card">
+      <span class="tool-icon">🧮</span>
+      <h3>成本计算器</h3>
+      <p>算成本、知利润</p>
+    </a>
+    <a href="{{ "suppliers/" | absURL }}" class="tool-card">
+      <span class="tool-icon">🏪</span>
+      <h3>供应商排行</h3>
+      <p>找货源、比价格</p>
+    </a>
+    <a href="{{ "guides/" | absURL }}" class="tool-card">
+      <span class="tool-icon">📋</span>
+      <h3>经营指南</h3>
+      <p>清真认证、执照、采购</p>
+    </a>
+    <a href="{{ "chefs/submit/" | absURL }}" class="tool-card">
+      <span class="tool-icon">📝</span>
+      <h3>挂简历</h3>
+      <p>免费展示你的履历</p>
+    </a>
+  </div>
+</section>
 {{ end }}
