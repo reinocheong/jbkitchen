@@ -2,72 +2,36 @@
 {{- $chefs := .Site.Data.chefs -}}
 {{- $jobs := .Site.Data.jobs -}}
 {{- $items := $jobs.items | default slice -}}
-<div class="chef-list-page">
+<div class="page-jobs">
 
-  <!-- 免费挂简历 -->
-  <section class="section" style="padding-top:0;">
-    <div style="background:linear-gradient(135deg,var(--green-800),var(--green-600));border-radius:var(--radius);padding:2rem;text-align:center;color:#fff;margin-bottom:2rem;">
-      <h2 style="color:#fff;margin-bottom:0.5rem;">免费挂简历</h2>
-      <p style="opacity:0.9;margin-bottom:1.5rem;">让新山 50+ 餐厅老板直接找到你</p>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLScJVkyYraKTstINyqyZDlA_3wJNCVj6ohHOMCs4Gtv6nChRBw/viewform" target="_blank" rel="noopener" class="btn" style="background:var(--gold);color:var(--green-900);font-weight:700;padding:0.7rem 2rem;border-radius:var(--radius-sm);text-decoration:none;display:inline-block;">
-        填写简历 →
-      </a>
-    </div>
-  </section>
+  <!-- CTA Banner -->
+  <div class="cta-banner">
+    <h2>免费挂简历</h2>
+    <p>让新山餐厅老板直接找到你</p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLScJVkyYraKTstINyqyZDlA_3wJNCVj6ohHOMCs4Gtv6nChRBw/viewform" target="_blank" rel="noopener" class="cta-btn">填写简历 →</a>
+  </div>
 
-  <!-- 求职者：厨师简历 -->
-  {{- if $chefs }}
-  <section class="section" style="padding-top:0;">
-    <h1>新山厨师人才库</h1>
-    <p class="subtitle">免费浏览厨师简历 · 找到你的下一任团队伙伴</p>
-    <p style="font-size:0.85rem;color:var(--text-3);margin-bottom:1rem;">共 {{ len $chefs }} 位厨师开放简历</p>
-    {{- range $chefs }}
-    <a href="{{ printf "chefs/%s/" .id | absURL }}" class="chef-list-item">
-      <div class="left">
-        <span class="avatar">{{ .emoji }}</span>
-        <div>
-          <div class="name">{{ .name }}</div>
-          <div class="detail">{{ .specialty }} · {{ .exp_years }}年经验 · {{ .location }}</div>
-        </div>
-      </div>
-      <div class="right">
-        <div class="tag">{{ .exp_years }}年</div>
-      </div>
-    </a>
-    {{- end }}
-  </section>
-  {{- end }}
-
-  <!-- 招聘信息 -->
+  <!-- Job Listings -->
   {{- if $items }}
-  <section class="section" style="padding-top:0;">
-    <h1>新山餐饮招聘</h1>
-    <p class="subtitle">聚合 Jora、Hiredly、Maukerja、MyFutureJobs 的 JB 餐饮职位</p>
-
-    <div class="job-meta-bar">
-      <span>共 <strong>{{ $jobs.count }}</strong> 个职位</span>
-      <span class="sep">·</span>
-      <span>更新于 {{ substr $jobs.updated 0 10 }}</span>
-      <span class="sep">·</span>
-      <span class="job-source-labels">
-        {{- range $src, $count := $jobs.by_source -}}
-        <span class="source-badge source-{{ lower $src }}">{{ $src }} {{ $count }}</span>
-        {{- end -}}
-      </span>
+  <section>
+    <div class="page-header">
+      <h1>JB 餐饮招聘</h1>
+      <div class="page-meta">
+        <span>{{ $jobs.count }} 个职位</span>
+        <span class="sep">·</span>
+        <span>更新于 {{ substr $jobs.updated 0 10 }}</span>
+      </div>
     </div>
 
     <div class="job-list">
       {{- range $items -}}
-      <a href="{{ .url }}" target="_blank" rel="noopener" class="job-item">
-        <div class="job-main">
-          <div class="job-title-line">
+      <a href="{{ .url }}" target="_blank" rel="noopener" class="job-card">
+        <div class="job-card-body">
+          <div class="job-card-top">
             <span class="job-title">{{ .title }}</span>
             <span class="job-company">{{ .company }}</span>
-            {{- if .category -}}
-            <span class="category-badge category-{{ .category | urlize }}">{{ .category }}</span>
-            {{- end -}}
           </div>
-          <div class="job-meta">
+          <div class="job-card-meta">
             {{- if .salary -}}
             {{- if .salary.text_formatted -}}
             <span class="job-salary">{{ .salary.text_formatted }}</span>
@@ -79,9 +43,8 @@
             <span class="job-date">{{ .date }}</span>
           </div>
         </div>
-        <div class="job-side">
-          <span class="source-badge source-{{ lower .source }}">{{ .source }}</span>
-          <span class="job-arrow">→</span>
+        <div class="job-card-side">
+          <span class="src-tag src-{{ lower .source }}">{{ .source }}</span>
         </div>
       </a>
       {{- end -}}
@@ -93,7 +56,7 @@
   </div>
   {{- end }}
 
-  <div style="text-align:center;margin-top:2rem;">
+  <div class="page-footer-cta">
     <a href="https://docs.google.com/forms/d/e/1FAIpQLScJVkyYraKTstINyqyZDlA_3wJNCVj6ohHOMCs4Gtv6nChRBw/viewform" target="_blank" rel="noopener" class="btn btn-primary">免费挂简历</a>
   </div>
 
