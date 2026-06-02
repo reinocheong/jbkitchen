@@ -131,7 +131,7 @@
 {{- end }}
 
 <!-- 最新厨师简历 -->
-{{- if $chefs }}
+{{- if gt (len $chefs) 0 }}
 <section class="section bg-light">
   <div class="section-header">
     <h2>🔥 最新厨师简历</h2>
