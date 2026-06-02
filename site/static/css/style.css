@@ -353,6 +353,94 @@ body {
 }
 .chef-list-page h1 { font-size: 1.8rem; color: var(--green-800); margin-bottom: 0.5rem; }
 .chef-list-page .subtitle { color: var(--text-3); margin-bottom: 2rem; }
+
+/* ── Job listing ── */
+.job-meta-bar {
+  font-size: 0.85rem;
+  color: var(--text-3);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+.job-meta-bar .sep { color: var(--border); }
+.job-source-labels { display: flex; gap: 0.3rem; flex-wrap: wrap; }
+.source-badge {
+  font-size: 0.7rem;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.source-jora { background: #e8f5e9; color: #2e7d32; }
+.source-hiredly { background: #e3f2fd; color: #1565c0; }
+.source-maukerja { background: #fff3e0; color: #e65100; }
+.source-myfuturejobs { background: #f3e5f5; color: #7b1fa2; }
+
+.job-list { display: flex; flex-direction: column; gap: 0.6rem; }
+.job-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1rem;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+.job-item:hover {
+  border-color: var(--green-400);
+  box-shadow: var(--shadow-md);
+}
+.job-item .job-main { flex: 1; min-width: 0; }
+.job-title-line { margin-bottom: 0.2rem; }
+.job-title {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--green-800);
+  display: inline;
+}
+.job-title:hover { color: var(--green-600); }
+.job-company {
+  font-size: 0.8rem;
+  color: var(--text-2);
+  margin-left: 0.4rem;
+}
+.job-meta {
+  font-size: 0.78rem;
+  color: var(--text-3);
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+.job-salary { color: var(--gold-dark); font-weight: 600; }
+.job-item .job-side {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+.job-arrow { color: var(--text-3); font-size: 0.9rem; }
+.job-item:hover .job-arrow { color: var(--green-600); }
+
+.empty-state {
+  text-align: center;
+  padding: 3rem;
+  background: var(--card);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  color: var(--text-3);
+}
+
+@media (max-width: 600px) {
+  .job-item { flex-direction: column; align-items: flex-start; }
+  .job-item .job-side { align-self: flex-end; }
+  .job-title { font-size: 0.85rem; }
+}
 .chef-list-item {
   background: var(--card);
   border-radius: var(--radius);

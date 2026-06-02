@@ -1,0 +1,754 @@
+{
+  "updated": "2026-06-02T15:55:57",
+  "count": 53,
+  "by_source": {
+    "Hiredly": 16,
+    "Maukerja": 9,
+    "Jora": 12,
+    "MyFutureJobs": 16
+  },
+  "items": [
+    {
+      "title": "Quality Assurance Executive (F&B Operations)",
+      "company": "Luckin Coffee Malaysia",
+      "location": "Johor Bahru",
+      "salary": {
+        "min": null,
+        "max": null,
+        "period": "monthly",
+        "text": null
+      },
+      "date": "2026-06-02",
+      "url": "https://my.hiredly.com/jobs-malaysia-luckin-coffee-malaysia-job-quality-assurance-executive-f-b-operations",
+      "source": "Hiredly"
+    },
+    {
+      "title": "Pembantu Dapur",
+      "company": "Good Culture Sdn Bhd",
+      "location": "Johor Bahru",
+      "salary": {
+        "min": 1800,
+        "max": 1800,
+        "period": "monthly",
+        "text": "1,800 - RM 2,000"
+      },
+      "date": "2026-06-02",
+      "url": "https://www.maukerja.my/job/26444255-pembantu-dapur",
+      "source": "Maukerja"
+    },
+    {
+      "title": "Restaurant Outlet Ops Lead – Johor",
+      "company": "Hunters International",
+      "location": "Johor Bahru, Johor",
+      "salary": {
+        "min": 4000,
+        "max": 4000,
+        "period": "monthly",
+        "text": "4,000 - RM4,000 per month"
+      },
+      "date": "2026-05-31",
+      "url": "https://my.jora.com/job/Restaurant-Outlet-Ops-bd706cef02a3fb9c4f93fa20c445f957?abstract_type=original&disallow=true&fsv=true&sl=Johor+Bahru+Johor&sol_key=133caee821022af9bf5f3f60fdf7ce2c&sp=sserp_top&sponsored=true&sq=Chef&sr=2&tk=7TEOZFMGrpzhOqh4aNaE-aU1WhKJyFUKSI8S9iwIm&trigger_source=serp",
+      "source": "Jora"
+    },
+    {
+      "title": "Ketua Tukang Masak",
+      "company": "Billion Onsen Spa Sdn Bhd",
+      "location": "Johor Bahru",
+      "salary": {
+        "min": 3000,
+        "max": 3000,
+        "period": "monthly",
+        "text": "3,000 - RM 5,000"
+      },
+      "date": "2026-05-31",
+      "url": "https://www.maukerja.my/job/26352144-ketua-tukang-masak",
+      "source": "Maukerja"
+    },
+    {
+      "title": "Restaurant Outlet Supervisor",
+      "company": "Hunters International",
+      "location": "Johor Bahru, Johor",
+      "salary": {
+        "min": null,
+        "max": null,
+        "period": "monthly",
+        "text": null
+      },
+      "date": "2026-05-30",
+      "url": "https://my.jora.com/job/Outlet-Supervisor-cdc1d52d2afa190e5bacfce5eade0241?abstract_type=original&disallow=true&fsv=true&sl=Johor+Bahru+Johor&sol_key=8444bbf1811e0c47c454c64fe86083aa&sp=sserp_top&sponsored=true&sq=Chef&sr=1&tk=7TEOZFMGrpzhOqh4aNaE-aU1WhKJyFUKSI8S9iwIm&trigger_source=serp",
+      "source": "Jora"
+    },
+    {
+      "title": "Chef De Partie, Butcher",
+      "company": "Sheraton",
+      "location": "Johor Bahru, Johor",
+      "salary": {
+        "min": null,
+        "max": null,
+        "period": "monthly",
+        "text": null
+      },
+      "date": "2026-05-29",
+      "url": "https://my.jora.com/job/Chef-de-Partie-319e7b510cdd45cd70260fa7340311fd?abstract_type=original&disallow=true&fsv=true&sl=Johor+Bahru+Johor&sol_key=a43e45278e0583d7c3a93be7a6807f19&sp=serp&sponsored=false&sq=Chef&sr=2&tk=7TEOZFMGrpzhOqh4aNaE-aU1WhKJyFUKSI8S9iwIm&trigger_source=serp",
+      "source": "Jora"
+    },
+    {
+      "title": "Chef de Cuisine",
+      "company": "Sheraton",
+      "location": "Johor Bahru, Johor",
+      "salary": {
+        "min": null,
+        "max": null,
+        "period": "monthly",
+        "text": null
+      },
+      "date": "2026-05-29",
+      "url": "https://my.jora.com/job/Chef-de-Cuisine-44347dea7e34d9de537f4dd4a648d555?abstract_type=original&disallow=true&fsv=true&sl=Johor+Bahru+Johor&sol_key=1e370f22b429560b6c376803b4807fb1&sp=serp&sponsored=false&sq=Chef&sr=4&tk=7TEOZFMGrpzhOqh4aNaE-aU1WhKJyFUKSI8S9iwIm&trigger_source=serp",
+      "source": "Jora"
+    },
+    {
+      "title": "Chef de Cuisine",
+      "company": "Marriott International",
+      "location": "Johor Bahru, Johor",
+      "salary": {
+        "min": null,
+        "max": null,
+        "period": "monthly",
+        "text": null
+      },
+      "date": "2026-05-29",
+      "url": "https://my.jora.com/job/Chef-de-Cuisine-fb0eced301cd46b778789517320d6f92?abstract_type=original&disallow=true&fsv=true&sl=Johor+Bahru+Johor&sol_key=0e69c036cd79006ae93b18989ac03f08&sp=serp&sponsored=false&sq=Chef&sr=5&tk=7TEOZFMGrpzhOqh4aNaE-aU1WhKJyFUKSI8S9iwIm&trigger_source=serp",
+      "source": "Jora"
+    },
+    {
+      "title": "Restaurant Supervisor -Southern Area / Johor Bharu",
+      "company": "Nando's Chickenland Malaysia Sdn Bhd",
+      "location": "Johor Bahru, Johor",
+      "salary": {
+        "min": null,
+        "max": null,
+        "period": "monthly",
+        "text": null
+      },
+      "date": "2026-05-29",
+      "url": "https://candidates.myfuturejobs.gov.my/search-jobs/description?what=chef&where=Johor%20Bahru&jobId=b490f8bdab4e4a55b435ee237a88692b",
+      "source": "MyFutureJobs"
+    },
+    {
+      "title": "Assistant Restaurant Manager - Southern Area / Johor Bharu",
+      "company": "Nando's Chickenland Malaysia Sdn Bhd",
+      "location": "Johor Bahru, Johor",
+      "salary": {
+        "min": null,
+        "max": null,
+        "period": "monthly",
+        "text": null
+      },
+      "date": "2026-05-29",
+      "url": "https://candidates.myfuturejobs.gov.my/search-jobs/description?what=chef&where=Johor%20Bahru&jobId=988717f05972438fbc751979bcda1a4d",
+      "source": "MyFutureJobs"
+    },
+    {
+      "title": "Restaurant Junior Supervisor",
+      "company": "Local house sdn bhd",
+      "location": "Johor Bahru, Johor",
+      "salary": {
+        "min": null,
+        "max": null,
+        "period": "monthly",
+        "text": null
+      },
+      "date": "2026-05-28",
+      "url": "https://candidates.myfuturejobs.gov.my/search-jobs/description?what=chef&where=Johor%20Bahru&jobId=bdcb339682d048a4b27242d04aa417f0",
+      "source": "MyFutureJobs"
+    },
+    {
+      "title": "Demi Chef (Cold Kitchen) - Renaissance Johor Bahru",
+      "company": "Renaissance Hotels",
+      "location": "Johor Bahru, Johor",
+      "salary": {
+        "min": null,
+        "max": null,
+        "period": "monthly",
+        "text": null
+      },
+      "date": "2026-05-26",
+      "url": "https://my.jora.com/job/Demi-Chef-d9ab9052410db95fe222c040b79089bd?abstract_type=original&disallow=true&fsv=true&sl=Johor+Bahru+Johor&sol_key=0cdaed4c565e25dec0a37240ba8cfad8&sp=serp&sponsored=false&sq=Chef&sr=6&tk=7TEOZFMGrpzhOqh4aNaE-aU1WhKJyFUKSI8S9iwIm&trigger_source=serp",
+      "source": "Jora"
+    },
+    {
+      "title": "Executive Pastry Chef",
+      "company": "Grammage Foods Sdn bhd",
+      "location": "Johor Bahru, Johor",
+      "salary": {
+        "min": 4500,
+        "max": 4500,
+        "period": "monthly",
+        "text": "4,500 - RM6,500 per month"
+      },
+      "date": "2026-05-26",
+      "url": "https://my.jora.com/job/Executive-Pastry-Chef-f9e4dfff3b8651c39f28a1bee8e0f759?abstract_type=original&disallow=true&fsv=true&sl=Johor+Bahru+Johor&sol_key=eb78b8bddd083799159f913f52c0d0da&sp=serp&sponsored=false&sq=Chef&sr=9&tk=7TEOZFMGrpzhOqh4aNaE-aU1WhKJyFUKSI8S9iwIm&trigger_source=serp",
+      "source": "Jora"
+    },
+    {
+      "title": "Senior Commis Viennoiserie / Demi Chef",
+      "company": "LOAF ADAM SDN BHD",
+      "location": "Johor Bahru, Johor",
+      "salary": {
+        "min": 2300,
+        "max": 2300,
+        "period": "monthly",
+        "text": "2,300 - RM2,500 per month"
+      },
+      "date": "2026-05-26",
+      "url": "https://my.jora.com/job/Demi-Chef-8d5cb27545eea564cb3ac4584dca3586?abstract_type=original&disallow=true&fsv=true&sl=Johor+Bahru+Johor&sol_key=a234688bd1dabbb4c67ed68b667e4d65&sp=sserp_bottom&sponsored=true&sq=Chef&sr=3&tk=7TEOZFMGrpzhOqh4aNaE-aU1WhKJyFUKSI8S9iwIm&trigger_source=serp",
+      "source": "Jora"
+    },
+    {
+      "title": "CAKE DECORATER CHEF / JUNIOR",
+      "company": "Season Confectionary And Bakery",
+      "location": "Johor Bahru, Johor",
+      "salary": {
+        "min": null,
+        "max": null,
+        "period": "monthly",
+        "text": null
+      },
+      "date": "2026-05-26",
+      "url": "https://my.jora.com/job/Chef-ee637fdb930a62ac72359bc80dd9795d?abstract_type=original&disallow=true&fsv=true&sl=Johor+Bahru+Johor&sol_key=14b3b5ebfbe06703de833039607e8d1b&sp=sserp_bottom&sponsored=true&sq=Chef&sr=5&tk=7TEOZFMGrpzhOqh4aNaE-aU1WhKJyFUKSI8S9iwIm&trigger_source=serp",
+      "source": "Jora"
+    },
+    {
+      "title": "Senior Tearista",
+      "company": "JY Spring Drink Sdn Bhd",
+      "location": "Aeon Tebrau",
+      "salary": {
+        "min": 2400,
+        "max": 3500,
+        "period": "monthly",
+        "text": "2400 - 3500"
+      },
+      "date": "2026-05-26",
+      "url": "https://my.hiredly.com/jobs-malaysia-jy-spring-drink-sdn-bhd-job-senior-tearista",
+      "source": "Hiredly"
+    },
+    {
+      "title": "Chef de Partie - Baker",
+      "company": "Marriott International",
+      "location": "Johor Bahru, Johor",
+      "salary": {
+        "min": null,
+        "max": null,
+        "period": "monthly",
+        "text": null
+      },
+      "date": "2026-05-24",
+      "url": "https://my.jora.com/job/Chef-de-Partie-896805dc851374c02bcbe9aefa766058?abstract_type=original&disallow=true&fsv=true&sl=Johor+Bahru+Johor&sol_key=662a5085ee461d10250fc349980c22ba&sp=serp&sponsored=false&sq=Chef&sr=8&tk=7TEOZFMGrpzhOqh4aNaE-aU1WhKJyFUKSI8S9iwIm&trigger_source=serp",
+      "source": "Jora"
+    },
+    {
+      "title": "Head Chef",
+      "company": "Kaysteaklobster",
+      "location": "Johor Bahru, Johor",
+      "salary": {
+        "min": 5000,
+        "max": 5000,
+        "period": "monthly",
+        "text": "5,000 - RM7,000 per month"
+      },
+      "date": "2026-05-23",
+      "url": "https://my.jora.com/job/Head-Chef-b3153746ee918ad6c183458f0a7acf1b?abstract_type=original&disallow=true&fsv=true&sl=Johor+Bahru+Johor&sol_key=22d93b031d6e6d1689a237052272edf5&sp=serp&sponsored=false&sq=Chef&sr=1&tk=7TEOZFMGrpzhOqh4aNaE-aU1WhKJyFUKSI8S9iwIm&trigger_source=serp",
+      "source": "Jora"
+    },
+    {
+      "title": "Sous Chef",
+      "company": "KAYSTEAKLOBSTER SDN BHD",
+      "location": "SKS City Mall",
+      "salary": {
+        "min": 4000,
+        "max": 5200,
+        "period": "monthly",
+        "text": "4000 - 5200"
+      },
+      "date": "2026-05-23",
+      "url": "https://my.hiredly.com/jobs-malaysia-kaysteaklobster-sdn-bhd-job-sous-chef",
+      "source": "Hiredly"
+    },
+    {
+      "title": "Chef De Partie",
+      "company": "KAYSTEAKLOBSTER SDN BHD",
+      "location": "SKS City Mall",
+      "salary": {
+        "min": 2800,
+        "max": 3800,
+        "period": "monthly",
+        "text": "2800 - 3800"
+      },
+      "date": "2026-05-23",
+      "url": "https://my.hiredly.com/jobs-malaysia-kaysteaklobster-sdn-bhd-job-chef-de-partie",
+      "source": "Hiredly"
+    },
+    {
+      "title": "Demi Chef",
+      "company": "KAYSTEAKLOBSTER SDN BHD",
+      "location": "SKS City Mall",
+      "salary": {
+        "min": 2300,
+        "max": 3000,
+        "period": "monthly",
+        "text": "2300 - 3000"
+      },
+      "date": "2026-05-23",
+      "url": "https://my.hiredly.com/jobs-malaysia-kaysteaklobster-sdn-bhd-job-demi-chef",
+      "source": "Hiredly"
+    },
+    {
+      "title": "Commis Chef",
+      "company": "KAYSTEAKLOBSTER SDN BHD",
+      "location": "SKS City Mall",
+      "salary": {
+        "min": 2000,
+        "max": 2500,
+        "period": "monthly",
+        "text": "2000 - 2500"
+      },
+      "date": "2026-05-23",
+      "url": "https://my.hiredly.com/jobs-malaysia-kaysteaklobster-sdn-bhd-job-commis-chef",
+      "source": "Hiredly"
+    },
+    {
+      "title": "Restaurant Manager",
+      "company": "KAYSTEAKLOBSTER SDN BHD",
+      "location": "SKS City Mall JBCC",
+      "salary": {
+        "min": 5000,
+        "max": 6500,
+        "period": "monthly",
+        "text": "5000 - 6500"
+      },
+      "date": "2026-05-23",
+      "url": "https://my.hiredly.com/jobs-malaysia-kaysteaklobster-sdn-bhd-job-restaurant-manager-0",
+      "source": "Hiredly"
+    },
+    {
+      "title": "Service Crew",
+      "company": "KAYSTEAKLOBSTER SDN BHD",
+      "location": "SKS City Mall JBCC",
+      "salary": {
+        "min": 2300,
+        "max": 2800,
+        "period": "monthly",
+        "text": "2300 - 2800"
+      },
+      "date": "2026-05-23",
+      "url": "https://my.hiredly.com/jobs-malaysia-kaysteaklobster-sdn-bhd-job-service-crew-0",
+      "source": "Hiredly"
+    },
+    {
+      "title": "Pembantu Dapur",
+      "company": "chendrasari niaga",
+      "location": "Johor Bahru, Johor",
+      "salary": {
+        "min": null,
+        "max": null,
+        "period": "monthly",
+        "text": null
+      },
+      "date": "2026-05-22",
+      "url": "https://candidates.myfuturejobs.gov.my/search-jobs/description?what=chef&where=Johor%20Bahru&jobId=a6adff38fc384656af2f5c969e8e3f8f",
+      "source": "MyFutureJobs"
+    },
+    {
+      "title": "Commis II , CDP",
+      "company": "THE CHEF PROJECT SDN BHD",
+      "location": "Patisserie Central Kitchen by Project Chef",
+      "salary": {
+        "min": 2000,
+        "max": 2599,
+        "period": "monthly",
+        "text": "2000 - 2599"
+      },
+      "date": "2026-05-21",
+      "url": "https://my.hiredly.com/jobs-malaysia-the-chef-project-sdn-bhd-job-commis-ii-cdp",
+      "source": "Hiredly"
+    },
+    {
+      "title": "Outlet Development Executive",
+      "company": "Cha Lab Sdn Bhd",
+      "location": "Johor Bahru",
+      "salary": {
+        "min": 2500,
+        "max": 3500,
+        "period": "monthly",
+        "text": "2500 - 3500"
+      },
+      "date": "2026-05-21",
+      "url": "https://my.hiredly.com/jobs-malaysia-cha-lab-sdn-bhd-job-outlet-development-executive",
+      "source": "Hiredly"
+    },
+    {
+      "title": "Commis Chef",
+      "company": "SERAI & SPICES RESTORAN",
+      "location": "Johor Bahru, Johor",
+      "salary": {
+        "min": null,
+        "max": null,
+        "period": "monthly",
+        "text": null
+      },
+      "date": "2026-05-21",
+      "url": "https://candidates.myfuturejobs.gov.my/search-jobs/description?what=chef&where=Johor%20Bahru&jobId=7c8e708e4cd34be4b2353f81f310de86",
+      "source": "MyFutureJobs"
+    },
+    {
+      "title": "KOREAN FOOD CHEF",
+      "company": "SUP BY SUPER KIMCHI SDN. BHD.",
+      "location": "Johor Bahru, Johor",
+      "salary": {
+        "min": null,
+        "max": null,
+        "period": "monthly",
+        "text": null
+      },
+      "date": "2026-05-21",
+      "url": "https://candidates.myfuturejobs.gov.my/search-jobs/description?what=chef&where=Johor%20Bahru&jobId=605f30f8a6da49e1ada0a07bc4108115",
+      "source": "MyFutureJobs"
+    },
+    {
+      "title": "🔥 Recruiting Opening Members for JB High-end Korean Restaurant!",
+      "company": "SUP BY SUPERKIMCHI",
+      "location": "sks city mall jbcc",
+      "salary": {
+        "min": 2000,
+        "max": 5000,
+        "period": "monthly",
+        "text": "2000 - 5000"
+      },
+      "date": "2026-05-20",
+      "url": "https://my.hiredly.com/jobs-malaysia-sup-by-superkimchi-job-recruiting-opening-members-for-jb-high-end-korean-restaurant",
+      "source": "Hiredly"
+    },
+    {
+      "title": "Assistant Restaurant Manager - Mid Valley Southkey",
+      "company": "Nando's Chickenland Malaysia Sdn Bhd",
+      "location": "Johor Bahru, Johor",
+      "salary": {
+        "min": null,
+        "max": null,
+        "period": "monthly",
+        "text": null
+      },
+      "date": "2026-05-20",
+      "url": "https://candidates.myfuturejobs.gov.my/search-jobs/description?what=chef&where=Johor%20Bahru&jobId=62b85dc809e4472eb3ab460ecc9f4462",
+      "source": "MyFutureJobs"
+    },
+    {
+      "title": "CHEF / CHEF ASSISTANT",
+      "company": "SHAJARAH BARAKAH SDN BHD",
+      "location": "Johor Bahru, Johor",
+      "salary": {
+        "min": null,
+        "max": null,
+        "period": "monthly",
+        "text": null
+      },
+      "date": "2026-05-19",
+      "url": "https://candidates.myfuturejobs.gov.my/search-jobs/description?what=chef&where=Johor%20Bahru&jobId=dfe79731fc754bc785d023015843cca6",
+      "source": "MyFutureJobs"
+    },
+    {
+      "title": "Outlet Manager",
+      "company": "DRAGON BLISS",
+      "location": "SETIA TROPIKA",
+      "salary": {
+        "min": 4000,
+        "max": 6000,
+        "period": "monthly",
+        "text": "4000 - 6000"
+      },
+      "date": "2026-05-18",
+      "url": "https://my.hiredly.com/jobs-malaysia-dragon-bliss-job-outlet-manager",
+      "source": "Hiredly"
+    },
+    {
+      "title": "Food and Beverage Outlets Manager",
+      "company": "DRAGON BLISS",
+      "location": "AUSTIN",
+      "salary": {
+        "min": 4000,
+        "max": 6000,
+        "period": "monthly",
+        "text": "4000 - 6000"
+      },
+      "date": "2026-05-18",
+      "url": "https://my.hiredly.com/jobs-malaysia-dragon-bliss-job-food-and-beverage-outlets-manager-0",
+      "source": "Hiredly"
+    },
+    {
+      "title": "DEMI CHEF JOHOR BAHRU",
+      "company": "JADE COMMERCIAL SERVICES",
+      "location": "Johor Bahru, Johor",
+      "salary": {
+        "min": null,
+        "max": null,
+        "period": "monthly",
+        "text": null
+      },
+      "date": "2026-05-18",
+      "url": "https://candidates.myfuturejobs.gov.my/search-jobs/description?what=chef&where=Johor%20Bahru&jobId=d55a3c2c5ca64c98880ff09d2bf489de",
+      "source": "MyFutureJobs"
+    },
+    {
+      "title": "DEMI CHEF JOHOR BAHRU",
+      "company": "Job Elite TT Agency",
+      "location": "Johor Bahru, Johor",
+      "salary": {
+        "min": null,
+        "max": null,
+        "period": "monthly",
+        "text": null
+      },
+      "date": "2026-05-18",
+      "url": "https://candidates.myfuturejobs.gov.my/search-jobs/description?what=chef&where=Johor%20Bahru&jobId=23daca8c2cd048e095741bd8236420dc",
+      "source": "MyFutureJobs"
+    },
+    {
+      "title": "Lead Pastry Chef",
+      "company": "Agensi Pekerjaan CKM Sdn Bhd",
+      "location": "Johor Bahru",
+      "salary": {
+        "min": 8000,
+        "max": 8000,
+        "period": "monthly",
+        "text": "8,000 - RM 10,000"
+      },
+      "date": "2026-05-17",
+      "url": "https://www.maukerja.my/job/26468461-lead-pastry-chef",
+      "source": "Maukerja"
+    },
+    {
+      "title": "Senior Bakery Chef",
+      "company": "Agensi Pekerjaan CKM Sdn Bhd",
+      "location": "Johor Bahru",
+      "salary": {
+        "min": 8000,
+        "max": 8000,
+        "period": "monthly",
+        "text": "8,000 - RM 10,000"
+      },
+      "date": "2026-05-17",
+      "url": "https://www.maukerja.my/job/26468459-senior-bakery-chef",
+      "source": "Maukerja"
+    },
+    {
+      "title": "Head Baker",
+      "company": "Agensi Pekerjaan CKM Sdn Bhd",
+      "location": "Johor Bahru",
+      "salary": {
+        "min": 8000,
+        "max": 8000,
+        "period": "monthly",
+        "text": "8,000 - RM 10,000"
+      },
+      "date": "2026-05-17",
+      "url": "https://www.maukerja.my/job/26468460-head-baker",
+      "source": "Maukerja"
+    },
+    {
+      "title": "Master Baker",
+      "company": "Agensi Pekerjaan CKM Sdn Bhd",
+      "location": "Johor Bahru",
+      "salary": {
+        "min": 8000,
+        "max": 8000,
+        "period": "monthly",
+        "text": "8,000 - RM 10,000"
+      },
+      "date": "2026-05-17",
+      "url": "https://www.maukerja.my/job/26468462-master-baker",
+      "source": "Maukerja"
+    },
+    {
+      "title": "Sous Chef l Taman Pelangi, Johor Bahru l RM3000-RM3500",
+      "company": "KEY SOLUTIONS TEAM ADVISORY SDN. BHD.",
+      "location": "Johor Bahru, Johor",
+      "salary": {
+        "min": null,
+        "max": null,
+        "period": "monthly",
+        "text": null
+      },
+      "date": "2026-05-16",
+      "url": "https://candidates.myfuturejobs.gov.my/search-jobs/description?what=chef&where=Johor%20Bahru&jobId=25947f5161054c9c99e46a5b9f6bfd4d",
+      "source": "MyFutureJobs"
+    },
+    {
+      "title": "Sous Chef- Novotel Johor Bahru",
+      "company": "Novotel Johor Bahru City Centre",
+      "location": "Johor Bahru",
+      "salary": {
+        "min": null,
+        "max": null,
+        "period": "monthly",
+        "text": null
+      },
+      "date": "2026-05-13",
+      "url": "https://www.maukerja.my/job/25833305-sous-chef-novotel-johor-bahru",
+      "source": "Maukerja"
+    },
+    {
+      "title": "Restaurant Supervisor - Aeon Tebrau City",
+      "company": "Nando's Chickenland Malaysia Sdn Bhd",
+      "location": "Johor Bahru, Johor",
+      "salary": {
+        "min": null,
+        "max": null,
+        "period": "monthly",
+        "text": null
+      },
+      "date": "2026-05-13",
+      "url": "https://candidates.myfuturejobs.gov.my/search-jobs/description?what=chef&where=Johor%20Bahru&jobId=afb4a0a8ba444404a26d5cd435c2cc62",
+      "source": "MyFutureJobs"
+    },
+    {
+      "title": "TUKANG MASAK",
+      "company": "THAVAS MESS RESTAURANT",
+      "location": "Johor Bahru, Johor",
+      "salary": {
+        "min": null,
+        "max": null,
+        "period": "monthly",
+        "text": null
+      },
+      "date": "2026-05-12",
+      "url": "https://candidates.myfuturejobs.gov.my/search-jobs/description?what=chef&where=Johor%20Bahru&jobId=062ab4b1046e493f9db702ec8bf56e19",
+      "source": "MyFutureJobs"
+    },
+    {
+      "title": "Head Chef, Food Services (Cook)",
+      "company": "KPJ Healthcare",
+      "location": "Johor Bahru, Johor",
+      "salary": {
+        "min": null,
+        "max": null,
+        "period": "monthly",
+        "text": null
+      },
+      "date": "2026-05-11",
+      "url": "https://my.jora.com/job/Head-Chef-bf4b29983f8668b16e35c65005df02c0?abstract_type=original&disallow=true&fsv=true&sl=Johor+Bahru+Johor&sol_key=f0abf5e2e6b8b5ace33c7d0e5b5ba5ab&sp=serp&sponsored=false&sq=Chef&sr=3&tk=7TEOZFMGrpzhOqh4aNaE-aU1WhKJyFUKSI8S9iwIm&trigger_source=serp",
+      "source": "Jora"
+    },
+    {
+      "title": "MARKETING MANAGER (KILANG HALAL)",
+      "company": "DOUBLE HAPPINESS ASIA FOODS (M) SDN BHD",
+      "location": "dato' onn",
+      "salary": {
+        "min": 5000,
+        "max": 8000,
+        "period": "monthly",
+        "text": "5000 - 8000"
+      },
+      "date": "2026-05-11",
+      "url": "https://my.hiredly.com/jobs-malaysia-double-happiness-asia-foods-m-sdn-bhd-job-marketing-manager-kilang-halal",
+      "source": "Hiredly"
+    },
+    {
+      "title": "Head Chef, Food Services (Cook)",
+      "company": "KPJ Healthcare Berhad",
+      "location": "Johor Bahru",
+      "salary": {
+        "min": null,
+        "max": null,
+        "period": "monthly",
+        "text": null
+      },
+      "date": "2026-05-11",
+      "url": "https://www.maukerja.my/job/26405288-head-chef-food-services-cook",
+      "source": "Maukerja"
+    },
+    {
+      "title": "North Indian Chef",
+      "company": "7 SPICES 7(M) SDN. BHD.",
+      "location": "Johor Bahru, Johor",
+      "salary": {
+        "min": null,
+        "max": null,
+        "period": "monthly",
+        "text": null
+      },
+      "date": "2026-05-11",
+      "url": "https://candidates.myfuturejobs.gov.my/search-jobs/description?what=chef&where=Johor%20Bahru&jobId=9c89fcd8b6ed45d4abb2ca6342e82aa2",
+      "source": "MyFutureJobs"
+    },
+    {
+      "title": "CHEF DE PARTIE",
+      "company": "NOVOTEL JOHOR BAHRU CITY CENTRE",
+      "location": "Johor Bahru, Johor",
+      "salary": {
+        "min": null,
+        "max": null,
+        "period": "monthly",
+        "text": null
+      },
+      "date": "2026-05-09",
+      "url": "https://candidates.myfuturejobs.gov.my/search-jobs/description?what=chef&where=Johor%20Bahru&jobId=e6c05241970141ffb9c59a814793bcd4",
+      "source": "MyFutureJobs"
+    },
+    {
+      "title": "Branch Manager Johor",
+      "company": "KOYO CORPORATE (M) SDN BHD",
+      "location": "80250",
+      "salary": {
+        "min": 8000,
+        "max": 10000,
+        "period": "monthly",
+        "text": "8000 - 10000"
+      },
+      "date": "2026-05-05",
+      "url": "https://my.hiredly.com/jobs-malaysia-koyo-corporate-m-sdn-bhd-job-branch-manager-johor",
+      "source": "Hiredly"
+    },
+    {
+      "title": "Chef / Cook",
+      "company": "MADAM KWAN (SUEZ TOP VENTURES SDN BHD)",
+      "location": "Johor Bahru, Johor",
+      "salary": {
+        "min": null,
+        "max": null,
+        "period": "monthly",
+        "text": null
+      },
+      "date": "2026-05-05",
+      "url": "https://candidates.myfuturejobs.gov.my/search-jobs/description?what=chef&where=Johor%20Bahru&jobId=14860a41e4604b3ca25d32f89674b068",
+      "source": "MyFutureJobs"
+    },
+    {
+      "title": "Pastry Chef (Cafe)",
+      "company": "Agensi Pekerjaan Jobs Kreate Sdn Bhd",
+      "location": "Johor Bahru",
+      "salary": {
+        "min": 2000,
+        "max": 2000,
+        "period": "monthly",
+        "text": "2,000 - RM 3,500"
+      },
+      "date": "2026-05-03",
+      "url": "https://www.maukerja.my/job/26248419-pastry-chef-cafe",
+      "source": "Maukerja"
+    },
+    {
+      "title": "Barista",
+      "company": "CENDOL N' CRUMBS GLOBAL (M) SDN BHD",
+      "location": "TAMAN RINTING, MASAI",
+      "salary": {
+        "min": 1700,
+        "max": 2500,
+        "period": "monthly",
+        "text": "1700 - 2500"
+      },
+      "date": "2026-05-02",
+      "url": "https://my.hiredly.com/jobs-malaysia-cendol-n-crumbs-global-m-sdn-bhd-job-barista",
+      "source": "Hiredly"
+    }
+  ]
+}
