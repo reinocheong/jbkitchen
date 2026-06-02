@@ -146,6 +146,13 @@
           <li><a href="{{ "dashboard/" | absURL }}">Dashboard</a></li>
         </ul>
       </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="{{ .Site.Params.khl_whatsapp }}" target="_blank" rel="noopener">WhatsApp KHL</a></li>
+          <li><a href="tel:{{ .Site.Params.khl_phone | safeHTML }}">{{ .Site.Params.khl_phone }}</a></li>
+        </ul>
+      </div>
     </div>
     <div class="footer-bottom">
       <p>&copy; {{ now.Year }} jbkitchen · <a href="{{ "dashboard/" | absURL }}" style="color:var(--gold);text-decoration:none;">Dashboard</a></p>

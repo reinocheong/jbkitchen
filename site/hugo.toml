@@ -9,8 +9,8 @@ publishDir = "../docs"
   description = "新山餐饮经营工具与指南 — 成本计算器、供应商目录、经营攻略，帮你开好一间餐厅"
   author = "KHL Frozen Food"
   khl_name = "KHL Frozen Food 冷冻食品批发"
-  khl_phone = "016-XXX XXXX"
-  khl_whatsapp = "https://wa.me/6016XXXXXXX"
+  khl_phone = "016-791 3913"
+  khl_whatsapp = "https://wa.me/60167913913"
   khl_desc = "新山冷冻食品批发专家 — 鸡肉、海鲜、加工食品，全柔佛配送"
 
 [markup]
