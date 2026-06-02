@@ -47,7 +47,7 @@
   <header class="site-header">
     <nav class="nav">
       <a href="{{ "" | absURL }}" class="logo"><span class="logo-text">jbkitchen</span></a>
-      <ul class="nav-menu">
+      <ul class="nav-menu" id="navMenu">
         <li><a href="{{ "chefs/" | absURL }}">Job Board</a></li>
         <li><a href="{{ "suppliers/" | absURL }}">Suppliers</a></li>
         <li><a href="{{ "calculator/" | absURL }}">Cost Calculator</a></li>
@@ -55,6 +55,9 @@
         <li><a href="{{ "contribute/" | absURL }}">Contribute</a></li>
         <li><a href="{{ "about/" | absURL }}">About</a></li>
       </ul>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
       <div class="nav-actions">
         <a href="https://docs.google.com/forms/d/e/1FAIpQLScJVkyYraKTstINyqyZDlA_3wJNCVj6ohHOMCs4Gtv6nChRBw/viewform" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Post Resume</a>
         <div class="lang-picker">
@@ -85,6 +88,18 @@
           var dd = document.getElementById('langDropdown');
           if (dd) dd.classList.remove('show');
         }
+      });
+      // Hamburger menu
+      document.getElementById('hamburgerBtn').addEventListener('click', function() {
+        document.getElementById('navMenu').classList.toggle('open');
+        this.classList.toggle('active');
+      });
+      // Close menu on link click
+      document.querySelectorAll('.nav-menu a').forEach(function(a) {
+        a.addEventListener('click', function() {
+          document.getElementById('navMenu').classList.remove('open');
+          document.getElementById('hamburgerBtn').classList.remove('active');
+        });
       });
       </script>
     </nav>
