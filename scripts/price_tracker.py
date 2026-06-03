@@ -104,14 +104,15 @@ def _fetch_fx():
 
 
 def track_prices():
+    current_date = datetime.now(SH_TZ).strftime("%Y-%m-%d")
     prices = {
-        "updated": datetime.now(SH_TZ).strftime("%Y-%m-%d"),
+        "updated": current_date,
         "fx": _fetch_fx(),
         "cpi": {},
     }
 
     cpi_data = _fetch_cpi()
-    cpi_date = cpi_data.pop("_date", datetime.now(SH_TZ).strftime("%Y-%m-%d"))
+    cpi_date = cpi_data.pop("_date", current_date)
 
     # Build ordered CPI output
     cpi_order = ["overall", "food_beverages", "housing", "transport", "communication"]
@@ -119,8 +120,8 @@ def track_prices():
         if key in cpi_data:
             prices["cpi"][key] = cpi_data[key]
 
-    if cpi_data:
-        prices["updated"] = cpi_date
+    if cpi_date != current_date:
+        prices["cpi_date"] = cpi_date  # separate field for CPI lag
 
     os.makedirs(DATA_DIR, exist_ok=True)
     os.makedirs(SITE_DATA_DIR, exist_ok=True)

@@ -85,7 +85,7 @@
         </div>
         {{- end }}
       </div>
-      <p class="live-updated">Source: DOSM · {{ $prices.updated }}</p>
+      <p class="live-updated">Source: DOSM · {{ $prices.cpi_date | default $prices.updated }}</p>
     </div>
     {{- end }}
 
