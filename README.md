@@ -131,10 +131,12 @@ jbkitchen/
 └──────────────────────────────────────────────┘
 ```
 
-**数据更新来源：**
-| 数据 | 来源 | 频率 |
-|:---|:---|:---|
-| 💱 汇率 | exchangerate-api.com | 每天4次 (cron 8/12/16/20) |
-| 📊 CPI 通胀 | DOSM Open API (cpi_headline) | 每天4次 / 每月更新 |
-| 🐓 鸡价 | WhatsApp Channel (120363405976277555@newsletter) | 供营商(通常周六下午)发消息 + cron 解析 |
-| 📰 新闻 | Google News RSS ×22关键词 | 每天4次 (cron 8/12/16/20) |
+**数据更新来源（每次 cron 跑 = 8/12/16/20 MYT）：**
+| 数据 | 来源 | 更新机制 | 实时性 |
+|:---|:---|:---|:---|
+| 💱 汇率 | exchangerate-api.com API | 每次 cron 拉最新 | 实时（API 返回当日汇率） |
+| 📊 CPI 通胀 | DOSM Open Data API | 每次 cron 拉最新 | 月发布·滞后约1月（当前最新：2026-04） |
+| 🐓 鸡价 | WhatsApp Channel 供营商发布 | wa_daemon3.js 实时监听 → cron 每次解析上线 | 供商发布后下次 cron 更新 |
+| 📰 新闻 | Google News RSS ×22关键词 | 每次 cron 拉最新30条 | 实时 |
+| 💼 招聘（Jora/Hiredly/Maukerja/MyFutureJobs） | 各自网站爬虫 | 每次 cron 爬最新 | 实时 |
+| 💼 招聘（JobStreet） | Windows Chrome CDP | Chrome 在线时 auto-publish 自动爬+去重合并 | 实时 |
