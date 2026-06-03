@@ -48,17 +48,19 @@
 - [x] CSS 核心 bug 修复（.source-badge 未闭合、hero-btn class 不存在、手机端 overflow-x）
 - [x] GitHub Pages CDN 缓存修复（CSS 加 ?v3 版本号）
 - [x] SSOT 7 文档全面更新对齐（含本次会话所有变更）
+- [x] GA4 真实 Measurement ID 替换占位符（G-RPR2CJKK11）
+- [x] KHL WhatsApp 号码修复（suppliers.json 假号 → 60167913913）
+- [x] Cron 频率 4x/天 → 2x/天（8:00+16:00）
+- [x] 数据更新频率文档化（README.md 完整表格）
+- [x] prices.json updated 字段修复（被 CPI 日期覆盖 bug）
+- [x] 管道 Python 依赖移至项目 venv（PEP 668 兼容）
 
 ## ⏳ 待办（以下需用户配合 / 外部依赖）
 
 - [ ] 打开 3 个 Google Form 邮件通知（Post Resume / Contribute / Inquiry → setting reinocheong@gmail.com）
-- [ ] 手机部署 Google Apps Script（需要电脑或手机 GAS 编辑）
-- [ ] KHL 真实 WhatsApp 号码
-- [ ] GA4 Measurement ID 替换为真实 ID
-- [ ] 域名购买 `jbkitchen.com`
-- [ ] Google Search Console 接入
+- [ ] 域名购买 `jbkitchen.com` + DNS 配置
+- [ ] Google Search Console 接入 + 提交 sitemap
 - [ ] 厨师注册数据导出到 XLSX 功能（通过 Google Sheets 导出）
-- [ ] 提交 sitemap 到 Google Search Console
 
 ## ⚠️ 已知问题
 
