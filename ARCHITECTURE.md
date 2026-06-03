@@ -46,7 +46,7 @@ graph TD
 
 | 时间 | 动作 | 触发 | 数据源 | 影响 |
 |:---|:---|:---|:---|:---|
-|| 8:00 / 12:00 / 16:00 / 20:00 | `auto-publish.sh` 执行 | cron `5c97932548d0` | 新闻RSS · DOSM CPI · 汇率API · 鸡价原始消息 · 5大招聘网站（Jora/Hiredly/Maukerja/MyFutureJobs + JobStreet 如 Chrome 在线） | 网站自动更新 |
+|| 8:00 / 16:00 | `auto-publish.sh` 执行 | cron `5c97932548d0` | 新闻RSS · DOSM CPI · 汇率API · 鸡价原始消息 · 5大招聘网站（Jora/Hiredly/Maukerja/MyFutureJobs + JobStreet 如 Chrome 在线） | 网站自动更新 |
 
 | 随时(通常周六下午) | 供营商在频道发新价目表 | `messages.upsert` 事件 | WhatsApp Channel | 覆盖 `chan_raw.json`，下次 cron (8/12/16/20点) 自动解析上线 |
 | 每日(不固定) | DOSM 发布新月度 CPI | `price_tracker.py` 下次运行时 | DOSM API (cpi_headline) | 通胀数据月度更新 |
