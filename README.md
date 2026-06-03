@@ -23,14 +23,15 @@
 | 层 | 技术 |
 |---|------|
 | 生成器 | Hugo v0.145 (extended) |
-| 数据采集 | Python 3.11 (requests + BeautifulSoup + Playwright), Node.js + Playwright (FB groups) |
-| 数据源（行业） | DOSM Open API（CPI）, exchangerate-api.com（汇率）, Google News RSS（新闻）, WhatsApp Channel（冷冻鸡批发价） |
-| 数据源（招聘） | Jora, Hiredly, Maukerja, MyFutureJobs, JobStreet, Indeed（JB 餐饮招聘） |
+| 数据采集 | Python 3.11, Node.js + Playwright (Windows Chrome CDP) |
+| 数据源（行业） | DOSM CPI, exchangerate-api.com, Google News RSS, WhatsApp Channel 鸡价 |
+| 数据源（招聘） | Jora, Hiredly, Maukerja, MyFutureJobs, JobStreet |
 | 部署 | GitHub Pages（`/docs` 目录，main 分支） |
-| 自动化 | 手动构建推送（token 缺少 workflow scope） |
-| 计数 | CountAPI（免费云端计数） |
-| 表单 | Google Apps Script → Google Sheets（厨师注册） |
-| 域名 | 当前 `reinocheong.github.io/jbkitchen`，正式期 `jbkitchen.com` |
+| 自动化 | Cron 每天 2次（8:00+16:00） |
+| 计数 | CountAPI |
+| 表单 | Google Forms ×3（Post Resume / Contribute / Inquiry） |
+| 域名 | 当前 `reinocheong.github.io/jbkitchen`，SEO 有流量后再买 |
+| Analytics | GA4（G-RPR2CJKK11）+ GSC 已验证 |
 
 ## 项目目录
 

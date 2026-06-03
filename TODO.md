@@ -68,3 +68,4 @@
 - CountAPI 免费版有请求频率限制
 - Google Apps Script 部署需要 Gmail 账号（用户暂时没电脑）
 - GitHub Pages CDN 缓存 ~1-2 分钟，CSS 更新需加版本号
+- **GSC sitemap 显示「无法抓取」** — sitemap.xml 实际 HTTP 200，Googlebot 可正常访问。GSC 需要时间处理，通常 24-48 小时自动恢复。不影响实际爬取索引。
