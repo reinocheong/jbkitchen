@@ -152,6 +152,16 @@
 - `docs/.nojekyll` 存在，`docs/` 目录干净（纯 Hugo 输出）
 - 更新 jbkitchen skill 对齐管道变更
 
+### 全管道验证 — 2026-06-03 17:05
+
+**操作人：AI** — Chrome 重启后全管道测试
+
+- aggregate.py: 53 条内置源 ✅
+- JobStreet scraper: 117 raw → 44 kitchen-relevant ✅
+- merge (dedup): 53 → 95 条（+42）✅
+- Hugo 构建: 30 pages ✅
+- GitHub Pages 部署 ✅
+
 ### 供应商排行榜上线 + 计算器重做
 - 使用 Windows Chrome CDP 通过 Google 搜索调研 JB 冷冻食品供应商，搜到实际结果
 - 创建 `site/data/suppliers.json`（15家供应商，含名/描述/分类/网址/成立年份）
