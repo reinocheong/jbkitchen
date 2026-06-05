@@ -1,10 +1,10 @@
 {
-  "updated": "2026-06-03",
+  "updated": "2026-06-05",
   "fx": {
-    "USD_MYR": 3.9683,
-    "MYR_USD": 0.252,
-    "CNY_MYR": 0.5814,
-    "SGD_MYR": 3.096
+    "USD_MYR": 4.0161,
+    "MYR_USD": 0.249,
+    "CNY_MYR": 0.5882,
+    "SGD_MYR": 3.125
   },
   "cpi": {
     "overall": {

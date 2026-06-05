@@ -1,14 +1,126 @@
 {
-  "updated": "2026-06-03T17:20:11",
+  "updated": "2026-06-05T08:16:42",
   "count": 96,
   "by_source": {
-    "MyFutureJobs": 17,
-    "Hiredly": 15,
-    "Maukerja": 9,
+    "Maukerja": 8,
     "Jora": 13,
-    "JobStreet": 44
+    "MyFutureJobs": 18,
+    "Hiredly": 15,
+    "JobStreet": 43
   },
   "items": [
+    {
+      "title": "Ketua Tukang Masak",
+      "company": "Billion Onsen Spa Sdn Bhd",
+      "location": "Johor Bahru",
+      "salary": {
+        "min": 3000,
+        "max": 3000,
+        "period": "monthly",
+        "text": "3,000 - RM 5,000",
+        "text_formatted": "RM3,000/month"
+      },
+      "date": "2026-06-05",
+      "url": "https://www.maukerja.my/job/26352144-ketua-tukang-masak",
+      "source": "Maukerja",
+      "id": "97c0b63904407ff8",
+      "title_normalized": "Ketua Tukang Masak",
+      "category": "cook",
+      "employment_type": null,
+      "location_normalized": "Johor Bahru",
+      "skills": [],
+      "description": null
+    },
+    {
+      "title": "EXECUTIVE CHEF (WESTERN CUISINE)",
+      "company": "LSE Attrus",
+      "location": "Johor Bahru, Johor",
+      "salary": {
+        "min": null,
+        "max": null,
+        "period": "monthly",
+        "text": null
+      },
+      "date": "2026-06-04",
+      "url": "https://my.jora.com/job/Executive-Chef-10a304176d3706dd9c0ccdd18299708d?abstract_type=original&disallow=true&fsv=true&sl=Johor+Bahru+Johor&sol_key=2c3bad6f71b41b03d3e32d2a2e08d57f&sp=serp&sponsored=false&sq=Chef&sr=2&tk=cbw3qRX2sY_ovYPzZTfs-G5YZYVUcekwpmuuoYwk8&trigger_source=serp",
+      "source": "Jora",
+      "id": "24a240148856e554",
+      "title_normalized": "Executive Chef (Western Cuisine)",
+      "category": "chef",
+      "employment_type": null,
+      "location_normalized": "Johor Bahru",
+      "skills": [
+        "Western Cuisine"
+      ],
+      "description": null
+    },
+    {
+      "title": "Chef",
+      "company": "Assalam Group Sdn Bhd",
+      "location": "Nusajaya, Johor",
+      "salary": {
+        "min": 3000,
+        "max": 3000,
+        "period": "monthly",
+        "text": "3,000 - RM3,000 per month",
+        "text_formatted": "RM3,000/month"
+      },
+      "date": "2026-06-04",
+      "url": "https://my.jora.com/job/Chef-db966f983a4a23100ecd0aff28d70b5c?abstract_type=original&disallow=true&fsv=true&sl=Johor+Bahru+Johor&sol_key=5303671df10e9628d62debe274ea75d5&sp=serp&sponsored=false&sq=Chef&sr=4&tk=cbw3qRX2sY_ovYPzZTfs-G5YZYVUcekwpmuuoYwk8&trigger_source=serp",
+      "source": "Jora",
+      "id": "bee6ac62b3afc8e7",
+      "title_normalized": "Chef",
+      "category": "chef",
+      "employment_type": null,
+      "location_normalized": "Nusajaya",
+      "skills": [],
+      "description": null
+    },
+    {
+      "title": "EXPEDITOR CHEF",
+      "company": "HAI DI LAO MALAYSIA SDN. BHD.",
+      "location": "Johor Bahru, Johor",
+      "salary": {
+        "min": null,
+        "max": null,
+        "period": "monthly",
+        "text": null
+      },
+      "date": "2026-06-04",
+      "url": "https://candidates.myfuturejobs.gov.my/search-jobs/description?what=chef&where=Johor%20Bahru&jobId=7fff789cbaf641dda8531bdafc38f9d1",
+      "source": "MyFutureJobs",
+      "id": "8140d75dfb51e7cc",
+      "title_normalized": "Expeditor Chef",
+      "category": "chef",
+      "employment_type": null,
+      "location_normalized": "Johor Bahru",
+      "skills": [],
+      "description": null
+    },
+    {
+      "title": "SOUS CHEF (Chinese Cuisine)",
+      "company": "NOVOTEL JOHOR BAHRU CITY CENTRE",
+      "location": "Johor Bahru, Johor",
+      "salary": {
+        "min": null,
+        "max": null,
+        "period": "monthly",
+        "text": null
+      },
+      "date": "2026-06-04",
+      "url": "https://candidates.myfuturejobs.gov.my/search-jobs/description?what=chef&where=Johor%20Bahru&jobId=ff3e836840cc4938aa270aa4d7787784",
+      "source": "MyFutureJobs",
+      "id": "1ef57235f15ed13a",
+      "title_normalized": "Sous Chef (Chinese Cuisine)",
+      "category": "chef",
+      "employment_type": null,
+      "location_normalized": "Johor Bahru",
+      "skills": [
+        "Chinese Cuisine",
+        "Dim Sum"
+      ],
+      "description": null
+    },
     {
       "title": "EXECUTIVE CHEF - HUI CUISINE - UTM JOHOR",
       "company": "SHAJARAH BARAKAH SDN BHD",
@@ -20,7 +132,7 @@
         "text": null
       },
       "date": "2026-06-03",
-      "url": "https://candidates.myfuturejobs.gov.my/search-jobs/description?what=chef&where=Johor%20Bahru&jobId=313b39473fc04221b567e481a624efdb",
+      "url": "https://candidates.myfuturejobs.gov.my/search-jobs/description?what=chef&where=Johor%20Bahru&jobId=384b1354d2db4e83b76de6a1078a519f",
       "source": "MyFutureJobs",
       "id": "cd7e5ed487fed4b2",
       "title_normalized": "Executive Chef - Hui Cuisine - Utm Johor",
@@ -85,33 +197,11 @@
         "text_formatted": "RM4,000/month"
       },
       "date": "2026-05-31",
-      "url": "https://my.jora.com/job/Restaurant-Outlet-Ops-bd706cef02a3fb9c4f93fa20c445f957?abstract_type=original&disallow=true&fsv=true&sl=Johor+Bahru+Johor&sol_key=94e44cab7e3ebc1255af70f2d7549427&sp=sserp_top&sponsored=true&sq=Chef&sr=2&tk=dvmtJ5vke5nYNYHUVKEx-kbTxyX9kxxymxBAYw4xM&trigger_source=serp",
+      "url": "https://my.jora.com/job/Restaurant-Outlet-Ops-bd706cef02a3fb9c4f93fa20c445f957?abstract_type=original&disallow=true&fsv=true&sl=Johor+Bahru+Johor&sol_key=c40ba1df3e6653069a088a3422378576&sp=sserp_top&sponsored=true&sq=Chef&sr=1&tk=cbw3qRX2sY_ovYPzZTfs-G5YZYVUcekwpmuuoYwk8&trigger_source=serp",
       "source": "Jora",
       "id": "e7d276af2982c7a8",
       "title_normalized": "Restaurant Outlet Ops Lead – Johor",
       "category": "management",
-      "employment_type": null,
-      "location_normalized": "Johor Bahru",
-      "skills": [],
-      "description": null
-    },
-    {
-      "title": "Ketua Tukang Masak",
-      "company": "Billion Onsen Spa Sdn Bhd",
-      "location": "Johor Bahru",
-      "salary": {
-        "min": 3000,
-        "max": 3000,
-        "period": "monthly",
-        "text": "3,000 - RM 5,000",
-        "text_formatted": "RM3,000/month"
-      },
-      "date": "2026-05-31",
-      "url": "https://www.maukerja.my/job/26352144-ketua-tukang-masak",
-      "source": "Maukerja",
-      "id": "97c0b63904407ff8",
-      "title_normalized": "Ketua Tukang Masak",
-      "category": "cook",
       "employment_type": null,
       "location_normalized": "Johor Bahru",
       "skills": [],
@@ -128,7 +218,7 @@
         "text": null
       },
       "date": "2026-05-30",
-      "url": "https://my.jora.com/job/Outlet-Supervisor-cdc1d52d2afa190e5bacfce5eade0241?abstract_type=original&disallow=true&fsv=true&sl=Johor+Bahru+Johor&sol_key=f82def27941cfea5d621d9ca0b881d8d&sp=sserp_top&sponsored=true&sq=Chef&sr=1&tk=dvmtJ5vke5nYNYHUVKEx-kbTxyX9kxxymxBAYw4xM&trigger_source=serp",
+      "url": "https://my.jora.com/job/Outlet-Supervisor-cdc1d52d2afa190e5bacfce5eade0241?abstract_type=original&disallow=true&fsv=true&sl=Johor+Bahru+Johor&sol_key=9895c472395eda07b5c0f3fcbfcb5898&sp=sserp_top&sponsored=true&sq=Chef&sr=2&tk=cbw3qRX2sY_ovYPzZTfs-G5YZYVUcekwpmuuoYwk8&trigger_source=serp",
       "source": "Jora",
       "id": "2ee651f777d3f381",
       "title_normalized": "Restaurant Outlet Supervisor",
@@ -151,7 +241,7 @@
         "text": null
       },
       "date": "2026-05-29",
-      "url": "https://my.jora.com/job/Chef-de-Partie-319e7b510cdd45cd70260fa7340311fd?abstract_type=original&disallow=true&fsv=true&sl=Johor+Bahru+Johor&sol_key=bd8a13473695330f200394f8aaf45673&sp=serp&sponsored=false&sq=Chef&sr=2&tk=dvmtJ5vke5nYNYHUVKEx-kbTxyX9kxxymxBAYw4xM&trigger_source=serp",
+      "url": "https://my.jora.com/job/Chef-de-Partie-319e7b510cdd45cd70260fa7340311fd?abstract_type=original&disallow=true&fsv=true&sl=Johor+Bahru+Johor&sol_key=7c81f97f412ed0840e6a9c8779b268b5&sp=serp&sponsored=false&sq=Chef&sr=3&tk=cbw3qRX2sY_ovYPzZTfs-G5YZYVUcekwpmuuoYwk8&trigger_source=serp",
       "source": "Jora",
       "id": "f7602b17d3b42fc0",
       "title_normalized": "Chef de Partie, Butcher",
@@ -165,6 +255,27 @@
     },
     {
       "title": "Chef de Cuisine",
+      "company": "Sheraton",
+      "location": "Johor Bahru, Johor",
+      "salary": {
+        "min": null,
+        "max": null,
+        "period": "monthly",
+        "text": null
+      },
+      "date": "2026-05-29",
+      "url": "https://my.jora.com/job/Chef-de-Cuisine-44347dea7e34d9de537f4dd4a648d555?abstract_type=original&disallow=true&fsv=true&sl=Johor+Bahru+Johor&sol_key=66c68b4f830dc4b7a4c83942649c94d9&sp=serp&sponsored=false&sq=Chef&sr=6&tk=cbw3qRX2sY_ovYPzZTfs-G5YZYVUcekwpmuuoYwk8&trigger_source=serp",
+      "source": "Jora",
+      "id": "b38b7981a2c03baf",
+      "title_normalized": "Chef de Cuisine",
+      "category": "chef",
+      "employment_type": null,
+      "location_normalized": "Johor Bahru",
+      "skills": [],
+      "description": null
+    },
+    {
+      "title": "Chef de Cuisine",
       "company": "Marriott International",
       "location": "Johor Bahru, Johor",
       "salary": {
@@ -174,7 +285,7 @@
         "text": null
       },
       "date": "2026-05-29",
-      "url": "https://my.jora.com/job/Chef-de-Cuisine-fb0eced301cd46b778789517320d6f92?abstract_type=original&disallow=true&fsv=true&sl=Johor+Bahru+Johor&sol_key=dc6df986e8dac5661da3b3f60e4ca488&sp=serp&sponsored=false&sq=Chef&sr=4&tk=dvmtJ5vke5nYNYHUVKEx-kbTxyX9kxxymxBAYw4xM&trigger_source=serp",
+      "url": "https://my.jora.com/job/Chef-de-Cuisine-fb0eced301cd46b778789517320d6f92?abstract_type=original&disallow=true&fsv=true&sl=Johor+Bahru+Johor&sol_key=50b871972511c2bb753dd7401b147cac&sp=serp&sponsored=false&sq=Chef&sr=7&tk=cbw3qRX2sY_ovYPzZTfs-G5YZYVUcekwpmuuoYwk8&trigger_source=serp",
       "source": "Jora",
       "id": "179d82539d09dd70",
       "title_normalized": "Chef de Cuisine",
@@ -185,8 +296,8 @@
       "description": null
     },
     {
-      "title": "Chef de Cuisine",
-      "company": "Sheraton",
+      "title": "Assistant Restaurant Manager - Southern Area / Johor Bharu",
+      "company": "Nando's Chickenland Malaysia Sdn Bhd",
       "location": "Johor Bahru, Johor",
       "salary": {
         "min": null,
@@ -195,11 +306,11 @@
         "text": null
       },
       "date": "2026-05-29",
-      "url": "https://my.jora.com/job/Chef-de-Cuisine-44347dea7e34d9de537f4dd4a648d555?abstract_type=original&disallow=true&fsv=true&sl=Johor+Bahru+Johor&sol_key=152d7dedc5a81cb5995e9b0b34da02cd&sp=serp&sponsored=false&sq=Chef&sr=5&tk=dvmtJ5vke5nYNYHUVKEx-kbTxyX9kxxymxBAYw4xM&trigger_source=serp",
-      "source": "Jora",
-      "id": "b38b7981a2c03baf",
-      "title_normalized": "Chef de Cuisine",
-      "category": "chef",
+      "url": "https://candidates.myfuturejobs.gov.my/search-jobs/description?what=chef&where=Johor%20Bahru&jobId=988717f05972438fbc751979bcda1a4d",
+      "source": "MyFutureJobs",
+      "id": "d3e83c2e3df4bce2",
+      "title_normalized": "Assistant Restaurant Manager - Southern Area / Johor Bharu",
+      "category": "management",
       "employment_type": null,
       "location_normalized": "Johor Bahru",
       "skills": [],
@@ -229,27 +340,6 @@
       "description": null
     },
     {
-      "title": "Assistant Restaurant Manager - Southern Area / Johor Bharu",
-      "company": "Nando's Chickenland Malaysia Sdn Bhd",
-      "location": "Johor Bahru, Johor",
-      "salary": {
-        "min": null,
-        "max": null,
-        "period": "monthly",
-        "text": null
-      },
-      "date": "2026-05-29",
-      "url": "https://candidates.myfuturejobs.gov.my/search-jobs/description?what=chef&where=Johor%20Bahru&jobId=988717f05972438fbc751979bcda1a4d",
-      "source": "MyFutureJobs",
-      "id": "d3e83c2e3df4bce2",
-      "title_normalized": "Assistant Restaurant Manager - Southern Area / Johor Bharu",
-      "category": "management",
-      "employment_type": null,
-      "location_normalized": "Johor Bahru",
-      "skills": [],
-      "description": null
-    },
-    {
       "title": "Restaurant Junior Supervisor",
       "company": "Local house sdn bhd",
       "location": "Johor Bahru, Johor",
@@ -273,6 +363,28 @@
       "description": null
     },
     {
+      "title": "Chef De Partie (Asian/Western) - Immediate Hiring",
+      "company": "Cezars Kitchen",
+      "location": "Johor Bahru, Johor",
+      "salary": {
+        "min": 3500,
+        "max": 3500,
+        "period": "monthly",
+        "text": "3,500 - RM4,000 per month",
+        "text_formatted": "RM3,500/month"
+      },
+      "date": "2026-05-27",
+      "url": "https://my.jora.com/job/Chef-de-Partie-a12219f1f8b903e54e504dd1877ba560?abstract_type=original&disallow=true&fsv=true&sl=Johor+Bahru+Johor&sol_key=731094a1ded0ef733d5a136471e83481&sp=sserp_bottom&sponsored=true&sq=Chef&sr=4&tk=cbw3qRX2sY_ovYPzZTfs-G5YZYVUcekwpmuuoYwk8&trigger_source=serp",
+      "source": "Jora",
+      "id": "455bba3fcb7b4408",
+      "title_normalized": "Chef de Partie (Asian/Western) - Immediate Hiring",
+      "category": "chef",
+      "employment_type": null,
+      "location_normalized": "Johor Bahru",
+      "skills": [],
+      "description": null
+    },
+    {
       "title": "Demi Chef (Cold Kitchen) - Renaissance Johor Bahru",
       "company": "Renaissance Hotels",
       "location": "Johor Bahru, Johor",
@@ -283,57 +395,10 @@
         "text": null
       },
       "date": "2026-05-26",
-      "url": "https://my.jora.com/job/Demi-Chef-d9ab9052410db95fe222c040b79089bd?abstract_type=original&disallow=true&fsv=true&sl=Johor+Bahru+Johor&sol_key=0c82f5ac6baf64a0754ec47fc59372cc&sp=serp&sponsored=false&sq=Chef&sr=6&tk=dvmtJ5vke5nYNYHUVKEx-kbTxyX9kxxymxBAYw4xM&trigger_source=serp",
+      "url": "https://my.jora.com/job/Demi-Chef-d9ab9052410db95fe222c040b79089bd?abstract_type=original&disallow=true&fsv=true&sl=Johor+Bahru+Johor&sol_key=5c074c2496c6ccfaf22bd09ba51b9673&sp=serp&sponsored=false&sq=Chef&sr=8&tk=cbw3qRX2sY_ovYPzZTfs-G5YZYVUcekwpmuuoYwk8&trigger_source=serp",
       "source": "Jora",
       "id": "d469cd51f1c45766",
       "title_normalized": "Demi Chef (Cold Kitchen) - Renaissance Johor Bahru",
-      "category": "chef",
-      "employment_type": null,
-      "location_normalized": "Johor Bahru",
-      "skills": [],
-      "description": null
-    },
-    {
-      "title": "Executive Pastry Chef",
-      "company": "Grammage Foods Sdn bhd",
-      "location": "Johor Bahru, Johor",
-      "salary": {
-        "min": 4500,
-        "max": 4500,
-        "period": "monthly",
-        "text": "4,500 - RM6,500 per month",
-        "text_formatted": "RM4,500/month"
-      },
-      "date": "2026-05-26",
-      "url": "https://my.jora.com/job/Executive-Pastry-Chef-f9e4dfff3b8651c39f28a1bee8e0f759?abstract_type=original&disallow=true&fsv=true&sl=Johor+Bahru+Johor&sol_key=3d259ac91570e1b7cabee4e686a8837d&sp=serp&sponsored=false&sq=Chef&sr=8&tk=dvmtJ5vke5nYNYHUVKEx-kbTxyX9kxxymxBAYw4xM&trigger_source=serp",
-      "source": "Jora",
-      "id": "e339f2a8e8e1916a",
-      "title_normalized": "Executive Pastry Chef",
-      "category": "chef",
-      "employment_type": null,
-      "location_normalized": "Johor Bahru",
-      "skills": [
-        "Baking",
-        "Pastry"
-      ],
-      "description": null
-    },
-    {
-      "title": "Senior Commis Viennoiserie / Demi Chef",
-      "company": "LOAF ADAM SDN BHD",
-      "location": "Johor Bahru, Johor",
-      "salary": {
-        "min": 2300,
-        "max": 2300,
-        "period": "monthly",
-        "text": "2,300 - RM2,500 per month",
-        "text_formatted": "RM2,300/month"
-      },
-      "date": "2026-05-26",
-      "url": "https://my.jora.com/job/Demi-Chef-8d5cb27545eea564cb3ac4584dca3586?abstract_type=original&disallow=true&fsv=true&sl=Johor+Bahru+Johor&sol_key=ae240c36b11aeffb0919336c3bab7a2b&sp=sserp_bottom&sponsored=true&sq=Chef&sr=3&tk=dvmtJ5vke5nYNYHUVKEx-kbTxyX9kxxymxBAYw4xM&trigger_source=serp",
-      "source": "Jora",
-      "id": "106d76c9257452dc",
-      "title_normalized": "Senior Commis Viennoiserie / Demi Chef",
       "category": "chef",
       "employment_type": null,
       "location_normalized": "Johor Bahru",
@@ -373,7 +438,7 @@
         "text": null
       },
       "date": "2026-05-24",
-      "url": "https://my.jora.com/job/Chef-de-Partie-896805dc851374c02bcbe9aefa766058?abstract_type=original&disallow=true&fsv=true&sl=Johor+Bahru+Johor&sol_key=e10a5f81f5f61c2d548a82af84fdbecd&sp=serp&sponsored=false&sq=Chef&sr=7&tk=dvmtJ5vke5nYNYHUVKEx-kbTxyX9kxxymxBAYw4xM&trigger_source=serp",
+      "url": "https://my.jora.com/job/Chef-de-Partie-896805dc851374c02bcbe9aefa766058?abstract_type=original&disallow=true&fsv=true&sl=Johor+Bahru+Johor&sol_key=d2f28cd2dcb6341ad9bac4c6eb09e733&sp=serp&sponsored=false&sq=Chef&sr=10&tk=cbw3qRX2sY_ovYPzZTfs-G5YZYVUcekwpmuuoYwk8&trigger_source=serp",
       "source": "Jora",
       "id": "95d45320b6979ae5",
       "title_normalized": "Chef de Partie - Baker",
@@ -398,7 +463,7 @@
         "text_formatted": "RM5,000/month"
       },
       "date": "2026-05-23",
-      "url": "https://my.jora.com/job/Head-Chef-b3153746ee918ad6c183458f0a7acf1b?abstract_type=original&disallow=true&fsv=true&sl=Johor+Bahru+Johor&sol_key=e36ffadc04cefb27bc5a4c1d0fbda84c&sp=serp&sponsored=false&sq=Chef&sr=1&tk=dvmtJ5vke5nYNYHUVKEx-kbTxyX9kxxymxBAYw4xM&trigger_source=serp",
+      "url": "https://my.jora.com/job/Head-Chef-fba62b93fbed7b4d84346f5644176731?abstract_type=original&disallow=true&fsv=true&sl=Johor+Bahru+Johor&sol_key=dca14ae3ef1514b8fb87cacbb6c8df9c&sp=serp&sponsored=false&sq=Chef&sr=1&tk=cbw3qRX2sY_ovYPzZTfs-G5YZYVUcekwpmuuoYwk8&trigger_source=serp",
       "source": "Jora",
       "id": "c0b2b72f8d894c7f",
       "title_normalized": "Head Chef",
@@ -537,6 +602,28 @@
       "category": "fb-service",
       "employment_type": null,
       "location_normalized": "SKS City Mall JBCC",
+      "skills": [],
+      "description": null
+    },
+    {
+      "title": "Head Chef ( Nanyang & Local Delight )",
+      "company": "Vivo Food Sdn Bhd",
+      "location": "Johor Bahru, Johor",
+      "salary": {
+        "min": 5000,
+        "max": 5000,
+        "period": "monthly",
+        "text": "5,000 - RM6,000 per month",
+        "text_formatted": "RM5,000/month"
+      },
+      "date": "2026-05-22",
+      "url": "https://my.jora.com/job/Head-Chef-3afe83a24ba49009e83106ac8547dfb2?abstract_type=original&disallow=true&fsv=true&sl=Johor+Bahru+Johor&sol_key=e94d9759300619a47953a6d4efb332d8&sp=sserp_bottom&sponsored=true&sq=Chef&sr=5&tk=cbw3qRX2sY_ovYPzZTfs-G5YZYVUcekwpmuuoYwk8&trigger_source=serp",
+      "source": "Jora",
+      "id": "0796d8f268fa245e",
+      "title_normalized": "Head Chef ( Nanyang & Local Delight )",
+      "category": "chef",
+      "employment_type": null,
+      "location_normalized": "Johor Bahru",
       "skills": [],
       "description": null
     },
@@ -804,6 +891,28 @@
       "description": null
     },
     {
+      "title": "Senior Bakery Chef",
+      "company": "Agensi Pekerjaan CKM Sdn Bhd",
+      "location": "Johor Bahru",
+      "salary": {
+        "min": 8000,
+        "max": 8000,
+        "period": "monthly",
+        "text": "8,000 - RM 10,000",
+        "text_formatted": "RM8,000/month"
+      },
+      "date": "2026-05-17",
+      "url": "https://www.maukerja.my/job/26468459-senior-bakery-chef",
+      "source": "Maukerja",
+      "id": "7ba256dd8e14b991",
+      "title_normalized": "Senior Bakery Chef",
+      "category": "chef",
+      "employment_type": null,
+      "location_normalized": "Johor Bahru",
+      "skills": [],
+      "description": null
+    },
+    {
       "title": "Lead Pastry Chef",
       "company": "Agensi Pekerjaan CKM Sdn Bhd",
       "location": "Johor Bahru",
@@ -826,28 +935,6 @@
         "Baking",
         "Pastry"
       ],
-      "description": null
-    },
-    {
-      "title": "Senior Bakery Chef",
-      "company": "Agensi Pekerjaan CKM Sdn Bhd",
-      "location": "Johor Bahru",
-      "salary": {
-        "min": 8000,
-        "max": 8000,
-        "period": "monthly",
-        "text": "8,000 - RM 10,000",
-        "text_formatted": "RM8,000/month"
-      },
-      "date": "2026-05-17",
-      "url": "https://www.maukerja.my/job/26468459-senior-bakery-chef",
-      "source": "Maukerja",
-      "id": "7ba256dd8e14b991",
-      "title_normalized": "Senior Bakery Chef",
-      "category": "chef",
-      "employment_type": null,
-      "location_normalized": "Johor Bahru",
-      "skills": [],
       "description": null
     },
     {
@@ -922,48 +1009,6 @@
       "description": null
     },
     {
-      "title": "Chef (Chinese Kitchen)",
-      "company": "LYC Mother & Child Centre Sdn. Bhd.",
-      "location": "Johor Bahru, Johor",
-      "salary": {
-        "min": null,
-        "max": null,
-        "period": "monthly",
-        "text": null
-      },
-      "date": "2026-05-13",
-      "url": "https://my.jora.com/job/Chef-Chinese-Kitchen-28552a24cc963c19221c6c2e45fd1a5a?abstract_type=original&disallow=true&fsv=true&sl=Johor+Bahru+Johor&sol_key=c78665fd3735ddeef68c21bef144a06a&sp=sserp_bottom&sponsored=true&sq=Chef&sr=5&tk=dvmtJ5vke5nYNYHUVKEx-kbTxyX9kxxymxBAYw4xM&trigger_source=serp",
-      "source": "Jora",
-      "id": "41b207c3db332f2d",
-      "title_normalized": "Chef (Chinese Kitchen)",
-      "category": "chef",
-      "employment_type": null,
-      "location_normalized": "Johor Bahru",
-      "skills": [],
-      "description": null
-    },
-    {
-      "title": "Sous Chef- Novotel Johor Bahru",
-      "company": "Novotel Johor Bahru City Centre",
-      "location": "Johor Bahru",
-      "salary": {
-        "min": null,
-        "max": null,
-        "period": "monthly",
-        "text": null
-      },
-      "date": "2026-05-13",
-      "url": "https://www.maukerja.my/job/25833305-sous-chef-novotel-johor-bahru",
-      "source": "Maukerja",
-      "id": "7add87393b603b4f",
-      "title_normalized": "Sous Chef- Novotel Johor Bahru",
-      "category": "chef",
-      "employment_type": null,
-      "location_normalized": "Johor Bahru",
-      "skills": [],
-      "description": null
-    },
-    {
       "title": "Restaurant Supervisor - Aeon Tebrau City",
       "company": "Nando's Chickenland Malaysia Sdn Bhd",
       "location": "Johor Bahru, Johor",
@@ -1018,32 +1063,10 @@
         "text": null
       },
       "date": "2026-05-11",
-      "url": "https://my.jora.com/job/Head-Chef-bf4b29983f8668b16e35c65005df02c0?abstract_type=original&disallow=true&fsv=true&sl=Johor+Bahru+Johor&sol_key=2822f26a7de802c29586c698d7e6ae36&sp=serp&sponsored=false&sq=Chef&sr=3&tk=dvmtJ5vke5nYNYHUVKEx-kbTxyX9kxxymxBAYw4xM&trigger_source=serp",
+      "url": "https://my.jora.com/job/Head-Chef-bf4b29983f8668b16e35c65005df02c0?abstract_type=original&disallow=true&fsv=true&sl=Johor+Bahru+Johor&sol_key=e44a90d1d68568868d6151364dc9ebe2&sp=serp&sponsored=false&sq=Chef&sr=5&tk=cbw3qRX2sY_ovYPzZTfs-G5YZYVUcekwpmuuoYwk8&trigger_source=serp",
       "source": "Jora",
       "id": "bd0b6c237cfc5e4e",
       "title_normalized": "Head Chef, Food Services (Cook)",
-      "category": "chef",
-      "employment_type": null,
-      "location_normalized": "Johor Bahru",
-      "skills": [],
-      "description": null
-    },
-    {
-      "title": "Sous Chef",
-      "company": "HAZA FOOD SDN BHD",
-      "location": "Johor Bahru, Johor",
-      "salary": {
-        "min": 4000,
-        "max": 4000,
-        "period": "monthly",
-        "text": "4,000 - RM5,000 per month",
-        "text_formatted": "RM4,000/month"
-      },
-      "date": "2026-05-11",
-      "url": "https://my.jora.com/job/Sous-Chef-ec3c1703c236a1f7478d7e1d5904dbcf?abstract_type=original&disallow=true&fsv=true&sl=Johor+Bahru+Johor&sol_key=6dc3cc873c4ebf643898e55a1ebf039a&sp=sserp_bottom&sponsored=true&sq=Chef&sr=4&tk=dvmtJ5vke5nYNYHUVKEx-kbTxyX9kxxymxBAYw4xM&trigger_source=serp",
-      "source": "Jora",
-      "id": "f2ce2e9eae874b6b",
-      "title_normalized": "Sous Chef",
       "category": "chef",
       "employment_type": null,
       "location_normalized": "Johor Bahru",
@@ -1138,6 +1161,31 @@
       "description": null
     },
     {
+      "title": "Pastry Chef (Cafe)",
+      "company": "Agensi Pekerjaan Jobs Kreate Sdn Bhd",
+      "location": "Johor Bahru",
+      "salary": {
+        "min": 2000,
+        "max": 2000,
+        "period": "monthly",
+        "text": "2,000 - RM 3,500",
+        "text_formatted": "RM2,000/month"
+      },
+      "date": "2026-05-06",
+      "url": "https://www.maukerja.my/job/26248419-pastry-chef-cafe",
+      "source": "Maukerja",
+      "id": "181b250298f3bf4a",
+      "title_normalized": "Pastry Chef (Cafe)",
+      "category": "chef",
+      "employment_type": null,
+      "location_normalized": "Johor Bahru",
+      "skills": [
+        "Baking",
+        "Pastry"
+      ],
+      "description": null
+    },
+    {
       "title": "Branch Manager Johor",
       "company": "KOYO CORPORATE (M) SDN BHD",
       "location": "80250",
@@ -1160,88 +1208,63 @@
       "description": null
     },
     {
-      "title": "Chef / Cook",
-      "company": "MADAM KWAN (SUEZ TOP VENTURES SDN BHD)",
-      "location": "Johor Bahru, Johor",
-      "salary": {
-        "min": null,
-        "max": null,
-        "period": "monthly",
-        "text": null
-      },
-      "date": "2026-05-05",
-      "url": "https://candidates.myfuturejobs.gov.my/search-jobs/description?what=chef&where=Johor%20Bahru&jobId=14860a41e4604b3ca25d32f89674b068",
-      "source": "MyFutureJobs",
-      "id": "2babb5f143dfc2fb",
-      "title_normalized": "Chef / Cook",
-      "category": "chef",
-      "employment_type": null,
-      "location_normalized": "Johor Bahru",
-      "skills": [],
-      "description": null
-    },
-    {
-      "title": "Pastry Chef (Cafe)",
-      "company": "Agensi Pekerjaan Jobs Kreate Sdn Bhd",
+      "title": "Sous Chef",
+      "company": "HAZA FOOD SDN BHD",
       "location": "Johor Bahru",
       "salary": {
-        "min": 2000,
-        "max": 2000,
+        "min": 4000,
+        "max": 4000,
         "period": "monthly",
-        "text": "2,000 - RM 3,500",
-        "text_formatted": "RM2,000/month"
-      },
-      "date": "2026-05-04",
-      "url": "https://www.maukerja.my/job/26248419-pastry-chef-cafe",
-      "source": "Maukerja",
-      "id": "181b250298f3bf4a",
-      "title_normalized": "Pastry Chef (Cafe)",
-      "category": "chef",
-      "employment_type": null,
-      "location_normalized": "Johor Bahru",
-      "skills": [
-        "Baking",
-        "Pastry"
-      ],
-      "description": null
-    },
-    {
-      "title": "Head Chef ( Nanyang & Local Delight )",
-      "company": "Vivo Food Sdn Bhd",
-      "location": "Johor Bahru",
-      "salary": {
-        "min": 5000,
-        "max": 5000,
-        "period": "monthly",
-        "text": "RM 5,000 – RM 6,000 per month",
-        "text_formatted": "RM5,000/month"
+        "text": "RM 4,000 – RM 5,000 per month",
+        "text_formatted": "RM4,000/month"
       },
       "description": null,
-      "date": "12d ago",
+      "date": "24d ago",
       "source": "JobStreet",
-      "id": "594e874eb8e61f88",
-      "title_normalized": "Head Chef ( Nanyang & Local Delight )",
+      "id": "b46c285022654954",
+      "title_normalized": "Sous Chef",
       "category": "chef",
       "employment_type": null,
       "location_normalized": "Johor Bahru",
       "skills": []
     },
     {
-      "title": "Chef De Partie (Asian/Western) - Immediate Hiring",
-      "company": "Cezars Kitchen Sdn Bhd",
+      "title": "Cook",
+      "company": "BNX Delight Holding Sdn. Bhd.",
       "location": "Johor Bahru",
       "salary": {
-        "min": 3500,
-        "max": 3500,
+        "min": 2000,
+        "max": 2000,
         "period": "monthly",
-        "text": "RM 3,500 – RM 4,000 per month",
-        "text_formatted": "RM3,500/month"
+        "text": "RM 2,000 – RM 3,000 per month",
+        "text_formatted": "RM2,000/month"
       },
       "description": null,
-      "date": "7d ago",
+      "date": "15h ago",
       "source": "JobStreet",
-      "id": "bf3c2d7692bd9cdb",
-      "title_normalized": "Chef de Partie (Asian/Western) - Immediate Hiring",
+      "id": "37319b1a9ea8443a",
+      "title_normalized": "Cook",
+      "category": "cook",
+      "employment_type": null,
+      "location_normalized": "Johor Bahru",
+      "skills": []
+    },
+    {
+      "title": "COMMIS CHEF",
+      "company": "TRIBUILDZ SDN BHD",
+      "location": "Johor Bahru",
+      "salary": {
+        "min": 2500,
+        "max": 2500,
+        "period": "monthly",
+        "text": "RM 2,500 – RM 3,300 per month",
+        "text_formatted": "RM2,500/month"
+      },
+      "description": null,
+      "date": "24d ago",
+      "source": "JobStreet",
+      "id": "5e94f54d510c9a08",
+      "title_normalized": "Commis Chef",
       "category": "chef",
       "employment_type": null,
       "location_normalized": "Johor Bahru",
@@ -1259,7 +1282,7 @@
         "text_formatted": "RM4,000/month"
       },
       "description": null,
-      "date": "19d ago",
+      "date": "20d ago",
       "source": "JobStreet",
       "id": "e47795a3ece5ec6d",
       "title_normalized": "Chef de Partie",
@@ -1267,6 +1290,29 @@
       "employment_type": null,
       "location_normalized": "Johor Bahru",
       "skills": []
+    },
+    {
+      "title": "Sous Chef (Japanese Omakase)",
+      "company": "Binchotan JB",
+      "location": "Johor Bahru",
+      "salary": {
+        "min": 5000,
+        "max": 5000,
+        "period": "monthly",
+        "text": "RM 5,000 – RM 6,000 per month",
+        "text_formatted": "RM5,000/month"
+      },
+      "description": null,
+      "date": "17d ago",
+      "source": "JobStreet",
+      "id": "f0d9631a4da7058b",
+      "title_normalized": "Sous Chef (Japanese Omakase)",
+      "category": "chef",
+      "employment_type": null,
+      "location_normalized": "Johor Bahru",
+      "skills": [
+        "Japanese Cuisine"
+      ]
     },
     {
       "title": "Senior Bakery Chef",
@@ -1280,31 +1326,10 @@
         "text_formatted": "RM8,000/month"
       },
       "description": null,
-      "date": "18d ago",
+      "date": "19d ago",
       "source": "JobStreet",
       "id": "782fa2862600f8ac",
       "title_normalized": "Senior Bakery Chef",
-      "category": "chef",
-      "employment_type": null,
-      "location_normalized": "Johor Bahru",
-      "skills": []
-    },
-    {
-      "title": "COMMIS CHEF",
-      "company": "TRIBUILDZ SDN BHD",
-      "location": "Johor Bahru",
-      "salary": {
-        "min": 2500,
-        "max": 2500,
-        "period": "monthly",
-        "text": "RM 2,500 – RM 3,300 per month",
-        "text_formatted": "RM2,500/month"
-      },
-      "description": null,
-      "date": "23d ago",
-      "source": "JobStreet",
-      "id": "5e94f54d510c9a08",
-      "title_normalized": "Commis Chef",
       "category": "chef",
       "employment_type": null,
       "location_normalized": "Johor Bahru",
@@ -1321,7 +1346,7 @@
         "text": null
       },
       "description": null,
-      "date": "21d ago",
+      "date": "23d ago",
       "source": "JobStreet",
       "id": "9f0b0cecfad6fc57",
       "title_normalized": "Senior Baker / Junior Baker",
@@ -1334,78 +1359,50 @@
       ]
     },
     {
-      "title": "Sous Chef (Japanese Omakase)",
-      "company": "Binchotan JB",
-      "location": "Johor Bahru",
-      "salary": {
-        "min": 5000,
-        "max": 5000,
-        "period": "monthly",
-        "text": "RM 5,000 – RM 6,000 per month",
-        "text_formatted": "RM5,000/month"
-      },
-      "description": null,
-      "date": "15d ago",
-      "source": "JobStreet",
-      "id": "f0d9631a4da7058b",
-      "title_normalized": "Sous Chef (Japanese Omakase)",
-      "category": "chef",
-      "employment_type": null,
-      "location_normalized": "Johor Bahru",
-      "skills": [
-        "Japanese Cuisine"
-      ]
-    },
-    {
-      "title": "Assistant Pastry Chef",
+      "title": "Kitchen Crew (Mid Valley Southkey)",
       "company": "BNX Delight Holding Sdn. Bhd.",
       "location": "Johor Bahru",
       "salary": {
-        "min": 4000,
-        "max": 4000,
+        "min": 2000,
+        "max": 2000,
         "period": "monthly",
-        "text": "RM 4,000 – RM 5,500 per month",
-        "text_formatted": "RM4,000/month"
+        "text": "RM 2,000 – RM 3,000 per month",
+        "text_formatted": "RM2,000/month"
       },
       "description": null,
-      "date": "30d+ ago",
+      "date": "14h ago",
       "source": "JobStreet",
-      "id": "1fc10fa973c7600b",
-      "title_normalized": "Assistant Pastry Chef",
+      "id": "ee571b646b6c699d",
+      "title_normalized": "Kitchen Crew (Mid Valley Southkey)",
+      "category": "cook",
+      "employment_type": null,
+      "location_normalized": "Johor Bahru",
+      "skills": []
+    },
+    {
+      "title": "Chef De Partie (Asian/Western) - Immediate Hiring",
+      "company": "Cezars Kitchen Sdn Bhd",
+      "location": "Johor Bahru",
+      "salary": {
+        "min": 3500,
+        "max": 3500,
+        "period": "monthly",
+        "text": "RM 3,500 – RM 4,000 per month",
+        "text_formatted": "RM3,500/month"
+      },
+      "description": null,
+      "date": "8d ago",
+      "source": "JobStreet",
+      "id": "bf3c2d7692bd9cdb",
+      "title_normalized": "Chef de Partie (Asian/Western) - Immediate Hiring",
       "category": "chef",
       "employment_type": null,
       "location_normalized": "Johor Bahru",
-      "skills": [
-        "Baking",
-        "Pastry"
-      ]
+      "skills": []
     },
     {
-      "title": "PASTRY CHEF (MOONCAKE & COOKIES SPECIALTY)",
-      "company": "ENHANCE FAMOUS SDN BHD",
-      "location": "Taman Desa Cemerlang",
-      "salary": {
-        "min": null,
-        "max": null,
-        "period": "monthly",
-        "text": null
-      },
-      "description": null,
-      "date": "29d ago",
-      "source": "JobStreet",
-      "id": "097a0b41ebea41cb",
-      "title_normalized": "Pastry Chef (Mooncake & Cookies Specialty)",
-      "category": "chef",
-      "employment_type": null,
-      "location_normalized": "Taman Desa Cemerlang",
-      "skills": [
-        "Baking",
-        "Pastry"
-      ]
-    },
-    {
-      "title": "Kitchen Crew Rusim Thai Kitchen Toppen & Paradigm Mall ( JB )",
-      "company": "Vivo Food Sdn Bhd",
+      "title": "KITCHEN HELPER (DESA CEMERLANG)",
+      "company": "BNX Delight Holding Sdn. Bhd.",
       "location": "Johor Bahru",
       "salary": {
         "min": 2000,
@@ -1415,11 +1412,11 @@
         "text_formatted": "RM2,000/month"
       },
       "description": null,
-      "date": "30d+ ago",
+      "date": "15h ago",
       "source": "JobStreet",
-      "id": "afb10f04773b7176",
-      "title_normalized": "Kitchen Crew Rusim Thai Kitchen Toppen & Paradigm Mall ( JB )",
-      "category": "cook",
+      "id": "4aaa006cd215e39b",
+      "title_normalized": "Kitchen Helper (Desa Cemerlang)",
+      "category": "kitchen-crew",
       "employment_type": null,
       "location_normalized": "Johor Bahru",
       "skills": []
@@ -1436,7 +1433,7 @@
         "text_formatted": "RM2,400/month"
       },
       "description": null,
-      "date": "12d ago",
+      "date": "13d ago",
       "source": "JobStreet",
       "id": "fc21803bbc31e78b",
       "title_normalized": "Food Processing Operator (Bakery / Pastry)",
@@ -1460,7 +1457,7 @@
         "text_formatted": "RM12/month"
       },
       "description": null,
-      "date": "14d ago",
+      "date": "15d ago",
       "source": "JobStreet",
       "id": "f27d848f28b00890",
       "title_normalized": "🔥 Recruiting Opening Members for JB High-end Korean Restaurant!",
@@ -1483,7 +1480,7 @@
         "text_formatted": "RM1,700/month"
       },
       "description": null,
-      "date": "20d ago",
+      "date": "22d ago",
       "source": "JobStreet",
       "id": "504002ea46162e59",
       "title_normalized": "Kitchen Crew",
@@ -1504,7 +1501,7 @@
         "text_formatted": "RM4,500/month"
       },
       "description": null,
-      "date": "5d ago",
+      "date": "6d ago",
       "source": "JobStreet",
       "id": "d9d306cee86475d5",
       "title_normalized": "R&D Chef (Cookies)",
@@ -1514,27 +1511,25 @@
       "skills": []
     },
     {
-      "title": "Application Testing Technician (AT Technician) - Pastry Chef",
-      "company": "UNIGRA FOOD PROCESSING ASIA PACIFIC SDN BHD",
-      "location": "Pasir Gudang",
+      "title": "Senior Commis Viennoiserie / Demi Chef",
+      "company": "LOAF ADAM SDN BHD",
+      "location": "Johor Bahru",
       "salary": {
-        "min": null,
-        "max": null,
+        "min": 2300,
+        "max": 2300,
         "period": "monthly",
-        "text": null
+        "text": "RM 2,300 – RM 2,500 per month",
+        "text_formatted": "RM2,300/month"
       },
       "description": null,
-      "date": "12d ago",
+      "date": "9d ago",
       "source": "JobStreet",
-      "id": "5dfe989755396d0d",
-      "title_normalized": "Application Testing Technician (AT Technician) - Pastry Chef",
+      "id": "559eff6a9315fc42",
+      "title_normalized": "Senior Commis Viennoiserie / Demi Chef",
       "category": "chef",
       "employment_type": null,
-      "location_normalized": "Pasir Gudang",
-      "skills": [
-        "Baking",
-        "Pastry"
-      ]
+      "location_normalized": "Johor Bahru",
+      "skills": []
     },
     {
       "title": "Commis I",
@@ -1548,7 +1543,7 @@
         "text_formatted": "RM1,900/month"
       },
       "description": null,
-      "date": "15d ago",
+      "date": "16d ago",
       "source": "JobStreet",
       "id": "a61a6450c9213562",
       "title_normalized": "Commis I",
@@ -1569,7 +1564,7 @@
         "text_formatted": "RM1,900/month"
       },
       "description": null,
-      "date": "26d ago",
+      "date": "27d ago",
       "source": "JobStreet",
       "id": "c7ca93ba74b826c9",
       "title_normalized": "Commis",
@@ -1590,7 +1585,7 @@
         "text_formatted": "RM2,000/month"
       },
       "description": null,
-      "date": "26d ago",
+      "date": "27d ago",
       "source": "JobStreet",
       "id": "388d9c3d8d4d3e3c",
       "title_normalized": "Commis",
@@ -1611,7 +1606,7 @@
         "text_formatted": "RM2,800/month"
       },
       "description": null,
-      "date": "13d ago",
+      "date": "14d ago",
       "source": "JobStreet",
       "id": "b51837b0176e0c59",
       "title_normalized": "Demi Chef",
@@ -1652,7 +1647,7 @@
         "text_formatted": "RM3,500/month"
       },
       "description": null,
-      "date": "22d ago",
+      "date": "24d ago",
       "source": "JobStreet",
       "id": "13fdb84cff778b88",
       "title_normalized": "Sous Chef",
@@ -1672,7 +1667,7 @@
         "text": null
       },
       "description": null,
-      "date": "21d ago",
+      "date": "22d ago",
       "source": "JobStreet",
       "id": "9f09497e55c69086",
       "title_normalized": "Chef (Chinese Kitchen)",
@@ -1692,7 +1687,7 @@
         "text": null
       },
       "description": null,
-      "date": "8d ago",
+      "date": "9d ago",
       "source": "JobStreet",
       "id": "82db923e9a6e11d6",
       "title_normalized": "Cake Decorater Chef / Junior",
@@ -1712,7 +1707,7 @@
         "text": null
       },
       "description": null,
-      "date": "8d ago",
+      "date": "9d ago",
       "source": "JobStreet",
       "id": "21d464a2c58e4b72",
       "title_normalized": "Bakery Chef",
@@ -1733,7 +1728,7 @@
         "text_formatted": "RM2,350/month"
       },
       "description": null,
-      "date": "20d ago",
+      "date": "21d ago",
       "source": "JobStreet",
       "id": "6dc4da604738b706",
       "title_normalized": "Kitchen Crew / Cook",
@@ -1754,7 +1749,7 @@
         "text_formatted": "RM2,500/month"
       },
       "description": null,
-      "date": "22d ago",
+      "date": "23d ago",
       "source": "JobStreet",
       "id": "16a0308f78c572b0",
       "title_normalized": "Pastry Chef (Sutera Mall)",
@@ -1778,7 +1773,7 @@
         "text_formatted": "RM1,900/month"
       },
       "description": null,
-      "date": "26d ago",
+      "date": "27d ago",
       "source": "JobStreet",
       "id": "4a891206b2ee366d",
       "title_normalized": "Kitchen Helper",
@@ -1799,7 +1794,7 @@
         "text_formatted": "RM4,500/month"
       },
       "description": null,
-      "date": "12d ago",
+      "date": "13d ago",
       "source": "JobStreet",
       "id": "c04ffe4918c37bbf",
       "title_normalized": "R&D Chef",
@@ -1807,29 +1802,6 @@
       "employment_type": null,
       "location_normalized": "Pasir Gudang",
       "skills": []
-    },
-    {
-      "title": "Food Processing Operator (Bakery / Pastry)",
-      "company": "ENHANCE FAMOUS SDN BHD",
-      "location": "Taman Desa Cemerlang",
-      "salary": {
-        "min": null,
-        "max": null,
-        "period": "monthly",
-        "text": null
-      },
-      "description": null,
-      "date": "30d+ ago",
-      "source": "JobStreet",
-      "id": "e8ed9e2ba6e185c7",
-      "title_normalized": "Food Processing Operator (Bakery / Pastry)",
-      "category": "other",
-      "employment_type": null,
-      "location_normalized": "Taman Desa Cemerlang",
-      "skills": [
-        "Baking",
-        "Pastry"
-      ]
     },
     {
       "title": "Cashier",
@@ -1843,7 +1815,7 @@
         "text_formatted": "RM1,800/month"
       },
       "description": null,
-      "date": "6d ago",
+      "date": "7d ago",
       "source": "JobStreet",
       "id": "1a6117c3dfb655ca",
       "title_normalized": "Cashier",
@@ -1851,6 +1823,29 @@
       "employment_type": null,
       "location_normalized": "Johor Bahru",
       "skills": []
+    },
+    {
+      "title": "Application Testing Technician (AT Technician) - Pastry Chef",
+      "company": "UNIGRA FOOD PROCESSING ASIA PACIFIC SDN BHD",
+      "location": "Pasir Gudang",
+      "salary": {
+        "min": null,
+        "max": null,
+        "period": "monthly",
+        "text": null
+      },
+      "description": null,
+      "date": "13d ago",
+      "source": "JobStreet",
+      "id": "5dfe989755396d0d",
+      "title_normalized": "Application Testing Technician (AT Technician) - Pastry Chef",
+      "category": "chef",
+      "employment_type": null,
+      "location_normalized": "Pasir Gudang",
+      "skills": [
+        "Baking",
+        "Pastry"
+      ]
     },
     {
       "title": "Bread Baker",
@@ -1864,7 +1859,7 @@
         "text_formatted": "RM2,600/month"
       },
       "description": null,
-      "date": "6d ago",
+      "date": "7d ago",
       "source": "JobStreet",
       "id": "971dd6759df91eb2",
       "title_normalized": "Bread Baker",
@@ -1888,7 +1883,7 @@
         "text_formatted": "RM1,800/month"
       },
       "description": null,
-      "date": "6d ago",
+      "date": "7d ago",
       "source": "JobStreet",
       "id": "72f1acdb05500ae8",
       "title_normalized": "Bread Apprentice",
@@ -1908,7 +1903,7 @@
         "text": null
       },
       "description": null,
-      "date": "13d ago",
+      "date": "14d ago",
       "source": "JobStreet",
       "id": "a84f8defb9560071",
       "title_normalized": "QC Technician (Baking)",
@@ -1932,7 +1927,7 @@
         "text_formatted": "RM2,600/month"
       },
       "description": null,
-      "date": "6d ago",
+      "date": "7d ago",
       "source": "JobStreet",
       "id": "3596d3528a0c426d",
       "title_normalized": "Bread Baker",
@@ -1955,7 +1950,7 @@
         "text": null
       },
       "description": null,
-      "date": "8d ago",
+      "date": "9d ago",
       "source": "JobStreet",
       "id": "64b73ef9776d8df2",
       "title_normalized": "Junior Baker",
@@ -1979,7 +1974,7 @@
         "text_formatted": "RM2,500/month"
       },
       "description": null,
-      "date": "5d ago",
+      "date": "6d ago",
       "source": "JobStreet",
       "id": "b791d19005816c07",
       "title_normalized": "Kitchen Crew",
@@ -2000,75 +1995,13 @@
         "text_formatted": "RM2,500/month"
       },
       "description": null,
-      "date": "5d ago",
+      "date": "6d ago",
       "source": "JobStreet",
       "id": "3f64350fdf7a07ec",
       "title_normalized": "Kitchen Assistant (Johor Bahru outlet)",
       "category": "kitchen-crew",
       "employment_type": null,
       "location_normalized": "Johor Bahru",
-      "skills": []
-    },
-    {
-      "title": "Kitchen Crew (Aeon Bukit Indah , Paradigm Mall JB , Mid Valley Southkey)",
-      "company": "Vivo Food Sdn Bhd",
-      "location": "Johor Bahru",
-      "salary": {
-        "min": 2100,
-        "max": 2100,
-        "period": "monthly",
-        "text": "RM 2,100 – RM 2,500 per month",
-        "text_formatted": "RM2,100/month"
-      },
-      "description": null,
-      "date": "19d ago",
-      "source": "JobStreet",
-      "id": "443283e727309e8b",
-      "title_normalized": "Kitchen Crew (Aeon Bukit Indah , Paradigm Mall JB , Mid Valley Southkey)",
-      "category": "cook",
-      "employment_type": null,
-      "location_normalized": "Johor Bahru",
-      "skills": []
-    },
-    {
-      "title": "Restaurant Crew - Johor",
-      "company": "Marrybrown Sdn Bhd",
-      "location": "Johor Bahru",
-      "salary": {
-        "min": null,
-        "max": null,
-        "period": "monthly",
-        "text": null
-      },
-      "description": null,
-      "date": "15d ago",
-      "source": "JobStreet",
-      "id": "54c53daf993f3e6d",
-      "title_normalized": "Restaurant Crew - Johor",
-      "category": "other",
-      "employment_type": null,
-      "location_normalized": "Johor Bahru",
-      "skills": []
-    },
-    {
-      "title": "Kitchen Helper",
-      "company": "Nina Zara Traditional Kueh Sdn Bhd",
-      "location": "Permas Jaya",
-      "salary": {
-        "min": 1700,
-        "max": 1700,
-        "period": "monthly",
-        "text": "RM 1,700 per month",
-        "text_formatted": "RM1,700/month"
-      },
-      "description": null,
-      "date": "17d ago",
-      "source": "JobStreet",
-      "id": "f9257aa6f944f871",
-      "title_normalized": "Kitchen Helper",
-      "category": "kitchen-crew",
-      "employment_type": null,
-      "location_normalized": "Permas Jaya",
       "skills": []
     },
     {
@@ -2092,6 +2025,68 @@
       "skills": []
     },
     {
+      "title": "Restaurant Crew - Johor",
+      "company": "Marrybrown Sdn Bhd",
+      "location": "Johor Bahru",
+      "salary": {
+        "min": null,
+        "max": null,
+        "period": "monthly",
+        "text": null
+      },
+      "description": null,
+      "date": "17d ago",
+      "source": "JobStreet",
+      "id": "54c53daf993f3e6d",
+      "title_normalized": "Restaurant Crew - Johor",
+      "category": "other",
+      "employment_type": null,
+      "location_normalized": "Johor Bahru",
+      "skills": []
+    },
+    {
+      "title": "Kitchen Crew (Aeon Bukit Indah , Paradigm Mall JB , Mid Valley Southkey)",
+      "company": "Vivo Food Sdn Bhd",
+      "location": "Johor Bahru",
+      "salary": {
+        "min": 2100,
+        "max": 2100,
+        "period": "monthly",
+        "text": "RM 2,100 – RM 2,500 per month",
+        "text_formatted": "RM2,100/month"
+      },
+      "description": null,
+      "date": "20d ago",
+      "source": "JobStreet",
+      "id": "443283e727309e8b",
+      "title_normalized": "Kitchen Crew (Aeon Bukit Indah , Paradigm Mall JB , Mid Valley Southkey)",
+      "category": "cook",
+      "employment_type": null,
+      "location_normalized": "Johor Bahru",
+      "skills": []
+    },
+    {
+      "title": "Kitchen Helper",
+      "company": "Nina Zara Traditional Kueh Sdn Bhd",
+      "location": "Permas Jaya",
+      "salary": {
+        "min": 1700,
+        "max": 1700,
+        "period": "monthly",
+        "text": "RM 1,700 per month",
+        "text_formatted": "RM1,700/month"
+      },
+      "description": null,
+      "date": "18d ago",
+      "source": "JobStreet",
+      "id": "f9257aa6f944f871",
+      "title_normalized": "Kitchen Helper",
+      "category": "kitchen-crew",
+      "employment_type": null,
+      "location_normalized": "Permas Jaya",
+      "skills": []
+    },
+    {
       "title": "KITCHEN CREW (DESA TEBRAU)",
       "company": "RMB NOODLE HOUSE",
       "location": "Taman Desa Tebrau",
@@ -2103,7 +2098,7 @@
         "text_formatted": "RM3,000/month"
       },
       "description": null,
-      "date": "20d ago",
+      "date": "22d ago",
       "source": "JobStreet",
       "id": "9d2ed57411bf19a7",
       "title_normalized": "Kitchen Crew (Desa Tebrau)",

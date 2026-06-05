@@ -16,7 +16,7 @@ $PYTHON scripts/aggregate.py
 
 # Step 1.5: Scrape JobStreet via Windows Chrome + merge (dedup by title+company)
 echo "[auto-publish] Scraping JobStreet via Windows Chrome..."
-if cmd.exe /c "cd /d C:\Users\User\Desktop\fb-cookie-extract && node scrape_extra_jobs.js" 2>/dev/null; then
+if cmd.exe /c "C: && cd C:\Users\User\Desktop\fb-cookie-extract && node scrape_extra_jobs.js" 2>/dev/null; then
   echo "[auto-publish] Merging JobStreet extras (dedup)..."
   $PYTHON scripts/merge_extra_jobs.py
 else
