@@ -26,9 +26,11 @@ git add -A && git commit -m "📦 构建更新" && git push
 
 系统使用 Hermes cron job：
 
-- **`jbkitchen — auto publish` (ID: `5c97932548d0`)：** 每天 8:00 / 12:00 / 16:00 / 20:00
+- **`jbkitchen — full pipeline` (ID: `5c97932548d0`)：** 每天 6:00
   - 脚本：`scripts/auto-publish.sh`
   - 流程：`aggregate.py`（刷新新闻/汇率/鸡价/招聘数据）→ `hugo --minify`（构建）→ `git push`（部署）
+- **`jbkitchen — 管道监控` (ID: `7c38188c86cb`)：** 每天 6:30
+  - 自动检查 6:00 管道状态，报错则修+重跑+通知
 
 
 ### 手动部署（故障时）

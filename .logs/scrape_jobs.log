@@ -140,3 +140,71 @@ Call log:
 
 [2026-06-06T16:14:49.701516] MyFutureJobs: 0 条
 [2026-06-06T16:14:49.701649] 共 36 条 (去重后)
+[2026-06-06T22:02:13.911896] Jora: 60 条
+[2026-06-06T22:02:20.639494] Hiredly: 22 条
+[2026-06-06T22:02:51.674536] Playwright 抓取失败 [https://www.maukerja.my/jobsearch/chef-jobs-in-johor-bahru]: Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://www.maukerja.my/jobsearch/chef-jobs-in-johor-bahru", waiting until "networkidle"
+
+[2026-06-06T22:02:51.747822] Maukerja: 0 条
+[2026-06-06T22:03:22.238584] Playwright 抓取失败 [https://candidates.myfuturejobs.gov.my/search-jobs?what=chef&where=Johor%20Bahru]: Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://candidates.myfuturejobs.gov.my/search-jobs?what=chef&where=Johor%20Bahru", waiting until "networkidle"
+
+[2026-06-06T22:03:22.289265] MyFutureJobs: 0 条
+[2026-06-06T22:03:22.289393] 共 28 条 (去重后)
+[2026-06-06T22:07:10.843639] Jora: 60 条
+[2026-06-06T22:07:14.078490] Hiredly: 22 条
+[2026-06-06T22:08:05.823532] Jora: 60 条
+[2026-06-06T22:08:10.057604] Hiredly: 22 条
+[2026-06-06T22:08:26.908632] Maukerja: 8 条
+[2026-06-06T22:08:57.412191] Playwright 抓取失败 [https://candidates.myfuturejobs.gov.my/search-jobs?what=chef&where=Johor%20Bahru]: Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://candidates.myfuturejobs.gov.my/search-jobs?what=chef&where=Johor%20Bahru", waiting until "networkidle"
+
+[2026-06-06T22:08:57.463936] MyFutureJobs: 0 条
+[2026-06-06T22:08:57.464109] 共 36 条 (去重后)
+[2026-06-06T22:09:43.031554] Jora: 60 条
+[2026-06-06T22:09:46.745843] Hiredly: 22 条
+[2026-06-06T22:10:08.565593] Maukerja: 8 条
+[2026-06-06T22:10:39.106907] Playwright 抓取失败 [https://candidates.myfuturejobs.gov.my/search-jobs?what=chef&where=Johor%20Bahru]: Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://candidates.myfuturejobs.gov.my/search-jobs?what=chef&where=Johor%20Bahru", waiting until "networkidle"
+
+[2026-06-06T22:10:39.153036] MyFutureJobs: 0 条
+[2026-06-06T22:10:39.153255] 共 36 条 (去重后)
+[2026-06-06T22:12:13.881504] Jora: 60 条
+[2026-06-06T22:12:17.338214] Hiredly: 22 条
+[2026-06-06T22:12:32.928191] Playwright 抓取失败 [https://www.maukerja.my/jobsearch/chef-jobs-in-johor-bahru]: Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.maukerja.my/jobsearch/chef-jobs-in-johor-bahru", waiting until "load"
+
+[2026-06-06T22:12:32.987984] Maukerja: 0 条
+[2026-06-06T22:12:48.458007] Playwright 抓取失败 [https://candidates.myfuturejobs.gov.my/search-jobs?what=chef&where=Johor%20Bahru]: Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://candidates.myfuturejobs.gov.my/search-jobs?what=chef&where=Johor%20Bahru", waiting until "load"
+
+[2026-06-06T22:12:48.499798] MyFutureJobs: 0 条
+[2026-06-06T22:12:48.499926] 共 28 条 (去重后)
+[2026-06-07T06:08:26.761391] Jora: 60 条
+[2026-06-07T06:08:30.281544] Hiredly: 22 条
+[2026-06-07T06:08:46.211499] Playwright 抓取失败 [https://www.maukerja.my/jobsearch/chef-jobs-in-johor-bahru]: Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.maukerja.my/jobsearch/chef-jobs-in-johor-bahru", waiting until "load"
+
+[2026-06-07T06:08:46.353379] Maukerja: 0 条
+[2026-06-07T06:09:01.903495] Playwright 抓取失败 [https://candidates.myfuturejobs.gov.my/search-jobs?what=chef&where=Johor%20Bahru]: Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://candidates.myfuturejobs.gov.my/search-jobs?what=chef&where=Johor%20Bahru", waiting until "load"
+
+[2026-06-07T06:09:01.977570] MyFutureJobs: 0 条
+[2026-06-07T06:09:01.977813] 共 28 条 (去重后)
+[2026-06-07T06:38:07.447739] Jora: 60 条
+[2026-06-07T06:38:11.536766] Hiredly: 22 条
+[2026-06-07T06:38:24.254384] Maukerja: 8 条
+[2026-06-07T06:38:39.758145] Playwright 抓取失败 [https://candidates.myfuturejobs.gov.my/search-jobs?what=chef&where=Johor%20Bahru]: Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://candidates.myfuturejobs.gov.my/search-jobs?what=chef&where=Johor%20Bahru", waiting until "load"
+
+[2026-06-07T06:38:39.806414] MyFutureJobs: 0 条
+[2026-06-07T06:38:39.806548] 共 36 条 (去重后)

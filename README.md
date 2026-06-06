@@ -27,7 +27,7 @@
 | 数据源（行业） | DOSM CPI, exchangerate-api.com, Google News RSS, WhatsApp Channel 鸡价 |
 | 数据源（招聘） | Jora, Hiredly, Maukerja, MyFutureJobs, JobStreet |
 | 部署 | GitHub Pages（`/docs` 目录，main 分支） |
-| 自动化 | Cron 每天 2次（8:00+16:00） |
+|| 自动化 | Cron 每天 1次（6:00），6:30 自动监控重跑 |
 | 计数 | CountAPI |
 | 表单 | Google Forms ×3（Post Resume / Contribute / Inquiry） |
 | 域名 | 当前 `reinocheong.github.io/jbkitchen`，SEO 有流量后再买 |
@@ -132,7 +132,7 @@ jbkitchen/
 └──────────────────────────────────────────────┘
 ```
 
-**数据更新来源（每次 cron 跑 = 8:00 + 16:00 MYT，每天2次）：**
+**数据更新来源（每次 cron 跑 = 6:00 MYT，每天1次 + 6:30 自动监控重跑）：**
 | 数据 | 来源 | 更新机制 | 实时性 | 依赖状态 |
 |:---|:---|:---|:---|:---|
 | 💱 汇率 | exchangerate-api.com API | 每次 cron 拉最新 | 实时 | ✅ 自动 |

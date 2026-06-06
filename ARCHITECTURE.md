@@ -9,8 +9,8 @@
 
 ```mermaid
 graph TD
-    subgraph "① 定时刷新 (每天4次 8/12/16/20)"
-        CRON[cron: 0 8,10,12,14,16,18,20 * * *] -->|auto-publish.sh| AG[aggregate.py]
+    subgraph "① 定时刷新 (每天6:00，6:30自动监控)"
+        CRON[cron: 0 6 * * *] -->|auto-publish.sh| AG[aggregate.py]
         AG --> NF[news_fetcher.py<br/>Google News RSS ×22关键词]
         AG --> PT[price_tracker.py<br/>DOSM CPI + exchangerate-api]
         AG --> CP[chan_prices.py<br/>解析鸡价 /0.9 计算]
@@ -46,9 +46,9 @@ graph TD
 
 | 时间 | 动作 | 触发 | 数据源 | 影响 |
 |:---|:---|:---|:---|:---|
-|| 8:00 / 16:00 | `auto-publish.sh` 执行 | cron `5c97932548d0` | 新闻RSS · DOSM CPI · 汇率API · 鸡价原始消息 · 5大招聘网站（Jora/Hiredly/Maukerja/MyFutureJobs + JobStreet 如 Chrome 在线） | 网站自动更新 |
+||| 6:00 | `auto-publish.sh` 执行 | cron `5c97932548d0` | 新闻RSS · DOSM CPI · 汇率API · 鸡价原始消息 · 5大招聘网站（Jora/Hiredly/Maukerja/MyFutureJobs + JobStreet 如 Chrome 在线） | 网站自动更新 |
 
-| 随时(通常周六下午) | 供营商在频道发新价目表 | `messages.upsert` 事件 | WhatsApp Channel | 覆盖 `chan_raw.json`，下次 cron (8/12/16/20点) 自动解析上线 |
+| 随时(通常周六下午) | 供营商在频道发新价目表 | `messages.upsert` 事件 | WhatsApp Channel | 覆盖 `chan_raw.json`，下次 cron (8点) 自动解析上线 |
 | 每日(不固定) | DOSM 发布新月度 CPI | `price_tracker.py` 下次运行时 | DOSM API (cpi_headline) | 通胀数据月度更新 |
 
 ### 故障排查（人工）
@@ -106,14 +106,14 @@ curl "http://127.0.0.1:3456/fetch_channel?invite=0029Vb6p7Qq5Ejy68g8VCj1U"
 
 | 文件 | 用途 | 更新方式 | 更新频率 |
 |:---|:---|:---|:---|
-| `site/data/prices.json` | 汇率 + CPI | `price_tracker.py` → `auto-publish.sh` | 每天4次 (cron 8/12/16/20) |
-| `site/data/news.json` | 新闻列表 (30条) | `news_fetcher.py` → `auto-publish.sh` | 每天4次 (cron 8/12/16/20) |
+|| `site/data/prices.json` | 汇率 + CPI | `price_tracker.py` → `auto-publish.sh` | 每天1次 (cron 6) |
+|| `site/data/news.json` | 新闻列表 (30条) | `news_fetcher.py` → `auto-publish.sh` | 每天1次 (cron 6) |
 | `site/data/chan_raw.json` | 鸡价原始消息 (daemon写入) | `wa_daemon3.js` `messages.upsert` | 供营商发新消息时 |
-| `site/data/chan_prices.json` | 鸡价解析结果 (46项) | `chan_prices.py` → `auto-publish.sh` | 每天4次，只要有新原始数据 |
-| `site/data/jobs.json` | JB餐饮招聘 (web聚合) | `scrape_jobs.py` → `auto-publish.sh` | 每天4次 (cron 8/12/16/20) |
+|| `site/data/chan_prices.json` | 鸡价解析结果 (46项) | `chan_prices.py` → `auto-publish.sh` | 每天1次，只要有新原始数据 |
+|| `site/data/jobs.json` | JB餐饮招聘 (web聚合) | `scrape_jobs.py` → `auto-publish.sh` | 每天1次 (cron 6) |
 
 | `site/data/chefs.json` | 厨师样本数据 | 手动维护 | 按需 |
-| `docs/` | 静态站输出 | `hugo --minify` → `auto-publish.sh` | 每天4次 + 手动 |
+|| `docs/` | 静态站输出 | `hugo --minify` → `auto-publish.sh` | 每天1次 + 手动 |
 
 ---
 
