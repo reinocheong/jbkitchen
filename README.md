@@ -135,9 +135,9 @@ jbkitchen/
 **数据更新来源（每次 cron 跑 = 8:00 + 16:00 MYT，每天2次）：**
 | 数据 | 来源 | 更新机制 | 实时性 | 依赖状态 |
 |:---|:---|:---|:---|:---|
-| 💱 汇率 | exchangerate-api.com API | 每次 cron 拉最新 | 实时（API 返回当日汇率） | ✅ 在线 |
-| 📊 CPI 通胀 | DOSM Open Data API | 每次 cron 拉最新 | 月发布·滞后约1月（当前最新：2026-04） | ✅ 在线 |
-| 🐓 鸡价 | WhatsApp Channel 供营商发布 | wa_daemon3.js 实时监听 → cron 每次解析上线 | 供商发布后下次 cron 更新 | ⚠️ 需 daemon 运行 |
-| 📰 新闻 | Google News RSS ×22关键词 | 每次 cron 拉最新30条 | 实时 | ✅ 在线 |
-| 💼 招聘（Jora/Hiredly/Maukerja/MyFutureJobs） | 各自网站爬虫 | 每次 cron 爬最新 | 实时 | ✅ 在线 |
+| 💱 汇率 | exchangerate-api.com API | 每次 cron 拉最新 | 实时 | ✅ 自动 |
+| 📊 CPI 通胀 | DOSM Open Data API | 每次 cron 拉最新 | 月发布·滞后约1月 | ✅ 自动 |
+| 🐓 鸡价 | 用户手动发送 | 用户发单价→我手动更新 | 用户发价后更新 | ✋ 手动 |
+| 📰 新闻 | Google News RSS ×22关键词 | 每次 cron 拉最新30条 | 实时 | ✅ 自动 |
+| 💼 招聘（Jora/Hiredly/Maukerja/MyFutureJobs） | 各自网站爬虫 | 每次 cron 爬最新 | 实时 | ✅ 自动 |
 | 💼 招聘（JobStreet） | Windows Chrome CDP | Chrome 在线时 auto-publish 自动爬+去重合并 | 实时 | ⚠️ 需 Chrome 9222 |
