@@ -1,7 +1,7 @@
 {
-  "date": "2026-06-08",
-  "updated": "2026-06-08 (manual update)",
-  "source": "Puchong Food Import & Export Sdn Bhd",
+  "date": "2026-06-01",
+  "updated": "2026-06-06 16:13",
+  "source": "Frozen Chicken Wholesale Price",
   "note": "Price = source / 0.9, rounded to nearest RM0.10",
   "items": [
     {
@@ -45,9 +45,9 @@
       "code": "SBB",
       "name": "Skinless Boneless Breast Salt (skinless Boneless Breast)(with Salt)(12k Box),(15k Box)",
       "name_raw": "SBB salt (skinless Boneless breast)(With salt)(12k/box),(15k/box)",
-      "price_src": 9.9,
-      "price_calc": 11.0,
-      "price": 11.0
+      "price_src": 10.0,
+      "price_calc": 11.1111,
+      "price": 11.1
     },
     {
       "item": "4",
@@ -198,17 +198,17 @@
       "code": "WHOLE",
       "name": "Whole Chicken (free Size)",
       "name_raw": "whole chicken (free size)",
-      "price_src": 8.1,
-      "price_calc": 9.0,
-      "price": 9.0
+      "price_src": 7.9,
+      "price_calc": 8.7778,
+      "price": 8.8
     },
     {
       "item": "21a",
       "code": "WING",
       "name": "Wing Import Size (m L)",
       "name_raw": "wing import size(m/L)",
-      "price_src": 11.8,
-      "price_calc": 13.1111,
+      "price_src": 11.7,
+      "price_calc": 13.0,
       "price": 13.0
     },
     {
@@ -243,18 +243,18 @@
       "code": "WL",
       "name": "Whole Leg JC(Whole Leg Size (m.L) (big Food Lpf Betagro Tyson Panus Thai Poultry) im",
       "name_raw": "WL JC(Whole leg size (m.L) (big food/Lpf/betagro/tyson/ panus/thai poultry)*IM*",
-      "price_src": 11.1,
-      "price_calc": 12.3333,
-      "price": 12.5
+      "price_src": 10.9,
+      "price_calc": 12.1111,
+      "price": 12.1
     },
     {
       "item": "23a",
       "code": "WL",
       "name": "Whole Leg JC (Whole Leg Size) (s) Tyson",
       "name_raw": "wL jc (Whole leg size) (s) tyson",
-      "price_src": 11.1,
-      "price_calc": 12.3333,
-      "price": 12.5
+      "price_src": 10.9,
+      "price_calc": 12.1111,
+      "price": 12.1
     },
     {
       "item": "23b",
@@ -270,9 +270,9 @@
       "code": "FILLET",
       "name": "Fillet Local Import",
       "name_raw": "Fillet Lo/im",
-      "price_src": 10.1,
-      "price_calc": 11.2222,
-      "price": 11.0
+      "price_src": 10.2,
+      "price_calc": 11.3333,
+      "price": 11.3
     },
     {
       "item": "31a",
@@ -324,9 +324,9 @@
       "code": "THIGH",
       "name": "Thigh Import",
       "name_raw": "thigh import",
-      "price_src": 11.1,
-      "price_calc": 12.3333,
-      "price": 12.5
+      "price_src": 11.4,
+      "price_calc": 12.6667,
+      "price": 12.7
     },
     {
       "item": "38",
@@ -369,9 +369,9 @@
       "code": "PEDAL",
       "name": "Pedal Local",
       "name_raw": "Pedal (lo)",
-      "price_src": 6.2,
-      "price_calc": 6.8889,
-      "price": 7.0
+      "price_src": 6.1,
+      "price_calc": 6.7778,
+      "price": 6.8
     },
     {
       "item": "44a",
@@ -396,9 +396,9 @@
       "code": "RANGKA",
       "name": "Rangka (carcass)",
       "name_raw": "Rangka (carcass)",
-      "price_src": 1.6,
-      "price_calc": 1.7778,
-      "price": 2.0
+      "price_src": 1.3,
+      "price_calc": 1.4444,
+      "price": 1.4
     },
     {
       "item": "47",
@@ -417,15 +417,6 @@
       "price_src": 5.2,
       "price_calc": 5.7778,
       "price": 5.8
-    },
-    {
-      "item": "48",
-      "code": "FAT",
-      "name": "Fat Import",
-      "name_raw": "fat(im)",
-      "price_src": 5.2,
-      "price_calc": 5.7778,
-      "price": 6.0
     }
   ]
 }
