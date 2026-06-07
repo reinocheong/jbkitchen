@@ -208,3 +208,29 @@ Call log:
 
 [2026-06-07T06:38:39.806414] MyFutureJobs: 0 条
 [2026-06-07T06:38:39.806548] 共 36 条 (去重后)
+[2026-06-08T06:20:55.585007] Jora: 60 条
+[2026-06-08T06:21:01.238644] Hiredly: 22 条
+[2026-06-08T06:21:17.171781] Playwright 抓取失败 [https://www.maukerja.my/jobsearch/chef-jobs-in-johor-bahru]: Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.maukerja.my/jobsearch/chef-jobs-in-johor-bahru", waiting until "load"
+
+[2026-06-08T06:21:17.275331] Maukerja: 0 条
+[2026-06-08T06:21:32.895866] Playwright 抓取失败 [https://candidates.myfuturejobs.gov.my/search-jobs?what=chef&where=Johor%20Bahru]: Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://candidates.myfuturejobs.gov.my/search-jobs?what=chef&where=Johor%20Bahru", waiting until "load"
+
+[2026-06-08T06:21:32.956030] MyFutureJobs: 0 条
+[2026-06-08T06:21:32.956384] 共 28 条 (去重后)
+[2026-06-08T06:40:18.129643] Jora: 60 条
+[2026-06-08T06:40:22.063699] Hiredly: 22 条
+[2026-06-08T06:40:37.598772] Playwright 抓取失败 [https://www.maukerja.my/jobsearch/chef-jobs-in-johor-bahru]: Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.maukerja.my/jobsearch/chef-jobs-in-johor-bahru", waiting until "load"
+
+[2026-06-08T06:40:37.659340] Maukerja: 0 条
+[2026-06-08T06:40:53.153469] Playwright 抓取失败 [https://candidates.myfuturejobs.gov.my/search-jobs?what=chef&where=Johor%20Bahru]: Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://candidates.myfuturejobs.gov.my/search-jobs?what=chef&where=Johor%20Bahru", waiting until "load"
+
+[2026-06-08T06:40:53.201965] MyFutureJobs: 0 条
+[2026-06-08T06:40:53.202091] 共 28 条 (去重后)

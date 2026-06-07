@@ -1,10 +1,9 @@
 {
-  "updated": "2026-06-07T06:38:39",
-  "count": 36,
+  "updated": "2026-06-08T06:40:53",
+  "count": 28,
   "by_source": {
     "Jora": 13,
-    "Hiredly": 15,
-    "Maukerja": 8
+    "Hiredly": 15
   },
   "items": [
     {
@@ -18,7 +17,7 @@
         "text": null
       },
       "date": "2026-06-05",
-      "url": "https://my.jora.com/job/Executive-Chef-10a304176d3706dd9c0ccdd18299708d?abstract_type=original&disallow=true&fsv=true&sl=Johor+Bahru+Johor&sol_key=f0d27c5bdb856900ea8280a315e31b48&sp=sserp_top&sponsored=true&sq=Chef&sr=1&tk=AjjF2igEM9SGcefH7lqk-PWabrqxVsV2KgN2E_t_e&trigger_source=serp",
+      "url": "https://my.jora.com/job/Executive-Chef-10a304176d3706dd9c0ccdd18299708d?abstract_type=original&disallow=true&fsv=true&sl=Johor+Bahru+Johor&sol_key=b56c3e9e2cd0ff48af76a108c2f1a51a&sp=sserp_top&sponsored=true&sq=Chef&sr=1&tk=cxG4hxiFEAWMNJYGW0Qu-r8shepL8AyDAyQfjcpK1&trigger_source=serp",
       "source": "Jora",
       "id": "24a240148856e554",
       "title_normalized": "Executive Chef (Western Cuisine)",
@@ -41,7 +40,7 @@
         "text": null
       },
       "date": "2026-06-05",
-      "url": "https://my.jora.com/job/Chef-de-Partie-a52138d8d139b5182656d1cc722dd1ab?abstract_type=original&disallow=true&fsv=true&sl=Johor+Bahru+Johor&sol_key=f857ca9bb0c0a732c75c6f87948bffd4&sp=serp&sponsored=false&sq=Chef&sr=3&tk=AjjF2igEM9SGcefH7lqk-PWabrqxVsV2KgN2E_t_e&trigger_source=serp",
+      "url": "https://my.jora.com/job/Chef-de-Partie-a52138d8d139b5182656d1cc722dd1ab?abstract_type=original&disallow=true&fsv=true&sl=Johor+Bahru+Johor&sol_key=e2cb68e523ce6e84aea3642bfa7da3bd&sp=serp&sponsored=false&sq=Chef&sr=3&tk=cxG4hxiFEAWMNJYGW0Qu-r8shepL8AyDAyQfjcpK1&trigger_source=serp",
       "source": "Jora",
       "id": "aab9ea6693fd0544",
       "title_normalized": "Chef de Partie - Baker",
@@ -77,50 +76,6 @@
       "description": null
     },
     {
-      "title": "Ketua Tukang Masak",
-      "company": "Billion Onsen Spa Sdn Bhd",
-      "location": "Johor Bahru",
-      "salary": {
-        "min": 3000,
-        "max": 3000,
-        "period": "monthly",
-        "text": "3,000 - RM 5,000",
-        "text_formatted": "RM3,000/month"
-      },
-      "date": "2026-06-05",
-      "url": "https://www.maukerja.my/job/26352144-ketua-tukang-masak",
-      "source": "Maukerja",
-      "id": "97c0b63904407ff8",
-      "title_normalized": "Ketua Tukang Masak",
-      "category": "cook",
-      "employment_type": null,
-      "location_normalized": "Johor Bahru",
-      "skills": [],
-      "description": null
-    },
-    {
-      "title": "Pembantu Dapur",
-      "company": "Good Culture Sdn Bhd",
-      "location": "Johor Bahru",
-      "salary": {
-        "min": 1800,
-        "max": 1800,
-        "period": "monthly",
-        "text": "1,800 - RM 2,000",
-        "text_formatted": "RM1,800/month"
-      },
-      "date": "2026-06-05",
-      "url": "https://www.maukerja.my/job/26444255-pembantu-dapur",
-      "source": "Maukerja",
-      "id": "b76529eb51a331b7",
-      "title_normalized": "Pembantu Dapur",
-      "category": "cook",
-      "employment_type": null,
-      "location_normalized": "Johor Bahru",
-      "skills": [],
-      "description": null
-    },
-    {
       "title": "Chef",
       "company": "Assalam Group Sdn Bhd",
       "location": "Nusajaya, Johor",
@@ -132,7 +87,7 @@
         "text_formatted": "RM3,000/month"
       },
       "date": "2026-06-04",
-      "url": "https://my.jora.com/job/Chef-db966f983a4a23100ecd0aff28d70b5c?abstract_type=original&disallow=true&fsv=true&sl=Johor+Bahru+Johor&sol_key=ea7d6ed13d931564cd1220834b0c4769&sp=serp&sponsored=false&sq=Chef&sr=5&tk=AjjF2igEM9SGcefH7lqk-PWabrqxVsV2KgN2E_t_e&trigger_source=serp",
+      "url": "https://my.jora.com/job/Chef-db966f983a4a23100ecd0aff28d70b5c?abstract_type=original&disallow=true&fsv=true&sl=Johor+Bahru+Johor&sol_key=f42deb8f7a89ffc08084ba838e78571d&sp=serp&sponsored=false&sq=Chef&sr=5&tk=cxG4hxiFEAWMNJYGW0Qu-r8shepL8AyDAyQfjcpK1&trigger_source=serp",
       "source": "Jora",
       "id": "bee6ac62b3afc8e7",
       "title_normalized": "Chef",
@@ -165,27 +120,6 @@
     },
     {
       "title": "Chef de Cuisine",
-      "company": "Marriott International",
-      "location": "Johor Bahru, Johor",
-      "salary": {
-        "min": null,
-        "max": null,
-        "period": "monthly",
-        "text": null
-      },
-      "date": "2026-05-30",
-      "url": "https://my.jora.com/job/Chef-de-Cuisine-fb0eced301cd46b778789517320d6f92?abstract_type=original&disallow=true&fsv=true&sl=Johor+Bahru+Johor&sol_key=95dce562eef97f2052735518b8f8620c&sp=serp&sponsored=false&sq=Chef&sr=6&tk=AjjF2igEM9SGcefH7lqk-PWabrqxVsV2KgN2E_t_e&trigger_source=serp",
-      "source": "Jora",
-      "id": "179d82539d09dd70",
-      "title_normalized": "Chef de Cuisine",
-      "category": "chef",
-      "employment_type": null,
-      "location_normalized": "Johor Bahru",
-      "skills": [],
-      "description": null
-    },
-    {
-      "title": "Chef de Cuisine",
       "company": "Sheraton",
       "location": "Johor Bahru, Johor",
       "salary": {
@@ -195,7 +129,7 @@
         "text": null
       },
       "date": "2026-05-30",
-      "url": "https://my.jora.com/job/Chef-de-Cuisine-44347dea7e34d9de537f4dd4a648d555?abstract_type=original&disallow=true&fsv=true&sl=Johor+Bahru+Johor&sol_key=2040fcb080e781246e177ee82b85cb70&sp=serp&sponsored=false&sq=Chef&sr=7&tk=AjjF2igEM9SGcefH7lqk-PWabrqxVsV2KgN2E_t_e&trigger_source=serp",
+      "url": "https://my.jora.com/job/Chef-de-Cuisine-44347dea7e34d9de537f4dd4a648d555?abstract_type=original&disallow=true&fsv=true&sl=Johor+Bahru+Johor&sol_key=b7220d69ef1d1889bb4e362b3674bb5a&sp=serp&sponsored=false&sq=Chef&sr=6&tk=cxG4hxiFEAWMNJYGW0Qu-r8shepL8AyDAyQfjcpK1&trigger_source=serp",
       "source": "Jora",
       "id": "b38b7981a2c03baf",
       "title_normalized": "Chef de Cuisine",
@@ -206,28 +140,46 @@
       "description": null
     },
     {
-      "title": "Executive Pastry Chef",
-      "company": "Grammage Foods Sdn bhd",
+      "title": "Chef de Cuisine",
+      "company": "Marriott International",
       "location": "Johor Bahru, Johor",
+      "salary": {
+        "min": null,
+        "max": null,
+        "period": "monthly",
+        "text": null
+      },
+      "date": "2026-05-30",
+      "url": "https://my.jora.com/job/Chef-de-Cuisine-fb0eced301cd46b778789517320d6f92?abstract_type=original&disallow=true&fsv=true&sl=Johor+Bahru+Johor&sol_key=81b5049e1057d1cad31a4f0a333b2464&sp=serp&sponsored=false&sq=Chef&sr=7&tk=cxG4hxiFEAWMNJYGW0Qu-r8shepL8AyDAyQfjcpK1&trigger_source=serp",
+      "source": "Jora",
+      "id": "179d82539d09dd70",
+      "title_normalized": "Chef de Cuisine",
+      "category": "chef",
+      "employment_type": null,
+      "location_normalized": "Johor Bahru",
+      "skills": [],
+      "description": null
+    },
+    {
+      "title": "R&D CHEF (COOKIES)",
+      "company": "Nasty Cookie Pte Ltd",
+      "location": "Pasir Gudang, Johor",
       "salary": {
         "min": 4500,
         "max": 4500,
         "period": "monthly",
-        "text": "4,500 - RM6,500 per month",
+        "text": "4,500 - RM5,000 per month",
         "text_formatted": "RM4,500/month"
       },
-      "date": "2026-05-27",
-      "url": "https://my.jora.com/job/Executive-Pastry-Chef-f9e4dfff3b8651c39f28a1bee8e0f759?abstract_type=original&disallow=true&fsv=true&sl=Johor+Bahru+Johor&sol_key=9cbb2c6211b32d0f63b14fb7eb4d47fb&sp=sserp_top&sponsored=true&sq=Chef&sr=2&tk=AjjF2igEM9SGcefH7lqk-PWabrqxVsV2KgN2E_t_e&trigger_source=serp",
+      "date": "2026-05-29",
+      "url": "https://my.jora.com/job/R-D-CHEF-8e58793c6816437e0bf337c44803d59a?abstract_type=original&disallow=true&fsv=true&sl=Johor+Bahru+Johor&sol_key=266b6efdc53ef3486af7081185e71f55&sp=sserp_bottom&sponsored=true&sq=Chef&sr=5&tk=cxG4hxiFEAWMNJYGW0Qu-r8shepL8AyDAyQfjcpK1&trigger_source=serp",
       "source": "Jora",
-      "id": "e339f2a8e8e1916a",
-      "title_normalized": "Executive Pastry Chef",
+      "id": "5854be3cfd1806aa",
+      "title_normalized": "R&D Chef (Cookies)",
       "category": "chef",
       "employment_type": null,
-      "location_normalized": "Johor Bahru",
-      "skills": [
-        "Baking",
-        "Pastry"
-      ],
+      "location_normalized": "Pasir Gudang",
+      "skills": [],
       "description": null
     },
     {
@@ -241,7 +193,7 @@
         "text": null
       },
       "date": "2026-05-27",
-      "url": "https://my.jora.com/job/Demi-Chef-d9ab9052410db95fe222c040b79089bd?abstract_type=original&disallow=true&fsv=true&sl=Johor+Bahru+Johor&sol_key=4a422cd04ae559cb592750f16661ed17&sp=serp&sponsored=false&sq=Chef&sr=8&tk=AjjF2igEM9SGcefH7lqk-PWabrqxVsV2KgN2E_t_e&trigger_source=serp",
+      "url": "https://my.jora.com/job/Demi-Chef-d9ab9052410db95fe222c040b79089bd?abstract_type=original&disallow=true&fsv=true&sl=Johor+Bahru+Johor&sol_key=607d16c9ef325e924096d9d57b5ef29d&sp=serp&sponsored=false&sq=Chef&sr=8&tk=cxG4hxiFEAWMNJYGW0Qu-r8shepL8AyDAyQfjcpK1&trigger_source=serp",
       "source": "Jora",
       "id": "d469cd51f1c45766",
       "title_normalized": "Demi Chef (Cold Kitchen) - Renaissance Johor Bahru",
@@ -263,7 +215,7 @@
         "text_formatted": "RM3,500/month"
       },
       "date": "2026-05-27",
-      "url": "https://my.jora.com/job/Chef-de-Partie-a12219f1f8b903e54e504dd1877ba560?abstract_type=original&disallow=true&fsv=true&sl=Johor+Bahru+Johor&sol_key=746851f3e3dc1dca2c91d374f7f62444&sp=sserp_bottom&sponsored=true&sq=Chef&sr=3&tk=AjjF2igEM9SGcefH7lqk-PWabrqxVsV2KgN2E_t_e&trigger_source=serp",
+      "url": "https://my.jora.com/job/Chef-de-Partie-a12219f1f8b903e54e504dd1877ba560?abstract_type=original&disallow=true&fsv=true&sl=Johor+Bahru+Johor&sol_key=d2314772486b48afed3e902ace77023b&sp=sserp_bottom&sponsored=true&sq=Chef&sr=3&tk=cxG4hxiFEAWMNJYGW0Qu-r8shepL8AyDAyQfjcpK1&trigger_source=serp",
       "source": "Jora",
       "id": "455bba3fcb7b4408",
       "title_normalized": "Chef de Partie (Asian/Western) - Immediate Hiring",
@@ -285,7 +237,7 @@
         "text_formatted": "RM2,300/month"
       },
       "date": "2026-05-26",
-      "url": "https://my.jora.com/job/Demi-Chef-8d5cb27545eea564cb3ac4584dca3586?abstract_type=original&disallow=true&fsv=true&sl=Johor+Bahru+Johor&sol_key=ef049ebcfaffd7c597fbcdea808fee0b&sp=sserp_bottom&sponsored=true&sq=Chef&sr=4&tk=AjjF2igEM9SGcefH7lqk-PWabrqxVsV2KgN2E_t_e&trigger_source=serp",
+      "url": "https://my.jora.com/job/Demi-Chef-8d5cb27545eea564cb3ac4584dca3586?abstract_type=original&disallow=true&fsv=true&sl=Johor+Bahru+Johor&sol_key=c84a0b18838dd8f1557c33fcf98e3cbd&sp=sserp_bottom&sponsored=true&sq=Chef&sr=4&tk=cxG4hxiFEAWMNJYGW0Qu-r8shepL8AyDAyQfjcpK1&trigger_source=serp",
       "source": "Jora",
       "id": "106d76c9257452dc",
       "title_normalized": "Senior Commis Viennoiserie / Demi Chef",
@@ -328,7 +280,7 @@
         "text": null
       },
       "date": "2026-05-25",
-      "url": "https://my.jora.com/job/Chef-de-Partie-896805dc851374c02bcbe9aefa766058?abstract_type=original&disallow=true&fsv=true&sl=Johor+Bahru+Johor&sol_key=333d9c745a5ebd8c6f08a4888ced3f0f&sp=serp&sponsored=false&sq=Chef&sr=10&tk=AjjF2igEM9SGcefH7lqk-PWabrqxVsV2KgN2E_t_e&trigger_source=serp",
+      "url": "https://my.jora.com/job/Chef-de-Partie-896805dc851374c02bcbe9aefa766058?abstract_type=original&disallow=true&fsv=true&sl=Johor+Bahru+Johor&sol_key=947ae8155f31bd450ba21d5f3699572f&sp=serp&sponsored=false&sq=Chef&sr=10&tk=cxG4hxiFEAWMNJYGW0Qu-r8shepL8AyDAyQfjcpK1&trigger_source=serp",
       "source": "Jora",
       "id": "95d45320b6979ae5",
       "title_normalized": "Chef de Partie - Baker",
@@ -353,7 +305,7 @@
         "text_formatted": "RM5,000/month"
       },
       "date": "2026-05-24",
-      "url": "https://my.jora.com/job/Head-Chef-fba62b93fbed7b4d84346f5644176731?abstract_type=original&disallow=true&fsv=true&sl=Johor+Bahru+Johor&sol_key=c0886c64e37dc4ac229d7688defe04bb&sp=serp&sponsored=false&sq=Chef&sr=1&tk=AjjF2igEM9SGcefH7lqk-PWabrqxVsV2KgN2E_t_e&trigger_source=serp",
+      "url": "https://my.jora.com/job/Head-Chef-b3153746ee918ad6c183458f0a7acf1b?abstract_type=original&disallow=true&fsv=true&sl=Johor+Bahru+Johor&sol_key=ff77b73eea24daa7a9a4cbae3b32a9a9&sp=serp&sponsored=false&sq=Chef&sr=1&tk=cxG4hxiFEAWMNJYGW0Qu-r8shepL8AyDAyQfjcpK1&trigger_source=serp",
       "source": "Jora",
       "id": "c0b2b72f8d894c7f",
       "title_normalized": "Head Chef",
@@ -610,103 +562,6 @@
       "description": null
     },
     {
-      "title": "Senior Bakery Chef",
-      "company": "Agensi Pekerjaan CKM Sdn Bhd",
-      "location": "Johor Bahru",
-      "salary": {
-        "min": 8000,
-        "max": 8000,
-        "period": "monthly",
-        "text": "8,000 - RM 10,000",
-        "text_formatted": "RM8,000/month"
-      },
-      "date": "2026-05-17",
-      "url": "https://www.maukerja.my/job/26468459-senior-bakery-chef",
-      "source": "Maukerja",
-      "id": "7ba256dd8e14b991",
-      "title_normalized": "Senior Bakery Chef",
-      "category": "chef",
-      "employment_type": null,
-      "location_normalized": "Johor Bahru",
-      "skills": [],
-      "description": null
-    },
-    {
-      "title": "Lead Pastry Chef",
-      "company": "Agensi Pekerjaan CKM Sdn Bhd",
-      "location": "Johor Bahru",
-      "salary": {
-        "min": 8000,
-        "max": 8000,
-        "period": "monthly",
-        "text": "8,000 - RM 10,000",
-        "text_formatted": "RM8,000/month"
-      },
-      "date": "2026-05-17",
-      "url": "https://www.maukerja.my/job/26468461-lead-pastry-chef",
-      "source": "Maukerja",
-      "id": "c1b58b70c4203f21",
-      "title_normalized": "Lead Pastry Chef",
-      "category": "chef",
-      "employment_type": null,
-      "location_normalized": "Johor Bahru",
-      "skills": [
-        "Baking",
-        "Pastry"
-      ],
-      "description": null
-    },
-    {
-      "title": "Head Baker",
-      "company": "Agensi Pekerjaan CKM Sdn Bhd",
-      "location": "Johor Bahru",
-      "salary": {
-        "min": 8000,
-        "max": 8000,
-        "period": "monthly",
-        "text": "8,000 - RM 10,000",
-        "text_formatted": "RM8,000/month"
-      },
-      "date": "2026-05-17",
-      "url": "https://www.maukerja.my/job/26468460-head-baker",
-      "source": "Maukerja",
-      "id": "46f9783154318a89",
-      "title_normalized": "Head Baker",
-      "category": "other",
-      "employment_type": null,
-      "location_normalized": "Johor Bahru",
-      "skills": [
-        "Baking",
-        "Pastry"
-      ],
-      "description": null
-    },
-    {
-      "title": "Master Baker",
-      "company": "Agensi Pekerjaan CKM Sdn Bhd",
-      "location": "Johor Bahru",
-      "salary": {
-        "min": 8000,
-        "max": 8000,
-        "period": "monthly",
-        "text": "8,000 - RM 10,000",
-        "text_formatted": "RM8,000/month"
-      },
-      "date": "2026-05-17",
-      "url": "https://www.maukerja.my/job/26468462-master-baker",
-      "source": "Maukerja",
-      "id": "ed512350f02e7eb2",
-      "title_normalized": "Master Baker",
-      "category": "other",
-      "employment_type": null,
-      "location_normalized": "Johor Bahru",
-      "skills": [
-        "Baking",
-        "Pastry"
-      ],
-      "description": null
-    },
-    {
       "title": "Head Chef, Food Services (Cook)",
       "company": "KPJ Healthcare",
       "location": "Johor Bahru, Johor",
@@ -717,7 +572,7 @@
         "text": null
       },
       "date": "2026-05-12",
-      "url": "https://my.jora.com/job/Head-Chef-bf4b29983f8668b16e35c65005df02c0?abstract_type=original&disallow=true&fsv=true&sl=Johor+Bahru+Johor&sol_key=923953839296f75cbd1b2b848b6cbfd2&sp=serp&sponsored=false&sq=Chef&sr=4&tk=AjjF2igEM9SGcefH7lqk-PWabrqxVsV2KgN2E_t_e&trigger_source=serp",
+      "url": "https://my.jora.com/job/Head-Chef-bf4b29983f8668b16e35c65005df02c0?abstract_type=original&disallow=true&fsv=true&sl=Johor+Bahru+Johor&sol_key=8855b677a63deddab9d2238d6ed57500&sp=serp&sponsored=false&sq=Chef&sr=4&tk=cxG4hxiFEAWMNJYGW0Qu-r8shepL8AyDAyQfjcpK1&trigger_source=serp",
       "source": "Jora",
       "id": "bd0b6c237cfc5e4e",
       "title_normalized": "Head Chef, Food Services (Cook)",
@@ -739,7 +594,7 @@
         "text_formatted": "RM4,000/month"
       },
       "date": "2026-05-11",
-      "url": "https://my.jora.com/job/Sous-Chef-ec3c1703c236a1f7478d7e1d5904dbcf?abstract_type=original&disallow=true&fsv=true&sl=Johor+Bahru+Johor&sol_key=36cb26473cf3a6e5c1c690ce21c6d2f8&sp=sserp_bottom&sponsored=true&sq=Chef&sr=5&tk=AjjF2igEM9SGcefH7lqk-PWabrqxVsV2KgN2E_t_e&trigger_source=serp",
+      "url": "https://my.jora.com/job/Sous-Chef-ec3c1703c236a1f7478d7e1d5904dbcf?abstract_type=original&disallow=true&fsv=true&sl=Johor+Bahru+Johor&sol_key=7b4a3ef7cba501d144c6ae15cda75865&sp=sserp_top&sponsored=true&sq=Chef&sr=2&tk=cxG4hxiFEAWMNJYGW0Qu-r8shepL8AyDAyQfjcpK1&trigger_source=serp",
       "source": "Jora",
       "id": "f2ce2e9eae874b6b",
       "title_normalized": "Sous Chef",
@@ -771,52 +626,6 @@
       "skills": [
         "Halal"
       ],
-      "description": null
-    },
-    {
-      "title": "Pastry Chef (Cafe)",
-      "company": "Agensi Pekerjaan Jobs Kreate Sdn Bhd",
-      "location": "Johor Bahru",
-      "salary": {
-        "min": 2000,
-        "max": 2000,
-        "period": "monthly",
-        "text": "2,000 - RM 3,500",
-        "text_formatted": "RM2,000/month"
-      },
-      "date": "2026-05-08",
-      "url": "https://www.maukerja.my/job/26248419-pastry-chef-cafe",
-      "source": "Maukerja",
-      "id": "181b250298f3bf4a",
-      "title_normalized": "Pastry Chef (Cafe)",
-      "category": "chef",
-      "employment_type": null,
-      "location_normalized": "Johor Bahru",
-      "skills": [
-        "Baking",
-        "Pastry"
-      ],
-      "description": null
-    },
-    {
-      "title": "Head Chef, Food Services (Cook)",
-      "company": "KPJ Healthcare Berhad",
-      "location": "Johor Bahru",
-      "salary": {
-        "min": null,
-        "max": null,
-        "period": "monthly",
-        "text": null
-      },
-      "date": "2026-05-08",
-      "url": "https://www.maukerja.my/job/26405288-head-chef-food-services-cook",
-      "source": "Maukerja",
-      "id": "b3ee35b09e6c9c05",
-      "title_normalized": "Head Chef, Food Services (Cook)",
-      "category": "chef",
-      "employment_type": null,
-      "location_normalized": "Johor Bahru",
-      "skills": [],
       "description": null
     }
   ]
