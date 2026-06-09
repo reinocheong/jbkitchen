@@ -40,7 +40,7 @@
   </script>
 
   <!-- Page view tracking — per-page counts -->
-  <script async src="https://api.countapi.xyz/hit/jbkitchen/{{ with .RelPermalink }}{{ urlize . }}{{ else }}/{{ end }}"></script>
+  <script async src="https://api.countapi.xyz/hit/jbkitchen/{{ with .RelPermalink }}{{ strings.TrimPrefix "/" (urlize .) }}{{ else }}home{{ end }}"></script>
 
   <!-- Google Translate - lightweight, no banner -->
   <script type="text/javascript">
