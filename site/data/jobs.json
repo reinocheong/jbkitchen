@@ -1,12 +1,12 @@
 {
   "updated": "2026-06-09T09:54:08",
-  "count": 93,
+  "count": 96,
   "by_source": {
     "Maukerja": 8,
     "Jora": 13,
     "Hiredly": 15,
     "MyFutureJobs": 18,
-    "JobStreet": 42
+    "JobStreet": 85
   },
   "items": [
     {
@@ -2047,6 +2047,69 @@
       "category": "kitchen-crew",
       "employment_type": null,
       "location_normalized": "Permas Jaya",
+      "skills": []
+    },
+    {
+      "title": "Floor Crew",
+      "company": "Sushi Shin Restaurant Sdn Bhd",
+      "location": "Johor Bahru",
+      "salary": {
+        "min": 2000,
+        "max": 2000,
+        "period": "monthly",
+        "text": "RM 2,000 – RM 2,800 per month",
+        "text_formatted": "RM2,000/month"
+      },
+      "description": null,
+      "date": "22d ago",
+      "source": "JobStreet",
+      "id": "3182537777687b82",
+      "title_normalized": "Floor Crew",
+      "category": "other",
+      "employment_type": null,
+      "location_normalized": "Johor Bahru",
+      "skills": []
+    },
+    {
+      "title": "KITCHEN HELPER",
+      "company": "Austin Heights Golf & Country Resort Sdn Bhd",
+      "location": "Johor Bahru",
+      "salary": {
+        "min": 1900,
+        "max": 1900,
+        "period": "monthly",
+        "text": "RM 1,900 – RM 2,000 per month",
+        "text_formatted": "RM1,900/month"
+      },
+      "description": null,
+      "date": "6h ago",
+      "source": "JobStreet",
+      "id": "4a891206b2ee366d",
+      "title_normalized": "Kitchen Helper",
+      "category": "kitchen-crew",
+      "employment_type": null,
+      "location_normalized": "Johor Bahru",
+      "skills": []
+    },
+    {
+      "title": "Commis",
+      "company": "Austin Heights Golf & Country Resort Sdn Bhd",
+      "location": "Johor Bahru",
+      "salary": {
+        "min": 2000,
+        "max": 2000,
+        "period": "monthly",
+        "text": "RM 2,000 – RM 2,700 per month",
+        "text_formatted": "RM2,000/month"
+      },
+      "description": null,
+      "date": "6h ago",
+      "source": "JobStreet",
+      "id": "388d9c3d8d4d3e3c",
+      "title_normalized": "Commis",
+      "category": "cook",
+      "employment_type": null,
+      "location_normalized": "Johor Bahru",
       "skills": []
     }
   ]

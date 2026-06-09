@@ -14,13 +14,13 @@ cd "$PROJECT_DIR"
 # Step 1: Refresh data (Jora, Hiredly, Maukerja, MyFutureJobs)
 $PYTHON scripts/aggregate.py
 
-# Step 1.5: Scrape JobStreet via Windows Chrome + merge (dedup by title+company)
-echo "[auto-publish] Scraping JobStreet via Windows Chrome..."
-if cmd.exe /c "C: && cd C:\Users\User\Desktop\fb-cookie-extract && node scrape_extra_jobs.js" 2>/dev/null; then
+# Step 1.5: Scrape JobStreet via CloakBrowser (stealth, no Windows dependency)
+echo "[auto-publish] Scraping JobStreet via CloakBrowser..."
+if $PYTHON scripts/scrape_jobstreet_wsl.py; then
   echo "[auto-publish] Merging JobStreet extras (dedup)..."
   $PYTHON scripts/merge_extra_jobs.py
 else
-  echo "[auto-publish] ⚠️ JobStreet scraper failed (Chrome offline?), continuing with built-in sources only"
+  echo "[auto-publish] ⚠️ JobStreet scraper failed (CloakBrowser issue?), continuing with built-in sources only"
 fi
 
 # Step 2: Build Hugo (preserve .nojekyll and CNAME)

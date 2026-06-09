@@ -13,7 +13,8 @@ import json, sys, os, re
 sys.path.insert(0, os.path.join(os.path.dirname(__file__)))
 from scrape_jobs import _enrich_job, _classify_category, JOB_KEYWORDS
 
-EXTRAS_FILE = "/mnt/c/Users/User/Desktop/fb-cookie-extract/extra_jobs_output.json"
+# Use CloakBrowser-scraped output (WSL path, no Windows dependency)
+EXTRAS_FILE = os.path.join(os.path.dirname(__file__), "..", "data", "extra_jobs_output.json")
 JOBS_FILE = os.path.join(os.path.dirname(__file__), "..", "site", "data", "jobs.json")
 JOBS_FILE2 = os.path.join(os.path.dirname(__file__), "..", "data", "jobs.json")
 
