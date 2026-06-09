@@ -5,6 +5,11 @@ disableKinds = ["taxonomy", "term"]
 enableRobotsTXT = true
 publishDir = "../docs"
 
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5
+  filename = "sitemap.xml"
+
 [params]
   description = "新山餐饮经营工具与指南 — 成本计算器、供应商目录、经营攻略，帮你开好一间餐厅"
   author = "KHL Frozen Food"
