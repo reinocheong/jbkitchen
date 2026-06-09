@@ -7,7 +7,7 @@
 
 - [x] 清理所有 Facebook 爬虫痕迹（脚本/数据/pycache/文档/cookie/css/.gitignore）
 - [x] 翻译按钮 CSS 修复（dropdown 定位 + 动画）
-- [x] 替换 FB 源为 JobStreet 厨师岗位（115 条，Windows Chrome CDP 爬取）
+- [x] 替换 FB 源为 JobStreet 厨师岗位（CloakBrowser stealth 爬取）
 - [x] 全站招聘数：60 → 225 条
 
 - [x] Hugo 站点骨架 + 深绿金色主题
@@ -57,7 +57,7 @@
 
 ## ⏳ 待办（以下需用户配合 / 外部依赖）
 
-- [ ] 打开 3 个 Google Form 邮件通知（Post Resume / Contribute / Inquiry → setting reinocheong@gmail.com）
+- [x] 打开 3 个 Google Form 邮件通知（Post Resume / Contribute / Inquiry → reinocheong@gmail.com）
 - [ ] 域名购买 `jbkitchen.com` + DNS 配置
 - [ ] Google Search Console 接入 + 提交 sitemap
 - [ ] 厨师注册数据导出到 XLSX 功能（通过 Google Sheets 导出）

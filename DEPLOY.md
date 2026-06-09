@@ -28,7 +28,7 @@ git add -A && git commit -m "📦 构建更新" && git push
 
 - **`jbkitchen — full pipeline` (ID: `5c97932548d0`)：** 每天 6:00
   - 脚本：`scripts/auto-publish.sh`
-  - 流程：`aggregate.py`（刷新新闻/汇率/鸡价/招聘数据）→ `hugo --minify`（构建）→ `git push`（部署）
+  - 流程：`aggregate.py`（刷新新闻/汇率/招聘数据）→ `scrape_jobstreet_wsl.py`（JobStreet via CloakBrowser）→ `merge_extra_jobs.py`（去重合并）→ `hugo --minify`（构建）→ `git push`（部署）
 - **`jbkitchen — 管道监控` (ID: `7c38188c86cb`)：** 每天 6:30
   - 自动检查 6:00 管道状态，报错则修+重跑+通知
 
@@ -66,13 +66,13 @@ cd .. && git add -A && git commit -m "..." && git push  # 部署
 | 服务 | 用途 | 状态 |
 |------|------|------|
 | CountAPI (countapi.xyz) | 每页面独立计数器 | ✅ 正常运行（免费版） |
-| Google Analytics GA4 | 深度流量分析 | ⚠️ Measurement ID 为占位符，需替换 |
+| Google Analytics GA4 | 深度流量分析 | ✅ G-RPR2CJKK11 已上线 |
 | Google Apps Script | 厨师注册表单→Google Sheet | ⚠️ 需要部署（见 setup/SHEET_SETUP_GUIDE.md） |
 | Google Sheets | 厨师注册数据存档 | ⚠️ 需要创建（见 setup/SHEET_SETUP_GUIDE.md） |
 | DOSM Open API | CPI 指数 + 通胀率 | ✅ 免费开放数据，无需 API key |
 | exchangerate-api.com | MYR 实时汇率 | ✅ 免费，无需 API key |
 | Google News RSS | 马来西亚餐饮新闻（22 关键词） | ✅ 免费 RSS，无需 API key |
-| WhatsApp Baileys (wa_daemon3.js) | 冷冻鸡价实时抓取 | ⚠️ 需保持 daemon 运行（PID 174813） |
+| WhatsApp Baileys (wa_daemon3.js) | 冷冻鸡价实时抓取 | ✋ 已暂停，改用手动更新 |
 
 ## Python 依赖
 

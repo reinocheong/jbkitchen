@@ -5,26 +5,19 @@
 
 ---
 
-## 一、完整数据流（三路并行）
+## 一、完整数据流（两路并行）
 
 ```mermaid
 graph TD
-    subgraph "① 定时刷新 (每天6:00，6:30自动监控)"
+    subgraph "① 定时刷新 (每天6:00)"
         CRON[cron: 0 6 * * *] -->|auto-publish.sh| AG[aggregate.py]
         AG --> NF[news_fetcher.py<br/>Google News RSS ×22关键词]
         AG --> PT[price_tracker.py<br/>DOSM CPI + exchangerate-api]
-        AG --> CP[chan_prices.py<br/>解析鸡价 /0.9 计算]
         NF --> NEWS[(site/data/news.json)]
         PT --> PRICES[(site/data/prices.json)]
     end
 
-    subgraph "② 实时抓取 (WhatsApp Channel)"
-        DAEMON[wa_daemon3.js<br/>PID 174813 :3456] -->|newsletterSubscribe| CHANNEL[鸡价频道<br/>120363405976277555@newsletter]
-        DAEMON -->|messages.upsert| RAW[(data/chan_raw.json)]
-        CP --> CHAN_PRICES[(site/data/chan_prices.json)]
-    end
-
-    subgraph "③ 构建部署 (auto-publish.sh)"
+    subgraph "② 构建部署 (auto-publish.sh)"
         SITE_DATA[(site/data/*.json)] -->|Hugo 读取| HUGO[hugo --minify]
         HUGO --> DOCS[(docs/ 静态站)]
         DOCS -->|git push| GH[GitHub Pages<br/>reinocheong.github.io/jbkitchen]
@@ -44,75 +37,34 @@ graph TD
 
 ### 日常运行（自动）
 
-| 时间 | 动作 | 触发 | 数据源 | 影响 |
-|:---|:---|:---|:---|:---|
-||| 6:00 | `auto-publish.sh` 执行 | cron `5c97932548d0` | 新闻RSS · DOSM CPI · 汇率API · 鸡价原始消息 · 5大招聘网站（Jora/Hiredly/Maukerja/MyFutureJobs + JobStreet 如 Chrome 在线） | 网站自动更新 |
-
-| 随时(通常周六下午) | 供营商在频道发新价目表 | `messages.upsert` 事件 | WhatsApp Channel | 覆盖 `chan_raw.json`，下次 cron (8点) 自动解析上线 |
-| 每日(不固定) | DOSM 发布新月度 CPI | `price_tracker.py` 下次运行时 | DOSM API (cpi_headline) | 通胀数据月度更新 |
+|| 时间 | 动作 | 触发 | 数据源 | 影响 |
+||:---|:---|:---|:---|:---|
+|| 6:00 | `auto-publish.sh` 执行 | cron `5c97932548d0` | 新闻RSS · DOSM CPI · 汇率API · 5大招聘网站 | 网站自动更新 |
+|| DOSM 发布新月度 CPI | `price_tracker.py` 下次运行时 | DOSM API (cpi_headline) | 通胀数据月度更新 |
 
 ### 故障排查（人工）
 
 > **第一步永远先跑 `./scripts/auto-publish.sh`** — 这步会刷新所有数据并部署，能解决90%的「数据不更新」问题。
 
-**症状诊断表：**
-
-| 症状 | 查什么 | 怎么修 |
-|:---|:---|:---|
-| 汇率/CPI 不动 | `cat site/data/prices.json \| jq .updated` | 手动跑 `python3 scripts/price_tracker.py` |
-| 鸡价没更新 | `cat site/data/chan_raw.json \| jq .updated` | 检查 daemon 是否还活着 |
-| 新闻没更新 | `cat site/data/news.json \| jq '.items \| length'` | 手动跑 `python3 scripts/news_fetcher.py` |
-| 网站白屏/样式没了 | `curl -s https://reinocheong.github.io/jbkitchen/index.html \| head -5` | 检查 `.nojekyll` 文件是否存在、路径是否 `absURL`、?v3 版本号 |
-| CSS 样式不对 | 查看浏览器 Console 的 404 错误 | 确认 CSS 链接加了 ?v3 版本号（GitHub Pages CDN 缓存） |
-| 整个网站404 | `curl -sI https://reinocheong.github.io/jbkitchen/` | 检查 GitHub Pages 是否开启、docs/ 目录是否存在 |
+|| 数据不更新 | 手动跑 `bash scripts/auto-publish.sh` | 一行命令刷新所有数据 + 部署 |
+|| 汇率/CPI 不动 | `python3 -c "import json; print(json.load(open('site/data/prices.json'))['updated'])"` | 手动跑 `python3 scripts/price_tracker.py` |
+|| 新闻没更新 | `python3 -c "import json; d=json.load(open('site/data/news.json')); print(len(d['items']), 'articles')"` | 手动跑 `python3 scripts/news_fetcher.py` |
+|| 网站白屏/样式没了 | `curl -s https://reinocheong.github.io/jbkitchen/index.html \| head -5` | 检查 `.nojekyll` 文件是否存在、路径是否 `absURL`、?v3 版本号 |
+|| CSS 样式不对 | 查看浏览器 Console 的 404 错误 | 确认 CSS 链接加了 ?v3 版本号（GitHub Pages CDN 缓存） |
+|| 整个网站404 | `curl -sI https://reinocheong.github.io/jbkitchen/` | 检查 GitHub Pages 是否开启、docs/ 目录是否存在 |
 
 ### Daemon 相关操作
 
-> **🚨 不要随意重启 daemon。** 频繁重启会触发 WhatsApp 封号（403/463错误）。
-
-**daemon 状态检查：**
-```bash
-curl http://127.0.0.1:3456/health
-# 期望: {"ok":true,"pid":174813,"connected":true,"uptime":"..."}
-```
-
-**daemon 日志：**
-```bash
-tail -50 /tmp/wa_daemon3.log
-```
-
-**daemon 必须重启（session 丢失/进程崩溃）时：**
-```bash
-# 1. 杀旧进程
-pkill -f "node wa_daemon3.js"
-sleep 2
-# 2. 确认 session 文件还在
-ls ~/leadpilot/wa/wa_session/creds.json && echo "session OK（无需扫码）" || echo "session 丢失，需要重新扫码"
-# 3. 启动新 daemon
-cd ~/leadpilot/wa && nohup node wa_daemon3.js > /tmp/wa_daemon3.log 2>&1 &
-# 4. 等待连接
-sleep 5
-curl http://127.0.0.1:3456/health
-```
-
-**频道订阅确认（正常情况不需要重复执行，除非频道取消关注）：**
-```bash
-curl "http://127.0.0.1:3456/fetch_channel?invite=0029Vb6p7Qq5Ejy68g8VCj1U"
-```
+> WhatsApp Channel 鸡价已改为**手动更新**。用户发价给我，我手动更新 prices.json。WA daemon 已暂停。
 
 ---
 
 ## 三、数据文件清单
 
-| 文件 | 用途 | 更新方式 | 更新频率 |
-|:---|:---|:---|:---|
 || `site/data/prices.json` | 汇率 + CPI | `price_tracker.py` → `auto-publish.sh` | 每天1次 (cron 6) |
 || `site/data/news.json` | 新闻列表 (30条) | `news_fetcher.py` → `auto-publish.sh` | 每天1次 (cron 6) |
-| `site/data/chan_raw.json` | 鸡价原始消息 (daemon写入) | `wa_daemon3.js` `messages.upsert` | 供营商发新消息时 |
-|| `site/data/chan_prices.json` | 鸡价解析结果 (46项) | `chan_prices.py` → `auto-publish.sh` | 每天1次，只要有新原始数据 |
-|| `site/data/jobs.json` | JB餐饮招聘 (web聚合) | `scrape_jobs.py` → `auto-publish.sh` | 每天1次 (cron 6) |
-
-| `site/data/chefs.json` | 厨师样本数据 | 手动维护 | 按需 |
+|| `site/data/jobs.json` | JB餐饮招聘 (web聚合 + JobStreet) | `scrape_jobs.py` + `scrape_jobstreet_wsl.py` → `auto-publish.sh` | 每天1次 (cron 6) |
+|| `site/data/chefs.json` | 厨师样本数据 | 手动维护 | 按需 |
 || `docs/` | 静态站输出 | `hugo --minify` → `auto-publish.sh` | 每天1次 + 手动 |
 
 ---
@@ -124,54 +76,40 @@ auto-publish.sh
   ├── aggregate.py
   │     ├── news_fetcher.py    → site/data/news.json
   │     ├── price_tracker.py   → site/data/prices.json
-  │     ├── chan_prices.py     → site/data/chan_prices.json
   │     ├── scrape_jobs.py     → site/data/jobs.json + data/jobs.json
-
+  │
+  ├── scrape_jobstreet_wsl.py  → data/extra_jobs_output.json (CloakBrowser)
+  ├── merge_extra_jobs.py      → site/data/jobs.json (dedup merge)
   │
   ├── hugo --minify            → docs/ (读取 site/data/*.json)
   │
   └── git add + commit + push → GitHub Pages
-
-
-wa_daemon3.js (独立进程 PID 174813)
-  └── messages.upsert          → site/data/chan_raw.json
 ```
 
-## 五、鸡价解析规则
+## 五、鸡价数据
 
-```
-原始: (32) mid Joint Wing 12.50
-  ↓ 解析
-{item: "32", name: "Mid Joint Wing", price_src: 12.50}
-  ↓ /0.9 计算
-price_calc: 13.8889
-  ↓ 四舍五入到 0.10
-price: 13.90
+鸡价改为**手动更新**。用户发价后，由我手动修改 `site/data/chan_prices.json` 和 `site/data/prices.json` 鸡价部分，然后跑 `auto-publish.sh` 部署上线。
 
-名称清理规则:
-- BB → Boneless Breast
-- SBB → Skinless Boneless Breast  
-- BL → Boneless Leg
-- WL → Whole Leg
-- *IM* → Import, *LO* → Local
-- 品牌名保持大写 (CARGIL, TYSON)
-- 尺寸范围 (0.8-0.9) 自动过滤（不是价格）
-```
+数据文件：`site/data/chan_prices.json`（46 项鸡价 + /0.9 计算后显示价格）
 
 ## 六、招聘数据流 (Job Scraping Pipeline)
 
 ```mermaid
 graph TD
-    subgraph "Web 抓取 (每天4次)"
+    subgraph "Web 抓取 (每天6:00)"
         JORA[Jora: requests+BS4]
         HIREDLY[Hiredly: __NEXT_DATA__]
         MAUKERJA[Maukerja: Playwright (Nuxt.js)]
         MYFJ[MyFutureJobs: Playwright (Angular)]
+        JSTREET[JobStreet: CloakBrowser stealth]
         JORA --> SJ[scrape_jobs.py]
         HIREDLY --> SJ
         MAUKERJA --> SJ
         MYFJ --> SJ
-        SJ --> JOBSJSON[(site/data/jobs.json)]
+        JSTREET --> JS[scrape_jobstreet_wsl.py]
+        JS --> MERGE[merge_extra_jobs.py<br/>dedup by title+company]
+        MERGE --> JOBSJSON[(site/data/jobs.json)]
+        SJ --> JOBSJSON
     end
 
 
@@ -224,10 +162,7 @@ site/content/
 
 | 问题 | 原因 | 处理 |
 |:---|:---|:---|
-| websiteFetchMessages 超时 | Baileys 7.0.0-rc13 bug | 不走拉取，依赖 live `messages.upsert` |
-| daemon 重启频繁 → 封号 | WhatsApp 检测频繁配对 | 分钟级指数退避，不重启 |
 | 网站文件旧 | docs/ 没重新构建 | 手动跑 `auto-publish.sh` 或等 cron |
 | cron 跑了但数据没变 | Python 脚本本身没出错但数据源无新内容 | 正常 — 数据源本身更新频率低于 cron |
-| 鸡价显示缺项 | 供商家消息中无价格的商品（如"(1c) bb local "） | 自动跳过，只显示有价格的项 |
 | CSS 嵌套 bug | `.source-badge {` 未闭合导致后续 848 行样式失效 | 确保每个 CSS class 正确闭合 |
 | GitHub Pages CDN 缓存 | 更改 CSS/HTML 后浏览器看到旧版本 | 在 CSS 链接加 ?v3 版本号强制刷新 |

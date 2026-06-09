@@ -23,7 +23,7 @@
 | 层 | 技术 |
 |---|------|
 | 生成器 | Hugo v0.145 (extended) |
-| 数据采集 | Python 3.11, Node.js + Playwright (Windows Chrome CDP) |
+| 数据采集 | Python 3.11, Playwright + CloakBrowser (stealth) |
 | 数据源（行业） | DOSM CPI, exchangerate-api.com, Google News RSS, WhatsApp Channel 鸡价 |
 | 数据源（招聘） | Jora, Hiredly, Maukerja, MyFutureJobs, JobStreet |
 | 部署 | GitHub Pages（`/docs` 目录，main 分支） |
@@ -49,7 +49,8 @@ jbkitchen/
 │   ├── price_tracker.py    # DOSM CPI + 汇率
 │   ├── chan_prices.py      # WhatsApp Channel 鸡价解析 /0.9
 │   ├── scrape_jobs.py      # JB 餐饮招聘聚合（Jora/Hiredly/Maukerja/MyFutureJobs）
-
+│   ├── scrape_jobstreet_wsl.py  # JobStreet 抓取（CloakBrowser stealth）
+│   ├── merge_extra_jobs.py      # JobStreet 去重合并
 │   └── auto-publish.sh     # cron 包装脚本（数据→构建→部署）
 ├── data/             # 原始 JSON
 ├── docs/             # 构建输出 → GitHub Pages
@@ -110,8 +111,7 @@ jbkitchen/
 
 > 详细架构图和数据流见 `ARCHITECTURE.md`
 
-```
-┌─ ① cron (每天 8/12/16/20 点) ──────────────┐
+```\n┌─ ① cron (每天 6:00) ────────────────────────┐
 │  auto-publish.sh                             │
 │    ├─ python3 aggregate.py                   │
 │    │    ├─ news_fetcher.py    → news.json     │
@@ -125,13 +125,6 @@ jbkitchen/
 
 
 
-┌─ ③ WhatsApp Channel (实时) ──────────────────┐
-│  供营商发价 → wa_daemon3.js (PID 174813)     │
-│    → messages.upsert → chan_raw.json         │
-│    → 下次 cron 自动解析上线                    │
-└──────────────────────────────────────────────┘
-```
-
 **数据更新来源（每次 cron 跑 = 6:00 MYT，每天1次 + 6:30 自动监控重跑）：**
 | 数据 | 来源 | 更新机制 | 实时性 | 依赖状态 |
 |:---|:---|:---|:---|:---|
@@ -140,4 +133,4 @@ jbkitchen/
 | 🐓 鸡价 | 用户手动发送 | 用户发单价→我手动更新 | 用户发价后更新 | ✋ 手动 |
 | 📰 新闻 | Google News RSS ×22关键词 | 每次 cron 拉最新30条 | 实时 | ✅ 自动 |
 | 💼 招聘（Jora/Hiredly/Maukerja/MyFutureJobs） | 各自网站爬虫 | 每次 cron 爬最新 | 实时 | ✅ 自动 |
-| 💼 招聘（JobStreet） | Windows Chrome CDP | Chrome 在线时 auto-publish 自动爬+去重合并 | 实时 | ⚠️ 需 Chrome 9222 |
+| 💼 招聘（JobStreet） | CloakBrowser (stealth) | auto-publish 自动爬+去重合并 | 实时 | ✅ 自动 |

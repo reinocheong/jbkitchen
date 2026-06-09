@@ -162,6 +162,21 @@
 - Hugo 构建: 30 pages ✅
 - GitHub Pages 部署 ✅
 
+## 2026-06-09
+
+**操作人：AI**
+
+### 切换 JobStreet 爬虫从 Windows Chrome CDP 到 CloakBrowser
+
+- 用户指出早上 6:00 cron 因 WiFi 问题失败（依赖 Windows Chrome CDP）
+- 用户要求改用 CloakBrowser MCP 爬取 JobStreet
+- 编写 `scripts/scrape_jobstreet_wsl.py`：使用 CloakBrowser 的 stealth Chromium (`/home/user/.cloakbrowser/chromium-146.0.7680.177.5/chrome`) 绕过 Cloudflare 反爬
+- 验证：108 条 JobStreet 数据抓取成功，Cloudflare 完全绕过
+- 更新 `merge_extra_jobs.py`：读取 WSL 路径取代 Windows 路径
+- 更新 `auto-publish.sh`：调用 Python CloakBrowser 脚本取代 `cmd.exe` Windows Node.js
+- 全管道验证：96 条招聘（+3 新），构建部署成功
+- SSOT 7 文档全面对齐：README/TODO/ARCHITECTURE/DEPLOY 移除 WA daemon 引用、修正 cron 频率、加入 CloakBrowser 技术栈
+
 ### 供应商排行榜上线 + 计算器重做
 - 使用 Windows Chrome CDP 通过 Google 搜索调研 JB 冷冻食品供应商，搜到实际结果
 - 创建 `site/data/suppliers.json`（15家供应商，含名/描述/分类/网址/成立年份）
