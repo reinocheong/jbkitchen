@@ -429,7 +429,7 @@ def _browser_scrape(url: str, extract_js: str) -> list:
         )
         page = ctx.new_page()
         try:
-            page.goto(url, wait_until="load", timeout=15000)
+            page.goto(url, wait_until="domcontentloaded", timeout=30000)
             time.sleep(2)  # Let dynamic content settle
             result = page.evaluate(extract_js)
             return result or []
