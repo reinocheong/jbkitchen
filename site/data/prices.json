@@ -1,32 +1,32 @@
 {
-  "updated": "2026-06-17",
+  "updated": "2026-07-05",
   "fx": {
-    "USD_MYR": 4.0486,
-    "MYR_USD": 0.247,
-    "CNY_MYR": 0.5952,
+    "USD_MYR": 4.065,
+    "MYR_USD": 0.246,
+    "CNY_MYR": 0.5988,
     "SGD_MYR": 3.1546
   },
   "cpi": {
     "overall": {
-      "index": 136.9,
+      "index": 137.1,
       "label": "整体通胀",
-      "inflation_yoy": 1.9
+      "inflation_yoy": 2.0
     },
     "food_beverages": {
-      "index": 159.6,
+      "index": 160.0,
       "label": "食品与饮料",
-      "inflation_yoy": 1.2
+      "inflation_yoy": 1.4
     },
     "housing": {
-      "index": 132.5,
+      "index": 133.1,
       "label": "住房水电",
-      "inflation_yoy": 1.1
+      "inflation_yoy": 1.2
     },
     "transport": {
-      "index": 127.3,
+      "index": 126.7,
       "label": "交通",
-      "inflation_yoy": 4.1
+      "inflation_yoy": 3.8
     }
   },
-  "cpi_date": "2026-04-01"
+  "cpi_date": "2026-05-01"
 }
